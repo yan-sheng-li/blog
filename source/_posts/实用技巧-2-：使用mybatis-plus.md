@@ -5,6 +5,7 @@ tags:
 categories: []
 date: 2024-03-21 00:56:00
 index_img: '../img/skills.jpg'
+description: '基于 MyBatis 的增强工具库，它简化了 MyBatis 的开发，并提供了更多的便利功能：简化CRUD操作，通用mapper,分页插件，代码生成器等'
 ---
 ## 依赖：
 

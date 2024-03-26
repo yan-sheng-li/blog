@@ -5,10 +5,15 @@ tags:
 categories: []
 date: 2024-03-21 01:16:00
 index_img: '../img/skills.jpg'
+description: '快速生成项目的api文档，在线调试，利索又好使'
 ---
 
 ## 加强版swagger
+
+## 效果
+![](http://liyansheng.top/typora/20240326144539.png)
 ## 依赖
+
 
 ```xml
 <dependency>

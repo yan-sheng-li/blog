@@ -5,6 +5,7 @@ tags:
 categories: []
 date: 2024-03-21 01:37:00
 index_img: '../img/skills.jpg'
+description: '轻量化权限认证，极易上手'
 ---
 > 参考文档：https://sa-token.cc/doc.html
 
