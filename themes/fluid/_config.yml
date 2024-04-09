@@ -326,7 +326,7 @@ iconfont: //at.alicdn.com/t/font_1736178_lbnruvf0jn.css
 navbar:
   # 导航栏左侧的标题，为空则按 hexo config 中 `title` 显示
   # The title on the left side of the navigation bar. If empty, it is based on `title` in hexo config
-  blog_title: "程序员小李_Home"
+  blog_title: "木子李-博客"
 
   # 导航栏毛玻璃特效，实验性功能，可能会造成页面滚动掉帧和抖动，部分浏览器不支持会自动不生效
   # Navigation bar frosted glass special animation. It is an experimental feature
@@ -426,10 +426,13 @@ footer:
   # 页脚第一行文字的 HTML，建议保留 Fluid 的链接，用于向更多人推广本主题
   # HTML of the first line of the footer, it is recommended to keep the Fluid link to promote this theme to more people
   content: '
-    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
-    <i class="iconfont icon-love"></i>
-    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
-  '
+    <a href="https://blog.csdn.net/weixin_44107140" target="_blank" rel="nofollow noopener">
+    <span>CSDN博客</span></a>
+    <i class="iconfont">|</i>
+    <a href="https://gitee.com/yan-sheng-li" target="_blank" rel="nofollow noopener"><span>Gitee码云</span></a>
+  <i class="iconfont">|</i> <a href="#" target="_blank" rel="nofollow noopener"><span style="color:green">微信公众号：《编程亿点有趣》</span></a>
+  | <a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=NZUoWMzd3PQLWwxRGMiBNYEnVkEdNq__&jump_from=webapi&authKey=kgAofDqUzgwMCSX+UQQwxf837zMeWFGGmo4iIcbgkklW2pdfmVOlxPWAK6sMYMaC">
+  <img border="0" src="http://liyansheng.top/typora/group.png" alt="远程调试-学习交流" title="远程调试-学习交流"></a>'
 
   # 展示网站的 PV、UV 统计数
   # Display website PV and UV statistics
@@ -440,8 +443,8 @@ footer:
     # Data source. If use leancloud, you need to set the parameter in `web_analytics: leancloud`
     # Options: busuanzi | leancloud
     source: "busuanzi"
-    pv_format: "总访问量 {} 次"  # 显示的文本，{}是数字的占位符（必须包含），下同
-    uv_format: "总访客数 {} 人"
+    pv_format: "总访问量 { } 次"  # 显示的文本，{}是数字的占位符（必须包含），下同
+    uv_format: "总访客数 { } 人"
 
   # 国内大陆服务器的备案信息
   # For Chinese mainland website policy, other areas keep disable
@@ -464,7 +467,7 @@ footer:
 index:
   # 首页 Banner 头图，可以是相对路径或绝对路径，以下相同
   # Path of Banner image, can be a relative path or an absolute path, the same on other pages
-  banner_img: /img/1.jpg
+  banner_img: /img/bg4.jpg
 
   # 头图高度，屏幕百分比
   # Height ratio of banner image
@@ -536,7 +539,7 @@ index:
 # Post Page
 #---------------------------
 post:
-  banner_img: /img/2.jpg
+  banner_img: /img/bg5.jpg
   banner_img_height: 70
   banner_mask_alpha: 0.3
 
@@ -1103,7 +1106,3 @@ static_prefix:
   hint: https://lib.baomitu.com/hint.css/2.7.0/
 
 
-# Online contact 在线客服 Daovoice 参考：http://dashboard.daovoice.io
-daovoice: true # 在线客服 Daovoice 参考：http://dashboard.daovoice.io
-   # 是否开启在线客服聊天
-  # appid: 814d8ba6  # 应用ID设置
