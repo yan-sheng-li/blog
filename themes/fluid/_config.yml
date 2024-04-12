@@ -955,8 +955,8 @@ about:
   banner_img_height: 60
   banner_mask_alpha: 0.3
   avatar: /img/touxiang.jpg
-  name: "李延胜"
-  intro: "广漂程序员一枚，热衷技术总结、实战。感谢您的关注与支持！"
+  name: "木子"
+  intro: "广漂【野生】码哥一枚👨‍💻，热衷技术总结、实战，热衷挑战各种奇奇怪怪的Bug🍳，你来需求，熬夜掉头发也肝💪。感谢您的关注与支持！下面是我在互联网各平台的足迹，可以关注我哦❤"
   # 更多图标可从 https://hexo.fluid-dev.com/docs/icon/ 查找，`class` 代表图标的 css class，添加 `qrcode` 后，图标不再是链接而是悬浮二维码
   # More icons can be found from https://hexo.fluid-dev.com/docs/en/icon/  `class` is the css class of the icon. If adding `qrcode`, The icon is no longer a link, but a hovering QR code
   icons:
