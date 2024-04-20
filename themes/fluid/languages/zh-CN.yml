@@ -7,26 +7,26 @@ home:
 archive:
   menu: '归档'
   title: '归档'
-  subtitle: '归档'
+  subtitle: '发布时间线👇'
   post_total: '共计 %d 篇文章'
 
 category:
   menu: '分类'
   title: '分类'
-  subtitle: '分类'
+  subtitle: '分类浏览👇'
   post_total: '共计 %d 篇文章'
   more: 'More...'
 
 tag:
   menu: '标签'
   title: '标签'
-  subtitle: '标签'
+  subtitle: '点击下方标签可查看相关的内容👇'
   post_total: '共计 %d 篇文章'
 
 about:
-  menu: '关于'
-  title: '关于'
-  subtitle: '关于'
+  menu: '作者'
+  title: '作者'
+  subtitle: '山高水远，看世界，也找自己🤳'
 
 links:
   menu: '友链'
