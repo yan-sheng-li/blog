@@ -1,11 +1,17 @@
+---
 title: 基于Spring Boot与MyBatis的租车行者网站开发实践
 author: 李延胜
-description: 本文介绍了基于Spring  Boot与MyBatis的租车行者网站的开发实践。该网站旨在满足现代社会用户对便捷出行的需求，提供了诸多功能，包括登录注册、车辆列表与详情展示、评论区、收藏、下单约车、车辆出租等。通过采用Spring  Boot、MyBatis、MySQL和Sa-token等技术，实现了快速开发、数据库交互、权限管理等功能。开发过程中，作者深刻体会到了Spring Boot与MyBatis的强大之处，并总结了开发心得。本文旨在分享作者在开发租车行者网站过程中的经验与感悟，为同类项目的开发提供参考与借鉴。
+description: >-
+  本文介绍了基于Spring 
+  Boot与MyBatis的租车行者网站的开发实践。该网站旨在满足现代社会用户对便捷出行的需求，提供了诸多功能，包括登录注册、车辆列表与详情展示、评论区、收藏、下单约车、车辆出租等。通过采用Spring 
+  Boot、MyBatis、MySQL和Sa-token等技术，实现了快速开发、数据库交互、权限管理等功能。开发过程中，作者深刻体会到了Spring
+  Boot与MyBatis的强大之处，并总结了开发心得。本文旨在分享作者在开发租车行者网站过程中的经验与感悟，为同类项目的开发提供参考与借鉴。
 tags:
   - 作品
 categories: []
+index_img: ../img/car.png
+abbrlink: 34106
 date: 2024-04-10 00:22:00
-index_img: '../img/car.png'
 ---
 
 > 随着城市交通的不断发展和人们对便捷出行的需求不断增加，租车行业逐渐成为了一种流行的出行方式。在这个背景下，为了满足用户的需求，我开发了一个租车行者网站，采用了Spring Boot与MyBatis作为主要的开发技术，通过MySQL作为数据存储，结合Sa-token进行权限管理，实现了一系列功能。

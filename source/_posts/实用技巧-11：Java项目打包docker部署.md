@@ -1,11 +1,13 @@
+---
 title: 实用技巧-11：Java项目打包docker部署
 author: 李延胜
 tags:
   - 实用
 categories: []
+index_img: ../img/skills.jpg
+description: 一键打包镜像，容器启动
+abbrlink: 1939
 date: 2024-03-26 15:19:00
-index_img: '../img/skills.jpg'
-description: '一键打包镜像，容器启动'
 ---
 > 项目导包要领如下：
 

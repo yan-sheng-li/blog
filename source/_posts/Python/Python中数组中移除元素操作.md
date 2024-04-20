@@ -6,6 +6,7 @@ tags:
   - Python
 categories:
   - Python
+abbrlink: 32017
 date: 2023-11-21 15:28:00
 ---
 ## 在 Python 中，有多种方式可以去除数组（列表）中的第一个元素。以下是其中几种方法：

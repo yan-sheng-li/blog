@@ -1,13 +1,13 @@
 ---
 title: 初学shell常用操作
-date: 2022-09-16 20:41:29
-tags: 
-- Linux
-- shell
+tags:
+  - Linux
+  - shell
 categories:
-- Linux
-
-index_img: http://liyansheng.top/typora/image-20230318180607679.png
+  - Linux
+index_img: 'http://liyansheng.top/typora/image-20230318180607679.png'
+abbrlink: 3820
+date: 2022-09-16 20:41:29
 ---
 ### 1.格式化输出时间
 

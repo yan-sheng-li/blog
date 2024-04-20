@@ -6,6 +6,7 @@ tags:
   - spring
 categories:
   - 后端
+abbrlink: 54852
 date: 2023-03-21 17:30:00
 ---
 > Spring JPA是Spring框架的一个模块，它提供了一种方便的方法来访问和管理关系型数据库中的数据。JPA是Java持久化API的缩写，它定义了一套标准的接口来管理对象与关系数据库之间的映射关系。

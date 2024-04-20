@@ -1,9 +1,12 @@
 ---
-index_img: http://liyansheng.top/typora/image-20230322231900301.png
+index_img: 'http://liyansheng.top/typora/image-20230322231900301.png'
 title: Java8的新特性与案例解析
 author: 李延胜
-tags: [java]
-categories: [java]
+tags:
+  - java
+categories:
+  - java
+abbrlink: 49921
 ---
 ### Java8的新特性
 

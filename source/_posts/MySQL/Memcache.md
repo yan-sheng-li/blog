@@ -1,8 +1,11 @@
 ---
-title: "这是一个示例文章"
-date: 2022-01-01
-tags: ["示例", "演示"]
+title: 这是一个示例文章
+tags:
+  - 示例
+  - 演示
 published: false   // 设置为 false，文章不会显示
+abbrlink: 31257
+date: 2022-01-01 00:00:00
 ---
 ### 我
 

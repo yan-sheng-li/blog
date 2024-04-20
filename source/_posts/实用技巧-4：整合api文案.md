@@ -1,11 +1,13 @@
+---
 title: 实用技巧-4：整合Api文档
 author: 李延胜
 tags:
   - 实用
 categories: []
+index_img: ../img/skills.jpg
+description: 快速生成项目的api文档，在线调试，利索又好使
+abbrlink: 17772
 date: 2024-03-21 01:16:00
-index_img: '../img/skills.jpg'
-description: '快速生成项目的api文档，在线调试，利索又好使'
 ---
 
 ## 加强版swagger

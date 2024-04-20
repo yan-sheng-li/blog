@@ -1,8 +1,9 @@
 ---
 title: GPG公钥生成问题-解决(Linux)
-date: 2023-03-17 1:18:29
 tags: 工具
-index_img: http://liyansheng.top/typora/image-20230318181342082.png
+index_img: 'http://liyansheng.top/typora/image-20230318181342082.png'
+abbrlink: 37189
+date: 2023-03-17 01:18:29
 ---
 > 今天要用到GPG公钥，在码云上，于是按照官方的步骤去操作，软件我下载安装好了，就是不好使，遇到的问题挺多。
 

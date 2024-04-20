@@ -1,11 +1,13 @@
+---
 title: 实用技巧-6：最快速的权限控制：Sa-Toekn
 author: 李延胜
 tags:
   - 实用
 categories: []
+index_img: ../img/skills.jpg
+description: 轻量化权限认证，极易上手
+abbrlink: 53762
 date: 2024-03-21 01:37:00
-index_img: '../img/skills.jpg'
-description: '轻量化权限认证，极易上手'
 ---
 > 参考文档：https://sa-token.cc/doc.html
 

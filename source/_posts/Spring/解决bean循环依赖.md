@@ -6,6 +6,7 @@ tags:
   - spring
 categories:
   - 后端
+abbrlink: 56540
 date: 2023-03-21 17:48:00
 ---
 ## 什么是循环依赖？

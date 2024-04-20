@@ -1,12 +1,13 @@
-﻿---
-title: vue引入三方库ElementUi,Echarts等避坑
+---
+title: 'vue引入三方库ElementUi,Echarts等避坑'
 author: 李延胜
 index_img: 'http://liyansheng.top/typora/image-20230318200712521.png'
 tags:
   - vue
 categories:
   - 前端
-date: 2022-4-18 17:43:00
+abbrlink: 498
+date: 2022-04-18 17:43:00
 ---
 #### 引入`vue-router`
 

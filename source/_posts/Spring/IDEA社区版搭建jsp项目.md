@@ -5,9 +5,10 @@ tags:
   - web
 categories:
   - 搭建
-date: 2023-06-12 00:20:00
-index_img: http://liyansheng.top/typora/jsp_note.jpg
+index_img: 'http://liyansheng.top/typora/jsp_note.jpg'
 permalink: idea_build_jsp/
+abbrlink: 54051
+date: 2023-06-12 00:20:00
 ---
 > 近期调试jsp类的web项目较多，本期带大家回顾一下该类项目的搭建与启动，完成一个简单的demo案例！
 

@@ -1,11 +1,12 @@
 ---
 title: Python：正则的贪婪匹配
 author: 李延胜
-index_img: '../img/re.jpg'
+index_img: ../img/re.jpg
 tags:
   - Python
 categories:
   - Python
+abbrlink: 42245
 date: 2023-11-28 22:04:00
 ---
 贪婪匹配是正则表达式中的一种匹配模式，它尽可能多地匹配输入文本。在贪婪模式下，匹配的字符会尽量多地匹配满足模式要求的部分。

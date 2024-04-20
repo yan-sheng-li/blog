@@ -1,12 +1,13 @@
+---
 title: 实用技巧-7：快速整合使用bootstrap-table
 author: 李延胜
 tags:
   - 实用
 categories: []
+index_img: ../img/skills.jpg
+description: 后台数据增删改查快速实现，模板换换接口即可
+abbrlink: 43379
 date: 2024-03-25 19:35:00
-index_img: '../img/skills.jpg'
-description: '后台数据增删改查快速实现，模板换换接口即可'
-
 ---
 # 快速整合bootstrap-table
 

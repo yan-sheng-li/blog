@@ -1,11 +1,12 @@
 ---
 title: 设计与实现基于Java+MySQL的考勤发布-签到系统
 author: 李延胜
-index_img: '../img/kaoqin.jpg'
+index_img: ../img/kaoqin.jpg
 tags:
   - 作品
 categories:
   - 作品
+abbrlink: 57370
 date: 2024-01-30 22:14:00
 ---
 ## 课题背景

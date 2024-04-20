@@ -1,12 +1,12 @@
 ---
 title: 启动Kafka步骤与常见问题
-date: 2022-10-16 22:41:29
-tags: 
-- kafka
+tags:
+  - kafka
 categories:
-- 中间件
-
-index_img: http://liyansheng.top/typora/image-20230318180359278.png
+  - 中间件
+index_img: 'http://liyansheng.top/typora/image-20230318180359278.png'
+abbrlink: 41053
+date: 2022-10-16 22:41:29
 ---
 > 每次用到kafka时都会出现各种奇怪的问题，综合实践，下面汇总下主要操作步骤：
 

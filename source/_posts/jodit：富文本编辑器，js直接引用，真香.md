@@ -1,8 +1,10 @@
+---
 title: jodit：富文本编辑器，js直接引用，真香
 author: 李延胜
-description: 一款出色的所见即所得编辑器，使用纯TypeScript编写，无需使用其他库。它包括一个文件编辑器和图像编辑器,上手简单！
+description: '一款出色的所见即所得编辑器，使用纯TypeScript编写，无需使用其他库。它包括一个文件编辑器和图像编辑器,上手简单！'
+index_img: ../img/jodit.png
+abbrlink: 44214
 date: 2024-04-10 00:21:21
-index_img: '../img/jodit.png'
 tags:
 ---
 

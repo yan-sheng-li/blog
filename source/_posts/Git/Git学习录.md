@@ -1,11 +1,13 @@
+---
 title: Git学习录
 author: 李延胜
 tags:
   - git
 categories:
   - 工具神器集
-date: 2023-11-15 14:52:00
 index_img: ../img/git.png
+abbrlink: 8084
+date: 2023-11-15 14:52:00
 ---
 > Git常用指令汇总：
 

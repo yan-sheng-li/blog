@@ -1,11 +1,13 @@
+---
 title: Webapp：Servlet计算正实数平方根并返回
 author: 李延胜
 tags:
   - java
 categories: []
+index_img: ../img/servlet.png
+description: 编写一个servlet，html页面通过表单向Servlet提交个正实数，Servlet负责计算这个数的平方根返回给客户。
+abbrlink: 22005
 date: 2024-03-29 00:05:00
-index_img: '../img/servlet.png'
-description: '编写一个servlet，html页面通过表单向Servlet提交个正实数，Servlet负责计算这个数的平方根返回给客户。'
 ---
 ## 🎈主线
 > 编写一个servlet，html页面通过表单向Servlet提交个正实数，Servlet负责计算这个数的平方根返回给客户。

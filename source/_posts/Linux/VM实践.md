@@ -1,13 +1,13 @@
 ---
 title: 玩转Linux虚拟机，从安装到实操
-date: 2022-09-20 17:41:29
-tags: 
-- Linux
-- shell
+tags:
+  - Linux
+  - shell
 categories:
-- Linux
-
-index_img: http://liyansheng.top/typora/image-20230318180814080.png
+  - Linux
+index_img: 'http://liyansheng.top/typora/image-20230318180814080.png'
+abbrlink: 29995
+date: 2022-09-20 17:41:29
 ---
 
 ## 1.VMware汉化

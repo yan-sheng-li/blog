@@ -1,11 +1,12 @@
 ---
 title: Python：字符串转列表
 author: 李延胜
-index_img: '../img/arraylist.jpg'
+index_img: ../img/arraylist.jpg
 tags:
   - Python
 categories:
   - Python
+abbrlink: 287
 date: 2023-11-28 22:05:00
 ---
 要将一个字符串转换为列表，可以使用字符串的 `split()` 方法。`split()` 方法根据指定的分隔符将字符串分割成子串，并将这些子串组成列表。

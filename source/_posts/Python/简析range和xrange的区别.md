@@ -1,12 +1,15 @@
 ---
 title: 简析range和xrange的区别
 author: 李延胜
-description: 在 Python 2 中，存在 range()和 xrange() 两个函数，但在 Python 3 中，xrange() 已经被移除，只剩下了 range()函数。
+description: >-
+  在 Python 2 中，存在 range()和 xrange() 两个函数，但在 Python 3 中，xrange() 已经被移除，只剩下了
+  range()函数。
 index_img: ../img/xrange.jpg
 tags:
   - Python
 categories:
   - Python
+abbrlink: 25288
 date: 2023-11-27 00:09:00
 ---
 > 在 Python 2 中，存在 `range()` 和 `xrange()` 两个函数，但在 Python 3 中，`xrange()` 已经被移除，只剩下了 `range()` 函数。

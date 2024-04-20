@@ -1,11 +1,12 @@
 ---
 title: IDEA整合Docker，快速打包部署
 author: 李延胜
-index_img: http://liyansheng.top/typora/image-20230319161345405.png
+index_img: 'http://liyansheng.top/typora/image-20230319161345405.png'
 tags:
   - docker
   - IDEA
 categories: []
+abbrlink: 36780
 date: 2023-03-19 15:34:00
 ---
 > 尝试了IDEA整合Docker，坑有些多，但经过查阅资料都一一解决了，写了个案例，感觉这种方式确实要方便很多。下面来整理下步骤：

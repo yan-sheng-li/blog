@@ -1,11 +1,13 @@
+---
 title: 实用技巧-9：Springboot加持Jsp
 author: 李延胜
 tags:
   - 实用
 categories: []
+index_img: ../img/skills.jpg
+description: springboot支持jsp页面
+abbrlink: 41256
 date: 2024-03-26 14:51:00
-index_img: '../img/skills.jpg'
-description: 'springboot支持jsp页面'
 ---
 ## 依赖
 

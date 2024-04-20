@@ -1,9 +1,10 @@
+---
 title: Dropzone.js实现文件长传
 author: 李延胜
+index_img: ../img/dropzone.png
+abbrlink: 13815
 date: 2024-04-03 21:03:48
-index_img: '../img/dropzone.png'
 tags:
-
 ---
 ### Dropzone.js实现文件长传
 

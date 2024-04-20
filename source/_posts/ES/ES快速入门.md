@@ -1,15 +1,13 @@
 ---
 title: ElasticSearch快速入门与部署
-date: 2022-11-16 22:41:29
-tags: 
-- ElasticSearch
+tags:
+  - ElasticSearch
 categories:
-- 中间件
-
+  - 中间件
 index_img: /img/ES-logo.png
-
-banner_img: 
-
+abbrlink: 6850
+date: 2022-11-16 22:41:29
+banner_img:
 ---
 ## 前言
 

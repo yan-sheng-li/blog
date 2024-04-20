@@ -1,11 +1,12 @@
 ---
 title: 快速实现免费使用typora
 author: 李延胜
-index_img: http://liyansheng.top/typora/image-20230318181048925.png
+index_img: 'http://liyansheng.top/typora/image-20230318181048925.png'
 tags:
   - 工具
 categories:
   - 工具神器集
+abbrlink: 28281
 date: 2022-03-18 17:38:00
 ---
 > 用过Typora的伙伴都知道，用它来写作是挺丝滑的事情，但新版的Typora已经开始收费了，如果你还想继续free使用，请往下看（支持正版哈）

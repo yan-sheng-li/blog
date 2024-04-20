@@ -1,14 +1,14 @@
 ---
 title: Springboot整合Kafka步骤
-date: 2023-03-16 22:41:29
-tags: 
-- kafka
-- SpringBoot
+tags:
+  - kafka
+  - SpringBoot
 categories:
-- 后端
-- 中间件
-
-index_img: http://liyansheng.top/typora/image-20230318180038770.png
+  - 后端
+  - 中间件
+index_img: 'http://liyansheng.top/typora/image-20230318180038770.png'
+abbrlink: 3865
+date: 2023-03-16 22:41:29
 ---
 > 简单整理下Springboot整合Kafka的步骤，并实现简单的案例
 

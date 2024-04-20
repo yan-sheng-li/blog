@@ -1,11 +1,12 @@
 ---
 title: hexo集成admin插件
 author: 李延胜
-index_img: http://liyansheng.top/typora/image-20230318175521229.png
+index_img: 'http://liyansheng.top/typora/image-20230318175521229.png'
 tags:
   - hexo
 categories:
   - 建站
+abbrlink: 37787
 date: 2023-03-18 05:57:00
 ---
 > **Hexo Admin** 插件使你可以在浏览器中管理 Hexo 博客，包括新建、编辑和删除文章、页面和草稿。管理员可以在后台轻松地完成这些任务，而不需要进入命令行。

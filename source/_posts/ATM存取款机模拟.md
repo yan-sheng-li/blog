@@ -1,11 +1,12 @@
 ---
 title: ATM存取款机模拟（Java+MySQL）
 author: 李延胜
-index_img: '../img/atm.jpg'
+index_img: ../img/atm.jpg
 tags:
   - 作品
 categories:
   - 作品
+abbrlink: 58235
 date: 2024-01-10 21:49:00
 ---
 ## 课题背景

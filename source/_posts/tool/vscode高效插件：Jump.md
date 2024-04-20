@@ -1,8 +1,10 @@
+---
 title: vscode高效插件：Jump
 author: 李延胜
 tags:
   - 工具
 categories: []
+abbrlink: 48434
 date: 2022-03-16 19:54:00
 ---
 

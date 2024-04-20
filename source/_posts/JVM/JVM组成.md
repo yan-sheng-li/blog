@@ -1,8 +1,9 @@
-
 ---
 title: JVM组成
-tags: ['JVM']
-time: 2023年3月27日22:41:08
+tags:
+  - JVM
+time: '2023年3月27日22:41:08'
+abbrlink: 54795
 ---
 
 ### jvm

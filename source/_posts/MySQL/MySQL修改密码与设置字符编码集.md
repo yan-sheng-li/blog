@@ -1,9 +1,11 @@
+---
 title: MySQL修改密码与设置字符编码集
 author: 李延胜
 tags:
   - MySQL
 categories:
   - 数据库
+abbrlink: 28882
 date: 2023-05-03 13:26:00
 ---
 ### 如何重置密码

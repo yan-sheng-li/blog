@@ -1,11 +1,12 @@
 ---
 title: 微友圈网站（Java web）
 author: 李延胜
-index_img: '../img/weiyou.jpg'
+index_img: ../img/weiyou.jpg
 tags:
   - 作品
 categories:
   - 作品
+abbrlink: 47404
 date: 2024-01-09 21:44:00
 ---
 ## 项目背景

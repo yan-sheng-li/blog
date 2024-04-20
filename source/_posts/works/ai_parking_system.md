@@ -1,3 +1,4 @@
+---
 title: 停车场管理系统
 author: 李延胜
 tags:
@@ -5,6 +6,7 @@ tags:
 categories:
   - 作品
 index_img: 'http://liyansheng.top/typora/bg.png'
+abbrlink: 8300
 date: 2023-06-07 15:59:00
 ---
 ## 主题

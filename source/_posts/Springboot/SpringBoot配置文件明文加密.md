@@ -1,8 +1,10 @@
+---
 title: SpringBoot配置文件明文加密
 author: 李延胜
 tags:
   - SpringBoot
 categories: []
+abbrlink: 50514
 date: 2023-04-20 22:29:00
 ---
 Spring Boot 里面的配置文件可以使用 `jasypt` 来实现加密和解密。

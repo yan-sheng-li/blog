@@ -1,8 +1,10 @@
+---
 title: 解决npm证书过期错误及其他常见npm问题
 author: 李延胜
 tags: []
 categories: []
-index_img: '../img/npm.png'
+index_img: ../img/npm.png
+abbrlink: 41760
 date: 2024-04-03 00:48:00
 ---
 > 在使用npm安装或更新包时，有时会遇到证书过期或其他常见问题。本文将介绍如何解决这些问题。

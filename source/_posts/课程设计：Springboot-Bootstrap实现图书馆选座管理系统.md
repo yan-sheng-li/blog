@@ -1,14 +1,16 @@
 ---
 title: 课程设计：Springboot+Bootstrap实现图书馆选座管理系统
 author: 李延胜
-index_img: '../img/封面2.jpg'
+index_img: ../img/封面2.jpg
 tags:
   - 作品
   - 毕设
 categories:
   - 作品
+description: >-
+  本文介绍了一个基于B/S架构的图书馆座位管理系统的设计与实现。使用IDEA、MySQL和Java等工具和语言开发，包括用户登录、座位预约、违规记录管理等功能，同时管理员拥有用户管理权限。系统通过HTML、CSS、JS和BootStrap等前端技术实现友好界面，并提供了数据库设计与编程方法的实践机会。
+abbrlink: 41479
 date: 2023-12-24 23:41:00
-description: 本文介绍了一个基于B/S架构的图书馆座位管理系统的设计与实现。使用IDEA、MySQL和Java等工具和语言开发，包括用户登录、座位预约、违规记录管理等功能，同时管理员拥有用户管理权限。系统通过HTML、CSS、JS和BootStrap等前端技术实现友好界面，并提供了数据库设计与编程方法的实践机会。
 ---
 
 

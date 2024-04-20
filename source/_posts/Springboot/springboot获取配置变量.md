@@ -2,9 +2,11 @@
 title: springboot获取配置变量
 author: 李延胜
 index_img: ../img/Springboot绑定配置变量.png
-date: 2023-11-11 18:26:34
 tags: SpringBoot
-categories: [后端]
+categories:
+  - 后端
+abbrlink: 6631
+date: 2023-11-11 18:26:34
 ---
 > 当在Spring Boot中需要绑定配置文件中的变量时，可以使用以下注解：
 

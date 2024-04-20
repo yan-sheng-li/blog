@@ -6,6 +6,7 @@ tags:
   - Python
 categories:
   - Python
+abbrlink: 20789
 date: 2023-11-23 15:36:00
 ---
 >在 Python 中使用 CSV 文件非常简单，Python 提供了内置的 `csv` 模块来处理 CSV 文件。你可以使用 `csv` 模块来读取、写入和操作 CSV 文件中的数据。

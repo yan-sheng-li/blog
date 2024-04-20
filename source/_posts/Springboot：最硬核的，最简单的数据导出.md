@@ -1,10 +1,12 @@
+---
 title: "\U0001F4AASpringboot：最硬核的，最丝滑的数据导入导出"
 author: 李延胜
 tags:
   - 工具
 categories: []
+index_img: ../img/dataExport.jpg
+abbrlink: 14172
 date: 2024-04-11 13:29:00
-index_img: '../img/dataExport.jpg'
 ---
 > 🎉 数据导出,数据导入比较常见，这次碰壁比较久，在此总结下，这个操作方式是最精简丝滑的。
 

@@ -1,11 +1,13 @@
 ---
 title: hexo添加live2d人物动画
 author: 李延胜
-index_img: https://imgconvert.csdnimg.cn/aHR0cHM6Ly9odWFqaTgudG9wL2ltZy9saXZlMmQvaGlqaWtpLmdpZg
+index_img: >-
+  https://imgconvert.csdnimg.cn/aHR0cHM6Ly9odWFqaTgudG9wL2ltZy9saXZlMmQvaGlqaWtpLmdpZg
 tags:
   - hexo
 categories:
   - 建站
+abbrlink: 31779
 date: 2023-03-18 06:22:00
 ---
 1. 在 Hexo 博客的 根目录下新建 /live2d_models 文件夹
