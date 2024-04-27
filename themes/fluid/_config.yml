@@ -326,7 +326,7 @@ iconfont: //at.alicdn.com/t/font_1736178_lbnruvf0jn.css
 navbar:
   # 导航栏左侧的标题，为空则按 hexo config 中 `title` 显示
   # The title on the left side of the navigation bar. If empty, it is based on `title` in hexo config
-  blog_title: "木子李-博客"
+  blog_title: "木子-博客"
 
   # 导航栏毛玻璃特效，实验性功能，可能会造成页面滚动掉帧和抖动，部分浏览器不支持会自动不生效
   # Navigation bar frosted glass special animation. It is an experimental feature
@@ -350,8 +350,9 @@ navbar:
     - { key: "category", link: "/categories/", icon: "iconfont icon-category-fill" }
     - { key: "tag", link: "/tags/", icon: "iconfont icon-tags-fill" }
     - { key: "about", link: "/about/", icon: "iconfont icon-user-fill" }
-    - { key: "remote_help", name: "远程协助",link: "/remote_help/", icon: "iconfont icon-bug" }
-    - { key: "chat", name: "Ai助手",link: "/HTML/ai-chat.html", icon: "iconfont icon-bot" }
+    - { key: "remote_help", name: "🐞远程调试/功能定做",link: "/remote_help/" }
+    - { key: "tool", name: "💪利其器",link: "/tool/"}
+    - { key: "chat", name: "🤖Ai助手",link: "/HTML/ai-chat.html", icon: "iconfont icon-bot" }
     #- { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
 
 # 搜索功能，基于 hexo-generator-search 插件，若已安装其他搜索插件请关闭此功能，以避免生成多余的索引文件
