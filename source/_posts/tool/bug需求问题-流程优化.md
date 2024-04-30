@@ -1,10 +1,13 @@
-title: "\U0001F4AA操作流程： 多少都可以做，任务可追溯，100%保真，逐步迭代，项目代码，随写随更新"
+---
+title: "\U0001F4AA流程规范化， 多少都可以做，任务可追溯"
 author: 李延胜
 index_img: ../img/look_here.gif
 permalink: issues_flow/
 abbrlink: 7645
 date: 2024-04-11 14:03:12
 tags:
+top: true
+description: 100%保真，逐步迭代，在线监工，项目代码，随写随更新🏷
 ---
 # 🎉任务跟踪，进度你我看得见
 
