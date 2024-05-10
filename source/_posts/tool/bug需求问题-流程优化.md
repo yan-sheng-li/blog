@@ -1,7 +1,7 @@
 ---
 title: "\U0001F4AA流程规范化， 多少都可以做，任务可追溯"
 author: 李延胜
-index_img: ../img/look_here.gif
+index_img: ../img/look_here.webp
 permalink: issues_flow/
 abbrlink: 7645
 date: 2024-04-11 14:03:12
