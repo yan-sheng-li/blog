@@ -120,7 +120,7 @@ Quit the server with CTRL-BREAK.
 [02/Apr/2023 16:51:05] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
 ```
 
-![image-20230402165656591](http://liyansheng.top/typora/image-20230402165656591.png)
+![image-20230402165656591](http://cdn.qiniu.liyansheng.top/typora/image-20230402165656591.png)
 
 自定义启动端口：
 

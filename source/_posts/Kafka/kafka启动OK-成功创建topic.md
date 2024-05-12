@@ -4,7 +4,7 @@ tags:
   - kafka
 categories:
   - 中间件
-index_img: 'http://liyansheng.top/typora/image-20230318180359278.png'
+index_img: 'http://cdn.qiniu.liyansheng.top/typora/image-20230318180359278.png'
 abbrlink: 41053
 date: 2022-10-16 22:41:29
 ---
@@ -41,11 +41,11 @@ docker exec -it [容器id] /bin/bash
 
 运行生产者
 
-![image-20220923112024973](http://liyansheng.top/typora/image-20220923112024973.png)
+![image-20220923112024973](http://cdn.qiniu.liyansheng.top/typora/image-20220923112024973.png)
 
 运行消费者
 
-![image-20220923112035890](http://liyansheng.top/typora/image-20220923112035890.png)
+![image-20220923112035890](http://cdn.qiniu.liyansheng.top/typora/image-20220923112035890.png)
 
 ------
 
@@ -175,15 +175,15 @@ docker run -d --name kafka-manager -p 12349:9000 --link zookeeper --link kafka01
 
 进入主页面后，点击 `Add Cluster` 添加集群信息
 
-![image-20220818233716973](http://liyansheng.top/typora/image-20220818233716973.png)
+![image-20220818233716973](http://cdn.qiniu.liyansheng.top/typora/image-20220818233716973.png)
 
 然后填写配置信息，主要填写集群名称，Zookeeper的Hosts，还有指定kafka版本（选个跟你所使用的kafka版本号最接近的就行），其他的一些配置按默认的就行。
 
 当你正确连接上以后，就能看到你的集群啦，如：
 
-![image-20220818235108897](http://liyansheng.top/typora/image-20220818235108897.png)
+![image-20220818235108897](http://cdn.qiniu.liyansheng.top/typora/image-20220818235108897.png)
 
-![image-20220818235134261](http://liyansheng.top/typora/image-20220818235134261.png)
+![image-20220818235134261](http://cdn.qiniu.liyansheng.top/typora/image-20220818235134261.png)
 
 **更多关于kafka可视化操作就由你慢慢探索吧！这里将你引进门！**
 
@@ -191,11 +191,11 @@ docker run -d --name kafka-manager -p 12349:9000 --link zookeeper --link kafka01
 >
 > 1. 如果你在启动`kafka manager`这个容器时指定了 `ZK_HOSTS` ，那么**Cluster Zookeeper Hosts**这项填的内容要和 `ZK_HOSTS` 一致，否则会出现连接不上，连接超时等情况。如下图：
 >
->     ![image-20220818234605319](http://liyansheng.top/typora/image-20220818234605319.png)
+>     ![image-20220818234605319](http://cdn.qiniu.liyansheng.top/typora/image-20220818234605319.png)
 >
 > 2. 另外有些配置默认值是1，但是你得将其改成1以上的整数，否则不能正确保存提交。如：
 >
->    ![image-20220818234844587](http://liyansheng.top/typora/image-20220818234844587.png)
+>    ![image-20220818234844587](http://cdn.qiniu.liyansheng.top/typora/image-20220818234844587.png)
 
 
 ------
@@ -208,9 +208,9 @@ kafka版本不同，响应的api有区别
 
 注意3.x是 --bootstrap-server localhost:9092方式新建，kafka2.x是以--zookeeper方式创建。下面查看新建的topic。
 
-![image-20220925165659756](http://liyansheng.top/typora/image-20220925165659756.png)
+![image-20220925165659756](http://cdn.qiniu.liyansheng.top/typora/image-20220925165659756.png)
 
-![image-20220925165713665](http://liyansheng.top/typora/image-20220925165713665.png)
+![image-20220925165713665](http://cdn.qiniu.liyansheng.top/typora/image-20220925165713665.png)
 
 
 
@@ -332,8 +332,8 @@ kafka.common.KafkaException: Socket server failed to bind to 150.158.16.123:9092
 
 注意，上面是配置里面有个地址写得不对，listeners=PLAINTEXT://10.20.30.153:9092后接的是内网地址，通过ip addr即可查看，如我的机器
 
-![image-20221001140813960](http://liyansheng.top/typora/image-20221001140813960.png)
+![image-20221001140813960](http://cdn.qiniu.liyansheng.top/typora/image-20221001140813960.png)
 
 一个写内网地址，一个写外网地址
 
-![image-20221001140917719](http://liyansheng.top/typora/image-20221001140917719.png)
+![image-20221001140917719](http://cdn.qiniu.liyansheng.top/typora/image-20221001140917719.png)

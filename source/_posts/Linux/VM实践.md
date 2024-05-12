@@ -5,7 +5,7 @@ tags:
   - shell
 categories:
   - Linux
-index_img: 'http://liyansheng.top/typora/image-20230318180814080.png'
+index_img: 'http://cdn.qiniu.liyansheng.top/typora/image-20230318180814080.png'
 abbrlink: 29995
 date: 2022-09-20 17:41:29
 ---
@@ -21,7 +21,7 @@ date: 2022-09-20 17:41:29
 > 3. 在`原路径`后面添加`--locale zh_CN`
 > 4. 保存，重启VMware，你就会发现汉化OK！
 
-<img src="http://liyansheng.top/typora/image-20220823091203391.png" alt="image-20220823091203391" style="zoom:70%;" />
+<img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823091203391.png" alt="image-20220823091203391" style="zoom:70%;" />
 
 ## 2.安装centos7 mini
 
@@ -41,17 +41,17 @@ date: 2022-09-20 17:41:29
 
 下方为VMware中安装centos mini版时手动分两个区的图示（swap区和"/"区）
 
-<img src="http://liyansheng.top/typora/image-20220823092953960.png" alt="image-20220823092953960" style="zoom:50%;" />
+<img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823092953960.png" alt="image-20220823092953960" style="zoom:50%;" />
 
-<img src="http://liyansheng.top/typora/image-20220823093049916.png" alt="image-20220823093049916" style="zoom:50%;" />
+<img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823093049916.png" alt="image-20220823093049916" style="zoom:50%;" />
 
-<img src="http://liyansheng.top/typora/image-20220823093117428.png" alt="image-20220823093117428" style="zoom:50%;" />
+<img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823093117428.png" alt="image-20220823093117428" style="zoom:50%;" />
 
 ## 3.动态获取IP
 
 > 刚装的centos，你可能获取不到动态IP，类似下面的情况：
 
-![image-20220823231118096](http://liyansheng.top/typora/image-20220823231118096.png)
+![image-20220823231118096](http://cdn.qiniu.liyansheng.top/typora/image-20220823231118096.png)
 
 解决方案：
 
@@ -75,7 +75,7 @@ date: 2022-09-20 17:41:29
 
 5. 再次测试：`ip addr`，就可以看到动态的IP了
 
-   <img src="http://liyansheng.top/typora/image-20220823233120116.png" alt="image-20220823233120116" style="zoom:67%;" />
+   <img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823233120116.png" alt="image-20220823233120116" style="zoom:67%;" />
 
 ## 4.关闭SELinux
 
@@ -134,7 +134,7 @@ date: 2022-09-20 17:41:29
 
 > **问题1**：安装前编译错误，如下图。
 >
-> <img src="http://liyansheng.top/typora/image-20220823105023719.png" alt="image-20220823105023719" style="zoom:67%;" />
+> <img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823105023719.png" alt="image-20220823105023719" style="zoom:67%;" />
 >
 > **原因**：是没有安装相关的依赖。
 >
@@ -144,15 +144,15 @@ date: 2022-09-20 17:41:29
 
 > **问题2**：安装好nginx后，在虚拟机上访客是能看到nginx的欢迎界面的，但是我将IP地址放到外面的window的浏览器却访问不到，如下图。
 >
-> <img src="http://liyansheng.top/typora/image-20220823110122059.png" alt="image-20220823110122059" style="zoom:40%;" />
+> <img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823110122059.png" alt="image-20220823110122059" style="zoom:40%;" />
 >
-> <img src="http://liyansheng.top/typora/image-20220823105924804.png" alt="image-20220823105924804" style="zoom:40%;" />
+> <img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823105924804.png" alt="image-20220823105924804" style="zoom:40%;" />
 >
 > **原因**：防火墙没有开放相应的端口
 >
 > **解决**：将`80`端口打开（记得重启防火墙）
 >
-> ![image-20220823111444095](http://liyansheng.top/typora/image-20220823111444095.png)
+> ![image-20220823111444095](http://cdn.qiniu.liyansheng.top/typora/image-20220823111444095.png)
 
 ## 6.防火墙常用指令
 
@@ -183,7 +183,7 @@ date: 2022-09-20 17:41:29
 
 ## 7.lsof命令没有找到？
 
-![image-20220823143849017](http://liyansheng.top/typora/image-20220823143849017.png)
+![image-20220823143849017](http://cdn.qiniu.liyansheng.top/typora/image-20220823143849017.png)
 
 ## 8.手动安装命令依赖
 
@@ -195,11 +195,11 @@ date: 2022-09-20 17:41:29
 
 1. 先用`yum search [命令]` 找一下你需要安装哪个插件和工具，如这里我要找`lsof`相关的：
 
-   <img src="http://liyansheng.top/typora/image-20220824093616969.png" alt="image-20220824093616969" style="zoom:67%;" />
+   <img src="http://cdn.qiniu.liyansheng.top/typora/image-20220824093616969.png" alt="image-20220824093616969" style="zoom:67%;" />
 
 2. 使用`yum install [名称]` 进行安装
 
-   <img src="http://liyansheng.top/typora/image-20220823144055517.png" alt="image-20220823144055517" style="zoom:50%;" />
+   <img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823144055517.png" alt="image-20220823144055517" style="zoom:50%;" />
 
 3. 等安装完成后，就可以使用这个命令了。
 
@@ -407,7 +407,7 @@ apt-get install vim
 >
 > [Linux文件属性详述 - JZEason - 博客园 (cnblogs.com)](https://www.cnblogs.com/JZjuechen/p/15689796.html)
 
-![来源 (https://www.cnblogs.com/JZjuechen/p/15689796.html](http://liyansheng.top/typora/image-20220824143055753.png)
+![来源 (https://www.cnblogs.com/JZjuechen/p/15689796.html](http://cdn.qiniu.liyansheng.top/typora/image-20220824143055753.png)
 
 演示：
 
@@ -415,7 +415,7 @@ apt-get install vim
 >
 > 权限分配角色：u-文件创建者  g-用户所在组，o-用户组外的其他人
 
-![image-20220829100130862](http://liyansheng.top/typora/image-20220829100130862.png)
+![image-20220829100130862](http://cdn.qiniu.liyansheng.top/typora/image-20220829100130862.png)
 
 ## 14.文件：打包、压缩与解压
 
@@ -506,11 +506,11 @@ d1.txt  d2.java  d.tar.gz
 
 > tar 的命令参数一定要写完整，否则会出现卡住，无响应的情况。
 
-<img src="http://liyansheng.top/typora/image-20220824152227333.png" alt="image-20220824152227333" style="zoom:50%;" />
+<img src="http://cdn.qiniu.liyansheng.top/typora/image-20220824152227333.png" alt="image-20220824152227333" style="zoom:50%;" />
 
 否则会报错：
 
-![image-20220824152254843](http://liyansheng.top/typora/image-20220824152254843.png)
+![image-20220824152254843](http://cdn.qiniu.liyansheng.top/typora/image-20220824152254843.png)
 
 
 
@@ -528,15 +528,15 @@ ping测试：打开cmd，直接ping主机名
 
 问题1：
 
-![image-20220825151904941](http://liyansheng.top/typora/image-20220825151904941.png)
+![image-20220825151904941](http://cdn.qiniu.liyansheng.top/typora/image-20220825151904941.png)
 
 linux  =>win  ping不通
 
-![image-20220825144443668](http://liyansheng.top/typora/image-20220825144443668.png)
+![image-20220825144443668](http://cdn.qiniu.liyansheng.top/typora/image-20220825144443668.png)
 
 win  => linux  可以ping通
 
-![image-20220826100655421](http://liyansheng.top/typora/image-20220826100655421.png)
+![image-20220826100655421](http://cdn.qiniu.liyansheng.top/typora/image-20220826100655421.png)
 
 解决：win的防火墙没关   关闭防火墙命令：`netsh advfirewall set allprofiles state off`
 
@@ -569,7 +569,7 @@ win  => linux  可以ping通
 
 补充：
 
-![image-20220825160515378](http://liyansheng.top/typora/image-20220825160515378.png)
+![image-20220825160515378](http://cdn.qiniu.liyansheng.top/typora/image-20220825160515378.png)
 
 
 
@@ -611,7 +611,7 @@ WantedBy=multi-user.target
 
 启动、查看运行状态：
 
-![image-20220829112302731](http://liyansheng.top/typora/image-20220829112302731.png)
+![image-20220829112302731](http://cdn.qiniu.liyansheng.top/typora/image-20220829112302731.png)
 
 ## 19.神奇的   tail
 

@@ -52,4 +52,4 @@ if __name__ == "__main__":
 
 效果如下：
 
-![image-20231122150654175](http://liyansheng.top/typora/image-20231122150654175.png)
+![image-20231122150654175](http://cdn.qiniu.liyansheng.top/typora/image-20231122150654175.png)

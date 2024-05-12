@@ -30,7 +30,7 @@ for i in tqdm(range(100)):
     time.sleep(0.1)
 ```
 
-![image-20231122152908666](http://liyansheng.top/typora/image-20231122152908666.png)
+![image-20231122152908666](http://cdn.qiniu.liyansheng.top/typora/image-20231122152908666.png)
 
 ### **手动更新进度条：** 
 
@@ -48,7 +48,7 @@ for i in range(100):
 progress_bar.close()
 ```
 
-![image-20231122152732503](http://liyansheng.top/typora/image-20231122152732503.png)
+![image-20231122152732503](http://cdn.qiniu.liyansheng.top/typora/image-20231122152732503.png)
 
 ### **自定义外观和信息：** 
 
@@ -63,7 +63,7 @@ for i in tqdm(range(100), desc='Processing', unit='iterations', ncols=100):
     time.sleep(0.1)
 ```
 
-![image-20231122152650701](http://liyansheng.top/typora/image-20231122152650701.png)
+![image-20231122152650701](http://cdn.qiniu.liyansheng.top/typora/image-20231122152650701.png)
 
 ### **嵌套进度条：** 
 
@@ -85,7 +85,7 @@ for i in outer:
 outer.close()
 ```
 
-![image-20231122152607736](http://liyansheng.top/typora/image-20231122152607736.png)
+![image-20231122152607736](http://cdn.qiniu.liyansheng.top/typora/image-20231122152607736.png)
 
 ### **暂停和恢复：** 
 

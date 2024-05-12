@@ -13,7 +13,7 @@ date: 2024-03-21 01:16:00
 ## 加强版swagger
 
 ## 效果
-![](http://liyansheng.top/typora/20240326144539.png)
+![](http://cdn.qiniu.liyansheng.top/typora/20240326144539.png)
 ## 依赖
 
 

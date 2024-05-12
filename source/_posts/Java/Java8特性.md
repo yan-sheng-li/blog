@@ -1,5 +1,5 @@
 ---
-index_img: 'http://liyansheng.top/typora/image-20230322231900301.png'
+index_img: 'http://cdn.qiniu.liyansheng.top/typora/image-20230322231900301.png'
 title: Java8的新特性与案例解析
 author: 李延胜
 tags:

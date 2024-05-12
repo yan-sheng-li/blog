@@ -105,19 +105,19 @@ public class SquareRootServlet extends HttpServlet {
 
 ## 🙌项目结构
 
-![image-20240329005240916](http://liyansheng.top/typora/image-20240329005240916.png)
+![image-20240329005240916](http://cdn.qiniu.liyansheng.top/typora/image-20240329005240916.png)
 
 ## 🎨效果图
 
 初始：
 
-![image-20240329004919515](http://liyansheng.top/typora/image-20240329004919515.png)
+![image-20240329004919515](http://cdn.qiniu.liyansheng.top/typora/image-20240329004919515.png)
 
 计算结果：
 
-![image-20240329004941975](http://liyansheng.top/typora/image-20240329004941975.png)
+![image-20240329004941975](http://cdn.qiniu.liyansheng.top/typora/image-20240329004941975.png)
 
 ------
 
 ## 📢tips
-![](http://liyansheng.top/typora/ad.jpg)
+![](http://cdn.qiniu.liyansheng.top/typora/ad.jpg)

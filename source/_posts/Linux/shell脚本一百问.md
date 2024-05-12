@@ -5,7 +5,7 @@ tags:
   - shell
 categories:
   - Linux
-index_img: 'http://liyansheng.top/typora/image-20230318180607679.png'
+index_img: 'http://cdn.qiniu.liyansheng.top/typora/image-20230318180607679.png'
 abbrlink: 3820
 date: 2022-09-16 20:41:29
 ---
@@ -78,7 +78,7 @@ liming
 
 ### 4.开发指定端口
 
-![image-20221028104222903](http://liyansheng.top/typora/image-20221028104222903.png)
+![image-20221028104222903](http://cdn.qiniu.liyansheng.top/typora/image-20221028104222903.png)
 
 5.查看已开发端口
 
@@ -133,15 +133,15 @@ firewall-cmd --list-ports
 
 首先VM=》编辑 =》 虚拟网络编辑器
 
-![image-20221030165854873](http://liyansheng.top/typora/image-20221030165854873.png)
+![image-20221030165854873](http://cdn.qiniu.liyansheng.top/typora/image-20221030165854873.png)
 
 选择NAT类型这行，然后打开设置
 
-![image-20221030165930597](http://liyansheng.top/typora/image-20221030165930597.png)
+![image-20221030165930597](http://cdn.qiniu.liyansheng.top/typora/image-20221030165930597.png)
 
 根据下图修改网卡配置文件
 
-![image-20221030165950728](http://liyansheng.top/typora/image-20221030165950728.png)
+![image-20221030165950728](http://cdn.qiniu.liyansheng.top/typora/image-20221030165950728.png)
 
 修改网卡配置：`vi /etc/sysconfig/network-scripts/ifcfg-ens33 `
 
@@ -347,7 +347,7 @@ usage: scp [-346BCpqrTv] [-c cipher] [-F ssh_config] [-i identity_file]
 
 如果str长度为零为真
 
-![image-20221116122413712](http://liyansheng.top/typora/image-20221116122413712.png)
+![image-20221116122413712](http://cdn.qiniu.liyansheng.top/typora/image-20221116122413712.png)
 
 ### 13.shift用法
 

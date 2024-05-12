@@ -15,7 +15,7 @@ date: 2024-03-25 19:35:00
 
 ## 效果图
 
-![image-20240325192345466](http://liyansheng.top/typora/image-20240325192345466.png)
+![image-20240325192345466](http://cdn.qiniu.liyansheng.top/typora/image-20240325192345466.png)
 
 ## 接口案例
 

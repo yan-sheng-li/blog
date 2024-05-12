@@ -80,7 +80,7 @@ public class DirectionImage extends Application {
 }
 ```
 
-![image-20240423211736939](http://liyansheng.top/typora/image-20240423211736939.png)
+![image-20240423211736939](http://cdn.qiniu.liyansheng.top/typora/image-20240423211736939.png)
 
 ## 2️⃣效果2
 
@@ -163,10 +163,10 @@ public class DirectionImage extends Application {
 
 
 
-![image-20240423211853757](http://liyansheng.top/typora/image-20240423211853757.png)
+![image-20240423211853757](http://cdn.qiniu.liyansheng.top/typora/image-20240423211853757.png)
 
 ## 🔑补充
 
 > 字符串包含`表情包`也行的
 
-![image-20240423212149342](http://liyansheng.top/typora/image-20240423212149342.png)
+![image-20240423212149342](http://cdn.qiniu.liyansheng.top/typora/image-20240423212149342.png)

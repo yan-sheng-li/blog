@@ -1,7 +1,7 @@
 ---
 title: 'vue引入三方库ElementUi,Echarts等避坑'
 author: 李延胜
-index_img: 'http://liyansheng.top/typora/image-20230318200712521.png'
+index_img: 'http://cdn.qiniu.liyansheng.top/typora/image-20230318200712521.png'
 tags:
   - vue
 categories:

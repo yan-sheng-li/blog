@@ -1,7 +1,7 @@
 ---
 title: hexo集成admin插件
 author: 李延胜
-index_img: 'http://liyansheng.top/typora/image-20230318175521229.png'
+index_img: 'http://cdn.qiniu.liyansheng.top/typora/image-20230318175521229.png'
 tags:
   - hexo
 categories:
@@ -20,7 +20,7 @@ date: 2023-03-18 05:57:00
 ```ada
 npm install --save hexo-admin
 ```
-![image-20230318060055736](http://liyansheng.top/typora/image-20230318060055736.png)
+![image-20230318060055736](http://cdn.qiniu.liyansheng.top/typora/image-20230318060055736.png)
 
 - 修改 _config.yml 文件
 
@@ -76,5 +76,5 @@ hexo server
 
 需要注意的是，Hexo Admin 插件并不适用于所有的 Hexo 主题。如果主题无法与 Hexo Admin 插件兼容，请查看主题文档以获取管理博客的其他方法。
 
-![image-20230318055623988](http://liyansheng.top/typora/image-20230318055623988.png)
+![image-20230318055623988](http://cdn.qiniu.liyansheng.top/typora/image-20230318055623988.png)
 

@@ -1,7 +1,7 @@
 ---
 title: GPG公钥生成问题-解决(Linux)
 tags: 工具
-index_img: 'http://liyansheng.top/typora/image-20230318181342082.png'
+index_img: 'http://cdn.qiniu.liyansheng.top/typora/image-20230318181342082.png'
 abbrlink: 37189
 date: 2023-03-17 01:18:29
 ---
@@ -11,15 +11,15 @@ date: 2023-03-17 01:18:29
 
 下载地址：[Gpg4win](https://gpg4win.org/)
 
-![image-20230317005007100](http://liyansheng.top/typora/image-20230317005007100.png)这个工具安装，打开后提示报错
+![image-20230317005007100](http://cdn.qiniu.liyansheng.top/typora/image-20230317005007100.png)这个工具安装，打开后提示报错
 
 如下：
 
-![image-20230317005100081](http://liyansheng.top/typora/image-20230317005100081.png)
+![image-20230317005100081](http://cdn.qiniu.liyansheng.top/typora/image-20230317005100081.png)
 
 点OK后
 
-![image-20230317005129974](http://liyansheng.top/typora/image-20230317005129974.png)
+![image-20230317005129974](http://cdn.qiniu.liyansheng.top/typora/image-20230317005129974.png)
 
 于是我找了网上的一些解决方案，还是不行
 
@@ -69,7 +69,7 @@ date: 2023-03-17 01:18:29
 
 将上述的publickey.asc里面的全部内容粘贴到下方的公钥框，点确定即可成功添加！
 
-![image-20230317010046157](http://liyansheng.top/typora/image-20230317010046157.png)
+![image-20230317010046157](http://cdn.qiniu.liyansheng.top/typora/image-20230317010046157.png)
 
 
 

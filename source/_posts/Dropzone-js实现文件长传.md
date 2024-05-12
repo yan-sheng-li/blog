@@ -160,7 +160,7 @@ public class FileUploadController {
 
 ## 🎨效果
 
-![image-20240403180555042](http://liyansheng.top/typora/image-20240403180555042.png)
+![image-20240403180555042](http://cdn.qiniu.liyansheng.top/typora/image-20240403180555042.png)
 
 附：
 

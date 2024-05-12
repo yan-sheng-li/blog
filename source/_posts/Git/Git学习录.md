@@ -17,7 +17,7 @@ date: 2023-11-15 14:52:00
 
 原理图：
 
-![image-20231115144225416](http://liyansheng.top/typora/image-20231115144225416.png)
+![image-20231115144225416](http://cdn.qiniu.liyansheng.top/typora/image-20231115144225416.png)
 
 #### SVN与Git区别？
 
@@ -25,7 +25,7 @@ date: 2023-11-15 14:52:00
 
     示意图：
 
-    ![image-20231115144243440](http://liyansheng.top/typora/image-20231115144243440.png)
+    ![image-20231115144243440](http://cdn.qiniu.liyansheng.top/typora/image-20231115144243440.png)
 
 - Git：<font color='cornflowerblue'>分布式</font>版本控制系统，没有中央服务器，<font color='cornflowerblue'>每个人电脑都是完整的版本库</font>。在工作时将各自的修改<font color='cornflowerblue'>推送</font>给对方，就能互相看到对方的修改。
 

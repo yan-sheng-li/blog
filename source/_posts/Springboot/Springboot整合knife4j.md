@@ -102,15 +102,15 @@ public class ProductController {
 
 启动程序，访问：http://localhost:{your-port}/doc.htm
 
-![image-20231128194303906](http://liyansheng.top/typora/image-20231128194303906.png)
+![image-20231128194303906](http://cdn.qiniu.liyansheng.top/typora/image-20231128194303906.png)
 
 接口信息：
 
-![image-20231128194410697](http://liyansheng.top/typora/image-20231128194410697.png)
+![image-20231128194410697](http://cdn.qiniu.liyansheng.top/typora/image-20231128194410697.png)
 
 可以直接向接口发起请求：
 
-![image-20231128194452290](http://liyansheng.top/typora/image-20231128194452290.png)
+![image-20231128194452290](http://cdn.qiniu.liyansheng.top/typora/image-20231128194452290.png)
 
 其他类型的接口同理操作。
 

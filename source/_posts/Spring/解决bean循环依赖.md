@@ -1,7 +1,7 @@
 ---
 title: 论SpringBean循环依赖的解决
 author: 李延胜
-index_img: 'http://liyansheng.top/typora/image-20230321175431570.png'
+index_img: 'http://cdn.qiniu.liyansheng.top/typora/image-20230321175431570.png'
 tags:
   - spring
 categories:

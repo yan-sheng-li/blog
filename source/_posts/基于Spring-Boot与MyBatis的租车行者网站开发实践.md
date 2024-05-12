@@ -46,17 +46,17 @@ date: 2024-04-10 00:22:00
 
 | 功能     | 效果图                                                       |
 | -------- | ------------------------------------------------------------ |
-| 登录     | ![image-20240409174413193](http://liyansheng.top/typora/image-20240409174413193.png) |
-| 注册     | ![image-20240409174426370](http://liyansheng.top/typora/image-20240409174426370.png) |
-| 首页     | ![image-20240409174445320](http://liyansheng.top/typora/image-20240409174445320.png) |
-| 使用引导 | ![image-20240409174513463](http://liyansheng.top/typora/image-20240409174513463.png)![](http://liyansheng.top/typora/ad.jpg) |
-| 车列表   | ![image-20240409174900509](http://liyansheng.top/typora/image-20240409174900509.png) |
-| 车详情   | ![image-20240409174914824](http://liyansheng.top/typora/image-20240409174914824.png) |
-| 评论区   | ![image-20240409174640727](http://liyansheng.top/typora/image-20240409174640727.png) |
-| 收藏     | ![image-20240409175003549](http://liyansheng.top/typora/image-20240409175003549.png) |
-| 下单约车 | ![image-20240409175045992](http://liyansheng.top/typora/image-20240409175045992.png) |
-| 车出租   | ![image-20240409175114963](http://liyansheng.top/typora/image-20240409175114963.png) |
-| 处理单子 | ![image-20240409175149871](http://liyansheng.top/typora/image-20240409175149871.png) |
+| 登录     | ![image-20240409174413193](http://cdn.qiniu.liyansheng.top/typora/image-20240409174413193.png) |
+| 注册     | ![image-20240409174426370](http://cdn.qiniu.liyansheng.top/typora/image-20240409174426370.png) |
+| 首页     | ![image-20240409174445320](http://cdn.qiniu.liyansheng.top/typora/image-20240409174445320.png) |
+| 使用引导 | ![image-20240409174513463](http://cdn.qiniu.liyansheng.top/typora/image-20240409174513463.png)![](http://cdn.qiniu.liyansheng.top/typora/ad.jpg) |
+| 车列表   | ![image-20240409174900509](http://cdn.qiniu.liyansheng.top/typora/image-20240409174900509.png) |
+| 车详情   | ![image-20240409174914824](http://cdn.qiniu.liyansheng.top/typora/image-20240409174914824.png) |
+| 评论区   | ![image-20240409174640727](http://cdn.qiniu.liyansheng.top/typora/image-20240409174640727.png) |
+| 收藏     | ![image-20240409175003549](http://cdn.qiniu.liyansheng.top/typora/image-20240409175003549.png) |
+| 下单约车 | ![image-20240409175045992](http://cdn.qiniu.liyansheng.top/typora/image-20240409175045992.png) |
+| 车出租   | ![image-20240409175114963](http://cdn.qiniu.liyansheng.top/typora/image-20240409175114963.png) |
+| 处理单子 | ![image-20240409175149871](http://cdn.qiniu.liyansheng.top/typora/image-20240409175149871.png) |
 | 更多功能 | 敬请期待！！！                                               |
 
 
@@ -67,4 +67,4 @@ Spring Boot提供了一种快速开发的方式，让我们可以更加关注业
 
 ## 源码
 
-![image-20240410000521238](http://liyansheng.top/typora/image-20240410000521238.png)
+![image-20240410000521238](http://cdn.qiniu.liyansheng.top/typora/image-20240410000521238.png)

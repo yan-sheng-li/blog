@@ -1,7 +1,7 @@
 ---
 title: 快速实现免费使用typora
 author: 李延胜
-index_img: 'http://liyansheng.top/typora/image-20230318181048925.png'
+index_img: 'http://cdn.qiniu.liyansheng.top/typora/image-20230318181048925.png'
 tags:
   - 工具
 categories:
@@ -13,7 +13,7 @@ date: 2022-03-18 17:38:00
 
 tips：本演示基于1.3.8版本
 
-![](http://liyansheng.top/typora/image-20220930085334062.png)
+![](http://cdn.qiniu.liyansheng.top/typora/image-20220930085334062.png)
 
 > 如果你还没有安装包，可以在我的百度网盘获取
 >
@@ -24,21 +24,21 @@ tips：本演示基于1.3.8版本
 
 1. 下载安装包，解压
 
-   ![](http://liyansheng.top/typora/image-20220930090443217.png)
+   ![](http://cdn.qiniu.liyansheng.top/typora/image-20220930090443217.png)
 
 2. 点击Setup.exe进行安装，可自定义安装目录
 
 3. 将`Crack`目录下的`.dll`文件添加到你的typora安装目录
 
-   ![](http://liyansheng.top/typora/image-20220930090528384.png)
+   ![](http://cdn.qiniu.liyansheng.top/typora/image-20220930090528384.png)
 
 4. 验证：打开typora，点击上方的`帮助`，然后查看我的`许可证`
 
-   ![](http://liyansheng.top/typora/image-20220930090953756.png)
+   ![](http://cdn.qiniu.liyansheng.top/typora/image-20220930090953756.png)
 
 5. 恭喜你，喜提free使用`typora`，继续专注你的写作吧！
 
-![](http://liyansheng.top/typora/image-20220930091009686.png)
+![](http://cdn.qiniu.liyansheng.top/typora/image-20220930091009686.png)
 
 ------
 

@@ -1,7 +1,7 @@
 ---
 title: SpringJPA的使用
 author: 李延胜
-index_img: 'http://liyansheng.top/typora/image-20230321115837349.png'
+index_img: 'http://cdn.qiniu.liyansheng.top/typora/image-20230321115837349.png'
 tags:
   - spring
 categories:

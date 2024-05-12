@@ -16,7 +16,7 @@ https://alvarotrigo.com/fullPage/zh/
 
 效果如下：
 
-![](http://liyansheng.top/typora/demo-fullpage.gif)
+![](http://cdn.qiniu.liyansheng.top/typora/demo-fullpage.gif)
 
 ## cdn引用
 
@@ -185,4 +185,4 @@ https://alvarotrigo.com/fullPage/zh/
 
 > 这个设计还是很惊艳的，容易上手，可以将上面的案例来跑一下，更详细的用法请参考官方教程。
 
-![](http://liyansheng.top/typora/ad.jpg)
+![](http://cdn.qiniu.liyansheng.top/typora/ad.jpg)

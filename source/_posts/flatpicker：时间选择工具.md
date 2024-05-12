@@ -48,7 +48,7 @@ https://flatpickr.js.org/
 
 效果：
 
-![image-20240404000142342](http://liyansheng.top/typora/image-20240404000142342.png)
+![image-20240404000142342](http://cdn.qiniu.liyansheng.top/typora/image-20240404000142342.png)
 
 ## ⚠注意
 

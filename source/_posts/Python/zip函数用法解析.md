@@ -31,7 +31,7 @@ print(list(zipped))
 
 这段代码将会输出：
 
-![image-20231125154212811](http://liyansheng.top/typora/image-20231125154212811.png)
+![image-20231125154212811](http://cdn.qiniu.liyansheng.top/typora/image-20231125154212811.png)
 
 `zip()` 函数将两个列表中对应位置的元素依次打包成元组，并将这些元组组合成一个迭代器。需要注意的是，`zip()` 会以最短的可迭代对象为准，如果有一个可迭代对象比其他的要短，那么 `zip()` 函数会在最短的可迭代对象耗尽时停止。
 
@@ -54,7 +54,7 @@ print(unzipped_list1)
 print(unzipped_list2)  
 ```
 
-![image-20231125154323071](http://liyansheng.top/typora/image-20231125154323071.png)
+![image-20231125154323071](http://cdn.qiniu.liyansheng.top/typora/image-20231125154323071.png)
 
 这样就能够将原先合并的元组序列重新分解为原始的列表。
 
@@ -74,7 +74,7 @@ print(transposed)
 
 这个例子中，`zip(*matrix)`会将原始矩阵转置，将原本行向量的列表转换为列向量的列表。如下：
 
-![image-20231125154918330](http://liyansheng.top/typora/image-20231125154918330.png)
+![image-20231125154918330](http://cdn.qiniu.liyansheng.top/typora/image-20231125154918330.png)
 
 
 
@@ -89,6 +89,6 @@ my_dict = dict(zip(keys, values))
 print(my_dict)
 ```
 
-![image-20231125155114172](http://liyansheng.top/typora/image-20231125155114172.png)
+![image-20231125155114172](http://cdn.qiniu.liyansheng.top/typora/image-20231125155114172.png)
 
 > 以上是一些关于zip函数的常用技巧，熟练掌握，有助于我们更巧妙解决开发中的问题和提高效率。

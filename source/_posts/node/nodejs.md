@@ -1,7 +1,7 @@
 ---
 title: node升级版本到18步骤
 author: 李延胜
-index_img: 'http://liyansheng.top/typora/image-20230320231314257.png'
+index_img: 'http://cdn.qiniu.liyansheng.top/typora/image-20230320231314257.png'
 tags:
   - node
 categories:

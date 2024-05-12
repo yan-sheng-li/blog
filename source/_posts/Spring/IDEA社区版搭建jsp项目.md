@@ -5,7 +5,7 @@ tags:
   - web
 categories:
   - 搭建
-index_img: 'http://liyansheng.top/typora/jsp_note.jpg'
+index_img: 'http://cdn.qiniu.liyansheng.top/typora/jsp_note.jpg'
 permalink: idea_build_jsp/
 abbrlink: 54051
 date: 2023-06-12 00:20:00
@@ -20,7 +20,7 @@ date: 2023-06-12 00:20:00
 
 创建maven项目，选择webapp模板
 
-![](http://liyansheng.top/typora/image-20230611232658492.png)
+![](http://cdn.qiniu.liyansheng.top/typora/image-20230611232658492.png)
 
 以下是一个简单的示例，用于在 JSP 页面上实现增删改查操作。
 
@@ -284,27 +284,27 @@ public class Person {
 
 
 
-![](http://liyansheng.top/typora/image-20230611234016428.png)
+![](http://cdn.qiniu.liyansheng.top/typora/image-20230611234016428.png)
 
 成功启动后，访问该路径即可看到页面
 
-![](http://liyansheng.top/typora/image-20230611234115413.png)
+![](http://cdn.qiniu.liyansheng.top/typora/image-20230611234115413.png)
 
 
 
-![](http://liyansheng.top/typora/image-20230611233519139.png)
+![](http://cdn.qiniu.liyansheng.top/typora/image-20230611233519139.png)
 
-![](http://liyansheng.top/typora/image-20230611233548736.png)
+![](http://cdn.qiniu.liyansheng.top/typora/image-20230611233548736.png)
 
-![](http://liyansheng.top/typora/image-20230611233457095.png)
+![](http://cdn.qiniu.liyansheng.top/typora/image-20230611233457095.png)
 
-![](http://liyansheng.top/typora/image-20230611233438814.png)
+![](http://cdn.qiniu.liyansheng.top/typora/image-20230611233438814.png)
 
 ## 3、存在问题
 
 页面乱码
 
-![](http://liyansheng.top/typora/image-20230611231657661.png)
+![](http://cdn.qiniu.liyansheng.top/typora/image-20230611231657661.png)
 
 > 在 JSP 页面中设置字符集编码为 UTF-8，这样浏览器就能正确识别和显示该编码下的汉字了。在 JSP 的头部添加以下代码即可：
 

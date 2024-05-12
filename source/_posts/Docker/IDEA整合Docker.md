@@ -1,7 +1,7 @@
 ---
 title: IDEA整合Docker，快速打包部署
 author: 李延胜
-index_img: 'http://liyansheng.top/typora/image-20230319161345405.png'
+index_img: 'http://cdn.qiniu.liyansheng.top/typora/image-20230319161345405.png'
 tags:
   - docker
   - IDEA
@@ -64,7 +64,7 @@ date: 2023-03-19 15:34:00
 
     新增一行：`ExecStart=/usr/bin/dockerd  -H tcp://0.0.0.0:2375  -H unix:///var/run/docker.sock`
 
-    ![ ](http://liyansheng.top/typora/image-20230116001447210.png)
+    ![ ](http://cdn.qiniu.liyansheng.top/typora/image-20230116001447210.png)
 
     `ps`：注意间隔，别写错了（我这步就是因为-H跟前面的写一块了，结果报了一堆奇怪的问题，(⊙o⊙)…
 
@@ -82,45 +82,45 @@ date: 2023-03-19 15:34:00
 
 4. 内部检验：curl http://127.0.0.1:2375/info
 
-    ![](http://liyansheng.top/typora/image-20230116002022460.png)
+    ![](http://cdn.qiniu.liyansheng.top/typora/image-20230116002022460.png)
 
 5. 外部访问（浏览器访问你Linux的IP+2375/info）
 
-    ![](http://liyansheng.top/typora/image-20230116002229312.png)
+    ![](http://cdn.qiniu.liyansheng.top/typora/image-20230116002229312.png)
 
     能访问到如上信息，说明外部访问也是OK的
 
     `ps`：如果你访问不到，注意检查下2375端口是否开放，我这里安装了宝塔面板，可以方便在安全里添加开放端口的规则，当然你不装这个也行，用命令行也是可以操作的呢。
 
-    ![](http://liyansheng.top/typora/image-20230116002534553.png)
+    ![](http://cdn.qiniu.liyansheng.top/typora/image-20230116002534553.png)
 
 ### 三、在IDEA整合Docker
 
 1. 先安装个插件`Docker`（在插件市场里面可以找到）
 
-    ![](http://liyansheng.top/typora/image-20230116002756415.png)
+    ![](http://cdn.qiniu.liyansheng.top/typora/image-20230116002756415.png)
 
 2. 配置连接远程Docker信息
 
     信息填写完整，下方出现`connection successful`说明连接成功！
 
-    ![](http://liyansheng.top/typora/image-20230116003020509.png)
+    ![](http://cdn.qiniu.liyansheng.top/typora/image-20230116003020509.png)
 
 3. 启动service
 
-    ![](http://liyansheng.top/typora/image-20230116003253279.png)
+    ![](http://cdn.qiniu.liyansheng.top/typora/image-20230116003253279.png)
 
 4. 然后就能浏览远程Docker里面的信息了
 
     （里面我拉了一些其他的镜像，可忽略）
 
-    ![](http://liyansheng.top/typora/image-20230116003343708.png)
+    ![](http://cdn.qiniu.liyansheng.top/typora/image-20230116003343708.png)
 
 ### 四、服务打镜像
 
 1.创建一个简单的SpringBoot项目，结构如下：
 
-![](http://liyansheng.top/typora/image-20230116003633915.png)
+![](http://cdn.qiniu.liyansheng.top/typora/image-20230116003633915.png)
 
 2.pom.xml如下：
 
@@ -252,43 +252,43 @@ ENTRYPOINT ["java","-jar","docker-0.0.1.jar"]
 
 7.将项目打jar包
 
-![](http://liyansheng.top/typora/image-20230116004108628.png)
+![](http://cdn.qiniu.liyansheng.top/typora/image-20230116004108628.png)
 
 如果打包成功，在项目下的target下我们能看到jar包
 
-![](http://liyansheng.top/typora/image-20230116004216546.png)
+![](http://cdn.qiniu.liyansheng.top/typora/image-20230116004216546.png)
 
 8.切换到Dockerfile文件，点击按钮打包镜像
 
-![](http://liyansheng.top/typora/image-20230116004354868.png)
+![](http://cdn.qiniu.liyansheng.top/typora/image-20230116004354868.png)
 
 在之前可以新增一些简单的配置
 
-![](http://liyansheng.top/typora/image-20230116004802417.png)
+![](http://cdn.qiniu.liyansheng.top/typora/image-20230116004802417.png)
 
 然后点击上图中的run按钮，进行镜像构建与容器启动
 
-![](http://liyansheng.top/typora/image-20230116004953308.png)
+![](http://cdn.qiniu.liyansheng.top/typora/image-20230116004953308.png)
 
 切换到Log面板，我们可以看到容器启动的日志
 
-![](http://liyansheng.top/typora/image-20230116005039825.png)
+![](http://cdn.qiniu.liyansheng.top/typora/image-20230116005039825.png)
 
 在Dashboard可以修改配置，比如我们新增端口映射：
 
-![](http://liyansheng.top/typora/image-20230116005209773.png)
+![](http://cdn.qiniu.liyansheng.top/typora/image-20230116005209773.png)
 
 这样我们在外部通过8080端口访问到容器内端口8080的服务
 
-![](http://liyansheng.top/typora/image-20230116005328517.png)
+![](http://cdn.qiniu.liyansheng.top/typora/image-20230116005328517.png)
 
 在控制面板，还提供了一些快捷按钮给我们操作：
 
-![](http://liyansheng.top/typora/image-20230116005531044.png)
+![](http://cdn.qiniu.liyansheng.top/typora/image-20230116005531044.png)
 
 比如进入容器：
 
-![](http://liyansheng.top/typora/image-20230116005547080.png)
+![](http://cdn.qiniu.liyansheng.top/typora/image-20230116005547080.png)
 
 ### 五、总结
 
@@ -305,13 +305,13 @@ ENTRYPOINT ["java","-jar","docker-0.0.1.jar"]
      (exit status 1)).
   ```
 
-  ![](http://liyansheng.top/typora/image-20230114231224128.png)
+  ![](http://cdn.qiniu.liyansheng.top/typora/image-20230114231224128.png)
 
 2. #### IDEA打镜像报错
 
-    ![](http://liyansheng.top/typora/image-20230115220606008.png)
+    ![](http://cdn.qiniu.liyansheng.top/typora/image-20230115220606008.png)
 
-    ![](http://liyansheng.top/typora/image-20230115220836929.png)
+    ![](http://cdn.qiniu.liyansheng.top/typora/image-20230115220836929.png)
 
     上述问题我也看了很多网上的解决方案，但是我没有得到解决，最后我是卸载然后重装了Docker然后才没有报上面的错误
 

@@ -755,7 +755,7 @@ http.cors.allow-origin: "*"
 
 启动测试：
 
-![](http://liyansheng.top/typora/image-20220915142412626.png)
+![](http://cdn.qiniu.liyansheng.top/typora/image-20220915142412626.png)
 
 查看集群状态
 
@@ -791,19 +791,19 @@ http.cors.allow-origin: "*"
 
 不管是哪个方式，集群操作都是差不多的。
 
-![](http://liyansheng.top/typora/image-20220915171748795.png)
+![](http://cdn.qiniu.liyansheng.top/typora/image-20220915171748795.png)
 
-![](http://liyansheng.top/typora/image-20220915171948319.png)
+![](http://cdn.qiniu.liyansheng.top/typora/image-20220915171948319.png)
 
 创建索引
 
-![](http://liyansheng.top/typora/image-20220915172126101.png)
+![](http://cdn.qiniu.liyansheng.top/typora/image-20220915172126101.png)
 
 在另一个节点获取节点
 
-![](http://liyansheng.top/typora/image-20220915172158462.png)
+![](http://cdn.qiniu.liyansheng.top/typora/image-20220915172158462.png)
 
-![](http://liyansheng.top/typora/image-20220915172220077.png)
+![](http://cdn.qiniu.liyansheng.top/typora/image-20220915172220077.png)
 
 可以看出，两个节点的数据是同步的。
 

@@ -74,7 +74,7 @@ https://driverjs.com/
 
 ## 效果
 
-![GIF 2024-4-3 18-49-24](http://liyansheng.top/typora/GIF%202024-4-3%2018-49-24.gif)
+![GIF 2024-4-3 18-49-24](http://cdn.qiniu.liyansheng.top/typora/GIF%202024-4-3%2018-49-24.gif)
 
 ## 其他用法
 
@@ -90,7 +90,7 @@ driverObj.highlight({
 })
 ```
 
-![GIF 2024-4-3 18-45-51](http://liyansheng.top/typora/GIF%202024-4-3%2018-45-51.gif)
+![GIF 2024-4-3 18-45-51](http://cdn.qiniu.liyansheng.top/typora/GIF%202024-4-3%2018-45-51.gif)
 
 ## 附录
 

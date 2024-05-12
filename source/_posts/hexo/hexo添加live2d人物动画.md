@@ -12,7 +12,7 @@ date: 2023-03-18 06:22:00
 ---
 1. 在 Hexo 博客的 根目录下新建 /live2d_models 文件夹
 
-    ![image-20230318061123366](http://liyansheng.top/typora/image-20230318061123366.png)
+    ![image-20230318061123366](http://cdn.qiniu.liyansheng.top/typora/image-20230318061123366.png)
 
 2. 下载 live2d-widget.js 和对应模型库
 
@@ -26,9 +26,9 @@ date: 2023-03-18 06:22:00
 
 3. 将下载的 live2d-widget.js (在node_modules里面)和模型库文件放入 /live2d_models 文件夹中
 
-    ![image-20230318061645524](http://liyansheng.top/typora/image-20230318061645524.png)
+    ![image-20230318061645524](http://cdn.qiniu.liyansheng.top/typora/image-20230318061645524.png)
 
-    ![image-20230318061711618](http://liyansheng.top/typora/image-20230318061711618.png)
+    ![image-20230318061711618](http://cdn.qiniu.liyansheng.top/typora/image-20230318061711618.png)
 
     
 
@@ -75,4 +75,4 @@ date: 2023-03-18 06:22:00
 
 5. 执行 hexo g 和 hexo s 命令重新生成和启动博客，查看效果
 
-![image-20230318062115087](http://liyansheng.top/typora/image-20230318062115087.png)
+![image-20230318062115087](http://cdn.qiniu.liyansheng.top/typora/image-20230318062115087.png)

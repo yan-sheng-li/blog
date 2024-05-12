@@ -15,7 +15,7 @@ tags:
 
 官网：https://xdsoft.net/jodit/
 
-![image-20240409000620687](http://liyansheng.top/typora/image-20240409000620687.png)
+![image-20240409000620687](http://cdn.qiniu.liyansheng.top/typora/image-20240409000620687.png)
 
 ## 用法
 
@@ -43,11 +43,11 @@ tags:
 
 :💪然后效果就出来了，如下：
 
-![image-20240408231459075](http://liyansheng.top/typora/image-20240408231459075.png)
+![image-20240408231459075](http://cdn.qiniu.liyansheng.top/typora/image-20240408231459075.png)
 
 插入素材也很方便
 
-![image-20240408234708195](http://liyansheng.top/typora/image-20240408234708195.png)
+![image-20240408234708195](http://cdn.qiniu.liyansheng.top/typora/image-20240408234708195.png)
 
 ## 完整案例
 
@@ -95,6 +95,6 @@ tags:
 
 效果如下：
 
-![image-20240409000332380](http://liyansheng.top/typora/image-20240409000332380.png)
+![image-20240409000332380](http://cdn.qiniu.liyansheng.top/typora/image-20240409000332380.png)
 
 更多配置和用法请移步官网查阅。[👉直达](https://xdsoft.net/jodit/)

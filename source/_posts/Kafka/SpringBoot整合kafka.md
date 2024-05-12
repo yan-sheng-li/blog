@@ -6,7 +6,7 @@ tags:
 categories:
   - 后端
   - 中间件
-index_img: 'http://liyansheng.top/typora/image-20230318180038770.png'
+index_img: 'http://cdn.qiniu.liyansheng.top/typora/image-20230318180038770.png'
 abbrlink: 3865
 date: 2023-03-16 22:41:29
 ---
@@ -99,6 +99,6 @@ class KafkaConsumer{
 
 5、结果
 
-![image-20230226184626286](http://liyansheng.top/typora/image-20230226184626286.png)
+![image-20230226184626286](http://cdn.qiniu.liyansheng.top/typora/image-20230226184626286.png)
 
 可能出现的问题连上服务器：[Kafka client 客户端远程连接 一直报网络错误问题 - 浅笑19 - 博客园 (cnblogs.com)](https://www.cnblogs.com/qianxiaoPro/p/15788854.html)
