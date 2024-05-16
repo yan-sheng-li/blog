@@ -352,7 +352,8 @@ navbar:
     - { key: "about", link: "/about/", icon: "iconfont icon-user-fill" }
     - { key: "pinggu", name: "🚀1分钟需求评估",link: "https://wj.qq.com/s2/14633203/a8b5/" }
     - { key: "remote_help", name: "🐞远程调试/功能定做",link: "/remote_help/" }
-    - { key: "tool", name: "💪利其器",link: "/tool/"}
+    - { key: "tool", name: "📚利其器",link: "/tool/"}
+    - { key: "tool", name: "💪加油鼓励",link: "/repay/"}
     - { key: "chat", name: "🤖Ai助手",link: "/HTML/ai-chat.html", icon: "iconfont icon-bot" }
     #- { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
 
