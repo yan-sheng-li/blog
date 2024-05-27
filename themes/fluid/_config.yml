@@ -326,7 +326,7 @@ iconfont: //at.alicdn.com/t/font_1736178_lbnruvf0jn.css
 navbar:
   # 导航栏左侧的标题，为空则按 hexo config 中 `title` 显示
   # The title on the left side of the navigation bar. If empty, it is based on `title` in hexo config
-  blog_title: "木子-博客"
+  blog_title: "👩‍💻木子-博客"
 
   # 导航栏毛玻璃特效，实验性功能，可能会造成页面滚动掉帧和抖动，部分浏览器不支持会自动不生效
   # Navigation bar frosted glass special animation. It is an experimental feature
@@ -350,7 +350,8 @@ navbar:
     - { key: "category", link: "/categories/", icon: "iconfont icon-category-fill" }
     - { key: "tag", link: "/tags/", icon: "iconfont icon-tags-fill" }
     - { key: "about", link: "/about/", icon: "iconfont icon-user-fill" }
-    - { key: "pinggu", name: "🚀1分钟需求评估",link: "https://wj.qq.com/s2/14633203/a8b5/" }
+    - { key: "pinggu", name: "📦项目大全",link: "https://yan-sheng-li.github.io" }
+    - { key: "pinggu", name: "🚀1分钟评估",link: "https://wj.qq.com/s2/14633203/a8b5/" }
     - { key: "remote_help", name: "🐞远程调试/功能定做",link: "/remote_help/" }
     - { key: "tool", name: "📚利其器",link: "/tool/"}
     - { key: "tool", name: "💪加油鼓励",link: "/repay/"}
@@ -959,16 +960,16 @@ about:
   banner_mask_alpha: 0.3
   avatar: /img/avatar2.jpg
   name: "木子"
-  intro: "广漂一枚👨‍💻，热衷技术总结、实战，热衷挑战各种奇奇怪怪的Bug🍳，你来需求，熬夜掉头发也肝💪。感谢您的关注与支持！下面是我在互联网各平台的足迹，可以关注我哦❤"
+  intro: "广漂一枚👨‍💻，热衷技术总结、实战，热衷挑战各种奇奇怪怪的Bug🍳，你来需求，我来肝💪。感谢您的关注与支持！下面是我在互联网各平台的足迹，可以关注我哦❤"
   # 更多图标可从 https://hexo.fluid-dev.com/docs/icon/ 查找，`class` 代表图标的 css class，添加 `qrcode` 后，图标不再是链接而是悬浮二维码
   # More icons can be found from https://hexo.fluid-dev.com/docs/en/icon/  `class` is the css class of the icon. If adding `qrcode`, The icon is no longer a link, but a hovering QR code
   icons:
     - { class: "iconfont icon-github-fill", link: "https://github.com/lys0214", tip: "GitHub" }
     - { class: "iconfont icon-gitee-fill", link: "https://gitee.com/yan-sheng-li", tip: "Gitee" }
-    - { class: "iconfont icon-qq-fill", qrcode: "/img/qq.jpg"}
-    - { class: "iconfont icon-users", qrcode: "/img/qqusers.jpg"}
-    - { class: "iconfont icon-wechat-fill", qrcode: "/img/vx.jpg" }
-    - { class: "iconfont icon-wechat2-fill", tip: "微信公众号：《编程亿点有趣》" }
+    - { class: "iconfont icon-qq-fill", qrcode: "http://cdn.qiniu.liyansheng.top/img/144893a1fd7669b781bdf99333ab28f.jpg"}
+    - { class: "iconfont icon-users", qrcode: "http://cdn.qiniu.liyansheng.top/img/aaaf6c09063d621cdb292227c9bc27d.jpg"}
+    - { class: "iconfont icon-wechat-fill", qrcode: "http://cdn.qiniu.liyansheng.top/img/fb02c23914b2788d8a5f494bb2f38ae.jpg" }
+    - { class: "iconfont icon-wechat2-fill", qrcode: "http://cdn.qiniu.liyansheng.top/img/2.png" }
     - { class: "iconfont icon-book", link: "https://blog.csdn.net/weixin_44107140", tip: "CSDN" }
 
 
