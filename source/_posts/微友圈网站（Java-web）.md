@@ -91,6 +91,6 @@ date: 2024-01-09 21:44:00
 
 ## 源码获取
 
-![get图](http://cdn.qiniu.liyansheng.top/typora/get%E5%9B%BE.jpg)
+![](http://cdn.qiniu.liyansheng.top/img/20240605152339.png)
 
 ## [点我远程协助-项目调试](https://bbs.csdn.net/topics/615978314)
