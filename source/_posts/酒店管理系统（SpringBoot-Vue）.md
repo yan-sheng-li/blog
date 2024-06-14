@@ -1,7 +1,10 @@
+---
 title: 酒店管理系统（SpringBoot+Vue）
 author: 李延胜
 abbrlink: 49939
 date: 2024-06-14 15:40:34
+hide: true
+permalink: project/hotel_boot/
 tags:
 ---
 
