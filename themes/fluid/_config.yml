@@ -353,11 +353,9 @@ navbar:
     - { key: "pinggu", name: "📦项目大全",link: "https://yan-sheng-li.github.io/project/" }
     - { key: "pinggu", name: "🚀1分钟评估",link: "https://wj.qq.com/s2/14633203/a8b5/" }
     - { key: "remote_help", name: "🐞远程调试/功能定做",link: "/remote_help/" }
-    - { key: "tool", name: "📚利其器",link: "/tool/"}
-    - { key: "tool", name: "📢服务保证，100%保真",link: "/issues_flow/"}
+    # - { key: "tool", name: "📚利其器",link: "/tool/"}
+    # - { key: "tool", name: "📢服务保证，100%保真",link: "/issues_flow/"}
     # - { key: "tool", name: "💪加油鼓励",link: "/repay/"}
-    # - { key: "chat", name: "🤖Ai助手",link: "/HTML/ai-chat.html", icon: "iconfont icon-bot" }
-    #- { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
 
 # 搜索功能，基于 hexo-generator-search 插件，若已安装其他搜索插件请关闭此功能，以避免生成多余的索引文件
 # Search feature, based on hexo-generator-search. If you have installed other search plugins, please disable this feature to avoid generating redundant index files
