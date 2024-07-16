@@ -1,0 +1,1115 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar2.jpg">
+  <link rel="icon" href="/img/avatar2.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="李延胜">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="1.VMware汉化tips：下载地址：&#x3D;》123云盘_VMware (123pan.com)  步骤：  在桌面找到你的VMware图标，右键打开属性 选择快捷方式，看目标那一栏 在原路径后面添加--locale zh_CN 保存，重启VMware，你就会发现汉化OK！     2.安装centos7 mini下载地址：https:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;centos">
+<meta property="og:type" content="article">
+<meta property="og:title" content="玩转Linux虚拟机，从安装到实操">
+<meta property="og:url" content="http://example.com/posts/29995.html">
+<meta property="og:site_name" content="👨‍💻木子-博客">
+<meta property="og:description" content="1.VMware汉化tips：下载地址：&#x3D;》123云盘_VMware (123pan.com)  步骤：  在桌面找到你的VMware图标，右键打开属性 选择快捷方式，看目标那一栏 在原路径后面添加--locale zh_CN 保存，重启VMware，你就会发现汉化OK！     2.安装centos7 mini下载地址：https:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;centos">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://cdn.qiniu.liyansheng.top/typora/image-20230318180814080.png">
+<meta property="article:published_time" content="2022-09-20T17:41:29.000Z">
+<meta property="article:modified_time" content="2024-07-16T15:39:53.510Z">
+<meta property="article:author" content="李延胜">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="shell">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://cdn.qiniu.liyansheng.top/typora/image-20230318180814080.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>玩转Linux虚拟机，从安装到实操 - 👨‍💻木子-博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"85b00ecca8bd5efa8a581f758ba73a03","google":null,"gtag":"G-M78M7E4Y4N","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+    <!-- Baidu Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?85b00ecca8bd5efa8a581f758ba73a03";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
+  
+
+  
+
+  
+    <!-- Google gtag.js -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript('https://www.googletagmanager.com/gtag/js?id=G-M78M7E4Y4N', function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-M78M7E4Y4N');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?85b00ecca8bd5efa8a581f758ba73a03";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>👩‍💻木子-博客</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>作者</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" target="_blank" rel="noopener" href="https://yan-sheng-li.github.io/project/">
+                
+                <span>📦项目大全</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" target="_blank" rel="noopener" href="https://wj.qq.com/s2/14633203/a8b5/">
+                
+                <span>🚀1分钟评估</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/remote_help/">
+                
+                <span>🐞远程调试/功能定做</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/bg5.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="玩转Linux虚拟机，从安装到实操"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-09-20 17:41" pubdate>
+          2022年9月20日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          12k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          98 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">玩转Linux虚拟机，从安装到实操</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：几秒前
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="1-VMware汉化"><a href="#1-VMware汉化" class="headerlink" title="1.VMware汉化"></a>1.VMware汉化</h2><p><code>tips</code>：下载地址：&#x3D;》<a target="_blank" rel="noopener" href="https://www.123pan.com/s/in5A-5GRRd">123云盘_VMware (123pan.com)</a></p>
+<blockquote>
+<p>步骤：</p>
+<ol>
+<li>在桌面找到你的<code>VMware</code>图标，右键打开<code>属性</code></li>
+<li>选择<code>快捷方式</code>，看<code>目标</code>那一栏</li>
+<li>在<code>原路径</code>后面添加<code>--locale zh_CN</code></li>
+<li>保存，重启VMware，你就会发现汉化OK！</li>
+</ol>
+</blockquote>
+<img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823091203391.png" srcset="/img/loading.gif" lazyload alt="image-20220823091203391" style="zoom:70%;" />
+
+<h2 id="2-安装centos7-mini"><a href="#2-安装centos7-mini" class="headerlink" title="2.安装centos7 mini"></a>2.安装centos7 mini</h2><p>下载地址：<a target="_blank" rel="noopener" href="https://mirrors.aliyun.com/centos/7/isos/x86_64/">https://mirrors.aliyun.com/centos/7/isos/x86_64/</a></p>
+<p><a target="_blank" rel="noopener" href="http://mirror.nsc.liu.se/centos-store/">Index of &#x2F;centos-store&#x2F; (liu.se)</a></p>
+<h3 id="自定义分区"><a href="#自定义分区" class="headerlink" title="自定义分区"></a>自定义分区</h3><blockquote>
+<p>科普：</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_46818279/article/details/107007052?ops_request_misc=%7B%22request_id%22:%22166126527316782350845797%22,%22scm%22:%2220140713.130102334..%22%7D&request_id=166126527316782350845797&biz_id=0&spm=1018.2226.3001.4187">学Linux必须了解的系统分区！！！（通俗易懂）_熬夜泡枸杞的博客-CSDN博客_linux图形界面分区</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/mahoon411/article/details/115443526?ops_request_misc=%7B%22request_id%22:%22166126527316782350845797%22,%22scm%22:%2220140713.130102334..%22%7D&request_id=166126527316782350845797&biz_id=0&spm=1018.2226.3001.4187">Linux系统分区_吮指原味张的博客-CSDN博客_linux系统分区</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Black_Customer/article/details/109693645?ops_request_misc=%7B%22request_id%22:%22166126687516781683990414%22,%22scm%22:%2220140713.130102334..%22%7D&request_id=166126687516781683990414&biz_id=0&spm=1018.2226.3001.4187">【linux】文件管理系统之手动分区_是馄饨呀的博客-CSDN博客_linux手动分区</a></p>
+</blockquote>
+<p>下方为VMware中安装centos mini版时手动分两个区的图示（swap区和”&#x2F;“区）</p>
+<img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823092953960.png" srcset="/img/loading.gif" lazyload alt="image-20220823092953960" style="zoom:50%;" />
+
+<img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823093049916.png" srcset="/img/loading.gif" lazyload alt="image-20220823093049916" style="zoom:50%;" />
+
+<img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823093117428.png" srcset="/img/loading.gif" lazyload alt="image-20220823093117428" style="zoom:50%;" />
+
+<h2 id="3-动态获取IP"><a href="#3-动态获取IP" class="headerlink" title="3.动态获取IP"></a>3.动态获取IP</h2><blockquote>
+<p>刚装的centos，你可能获取不到动态IP，类似下面的情况：</p>
+</blockquote>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823231118096.png" srcset="/img/loading.gif" lazyload alt="image-20220823231118096"></p>
+<p>解决方案：</p>
+<ol>
+<li><p>首先确定你网卡的名称，使用指令<code>ip addr</code>即可查看。如上图，我的当前网卡名称是 <strong>ens33</strong></p>
+</li>
+<li><p>修改网卡配置文件：指令 <code>vi /etc/sysconfig/network-scripts/ifcfg-[网卡名称]</code></p>
+</li>
+<li><p>将配置文件中修改两处：<code>BOOTPROTO=dhcp</code> ，<code>ONBOOT=yes</code>。修改后（记得保存）如下：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs sh">BOOTPROTO=dhcp<br>DEVICE=eth0<br>HWADDR=52:54:00:d2:5a:83<br>ONBOOT=<span class="hljs-built_in">yes</span><br>PERSISTENT_DHCLIENT=<span class="hljs-built_in">yes</span><br>TYPE=Ethernet<br>USERCTL=no<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>重启网络服务：<code>systemctl restart network</code></p>
+</li>
+<li><p>再次测试：<code>ip addr</code>，就可以看到动态的IP了</p>
+<img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823233120116.png" srcset="/img/loading.gif" lazyload alt="image-20220823233120116" style="zoom:67%;" /></li>
+</ol>
+<h2 id="4-关闭SELinux"><a href="#4-关闭SELinux" class="headerlink" title="4.关闭SELinux"></a>4.关闭SELinux</h2><blockquote>
+<p>科普：SELinux是一个增强型的Linux，它是一个Linux的一个内核模块，是Linux的一个安全子系统。</p>
+<p>具体可以参读：</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/165974960">一文彻底明白linux中的selinux到底是什么 - 知乎 (zhihu.com)</a></p>
+</blockquote>
+<p>关闭步骤：</p>
+<ol>
+<li><p>首先查看SELinux的状态是否开启，使用命令：<code>cat  /etc/selinux/config</code></p>
+</li>
+<li><p>如果你的<code>SELINUX=enforcing</code>，说明SELinux处于<code>开启</code>状态</p>
+</li>
+<li><p>将<code>SELINUX</code>的值修改为<code>disabled</code>（如下）即可关闭（需要重启机器才能生效，快速重启：<code>shutdown -r now</code>）。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs sh">[root@VM-16-12-centos ~]<span class="hljs-comment"># cat /etc/selinux/config </span><br><span class="hljs-comment"># This file controls the state of SELinux on the system.</span><br><span class="hljs-comment"># SELINUX= can take one of these three values:</span><br><span class="hljs-comment">#     enforcing - SELinux security policy is enforced.</span><br><span class="hljs-comment">#     permissive - SELinux prints warnings instead of enforcing.</span><br><span class="hljs-comment">#     disabled - No SELinux policy is loaded.</span><br>SELINUX=disabled<br><span class="hljs-comment"># SELINUXTYPE= can take one of three values:</span><br><span class="hljs-comment">#     targeted - Targeted processes are protected,</span><br><span class="hljs-comment">#     minimum - Modification of targeted policy. Only selected processes are protected. </span><br><span class="hljs-comment">#     mls - Multi Level Security protection.</span><br>SELINUXTYPE=targeted<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="5-安装Nginx"><a href="#5-安装Nginx" class="headerlink" title="5.安装Nginx"></a>5.安装Nginx</h2><p><strong>Nginx下载链接</strong>：<a target="_blank" rel="noopener" href="http://nginx.org/en/download.html">nginx: download</a></p>
+<blockquote>
+<p>安装教程参考：</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/t8116189520/article/details/81909574?ops_request_misc=%7B%22request_id%22:%22166126986116782425135807%22,%22scm%22:%2220140713.130102334..%22%7D&request_id=166126986116782425135807&biz_id=0&spm=1018.2226.3001.4187">LINUX安装nginx详细步骤_大蛇王的博客-CSDN博客_linux安装nginx</a></p>
+</blockquote>
+<p>安装步骤网上都有很全，我就不在这里赘述了。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs shell">查看Nginx的版本号：nginx -V<br><br>启动Nginx：start nginx<br><br>快速停止或关闭Nginx：nginx -s stop<br><br>正常停止或关闭Nginx：nginx -s quit<br><br>配置文件修改重装载命令：nginx -s reload<br></code></pre></td></tr></table></figure>
+
+<p><strong>下面列举下我遇到的问题：</strong></p>
+<blockquote>
+<p><strong>问题1</strong>：安装前编译错误，如下图。</p>
+<img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823105023719.png" srcset="/img/loading.gif" lazyload alt="image-20220823105023719" style="zoom:67%;" />
+
+<p><strong>原因</strong>：是没有安装相关的依赖。</p>
+<p><strong>解决</strong>：先安装依赖  <code>yum -y install gcc zlib zlib-devel pcre-devel openssl openssl-devel</code></p>
+</blockquote>
+<blockquote>
+<p><strong>问题2</strong>：安装好nginx后，在虚拟机上访客是能看到nginx的欢迎界面的，但是我将IP地址放到外面的window的浏览器却访问不到，如下图。</p>
+<img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823110122059.png" srcset="/img/loading.gif" lazyload alt="image-20220823110122059" style="zoom:40%;" />
+
+<img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823105924804.png" srcset="/img/loading.gif" lazyload alt="image-20220823105924804" style="zoom:40%;" />
+
+<p><strong>原因</strong>：防火墙没有开放相应的端口</p>
+<p><strong>解决</strong>：将<code>80</code>端口打开（记得重启防火墙）</p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823111444095.png" srcset="/img/loading.gif" lazyload alt="image-20220823111444095"></p>
+</blockquote>
+<h2 id="6-防火墙常用指令"><a href="#6-防火墙常用指令" class="headerlink" title="6.防火墙常用指令"></a>6.防火墙常用指令</h2><ol>
+<li><p>查看防火墙状态：<code>systemctl status firewalld</code> 或<code>firewall-cmd --state</code></p>
+</li>
+<li><p>查看所有开启的端口：<code>firewall-cmd --list-ports</code></p>
+</li>
+<li><p>手动开启端口：<code>firewall-cmd  --zone=public --add-port=[端口号]/[tcp或者udp]  --permanent</code></p>
+</li>
+<li><p>设置防火墙开机自启：<code>systemctl enable firewalld.service</code></p>
+</li>
+<li><p>查看防火墙是否开机自启：<code>systemctl is-enabled firewalld.service ;echo &amp;?</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@VM-16-12-centos ~]# systemctl is-enabled firewalld.service ;echo &amp;?<br>enabled<br>[1] 27811<br><br>-bash: ?: 未找到命令<br>[1]+  完成                  echo<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>防火墙重启：<code>systemctl restart firewalld.service</code></p>
+</li>
+<li><p>查看防火墙版本：<code>firewall-cmd --version</code></p>
+</li>
+<li><p>永久关闭防火墙：<code>chkconfig iptables off</code></p>
+</li>
+</ol>
+<h2 id="7-lsof命令没有找到？"><a href="#7-lsof命令没有找到？" class="headerlink" title="7.lsof命令没有找到？"></a>7.lsof命令没有找到？</h2><p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823143849017.png" srcset="/img/loading.gif" lazyload alt="image-20220823143849017"></p>
+<h2 id="8-手动安装命令依赖"><a href="#8-手动安装命令依赖" class="headerlink" title="8.手动安装命令依赖"></a>8.手动安装命令依赖</h2><blockquote>
+<p><strong>场景</strong>：这次我测试安装的是<code>centos 7 mini</code>版，也就是精简版，没有系统桌面等，因此，常常遇到下面的情况：</p>
+<p>当你输入一些命令的时候，系统提示你没有这个命令，如<code>lsof</code>，<code>ifconfig</code>都没有预装。</p>
+</blockquote>
+<p><strong>解决</strong>方式：</p>
+<ol>
+<li><p>先用<code>yum search [命令]</code> 找一下你需要安装哪个插件和工具，如这里我要找<code>lsof</code>相关的：</p>
+<img src="http://cdn.qiniu.liyansheng.top/typora/image-20220824093616969.png" srcset="/img/loading.gif" lazyload alt="image-20220824093616969" style="zoom:67%;" />
+</li>
+<li><p>使用<code>yum install [名称]</code> 进行安装</p>
+<img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823144055517.png" srcset="/img/loading.gif" lazyload alt="image-20220823144055517" style="zoom:50%;" />
+</li>
+<li><p>等安装完成后，就可以使用这个命令了。</p>
+</li>
+<li><p>（安装其他的命令也同理）</p>
+</li>
+</ol>
+<h2 id="9-进程相关命令"><a href="#9-进程相关命令" class="headerlink" title="9.进程相关命令"></a>9.进程相关命令</h2><blockquote>
+<p>1.查看进程号 或某个进程是否启动</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@localhost home]# ps -ef | grep nginx<br>root      21939      1  0 10:55 ?        00:00:00 nginx: master process ./nginx<br>nobody    21940  21939  0 10:55 ?        00:00:00 nginx: worker process<br>root     111075   1374  0 14:43 pts/0    00:00:00 grep --color=auto nginx<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>2.查看pid与端口对应关系</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@localhost home]# lsof -nP -iTCP -sTCP:LISTEN<br>COMMAND   PID   USER   FD   TYPE DEVICE SIZE/OFF NODE NAME<br>sshd      876   root    3u  IPv4  18972      0t0  TCP *:22 (LISTEN)<br>sshd      876   root    4u  IPv6  18981      0t0  TCP *:22 (LISTEN)<br>master   1104   root   13u  IPv4  20058      0t0  TCP 127.0.0.1:25 (LISTEN)<br>master   1104   root   14u  IPv6  20059      0t0  TCP [::1]:25 (LISTEN)<br>nginx   21939   root    6u  IPv4 119065      0t0  TCP *:80 (LISTEN)<br>nginx   21940 nobody    6u  IPv4 119065      0t0  TCP *:80 (LISTEN)<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>3.查看端口对应的线程</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@localhost home]# lsof -nP -i :80<br>COMMAND   PID   USER   FD   TYPE DEVICE SIZE/OFF NODE NAME<br>nginx   21939   root    6u  IPv4 119065      0t0  TCP *:80 (LISTEN)<br>nginx   21940 nobody    6u  IPv4 119065      0t0  TCP *:80 (LISTEN)<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>4.查看进程对应的端口</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@localhost home]# lsof -nP |grep LISTEN | grep 21939<br>nginx      21939         root    6u     IPv4             119065       0t0        TCP *:80 (LISTEN)<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>5.查看监听端口的进程</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@localhost home]# lsof -nP |grep LISTEN |grep 80<br>nginx      21939         root    6u     IPv4             119065       0t0        TCP *:80 (LISTEN)<br>nginx      21940       nobody    6u     IPv4             119065       0t0        TCP *:80 (LISTEN)<br></code></pre></td></tr></table></figure>
+
+<h2 id="10-系统相关"><a href="#10-系统相关" class="headerlink" title="10.系统相关"></a>10.系统相关</h2><blockquote>
+<p>1.查看系统资源</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@localhost lys]# vmstat 3 5<br>procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----<br> r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st<br> 1  0      0 1058580   2072 588056    0    0     6    14  108  132  0  0 99  0  0<br> 0  0      0 1058304   2072 588064    0    0     0     0  226  273  0  0 100  0  0<br> 0  0      0 1058388   2072 588076    0    0     0     6  178  215  0  1 99  0  0<br> 0  0      0 1058444   2072 588084    0    0     0    10  213  260  0  0 99  0  0<br> 0  0      0 1058296   2072 588100    0    0     0     3  210  256  0  0 100  0  0<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>2.CPU信息</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@localhost lys]# dmesg | grep CPU<br>[    0.000000] smpboot: Allowing 128 CPUs, 126 hotplug CPUs<br>[    0.000000] Detected CPU family 6 model 140 stepping 1<br>[    0.000000] setup_percpu: NR_CPUS:5120 nr_cpumask_bits:128 nr_cpu_ids:128 nr_node_ids:1<br>[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=128, Nodes=1<br>[    0.000000]  RCU restricting CPUs from NR_CPUS=5120 to nr_cpu_ids=128.<br>[    0.737289] smpboot: CPU0: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz (fam: 06, model: 8c, stepping: 01)<br>[    0.787916] core: CPUID marked event: &#x27;cpu cycles&#x27; unavailable<br>[    0.787922] core: CPUID marked event: &#x27;instructions&#x27; unavailable<br>[    0.787928] core: CPUID marked event: &#x27;bus cycles&#x27; unavailable<br>[    0.787935] core: CPUID marked event: &#x27;cache references&#x27; unavailable<br>[    0.787941] core: CPUID marked event: &#x27;cache misses&#x27; unavailable<br>[    0.787947] core: CPUID marked event: &#x27;branch instructions&#x27; unavailable<br>[    0.787953] core: CPUID marked event: &#x27;branch misses&#x27; unavailable<br>[    0.807789] smpboot: CPU 1 Converting physical 2 to logical package 1<br>[    0.807796] smpboot: CPU 1 Converting physical 0 to logical die 1<br>[    0.807896] Brought up 2 CPUs<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>3.使用情况</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs shell">top - 15:13:27 up  4:37,  2 users,  load average: 0.02, 0.03, 0.05<br>Tasks: 114 total,   1 running, 113 sleeping,   0 stopped,   0 zombie<br>top - 15:15:13 up  4:39,  2 users,  load average: 0.06, 0.03, 0.05<br>top - 15:16:14 up  4:40,  2 users,  load average: 0.02, 0.03, 0.05<br>Tasks: 115 total,   1 running, 114 sleeping,   0 stopped,   0 zombie<br><span class="hljs-meta prompt_">%</span><span class="language-bash">Cpu(s):  0.2 us,  0.3 sy,  0.0 ni, 99.3 <span class="hljs-built_in">id</span>,  0.0 wa,  0.0 hi,  0.2 si,  0.0 st</span><br>KiB Mem :  1862992 total,  1064840 free,   214692 used,   583460 buff/cache<br>KiB Swap:  2097148 total,  2097148 free,        0 used.  1475700 avail Mem <br><br>   PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND                                                     <br>     9 root      20   0       0      0      0 S   0.3  0.0   0:11.23 rcu_sched                                                   <br>  1372 root      20   0  162128   6540   4780 S   0.3  0.4   1:19.96 sshd                                                        <br>  1436 root      20   0  162732   2980   1604 S   0.3  0.2   0:14.53 top                                                         <br>     1 root      20   0  125352   3872   2608 S   0.0  0.2   0:02.53 systemd                                                     <br>     2 root      20   0       0      0      0 S   0.0  0.0   0:00.02 kthreadd                                                    <br>     4 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/0:0H                                                <br>     5 root      20   0       0      0      0 S   0.0  0.0   0:00.71 kworker/u256:0                                              <br>     6 root      20   0       0      0      0 S   0.0  0.0   0:05.60 ksoftirqd/0                                                 <br>     7 root      rt   0       0      0      0 S   0.0  0.0   0:01.93 migration/0                                                 <br>     8 root      20   0       0      0      0 S   0.0  0.0   0:00.00 rcu_bh                                                      <br>    10 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 lru-add-drain                                               <br>    11 root      rt   0       0      0      0 S   0.0  0.0   0:00.23 watchdog/0                                                  <br>    12 root      rt   0       0      0      0 S   0.0  0.0   0:00.22 watchdog/1                                                  <br>    13 root      rt   0       0      0      0 S   0.0  0.0   0:01.19 migration/<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>4.内存信息查看</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@localhost lys]# free<br>              total        used        free      shared  buff/cache   available<br>Mem:        1862992      214140     1064896        9768      583956     1476252<br>Swap:       2097148           0     2097148<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>5.磁盘信息</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@localhost lys]# df -h<br>文件系统        容量  已用  可用 已用% 挂载点<br>devtmpfs        900M     0  900M    0% /dev<br>tmpfs           910M     0  910M    0% /dev/shm<br>tmpfs           910M  9.6M  901M    2% /run<br>tmpfs           910M     0  910M    0% /sys/fs/cgroup<br>/dev/sda2        18G  1.7G   17G   10% /<br>tmpfs           182M     0  182M    0% /run/user/0<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>6.网卡信息</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@localhost lys]#  ifconfig<br>ens33: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500<br>        inet 192.168.220.128  netmask 255.255.255.0  broadcast 192.168.220.255<br>        inet6 fe80::a393:4a1f:f4bb:78c3  prefixlen 64  scopeid 0x20&lt;link&gt;<br>        ether 00:0c:29:a8:cd:91  txqueuelen 1000  (Ethernet)<br>        RX packets 381262  bytes 103026975 (98.2 MiB)<br>        RX errors 0  dropped 0  overruns 0  frame 0<br>        TX packets 535639  bytes 96851931 (92.3 MiB)<br>        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0<br><br>lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt;  mtu 65536<br>        inet 127.0.0.1  netmask 255.0.0.0<br>        inet6 ::1  prefixlen 128  scopeid 0x10&lt;host&gt;<br>        loop  txqueuelen 1000  (Local Loopback)<br>        RX packets 92  bytes 9058 (8.8 KiB)<br>        RX errors 0  dropped 0  overruns 0  frame 0<br>        TX packets 92  bytes 9058 (8.8 KiB)<br>        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0<br></code></pre></td></tr></table></figure>
+
+<h2 id="11-给vi编辑器设置行数显示"><a href="#11-给vi编辑器设置行数显示" class="headerlink" title="11.给vi编辑器设置行数显示"></a>11.给vi编辑器设置行数显示</h2><p>很简单，三步搞定！</p>
+<ol>
+<li>首先打开配置文件：<code>vi ~/.vimrc</code></li>
+<li>编辑输入<code>set number</code></li>
+<li>保存退出</li>
+</ol>
+<p>当你下次再打开vi的时候，就会发现显示行号了！</p>
+<h3 id="在docker容器中安装vi"><a href="#在docker容器中安装vi" class="headerlink" title="在docker容器中安装vi"></a>在docker容器中安装vi</h3><p>apt-get update</p>
+<p>apt-get install vim</p>
+<h3 id="鼠标移动光标"><a href="#鼠标移动光标" class="headerlink" title="鼠标移动光标"></a>鼠标移动光标</h3><p>命令模式下，输入set mouse&#x3D;a</p>
+<h2 id="12-Linux常用指令"><a href="#12-Linux常用指令" class="headerlink" title="12.Linux常用指令"></a>12.Linux常用指令</h2><blockquote>
+<p>参考：</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_23329167/article/details/83856430?ops_request_misc=%7B%22request_id%22:%22166130338016781432990897%22,%22scm%22:%2220140713.130102334..%22%7D&request_id=166130338016781432990897&biz_id=0&spm=1018.2226.3001.4187">Linux常用命令_Demon_gu的博客-CSDN博客_linux常用命令</a></p>
+</blockquote>
+<p>重点摘要：</p>
+<ol>
+<li>查看包含隐藏文件的列表：<code>ls  -a</code></li>
+<li>清屏快捷键：<code>ctrl + l</code></li>
+</ol>
+<h2 id="13-权限修改"><a href="#13-权限修改" class="headerlink" title="13.权限修改"></a>13.权限修改</h2><p>文件属性信息：</p>
+<blockquote>
+<p>参考：</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/JZjuechen/p/15689796.html">Linux文件属性详述 - JZEason - 博客园 (cnblogs.com)</a></p>
+</blockquote>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220824143055753.png" srcset="/img/loading.gif" lazyload alt="来源 (https://www.cnblogs.com/JZjuechen/p/15689796.html"></p>
+<p>演示：</p>
+<blockquote>
+<p>权限标示：r-可读，w-可写，x-可执行</p>
+<p>权限分配角色：u-文件创建者  g-用户所在组，o-用户组外的其他人</p>
+</blockquote>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220829100130862.png" srcset="/img/loading.gif" lazyload alt="image-20220829100130862"></p>
+<h2 id="14-文件：打包、压缩与解压"><a href="#14-文件：打包、压缩与解压" class="headerlink" title="14.文件：打包、压缩与解压"></a>14.文件：打包、压缩与解压</h2><p>参考学习：<a target="_blank" rel="noopener" href="https://blog.csdn.net/example440982/article/details/51712973">tar 解压缩命令详解_追求者2016的博客-CSDN博客_tar</a></p>
+<blockquote>
+<p>使用系统自带的   <strong>tar</strong>  工具即可完成文件的压缩与解压。</p>
+<p>参数说明：</p>
+<ul>
+<li>-c: 建立压缩档案 </li>
+<li>-x：解压 </li>
+<li>-t：查看内容 </li>
+<li>-r：向压缩归档文件末尾追加文件 </li>
+<li>-u：更新原压缩包中的文件</li>
+</ul>
+<p>可选参数：</p>
+<ul>
+<li>-z：有gzip属性的 </li>
+<li>-j：有bz2属性的 </li>
+<li>-J：具有xz属性的 </li>
+<li>-Z：有compress属性的 </li>
+<li>-v：显示所有过程 </li>
+<li>-O：将文件解开到标准输出</li>
+</ul>
+</blockquote>
+<h3 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h3><blockquote>
+<p>仅打包，不压缩。</p>
+</blockquote>
+<p>命令：<code>tar -cvf [打包后文件名称] [要打包的文件]</code></p>
+<p>示例：创建两个文件夹，并打包（如果打包全部文件，可以直接用<code>*</code>代替）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@VM-16-12-centos demo]# touch d1.txt<br>[root@VM-16-12-centos demo]# touch d2.java<br>[root@VM-16-12-centos demo]# ll<br>总用量 0<br>-rw-r--r-- 1 root root 0 8月  24 23:31 d1.txt<br>-rw-r--r-- 1 root root 0 8月  24 23:31 d2.java<br>[root@VM-16-12-centos demo]# tar -cvf d.tar ./*<br>./d1.txt<br>./d2.java<br>[root@VM-16-12-centos demo]# ls<br>d1.txt  d2.java  d.tar<br>[root@VM-16-12-centos demo]# ll<br>总用量 12<br>-rw-r--r-- 1 root root     0 8月  24 23:31 d1.txt<br>-rw-r--r-- 1 root root     0 8月  24 23:31 d2.java<br>-rw-r--r-- 1 root root 10240 8月  24 23:32 d.tar<br></code></pre></td></tr></table></figure>
+
+<h3 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h3><blockquote>
+<p>先打包，后压缩。以gzip压缩 在参数f后面的压缩文件名是自己取的，习惯上用tar来做，如果加z参数，则以tar.gz 或tgz来代表gzip压缩过的tar file文件。</p>
+</blockquote>
+<p>命令：<code>tar -zcvf [打包后文件名] [-C] [指定输出父目录]  [文件]</code></p>
+<p>示例：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@VM-16-12-centos demo]# ls<br>d1.txt  d2.java<br>[root@VM-16-12-centos demo]# tar -zcvf d.tar.gz ./*<br>./d1.txt<br>./d2.java<br>[root@VM-16-12-centos demo]# ls<br>d1.txt  d2.java  d.tar.gz<br></code></pre></td></tr></table></figure>
+
+<h3 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h3><p>命令：<code>tar -zxvf [压缩包]  [-C] [解压位置]</code></p>
+<p>示例：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@VM-16-12-centos demo]# ls<br>d.tar.gz<br>[root@VM-16-12-centos demo]# tar -zxvf d.tar.gz <br>./d1.txt<br>./d2.java<br>[root@VM-16-12-centos demo]# ls<br>d1.txt  d2.java  d.tar.gz<br>[root@VM-16-12-centos demo]# <br></code></pre></td></tr></table></figure>
+
+<h3 id="避雷-x3D-》"><a href="#避雷-x3D-》" class="headerlink" title="避雷&#x3D;》"></a>避雷&#x3D;》</h3><blockquote>
+<p>tar 的命令参数一定要写完整，否则会出现卡住，无响应的情况。</p>
+</blockquote>
+<img src="http://cdn.qiniu.liyansheng.top/typora/image-20220824152227333.png" srcset="/img/loading.gif" lazyload alt="image-20220824152227333" style="zoom:50%;" />
+
+<p>否则会报错：</p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220824152254843.png" srcset="/img/loading.gif" lazyload alt="image-20220824152254843"></p>
+<h2 id="15-自定义主机名-多节点）互ping通"><a href="#15-自定义主机名-多节点）互ping通" class="headerlink" title="15.自定义主机名(多节点）互ping通"></a>15.自定义主机名(多节点）互ping通</h2><p>自定义主机名：<code>hostnamectl set-hostname [主机名]</code></p>
+<p>查看主机名：<code>hostname</code></p>
+<p>路径<code>C:\Windows\System32\drivers\etc</code></p>
+<p>末尾添加：<code>192.168.220.128  node1</code></p>
+<p>ping测试：打开cmd，直接ping主机名</p>
+<p>问题1：</p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220825151904941.png" srcset="/img/loading.gif" lazyload alt="image-20220825151904941"></p>
+<p>linux  &#x3D;&gt;win  ping不通</p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220825144443668.png" srcset="/img/loading.gif" lazyload alt="image-20220825144443668"></p>
+<p>win  &#x3D;&gt; linux  可以ping通</p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220826100655421.png" srcset="/img/loading.gif" lazyload alt="image-20220826100655421"></p>
+<p>解决：win的防火墙没关   关闭防火墙命令：<code>netsh advfirewall set allprofiles state off</code></p>
+<blockquote>
+<p>更多防火墙操作，可以参考：</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/tomtellyou/p/16300557.html">windows防火墙常用命令 - 苍山落暮 - 博客园 (cnblogs.com)</a></p>
+</blockquote>
+<h2 id="16-yum配置"><a href="#16-yum配置" class="headerlink" title="16.yum配置"></a>16.yum配置</h2><blockquote>
+<p><strong>yum</strong> 主要功能是更方便的<code>添加</code>&#x2F;<code>删除</code>&#x2F;<code>更新</code>RPM包，<code>自动解决</code>包的依赖性问题，便于管理大量系统的更新问题。</p>
+<p>学习参考：</p>
+<p><a target="_blank" rel="noopener" href="https://baijiahao.baidu.com/s?id=1708418392526536542&wfr=spider&for=pc">Linux新手入门系列：配置yum源 (baidu.com)</a></p>
+</blockquote>
+<p>原装镜像源：位于<code>/etc/yum.repos.d/</code>的<code>CentOS-Base.repo</code></p>
+<p>优质镜像源：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://mirrors.163.com/.help/centos.html">CentOS镜像使用帮助 (163.com)</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.aliyun.com/mirror/centos?spm=a2c6h.13651102.0.0.3e221b11Lrn54l">centos镜像_centos下载地址_centos安装教程-阿里巴巴开源镜像站 (aliyun.com)</a></li>
+</ul>
+<p>如要修改原镜像源，请：</p>
+<ol>
+<li>将下载的镜像源文件放入<code>/etc/yum.repos.d/</code>目录下</li>
+<li>清除yum缓存：<code>yum clear all</code></li>
+<li>刷新：<code>yum makecache</code></li>
+</ol>
+<p>补充：</p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220825160515378.png" srcset="/img/loading.gif" lazyload alt="image-20220825160515378"></p>
+<h2 id="17-软件常用配置路径"><a href="#17-软件常用配置路径" class="headerlink" title="17.软件常用配置路径"></a>17.软件常用配置路径</h2><blockquote>
+<p>学习参考：</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_38317491/article/details/79217178?spm=1001.2101.3001.4242.2&utm_relevant_index=4"> linux常用的文件路径_爪穴心久的博客-CSDN博客_linux常用文件路径</a></p>
+<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/news/224459">Linux配置文件路径大全 - 腾讯云开发者社区-腾讯云 (tencent.com)</a></p>
+</blockquote>
+<h2 id="18-systemd服务管理（难点）"><a href="#18-systemd服务管理（难点）" class="headerlink" title="18.systemd服务管理（难点）"></a>18.systemd服务管理（难点）</h2><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/hsyw/p/15054079.html">systemd 介绍 - taotaozh - 博客园 (cnblogs.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_35742493/article/details/121028721">Linux 之systemd服务简介_Tian_cy_的博客-CSDN博客_linux systemd</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/ch21st/article/details/51383892?spm=1001.2101.3001.6650.1&depth_1-utm_relevant_index=2">Systemd 入门教程：实战篇_道素的博客-CSDN博客_systemd</a></p>
+<h3 id="使用systemd启动Nginx"><a href="#使用systemd启动Nginx" class="headerlink" title="使用systemd启动Nginx"></a>使用systemd启动Nginx</h3><p>编写配置文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs shell">[Unit]<br>Description=nginx<br>After=network.target<br><br>[Service]<br>Type=forking<br>ExecStart=/usr/local/nginx/sbin/nginx<br>ExecReload=/usr/local/nginx/sbin/nginx -s reload<br>ExecStop=/usr/local/nginx/sbin/nginx -s quit<br>PrivateTmp=true<br><br>[Install]<br>WantedBy=multi-user.target<br></code></pre></td></tr></table></figure>
+
+<p>启动、查看运行状态：</p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220829112302731.png" srcset="/img/loading.gif" lazyload alt="image-20220829112302731"></p>
+<h2 id="19-神奇的-tail"><a href="#19-神奇的-tail" class="headerlink" title="19.神奇的   tail"></a>19.神奇的   tail</h2><blockquote>
+<p>tail用于查看文件的内容</p>
+</blockquote>
+<p>常用参数：</p>
+<p><code>-f</code>：查阅正在改变的日志文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs shell">Print the last 10 lines of each FILE to standard output.<br>With more than one FILE, precede each with a header giving the file name.<br>With no FILE, or when FILE is -, read standard input.<br><br>Mandatory arguments to long options are mandatory for short options too.<br>  -c, --bytes=K            output the last K bytes; or use -c +K to output<br>                             bytes starting with the Kth of each file<br>  -f, --follow[=&#123;name|descriptor&#125;]<br>                           output appended data as the file grows;<br>                             an absent option argument means &#x27;descriptor&#x27;<br>  -F                       same as --follow=name --retry<br>  -n, --lines=K            output the last K lines, instead of the last 10;<br>                             or use -n +K to output starting with the Kth<br>      --max-unchanged-stats=N<br>                           with --follow=name, reopen a FILE which has not<br>                             changed size after N (default 5) iterations<br>                             to see if it has been unlinked or renamed<br>                             (this is the usual case of rotated log files);<br>                             with inotify, this option is rarely useful<br>      --pid=PID            with -f, terminate after process ID, PID dies<br>  -q, --quiet, --silent    never output headers giving file names<br>      --retry              keep trying to open a file if it is inaccessible<br>  -s, --sleep-interval=N   with -f, sleep for approximately N seconds<br>                             (default 1.0) between iterations;<br>                             with inotify and --pid=P, check process P at<br>                             least once every N seconds<br>  -v, --verbose            always output headers giving file names<br>      --help            显示此帮助信息并退出<br>      --version         显示版本信息并退出<br></code></pre></td></tr></table></figure>
+
+<h2 id="20-sed命令"><a href="#20-sed命令" class="headerlink" title="20.sed命令"></a>20.sed命令</h2><blockquote>
+<p>用于脚本处理文本内容，实现自动编辑，简化对文件的反复操作</p>
+</blockquote>
+<h2 id="21-后台启动命令"><a href="#21-后台启动命令" class="headerlink" title="21.后台启动命令"></a>21.后台启动命令</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/lukabruce/article/details/82698935">(51条消息) linux后台永久启动Kafka、Flume命令(测试通过）_卢子墨的博客-CSDN博客_linux后台启动kafka</a></p>
+<ol>
+<li><p>命令前添加nohup</p>
+<p>  a.  1&gt;&#x2F;dev&#x2F;null  2&gt;&amp;1 是将命令产生的输入和错误都输入到空设备，也就是不输出的意思。&#x2F;dev&#x2F;null 代表空设备，“&#x2F;”不要漏掉，否则会报 -bash: dev&#x2F;null not a file or dirctory 的错误 ；</p>
+<p>   b.  &#x2F;home&#x2F;espai&#x2F;kafka&#x2F; 指的是config&#x2F;server.properties存在的路径，可以根据自己安装的路径进行修改。</p>
+<p>   c.  启动命令首位加上nohup，即使停掉crt，kafka、flume依然可以在后台执行，这样就不用每次登陆，重新运行启动命令了。如果需要停掉服务，只需运行 kill -9 [程序运行的号即可，比如上面kafka的是15568]   –&gt; kill -9 15568</p>
+</li>
+</ol>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Linux/" class="category-chain-item">Linux</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Linux/">#Linux</a>
+      
+        <a href="/tags/shell/">#shell</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>玩转Linux虚拟机，从安装到实操</div>
+      <div>http://example.com/posts/29995.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>李延胜</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年9月20日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/41053.html" title="启动Kafka步骤与常见问题">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">启动Kafka步骤与常见问题</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/3820.html" title="初学shell常用操作">
+                        <span class="hidden-mobile">初学shell常用操作</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"SabYreKdzdOiQemY4H7Pzbjr-gzGzoHsz","appKey":"o5EFclbNb5gGIxPipHHkBfg2","path":"window.location.pathname","placeholder":"您想说点什么吗...","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://blog.csdn.net/weixin_44107140" target="_blank" rel="nofollow noopener"> <span>CSDN博客</span></a> <i class="iconfont">|</i> <a href="https://gitee.com/yan-sheng-li" target="_blank" rel="nofollow noopener"><span>Gitee码云</span></a> <i class="iconfont">|</i> <a href="#" target="_blank" rel="nofollow noopener"><span style="color:green">微信公众号：《编程亿点有趣》</span></a> <i class="iconfont">|</i><a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=NZUoWMzd3PQLWwxRGMiBNYEnVkEdNq__&jump_from=webapi&authKey=kgAofDqUzgwMCSX+UQQwxf837zMeWFGGmo4iIcbgkklW2pdfmVOlxPWAK6sMYMaC"> <img border="0" src="../../img/group.png" srcset="/img/loading.gif" lazyload alt="远程调试-学习交流" title="远程调试-学习交流"></a>
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+    
+    
+  
+</div>
+
+  
+  
+  
+
+  <div style="text-align: center;">
+    <a href="https://beian.miit.gov.cn/" target="_blank">辽ICP备2022000630号</a>
+  </div>
+
+  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=2031204435&auto=1&height=32"></iframe>
+
+</div>
+
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"superSample":1,"width":200,"height":300,"position":"left","hOffset":0,"vOffset":-50},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
+</html>

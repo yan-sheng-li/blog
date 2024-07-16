@@ -1,0 +1,859 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar2.jpg">
+  <link rel="icon" href="/img/avatar2.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="李延胜">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="本文介绍了一个基于B&#x2F;S架构的图书馆座位管理系统的设计与实现。使用IDEA、MySQL和Java等工具和语言开发，包括用户登录、座位预约、违规记录管理等功能，同时管理员拥有用户管理权限。系统通过HTML、CSS、JS和BootStrap等前端技术实现友好界面，并提供了数据库设计与编程方法的实践机会。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="课程设计：Springboot+Bootstrap实现图书馆选座管理系统">
+<meta property="og:url" content="http://example.com/posts/41479.html">
+<meta property="og:site_name" content="👨‍💻木子-博客">
+<meta property="og:description" content="本文介绍了一个基于B&#x2F;S架构的图书馆座位管理系统的设计与实现。使用IDEA、MySQL和Java等工具和语言开发，包括用户登录、座位预约、违规记录管理等功能，同时管理员拥有用户管理权限。系统通过HTML、CSS、JS和BootStrap等前端技术实现友好界面，并提供了数据库设计与编程方法的实践机会。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/%E5%B0%81%E9%9D%A22.jpg">
+<meta property="article:published_time" content="2023-12-24T23:41:00.000Z">
+<meta property="article:modified_time" content="2024-07-16T15:39:53.510Z">
+<meta property="article:author" content="李延胜">
+<meta property="article:tag" content="作品">
+<meta property="article:tag" content="毕设">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img/%E5%B0%81%E9%9D%A22.jpg">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>课程设计：Springboot+Bootstrap实现图书馆选座管理系统 - 👨‍💻木子-博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"85b00ecca8bd5efa8a581f758ba73a03","google":null,"gtag":"G-M78M7E4Y4N","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+    <!-- Baidu Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?85b00ecca8bd5efa8a581f758ba73a03";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
+  
+
+  
+
+  
+    <!-- Google gtag.js -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript('https://www.googletagmanager.com/gtag/js?id=G-M78M7E4Y4N', function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-M78M7E4Y4N');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?85b00ecca8bd5efa8a581f758ba73a03";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>👩‍💻木子-博客</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>作者</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" target="_blank" rel="noopener" href="https://yan-sheng-li.github.io/project/">
+                
+                <span>📦项目大全</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" target="_blank" rel="noopener" href="https://wj.qq.com/s2/14633203/a8b5/">
+                
+                <span>🚀1分钟评估</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/remote_help/">
+                
+                <span>🐞远程调试/功能定做</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/bg5.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="课程设计：Springboot+Bootstrap实现图书馆选座管理系统"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-12-24 23:41" pubdate>
+          2023年12月24日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          17 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">课程设计：Springboot+Bootstrap实现图书馆选座管理系统</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：几秒前
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="大体要求"><a href="#大体要求" class="headerlink" title="大体要求"></a>大体要求</h2><p>设计和实现一个B&#x2F;S结构的图书馆座位管理系统，其功能主要包括用户登录、座位预约、我的预约、我的违规记录等；此外，管理员还具有管理用户的功能。<br>具体要求如下。<br>（1）用户登录：只有合法的用户才能登录此系统，进行相关的操作。<br>（2）座位预约：用户可以选择自习室进行选座。预约时间段分为当天和明天两个时间段。可以参考上面清华大学图书馆的预约规则。<br>（3）我的预约：用户预约后，若没有在规定的时间内进行签到，将计违规操作一次。若用户需要中途离开一小段时间，需进行暂时离开操作，座位继续为该用户保留半小时，半小时内回到座位，需进行重新签到，若没有在规定的时间内回来，计违规操作一次。离开图书馆需进行签退操作，否则计违规操作一次。<br>（4）我的违规记录：用户可查看自己是否有违规记录，以及违规操作的原因。</p>
+<p>（5）用户管理：管理员比普通用户多一个用户管理的模块，模块功能为可以查询、增加、修改、删除用户以及导出用户列表。<br>设计报告中设计和实现部分要求有：（1）程序的功能模块分类、（2）项目结构的设计、（3）数据库的设计、（4）源程序中应体现一定的程序注释说明。</p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>在现代快节奏的图书馆环境中，高效的座位管理系统已成为优化学习空间的必备工具。本文探讨了如何利用强大的技术栈（Spring Boot、Thymeleaf、Bootstrap 和 MySQL）开发出一个稳健的图书馆座位管理系统。让我们深入了解这个系统的核心功能和技术特点。</p>
+<h2 id="功能概览"><a href="#功能概览" class="headerlink" title="功能概览"></a>功能概览</h2><p>座位管理系统提供了一系列功能来简化图书馆座位的管理：</p>
+<ul>
+<li><strong>用户认证：</strong> 只有授权用户可以访问系统。</li>
+<li><strong>座位预约：</strong> 用户可以灵活地预约今天或明天的座位，系统的预约机制参考了清华大学图书馆的灵活预约规则。</li>
+<li><strong>我的预约：</strong> 用户可以查看自己的预约，进行签到、临时离开操作，并且系统会自动记录违规操作以提高用户的管理意识。</li>
+<li><strong>我的违规记录：</strong> 用户可以查看自己是否有违规记录，了解违规原因。</li>
+<li><strong>用户管理：</strong> 管理员可以管理用户，包括查询、添加、修改、删除用户以及导出用户列表。</li>
+</ul>
+<h2 id="数据库表设计："><a href="#数据库表设计：" class="headerlink" title="数据库表设计："></a>数据库表设计：</h2><p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223224819636.png" srcset="/img/loading.gif" lazyload alt="image-20231223224819636"></p>
+<h2 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h2><p>座位管理系统采用以下技术：</p>
+<ul>
+<li><strong>Spring Boot：</strong> 提供了强大而灵活的 Java 企业应用程序开发框架。</li>
+<li><strong>Thymeleaf：</strong> 用于在服务器端和独立环境中渲染动态内容的现代化 Java 模板引擎。</li>
+<li><strong>Bootstrap：</strong> 流行的前端框架，用于构建响应式和视觉吸引力强的网页。</li>
+<li><strong>MySQL：</strong> 可靠且广泛使用的关系型数据库管理系统。</li>
+<li><strong>MyBatis-Plus：</strong> MyBatis 的增强工具，简化数据库操作。</li>
+<li><strong>SA-Token：</strong> Spring Boot 项目的轻量级权限认证系统。</li>
+</ul>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/b50eb7f070464a28b6b6bf3dcc7136bf.jpeg" srcset="/img/loading.gif" lazyload></p>
+<h2 id="系统架构"><a href="#系统架构" class="headerlink" title="系统架构"></a>系统架构</h2><p>座位管理系统采用模块化架构，前端页面使用Thymeleaf模板渲染动态内容，后端逻辑则由Spring Boot处理，并与MySQL数据库无缝集成。</p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223225920870.png" srcset="/img/loading.gif" lazyload alt="image-20231223225920870"></p>
+<h2 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h2><p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223233125145.png" srcset="/img/loading.gif" lazyload alt="image-20231223233125145"></p>
+<h2 id="核心功能展示"><a href="#核心功能展示" class="headerlink" title="核心功能展示"></a>核心功能展示</h2><h3 id="用户认证"><a href="#用户认证" class="headerlink" title="用户认证"></a>用户认证</h3><p>基于用户表的role字段来判断身份，admin表示管理员，user表示普通用户，登录后，根据role自动验证授权。</p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223230159535.png" srcset="/img/loading.gif" lazyload alt="image-20231223230159535"></p>
+<h3 id="首页"><a href="#首页" class="headerlink" title="首页"></a>首页</h3><p>简单分三个板块：</p>
+<ul>
+<li><strong>轮播图</strong>：在这个板块，您可以欣赏到校园内壮丽的景色和丰富多彩的校园活动，让您更深入地了解我们学校的多元魅力。这里将呈现校园一瞥，带您领略我们学校丰富多彩的校园生活。</li>
+<li><strong>系统公告</strong>：系统公告板块为您提供最新的系统消息和重要通知。无论是座位预约调整、系统更新还是重要通知事项，您都可以在这里第一时间获取到相关信息。我们承诺提供及时、清晰的系统动态，让您对系统运行状况了如指掌。</li>
+<li><strong>学校通知</strong>：学校通知板块为您带来学校内部的最新动态和重要消息。无论是学校活动、教学安排还是重要通知，这里将为您及时呈现。让您与学校保持紧密联系，随时了解学校的各项消息和活动，共同感受学校蓬勃发展的活力与魅力。</li>
+</ul>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223230303279.png" srcset="/img/loading.gif" lazyload alt="image-20231223230303279"></p>
+<h3 id="座位预约"><a href="#座位预约" class="headerlink" title="座位预约"></a>座位预约</h3><p>选座阅览室：</p>
+<p>选择开放的阅览室，如果是管理员，还能操作新增阅览室。</p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223230344950.png" srcset="/img/loading.gif" lazyload alt="image-20231223230344950"></p>
+<p>选座预约：</p>
+<p>进入一个阅览室，即可看到改室内的座位的状态（可选，使用中，暂离等）</p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223230416281.png" srcset="/img/loading.gif" lazyload alt="image-20231223230416281"></p>
+<p>成功预约如下：</p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223230445919.png" srcset="/img/loading.gif" lazyload alt="image-20231223230445919"></p>
+<p>不可重复预约，一次一人只能预约一个，如下：</p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223230630634.png" srcset="/img/loading.gif" lazyload alt="image-20231223230630634"></p>
+<h3 id="我的预约"><a href="#我的预约" class="headerlink" title="我的预约"></a>我的预约</h3><p>进入我的预约界面，如果我有新的预约，将出现签到按钮，点击按钮，可签到！</p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223230505210.png" srcset="/img/loading.gif" lazyload alt="image-20231223230505210"></p>
+<p>签到成功如下：</p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223230700612.png" srcset="/img/loading.gif" lazyload alt="image-20231223230700612"></p>
+<p>中途可暂离或者签退：</p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223230730970.png" srcset="/img/loading.gif" lazyload alt="image-20231223230730970"></p>
+<p>指定时间内不签到或者长时间不签退，记违规一次：</p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223230838768.png" srcset="/img/loading.gif" lazyload alt="image-20231223230838768"></p>
+<h3 id="违规查看"><a href="#违规查看" class="headerlink" title="违规查看"></a>违规查看</h3><p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223230539000.png" srcset="/img/loading.gif" lazyload alt="image-20231223230539000"></p>
+<h3 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h3><p>管理员可操作</p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223230601055.png" srcset="/img/loading.gif" lazyload alt="image-20231223230601055"></p>
+<p>个人信息更新：</p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223230934389.png" srcset="/img/loading.gif" lazyload alt="image-20231223230934389"></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223230950088.png" srcset="/img/loading.gif" lazyload alt="image-20231223230950088"></p>
+<p>以上展示部分，更多页面效果可以拿到源码后自己尝试！</p>
+<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231224231224390.png" srcset="/img/loading.gif" lazyload alt="image-20231224231224390" style="zoom:67%;" />
+
+
+<h2 id="开发过程和挑战"><a href="#开发过程和挑战" class="headerlink" title="开发过程和挑战"></a>开发过程和挑战</h2><p>在系统开发过程中，我们遇到了一些挑战，比如实现灵活的预约系统和有效管理用户违规情况。然而，通过合理的决策和充分利用Spring Boot的特性，我们成功解决了这些挑战。此外，权限系统没有使用spring scurity 和shiro，而是选择轻量级权限认证系统SA-token，经过这次实践，用起来很是很丝滑的。页面搭建使用的是bootstrap5，相比与其他的layui，elementUI  感觉更容易上手。</p>
+<h2 id="未来展望"><a href="#未来展望" class="headerlink" title="未来展望"></a>未来展望</h2><p>展望未来，座位管理系统可以进一步完善，比如<strong>实时座位可用性更新、用户通知功能以及增加分析功能</strong>以提升用户体验。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E4%BD%9C%E5%93%81/" class="category-chain-item">作品</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E4%BD%9C%E5%93%81/">#作品</a>
+      
+        <a href="/tags/%E6%AF%95%E8%AE%BE/">#毕设</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>课程设计：Springboot+Bootstrap实现图书馆选座管理系统</div>
+      <div>http://example.com/posts/41479.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>李延胜</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年12月24日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/14719.html" title="课程设计：停车场管理系统（Java+MySQL）">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">课程设计：停车场管理系统（Java+MySQL）</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/287.html" title="Python：字符串转列表">
+                        <span class="hidden-mobile">Python：字符串转列表</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"SabYreKdzdOiQemY4H7Pzbjr-gzGzoHsz","appKey":"o5EFclbNb5gGIxPipHHkBfg2","path":"window.location.pathname","placeholder":"您想说点什么吗...","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://blog.csdn.net/weixin_44107140" target="_blank" rel="nofollow noopener"> <span>CSDN博客</span></a> <i class="iconfont">|</i> <a href="https://gitee.com/yan-sheng-li" target="_blank" rel="nofollow noopener"><span>Gitee码云</span></a> <i class="iconfont">|</i> <a href="#" target="_blank" rel="nofollow noopener"><span style="color:green">微信公众号：《编程亿点有趣》</span></a> <i class="iconfont">|</i><a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=NZUoWMzd3PQLWwxRGMiBNYEnVkEdNq__&jump_from=webapi&authKey=kgAofDqUzgwMCSX+UQQwxf837zMeWFGGmo4iIcbgkklW2pdfmVOlxPWAK6sMYMaC"> <img border="0" src="../../img/group.png" srcset="/img/loading.gif" lazyload alt="远程调试-学习交流" title="远程调试-学习交流"></a>
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+    
+    
+  
+</div>
+
+  
+  
+  
+
+  <div style="text-align: center;">
+    <a href="https://beian.miit.gov.cn/" target="_blank">辽ICP备2022000630号</a>
+  </div>
+
+  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=2031204435&auto=1&height=32"></iframe>
+
+</div>
+
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"superSample":1,"width":200,"height":300,"position":"left","hOffset":0,"vOffset":-50},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
+</html>

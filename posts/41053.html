@@ -1,0 +1,906 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar2.jpg">
+  <link rel="icon" href="/img/avatar2.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="李延胜">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="每次用到kafka时都会出现各种奇怪的问题，综合实践，下面汇总下主要操作步骤：  Docker镜像形式启动zookeeper启动1docker run -d --name zookeeper -p 2181:2181 -t wurstmeister&#x2F;zookeeper  kafka启动1docker run --name kafka01 -p 9092:9092 -e KAFKA_BROKER_">
+<meta property="og:type" content="article">
+<meta property="og:title" content="启动Kafka步骤与常见问题">
+<meta property="og:url" content="http://example.com/posts/41053.html">
+<meta property="og:site_name" content="👨‍💻木子-博客">
+<meta property="og:description" content="每次用到kafka时都会出现各种奇怪的问题，综合实践，下面汇总下主要操作步骤：  Docker镜像形式启动zookeeper启动1docker run -d --name zookeeper -p 2181:2181 -t wurstmeister&#x2F;zookeeper  kafka启动1docker run --name kafka01 -p 9092:9092 -e KAFKA_BROKER_">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://cdn.qiniu.liyansheng.top/typora/image-20230318180359278.png">
+<meta property="article:published_time" content="2022-10-16T22:41:29.000Z">
+<meta property="article:modified_time" content="2024-07-16T15:39:53.506Z">
+<meta property="article:author" content="李延胜">
+<meta property="article:tag" content="kafka">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://cdn.qiniu.liyansheng.top/typora/image-20230318180359278.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>启动Kafka步骤与常见问题 - 👨‍💻木子-博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"85b00ecca8bd5efa8a581f758ba73a03","google":null,"gtag":"G-M78M7E4Y4N","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+    <!-- Baidu Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?85b00ecca8bd5efa8a581f758ba73a03";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
+  
+
+  
+
+  
+    <!-- Google gtag.js -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript('https://www.googletagmanager.com/gtag/js?id=G-M78M7E4Y4N', function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-M78M7E4Y4N');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?85b00ecca8bd5efa8a581f758ba73a03";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>👩‍💻木子-博客</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>作者</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" target="_blank" rel="noopener" href="https://yan-sheng-li.github.io/project/">
+                
+                <span>📦项目大全</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" target="_blank" rel="noopener" href="https://wj.qq.com/s2/14633203/a8b5/">
+                
+                <span>🚀1分钟评估</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/remote_help/">
+                
+                <span>🐞远程调试/功能定做</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/bg5.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="启动Kafka步骤与常见问题"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-10-16 22:41" pubdate>
+          2022年10月16日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          9.8k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          82 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">启动Kafka步骤与常见问题</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：几秒前
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <blockquote>
+<p>每次用到kafka时都会出现各种奇怪的问题，综合实践，下面汇总下主要操作步骤：</p>
+</blockquote>
+<h2 id="Docker镜像形式启动"><a href="#Docker镜像形式启动" class="headerlink" title="Docker镜像形式启动"></a>Docker镜像形式启动</h2><h3 id="zookeeper启动"><a href="#zookeeper启动" class="headerlink" title="zookeeper启动"></a>zookeeper启动</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker run -d --name zookeeper -p 2181:2181 -t wurstmeister/zookeeper<br></code></pre></td></tr></table></figure>
+
+<h3 id="kafka启动"><a href="#kafka启动" class="headerlink" title="kafka启动"></a>kafka启动</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker run --name kafka01 -p 9092:9092 -e KAFKA_BROKER_ID=0 -e KAFKA_ZOOKEEPER_CONNECT=150.158.16.123:12348 -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://150.158.16.123:9092 -e KAFKA_LISTENERS=PLAINTEXT://0.0.0.0:9092 -d  wurstmeister/kafka<br></code></pre></td></tr></table></figure>
+
+<h3 id="进入kafka容器"><a href="#进入kafka容器" class="headerlink" title="进入kafka容器"></a>进入kafka容器</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker exec -it [容器id] /bin/bash<br></code></pre></td></tr></table></figure>
+
+<p>创建topic</p>
+<p>进入容器，在<code>/opt/kafka_2.13-2.8.1/bin</code> 目录下创建topic</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">./kafka-topics.sh --create --zookeeper 150.158.16.123:12348 --replication-factor 1 --partitions 1 --topic mykafka<br>./kafka-topics.sh --create --zookeeper 150.158.16.123:2181 --replication-factor 1 --partitions 1 --topic mykafka<br></code></pre></td></tr></table></figure>
+
+<p>运行生产者</p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220923112024973.png" srcset="/img/loading.gif" lazyload alt="image-20220923112024973"></p>
+<p>运行消费者</p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220923112035890.png" srcset="/img/loading.gif" lazyload alt="image-20220923112035890"></p>
+<hr>
+<h2 id="单机形式启动"><a href="#单机形式启动" class="headerlink" title="单机形式启动"></a>单机形式启动</h2><h3 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h3><p>1、Linux 机器</p>
+<p>2、环境已准备好JDK，如果还没有装，推荐用yum一键安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">yum  install  -y  java-1.8.0-openjdk.x86_64<br></code></pre></td></tr></table></figure>
+
+<p>检验：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@localhost ~]# java -version<br>openjdk version &quot;1.8.0_362&quot;<br>OpenJDK Runtime Environment (build 1.8.0_362-b08)<br>OpenJDK 64-Bit Server VM (build 25.362-b08, mixed mode)<br></code></pre></td></tr></table></figure>
+
+<p>3、将kafka压缩包上传到你的Linux</p>
+<p>配置文件关注<code>config</code>目录下的<code>zookeeper.properties</code>和<code>server.properties</code>，启动服务时要指定</p>
+<h3 id="配置-启动"><a href="#配置-启动" class="headerlink" title="配置-启动"></a>配置-启动</h3><p>有默认配置，可不做修改（有需要可以自定义启动端口和数据存放位置等参数）</p>
+<p>1、先启动自带的 Zookeeper：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@localhost bin]# ./zookeeper-server-start.sh ../config/zookeeper.properties <br>OpenJDK 64-Bit Server VM warning: If the number of processors is expected to increase from one, then you should configure the number of parallel GC threads appropriately using -XX:ParallelGCThreads=N<br>[2023-02-26 14:14:52,759] INFO Reading configuration from: ../config/zookeeper.properties (org.apache.zookeeper.server.quorum.QuorumPeerConfig)<br>[2023-02-26 14:14:52,766] INFO autopurge.snapRetainCount set to 3 (org.apache.zookeeper.server.DatadirCleanupManager)<br>[2023-02-26 14:14:52,767] INFO autopurge.purgeInterval set to 0 (org.apache.zookeeper.server.DatadirCleanupManager)<br>[2023-02-26 14:14:52,767] INFO Purge task is not scheduled. (org.apache.zookeeper.server.DatadirCleanupManager)<br>[2023-02-26 14:14:52,767] WARN Either no config or no quorum defined in config, running  in standalone mode (org.apache.zookeeper.server.quorum.QuorumPeerMain)<br>[2023-02-26 14:14:52,783] INFO Reading configuration from: ../config/zookeeper.properties (org.apache.zookeeper.server.quorum.QuorumPeerConfig)<br>[2023-02-26 14:14:52,784] INFO Starting server (org.apache.zookeeper.server.ZooKeeperServerMain)<br>[2023-02-26 14:14:52,796] INFO Server environment:zookeeper.version=3.4.14-4c25d480e66aadd371de8bd2fd8da255ac140bcf, built on 03/06/2019 16:18 GMT (org.apache.zookeeper.server.ZooKeeperServer)<br>[2023-02-26 14:14:52,796] INFO Server environment:host.name=localhost (org.apache.zookeeper.server.ZooKeeperServer)<br>[2023-02-26 14:14:52,796] INFO Server environment:java.version=1.8.0_362 (org.apache.zookeeper.server.ZooKeeperServer)<br>[2023-02-26 14:14:52,796] INFO Server environment:java.vendor=Red Hat, Inc. (org.apache.zookeeper.server.ZooKeeperServer)<br>[2023-02-26 14:14:52,796] INFO Server environment:java.home=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.362.b08-1.el7_9.x86_64/jre (org.apache.zookeeper.server.ZooKeeperServer)<br>(省略大部分)<br></code></pre></td></tr></table></figure>
+
+<p>2、启动 Kafka</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@localhost kafka_2.12-2.3.0]# bin/kafka-server-start.sh config/server.properties <br>OpenJDK 64-Bit Server VM warning: If the number of processors is expected to increase from one, then you should configure the number of parallel GC threads appropriately using -XX:ParallelGCThreads=N<br>[2023-02-26 14:16:00,261] INFO Registered kafka:type=kafka.Log4jController MBean (kafka.utils.Log4jControllerRegistration$)<br>[2023-02-26 14:16:01,004] INFO Registered signal handlers for TERM, INT, HUP (org.apache.kafka.common.utils.LoggingSignalHandler)<br>[2023-02-26 14:16:01,024] INFO starting (kafka.server.KafkaServer)<br>[2023-02-26 14:16:01,025] INFO Connecting to zookeeper on localhost:2181 (kafka.server.KafkaServer)<br>[2023-02-26 14:16:01,068] INFO [ZooKeeperClient Kafka server] Initializing a new session to localhost:2181. (kafka.zookeeper.ZooKeeperClient)<br>[2023-02-26 14:16:01,072] INFO Client environment:zookeeper.version=3.4.14-4c25d480e66aadd371de8bd2fd8da255ac140bcf, built on 03/06/2019 16:18 GMT (org.apache.zookeeper.ZooKeeper)<br>[2023-02-26 14:16:01,072] INFO Client environment:host.name=localhost (org.apache.zookeeper.ZooKeeper)<br>[2023-02-26 14:16:01,072] INFO Client environment:java.version=1.8.0_362 (org.apache.zookeeper.ZooKeeper)<br>[2023-02-26 14:16:01,072] INFO Client environment:java.vendor=Red Hat, Inc. (org.apache.zookeeper.ZooKeeper)<br>[2023-02-26 14:16:01,072] INFO Client environment:java.home=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.362.b08-1.el7_9.x86_64/jre (org.apache.zookeeper.ZooKeeper)<br>(省略大部分)<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>上述步骤只要启动过程没有报错信息，一般是没有问题的</p>
+</blockquote>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>1、创建个topic</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@localhost bin]# ./kafka-topics.sh --create --zookeeper 192.168.154.134:2181 --replication-factor 1 --partitions 1 --topic test<br>Created topic test.<br></code></pre></td></tr></table></figure>
+
+<p>2、查看topic列表</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@localhost bin]# ./kafka-topics.sh --zookeeper 192.168.154.134:2181 --list<br>OpenJDK 64-Bit Server VM warning: If the number of processors is expected to increase from one, then you should configure the number of parallel GC threads appropriately using -XX:ParallelGCThreads=N<br>test<br></code></pre></td></tr></table></figure>
+
+<p>3、启动生产者</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@localhost bin]# ./kafka-console-producer.sh --broker-list 192.168.154.134:9092 --topic test<br><span class="hljs-meta prompt_">&gt;</span><span class="language-bash">hi</span><br><span class="hljs-meta prompt_">&gt;</span><span class="language-bash">什么意思啊</span><br></code></pre></td></tr></table></figure>
+
+<p>4、启动消费者</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@localhost bin]# ./kafka-console-consumer.sh --bootstrap-server 192.168.154.134:9092 --topic test<br>hi<br>什么意思啊<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>正常启动，OK！</p>
+</blockquote>
+<h2 id="可视化：kafka-manager"><a href="#可视化：kafka-manager" class="headerlink" title="可视化：kafka-manager"></a>可视化：kafka-manager</h2><h3 id="镜像下载"><a href="#镜像下载" class="headerlink" title="镜像下载"></a>镜像下载</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker pull sheepkiller/kafka-manager<br></code></pre></td></tr></table></figure>
+
+<h3 id="运行容器"><a href="#运行容器" class="headerlink" title="运行容器"></a>运行容器</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker run -d --name kafka-manager -p 12349:9000 --link zookeeper --link kafka01 --env ZK_HOSTS=zookeeper:2181 sheepkiller/kafka-manager  <br></code></pre></td></tr></table></figure>
+
+<p>然后访问对应的<code>IP：端口</code>即可进入管理页面</p>
+<blockquote>
+<p>注意：<code>ZK_HOSTS</code> 后面在web页面上要用到！</p>
+</blockquote>
+<h3 id="管理界面"><a href="#管理界面" class="headerlink" title="管理界面"></a>管理界面</h3><p>进入主页面后，点击 <code>Add Cluster</code> 添加集群信息</p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220818233716973.png" srcset="/img/loading.gif" lazyload alt="image-20220818233716973"></p>
+<p>然后填写配置信息，主要填写集群名称，Zookeeper的Hosts，还有指定kafka版本（选个跟你所使用的kafka版本号最接近的就行），其他的一些配置按默认的就行。</p>
+<p>当你正确连接上以后，就能看到你的集群啦，如：</p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220818235108897.png" srcset="/img/loading.gif" lazyload alt="image-20220818235108897"></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220818235134261.png" srcset="/img/loading.gif" lazyload alt="image-20220818235134261"></p>
+<p><strong>更多关于kafka可视化操作就由你慢慢探索吧！这里将你引进门！</strong></p>
+<blockquote>
+<p>注意：</p>
+<ol>
+<li><p>如果你在启动<code>kafka manager</code>这个容器时指定了 <code>ZK_HOSTS</code> ，那么<strong>Cluster Zookeeper Hosts</strong>这项填的内容要和 <code>ZK_HOSTS</code> 一致，否则会出现连接不上，连接超时等情况。如下图：</p>
+<p> <img src="http://cdn.qiniu.liyansheng.top/typora/image-20220818234605319.png" srcset="/img/loading.gif" lazyload alt="image-20220818234605319"></p>
+</li>
+<li><p>另外有些配置默认值是1，但是你得将其改成1以上的整数，否则不能正确保存提交。如：</p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220818234844587.png" srcset="/img/loading.gif" lazyload alt="image-20220818234844587"></p>
+</li>
+</ol>
+</blockquote>
+<hr>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>kafka版本不同，响应的api有区别</p>
+<p>本版本是2.11</p>
+<p>注意3.x是 –bootstrap-server localhost:9092方式新建，kafka2.x是以–zookeeper方式创建。下面查看新建的topic。</p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220925165659756.png" srcset="/img/loading.gif" lazyload alt="image-20220925165659756"></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220925165713665.png" srcset="/img/loading.gif" lazyload alt="image-20220925165713665"></p>
+<h2 id="奇葩问题"><a href="#奇葩问题" class="headerlink" title="奇葩问题"></a>奇葩问题</h2><h3 id="1-重启docker失败？"><a href="#1-重启docker失败？" class="headerlink" title="1.重启docker失败？"></a>1.重启docker失败？</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@localhost ~]# systemctl restart docker<br>Job for docker.service failed because the control process exited with error code. See &quot;systemctl status docker.service&quot; and &quot;journalctl -xe&quot; for details.<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@localhost ~]# journalctl -xe<br>-- The result is failed.<br>2月 22 02:01:53 localhost.localdomain systemd[1]: Unit docker.service entered failed state.<br>2月 22 02:01:53 localhost.localdomain systemd[1]: Unit docker.service entered failed state.<br>2月 22 02:01:53 localhost.localdomain systemd[1]: docker.service failed.<br>2月 22 02:01:55 localhost.localdomain systemd[1]: docker.service holdoff time over, scheduling restart.<br>2月 22 02:01:55 localhost.localdomain systemd[1]: Stopped Docker Application Container Engine.<br>-- Subject: Unit docker.service has finished shutting down<br>-- Defined-By: systemd<br>-- Support: http://lists.freedesktop.org/mailman/listinfo/systemd-devel<br>-- <br>-- Unit docker.service has finished shutting down.<br>2月 22 02:01:55 localhost.localdomain systemd[1]: start request repeated too quickly for docker.service<br>2月 22 02:01:55 localhost.localdomain systemd[1]: Failed to start Docker Application Container Engine.<br>-- Subject: Unit docker.service has failed<br>-- Defined-By: systemd<br>-- Support: http://lists.freedesktop.org/mailman/listinfo/systemd-devel<br>-- <br>-- Unit docker.service has failed.<br>-- <br>-- The result is failed.<br></code></pre></td></tr></table></figure>
+
+<p>原因：修改文件<code>/etc/docker/daemon.json</code>时不规范，可能存在空格什么的 </p>
+<p>解决：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@localhost ~]# cat &lt;&lt;EOF &gt;/etc/docker/daemon.json<br><span class="hljs-meta prompt_">&gt; </span><span class="language-bash">&#123;</span><br><span class="hljs-meta prompt_">&gt; </span><span class="language-bash"><span class="hljs-string">&quot;registry-mirrors&quot;</span>: [<span class="hljs-string">&quot;https://registry.docker-cn.com&quot;</span>]</span><br><span class="hljs-meta prompt_">&gt; </span><span class="language-bash">&#125;</span><br><span class="hljs-meta prompt_">&gt; </span><span class="language-bash">EOF</span><br>[root@localhost ~]# cat /etc/docker/daemon.json <br>&#123;<br>&quot;registry-mirrors&quot;: [&quot;https://registry.docker-cn.com&quot;]<br>&#125;<br>[root@localhost ~]# <br>[root@localhost ~]# systemctl daemon-reload<br>[root@localhost ~]# systemctl restart docker<br></code></pre></td></tr></table></figure>
+
+<h3 id="2-查询镜像无果？"><a href="#2-查询镜像无果？" class="headerlink" title="2.查询镜像无果？"></a>2.查询镜像无果？</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@localhost ~]# docker search kafka<br>Error response from daemon: Get &quot;https://index.docker.io/v1/search?q=kafka&amp;n=25&quot;: x509: certificate has expired or is not yet valid: current time 2023-02-22T02:08:25+08:00 is before 2023-02-22T00:00:00Z<br></code></pre></td></tr></table></figure>
+
+<p>原因：虚拟机时间与外部时间不一致</p>
+<p>解决：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@localhost ~]# date<br>2023年 02月 22日 星期三 02:09:50 CST<br>[root@localhost ~]# ntpdate cn.pool.ntp.org<br>26 Feb 13:31:38 ntpdate[44996]: step time server 119.28.206.193 offset 386475.634457 sec<br>[root@localhost ~]# date<br>2023年 02月 26日 星期日 13:31:48 CST<br>[root@localhost ~]# docker search kafka<br>NAME                                         DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED<br>bitnami/kafka                                Apache Kafka is a distributed streaming plat…   615                  [OK]<br>ubuntu/kafka                                 Apache Kafka, a distributed event streaming …   25                   <br>bitnami/kafka-exporter                                                                       9                    <br>ibmcom/kafka                                 Docker Image for IBM Cloud Private-CE (Commu…   6                    <br>bitnami/kafka-trigger-controller             Source for this controller is in the kubeles…   5                    <br>ibmcom/kafka-python-console-sample           Docker image for the IBM Event Streams Pytho…   2                    <br>openwhisk/kafkaprovider                      Apache OpenWhisk event provider service for …   2                    [OK]<br></code></pre></td></tr></table></figure>
+
+<h3 id="3-Docker容器内如何安装vim"><a href="#3-Docker容器内如何安装vim" class="headerlink" title="3.Docker容器内如何安装vim?"></a>3.Docker容器内如何安装vim?</h3><ol>
+<li><p>apt-get install vim  （可能提示你安装失败！继续往下）</p>
+</li>
+<li><p>agt-get update 同步 &#x2F;etc&#x2F;apt&#x2F;sources.list 和 &#x2F;etc&#x2F;apt&#x2F;sources.list.d 中列出的源的索引</p>
+<p>配置国内镜像源：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">echo &quot;deb http://mirrors.163.com/debian/ jessie main non-free contrib&quot; &gt;/etc/apt/sources.list<br>    echo &quot;deb http://mirrors.163.com/debian/ jessie-proposed-updates main non-free contrib&quot; &gt;&gt;/etc/apt/sources.list<br>    echo &quot;deb-src http://mirrors.163.com/debian/ jessie main non-free contrib&quot; &gt;&gt;/etc/apt/sources.list<br>    echo &quot;deb-src http://mirrors.163.com/debian/ jessie-proposed-updates main non-free contrib&quot; &gt;&gt;/etc/apt/sources.list<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>返回第一步</p>
+</li>
+</ol>
+<h3 id="4-无法启动kafka"><a href="#4-无法启动kafka" class="headerlink" title="4.无法启动kafka?"></a>4.无法启动kafka?</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs shell">kafka.common.KafkaException: Socket server failed to bind to 150.158.16.123:9092: 无法指定被请求的地址.<br>        at kafka.network.Acceptor.openServerSocket(SocketServer.scala:327)<br>        at kafka.network.Acceptor.&lt;init&gt;(SocketServer.scala:252)<br>        at kafka.network.SocketServer$$anonfun$startup$1.apply(SocketServer.scala:91)<br>        at kafka.network.SocketServer$$anonfun$startup$1.apply(SocketServer.scala:83)<br>        at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)<br>        at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)<br>        at kafka.network.SocketServer.startup(SocketServer.scala:83)<br>        at kafka.server.KafkaServer.startup(KafkaServer.scala:222)<br>        at kafka.server.KafkaServerStartable.startup(KafkaServerStartable.scala:38)<br>        at kafka.Kafka$.main(Kafka.scala:65)<br>        at kafka.Kafka.main(Kafka.scala)<br><br></code></pre></td></tr></table></figure>
+
+<p>注意，上面是配置里面有个地址写得不对，listeners&#x3D;PLAINTEXT:&#x2F;&#x2F;10.20.30.153:9092后接的是内网地址，通过ip addr即可查看，如我的机器</p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20221001140813960.png" srcset="/img/loading.gif" lazyload alt="image-20221001140813960"></p>
+<p>一个写内网地址，一个写外网地址</p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20221001140917719.png" srcset="/img/loading.gif" lazyload alt="image-20221001140917719"></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/" class="category-chain-item">中间件</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/kafka/">#kafka</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>启动Kafka步骤与常见问题</div>
+      <div>http://example.com/posts/41053.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>李延胜</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年10月16日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/6850.html" title="ElasticSearch快速入门与部署">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">ElasticSearch快速入门与部署</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/29995.html" title="玩转Linux虚拟机，从安装到实操">
+                        <span class="hidden-mobile">玩转Linux虚拟机，从安装到实操</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"SabYreKdzdOiQemY4H7Pzbjr-gzGzoHsz","appKey":"o5EFclbNb5gGIxPipHHkBfg2","path":"window.location.pathname","placeholder":"您想说点什么吗...","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://blog.csdn.net/weixin_44107140" target="_blank" rel="nofollow noopener"> <span>CSDN博客</span></a> <i class="iconfont">|</i> <a href="https://gitee.com/yan-sheng-li" target="_blank" rel="nofollow noopener"><span>Gitee码云</span></a> <i class="iconfont">|</i> <a href="#" target="_blank" rel="nofollow noopener"><span style="color:green">微信公众号：《编程亿点有趣》</span></a> <i class="iconfont">|</i><a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=NZUoWMzd3PQLWwxRGMiBNYEnVkEdNq__&jump_from=webapi&authKey=kgAofDqUzgwMCSX+UQQwxf837zMeWFGGmo4iIcbgkklW2pdfmVOlxPWAK6sMYMaC"> <img border="0" src="../../img/group.png" srcset="/img/loading.gif" lazyload alt="远程调试-学习交流" title="远程调试-学习交流"></a>
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+    
+    
+  
+</div>
+
+  
+  
+  
+
+  <div style="text-align: center;">
+    <a href="https://beian.miit.gov.cn/" target="_blank">辽ICP备2022000630号</a>
+  </div>
+
+  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=2031204435&auto=1&height=32"></iframe>
+
+</div>
+
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"superSample":1,"width":200,"height":300,"position":"left","hOffset":0,"vOffset":-50},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
+</html>

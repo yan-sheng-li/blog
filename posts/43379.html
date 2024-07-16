@@ -1,0 +1,797 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/avatar2.jpg">
+  <link rel="icon" href="/img/avatar2.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="李延胜">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="后台数据增删改查快速实现，模板换换接口即可">
+<meta property="og:type" content="article">
+<meta property="og:title" content="实用技巧-7：快速整合使用bootstrap-table">
+<meta property="og:url" content="http://example.com/posts/43379.html">
+<meta property="og:site_name" content="👨‍💻木子-博客">
+<meta property="og:description" content="后台数据增删改查快速实现，模板换换接口即可">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/skills.jpg">
+<meta property="article:published_time" content="2024-03-25T19:35:00.000Z">
+<meta property="article:modified_time" content="2024-07-16T15:39:53.510Z">
+<meta property="article:author" content="李延胜">
+<meta property="article:tag" content="实用">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img/skills.jpg">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>实用技巧-7：快速整合使用bootstrap-table - 👨‍💻木子-博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"85b00ecca8bd5efa8a581f758ba73a03","google":null,"gtag":"G-M78M7E4Y4N","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+    <!-- Baidu Analytics -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?85b00ecca8bd5efa8a581f758ba73a03";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
+  
+
+  
+
+  
+    <!-- Google gtag.js -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript('https://www.googletagmanager.com/gtag/js?id=G-M78M7E4Y4N', function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-M78M7E4Y4N');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?85b00ecca8bd5efa8a581f758ba73a03";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>👩‍💻木子-博客</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>作者</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" target="_blank" rel="noopener" href="https://yan-sheng-li.github.io/project/">
+                
+                <span>📦项目大全</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" target="_blank" rel="noopener" href="https://wj.qq.com/s2/14633203/a8b5/">
+                
+                <span>🚀1分钟评估</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/remote_help/">
+                
+                <span>🐞远程调试/功能定做</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg/bg5.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="实用技巧-7：快速整合使用bootstrap-table"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-03-25 19:35" pubdate>
+          2024年3月25日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          16k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          131 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">实用技巧-7：快速整合使用bootstrap-table</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：几秒前
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="快速整合bootstrap-table"><a href="#快速整合bootstrap-table" class="headerlink" title="快速整合bootstrap-table"></a>快速整合bootstrap-table</h1><h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20240325192345466.png" srcset="/img/loading.gif" lazyload alt="image-20240325192345466"></p>
+<h2 id="接口案例"><a href="#接口案例" class="headerlink" title="接口案例"></a>接口案例</h2><p>数据列表：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br>  <span class="hljs-attr">&quot;code&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">200</span><span class="hljs-punctuation">,</span><br>  <span class="hljs-attr">&quot;msg&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;ok&quot;</span><span class="hljs-punctuation">,</span><br>  <span class="hljs-attr">&quot;data&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><br>    <span class="hljs-punctuation">&#123;</span><br>      <span class="hljs-attr">&quot;categoryId&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">52</span><span class="hljs-punctuation">,</span><br>      <span class="hljs-attr">&quot;categoryName&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;哈哈哈&quot;</span><br>    <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-punctuation">&#123;</span><br>      <span class="hljs-attr">&quot;categoryId&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">53</span><span class="hljs-punctuation">,</span><br>      <span class="hljs-attr">&quot;categoryName&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;哈哈哈地方&quot;</span><br>    <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-punctuation">&#123;</span><br>      <span class="hljs-attr">&quot;categoryId&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">7</span><span class="hljs-punctuation">,</span><br>      <span class="hljs-attr">&quot;categoryName&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;悬疑灵异&quot;</span><br>    <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-punctuation">&#123;</span><br>      <span class="hljs-attr">&quot;categoryId&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">4</span><span class="hljs-punctuation">,</span><br>      <span class="hljs-attr">&quot;categoryName&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;武侠仙侠&quot;</span><br>    <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-punctuation">&#123;</span><br>      <span class="hljs-attr">&quot;categoryId&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">3</span><span class="hljs-punctuation">,</span><br>      <span class="hljs-attr">&quot;categoryName&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;玄幻奇幻&quot;</span><br>    <span class="hljs-punctuation">&#125;</span><br>  <span class="hljs-punctuation">]</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+
+<p>增：&#x2F;novel-category&#x2F;add</p>
+<p>删：&#x2F;novel-category&#x2F;delete&#x2F;{id}</p>
+<p>改：&#x2F;novel-category&#x2F;update</p>
+<p>查：&#x2F;novel-category&#x2F;list</p>
+<p>批量删：&#x2F;novel-category&#x2F;deleteBatch</p>
+<h2 id="对应后端实现"><a href="#对应后端实现" class="headerlink" title="对应后端实现"></a>对应后端实现</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.xxx.readverse.controller;<br><br><br><span class="hljs-keyword">import</span> cn.dev33.satoken.util.SaResult;<br><span class="hljs-keyword">import</span> com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;<br><span class="hljs-keyword">import</span> com.baomidou.mybatisplus.core.metadata.IPage;<br><span class="hljs-keyword">import</span> com.baomidou.mybatisplus.extension.plugins.pagination.Page;<br><span class="hljs-keyword">import</span> com.xxx.readverse.entity.Category;<br><span class="hljs-keyword">import</span> com.xxx.readverse.service.CategoryService;<br><span class="hljs-keyword">import</span> io.swagger.annotations.Api;<br><span class="hljs-keyword">import</span> io.swagger.annotations.ApiOperation;<br><span class="hljs-keyword">import</span> org.springframework.beans.factory.annotation.Autowired;<br><span class="hljs-keyword">import</span> org.springframework.dao.DuplicateKeyException;<br><span class="hljs-keyword">import</span> org.springframework.stereotype.Controller;<br><span class="hljs-keyword">import</span> org.springframework.web.bind.annotation.*;<br><br><span class="hljs-keyword">import</span> java.util.Arrays;<br><span class="hljs-keyword">import</span> java.util.List;<br><br><span class="hljs-meta">@Controller</span><br><span class="hljs-meta">@RequestMapping(&quot;/novel-category&quot;)</span><br><span class="hljs-meta">@Api(tags = &quot;小说分类&quot;)</span><br><span class="hljs-meta">@CrossOrigin</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">CategoryController</span> &#123;<br><br>    <span class="hljs-meta">@Autowired</span><br>    <span class="hljs-keyword">private</span> CategoryService novelCategoryService;<br><br><br>    <span class="hljs-meta">@GetMapping(&quot;/list&quot;)</span><br>    <span class="hljs-meta">@ApiOperation(&quot;分类列表&quot;)</span><br>    <span class="hljs-meta">@ResponseBody</span><br>    <span class="hljs-keyword">public</span> SaResult <span class="hljs-title function_">getNovelCategories</span><span class="hljs-params">()</span> &#123;<br>        List&lt;Category&gt; categoryList = novelCategoryService.list(<span class="hljs-keyword">new</span> <span class="hljs-title class_">QueryWrapper</span>&lt;Category&gt;().last(<span class="hljs-string">&quot;limit 12&quot;</span>));<br>        <span class="hljs-keyword">return</span> SaResult.data(categoryList);<br>    &#125;<br><br>    <span class="hljs-meta">@PostMapping(&quot;/add&quot;)</span><br>    <span class="hljs-meta">@ApiOperation(&quot;新增分类&quot;)</span><br>    <span class="hljs-meta">@ResponseBody</span><br>    <span class="hljs-keyword">public</span> SaResult <span class="hljs-title function_">add</span><span class="hljs-params">(Category novelCategory)</span> &#123;<br>        <span class="hljs-keyword">try</span> &#123;<br>            novelCategoryService.save(novelCategory);<br>        &#125; <span class="hljs-keyword">catch</span> (DuplicateKeyException e) &#123;<br>            <span class="hljs-keyword">return</span> SaResult.error(<span class="hljs-string">&quot;操作未成功，可能是因为数据重复导致的&quot;</span>);<br>        &#125;<br>        <span class="hljs-keyword">return</span> SaResult.data(novelCategory.getCategoryId());<br>    &#125;<br><br>    <span class="hljs-meta">@GetMapping(&quot;/deleteBatch&quot;)</span><br>    <span class="hljs-meta">@ApiOperation(&quot;批量删除&quot;)</span><br>    <span class="hljs-meta">@ResponseBody</span><br>    <span class="hljs-keyword">public</span> SaResult <span class="hljs-title function_">deleteBatch</span><span class="hljs-params">(<span class="hljs-meta">@RequestParam(&quot;ids&quot;)</span> Integer[] ids)</span> &#123;<br>        novelCategoryService.removeByIds(Arrays.asList(ids));<br>        <span class="hljs-keyword">return</span> SaResult.ok();<br>    &#125;<br><br>    <span class="hljs-meta">@GetMapping(&quot;/delete/&#123;id&#125;&quot;)</span><br>    <span class="hljs-meta">@ApiOperation(&quot;删除分类&quot;)</span><br>    <span class="hljs-meta">@ResponseBody</span><br>    <span class="hljs-keyword">public</span> SaResult <span class="hljs-title function_">delete</span><span class="hljs-params">(<span class="hljs-meta">@PathVariable</span> Integer id)</span> &#123;<br>        novelCategoryService.removeById(id);<br>        <span class="hljs-keyword">return</span> SaResult.ok();<br>    &#125;<br><br>    <span class="hljs-meta">@PostMapping(&quot;/update&quot;)</span><br>    <span class="hljs-meta">@ApiOperation(&quot;修改分类&quot;)</span><br>    <span class="hljs-meta">@ResponseBody</span><br>    <span class="hljs-keyword">public</span> SaResult <span class="hljs-title function_">update</span><span class="hljs-params">(Category novelCategory)</span> &#123;<br>        novelCategoryService.updateById(novelCategory);<br>        <span class="hljs-keyword">return</span> SaResult.ok();<br>    &#125;<br><br>    <span class="hljs-meta">@GetMapping(&quot;/&#123;id&#125;&quot;)</span><br>    <span class="hljs-meta">@ApiOperation(&quot;获取某个分类信息&quot;)</span><br>    <span class="hljs-meta">@ResponseBody</span><br>    <span class="hljs-keyword">public</span> SaResult <span class="hljs-title function_">getById</span><span class="hljs-params">(<span class="hljs-meta">@PathVariable</span> Integer id)</span> &#123;<br>        <span class="hljs-type">Category</span> <span class="hljs-variable">category</span> <span class="hljs-operator">=</span> novelCategoryService.getById(id);<br>        <span class="hljs-keyword">return</span>  SaResult.data(category);<br>    &#125;<br>    <br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<h2 id="页面完整代码"><a href="#页面完整代码" class="headerlink" title="页面完整代码"></a>页面完整代码</h2><p>需要注意的问题</p>
+<ol>
+<li><p>注意依赖引进</p>
+</li>
+<li><p>方法异步操作，特别是弹窗组件</p>
+</li>
+<li><p>数据项的ID，并不是每个都是id，根据实体数据来确认。</p>
+</li>
+<li><p>新增，编辑使用弹窗，控制弹窗的显示和关闭，$(‘xxx’).modal(‘show’),        $(‘xxx’).modal(‘hide’)</p>
+</li>
+<li><p>基本通用，直接换接口名称就行。</p>
+</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-meta">&lt;!doctype <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;X-UA-Compatible&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;ie=edge&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>表格演示<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css&quot;</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.3/dist/bootstrap-table.min.css&quot;</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span>&gt;</span><br><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.3/dist/bootstrap-table.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.3/dist/locale/bootstrap-table-zh-CN.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css&quot;</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/tableexport.jquery.plugin@1.28.0/tableExport.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/sweetalert2@11&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br>  <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css"></span><br><span class="language-css">    <span class="hljs-selector-class">.select</span>,</span><br><span class="language-css">    <span class="hljs-selector-id">#locale</span> &#123;</span><br><span class="language-css">      <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;</span><br><span class="language-css">    &#125;</span><br><span class="language-css"></span><br><span class="language-css">    <span class="hljs-selector-class">.edit</span> &#123;</span><br><span class="language-css">      <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">10px</span>;</span><br><span class="language-css">    &#125;</span><br><span class="language-css">  </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>  <span class="hljs-comment">&lt;!-- 新增弹窗 --&gt;</span><br>  <span class="hljs-comment">&lt;!-- Modal Body --&gt;</span><br>  <span class="hljs-comment">&lt;!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard --&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;modal fade&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;addModal&quot;</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">&quot;-1&quot;</span> <span class="hljs-attr">data-bs-backdrop</span>=<span class="hljs-string">&quot;static&quot;</span> <span class="hljs-attr">data-bs-keyboard</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;dialog&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">&quot;modalTitleId&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;modal-dialog modal-dialog-scrollable modal-dialog-centered modal-md&quot;</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;document&quot;</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;addForm&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;modal-content&quot;</span>&gt;</span><br>          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;modal-header&quot;</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">h5</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;modal-title&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;modalTitleId&quot;</span>&gt;</span><br>              新增<br>            <span class="hljs-tag">&lt;/<span class="hljs-name">h5</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn-close&quot;</span> <span class="hljs-attr">data-bs-dismiss</span>=<span class="hljs-string">&quot;modal&quot;</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Close&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;modal-body&quot;</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-floating mb-3&quot;</span>&gt;</span><br>              <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-control&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;categoryName&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;categoryName&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;&quot;</span> /&gt;</span><br>              <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;categoryName&quot;</span>&gt;</span>Name<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><br>          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;modal-footer&quot;</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn btn-secondary&quot;</span> <span class="hljs-attr">data-bs-dismiss</span>=<span class="hljs-string">&quot;modal&quot;</span>&gt;</span><br>              关闭<br>            <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;reset&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn btn-outline-danger&quot;</span>&gt;</span>清空<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn btn-primary&quot;</span>&gt;</span>保存<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><br>  <span class="hljs-comment">&lt;!-- 编辑弹窗 --&gt;</span><br>  <span class="hljs-comment">&lt;!-- Modal Body --&gt;</span><br>  <span class="hljs-comment">&lt;!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard --&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;modal fade&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;editModal&quot;</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">&quot;-1&quot;</span> <span class="hljs-attr">data-bs-backdrop</span>=<span class="hljs-string">&quot;static&quot;</span> <span class="hljs-attr">data-bs-keyboard</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;dialog&quot;</span></span><br><span class="hljs-tag">    <span class="hljs-attr">aria-labelledby</span>=<span class="hljs-string">&quot;modalTitleId&quot;</span> <span class="hljs-attr">aria-hidden</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;modal-dialog modal-dialog-scrollable modal-dialog-centered modal-md&quot;</span> <span class="hljs-attr">role</span>=<span class="hljs-string">&quot;document&quot;</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;editForm&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;modal-content&quot;</span>&gt;</span><br>          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;modal-header&quot;</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">h5</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;modal-title&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;modalTitleId&quot;</span>&gt;</span><br>              编辑<br>            <span class="hljs-tag">&lt;/<span class="hljs-name">h5</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn-close&quot;</span> <span class="hljs-attr">data-bs-dismiss</span>=<span class="hljs-string">&quot;modal&quot;</span> <span class="hljs-attr">aria-label</span>=<span class="hljs-string">&quot;Close&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;modal-body&quot;</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;hidden&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;categoryId&quot;</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-floating mb-3&quot;</span>&gt;</span><br>              <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;form-control&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;categoryName&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;categoryName&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;&quot;</span> /&gt;</span><br>              <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;categoryName&quot;</span>&gt;</span>Name<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;modal-footer&quot;</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;button&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn btn-secondary&quot;</span> <span class="hljs-attr">data-bs-dismiss</span>=<span class="hljs-string">&quot;modal&quot;</span>&gt;</span><br>              关闭<br>            <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;reset&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn btn-outline-danger&quot;</span>&gt;</span>清空<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn btn-primary&quot;</span>&gt;</span>保存<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><br><br><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- 自定义工具栏 --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;toolbar&quot;</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;add&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn btn-primary&quot;</span> <span class="hljs-attr">data-bs-toggle</span>=<span class="hljs-string">&quot;modal&quot;</span> <span class="hljs-attr">data-bs-target</span>=<span class="hljs-string">&quot;#addModal&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;bi bi-plus-square&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span> 新增<br>      <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;export&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn btn-success&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;bi bi-file-earmark-spreadsheet&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span> 导出<br>      <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;remove&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn btn-danger&quot;</span> <span class="hljs-attr">disabled</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;bi bi-trash&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span> 批量删除<br>      <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- 表格初始化 --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;table&quot;</span> <span class="hljs-attr">data-toolbar</span>=<span class="hljs-string">&quot;#toolbar&quot;</span> <span class="hljs-attr">data-search</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">data-show-refresh</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">data-show-toggle</span>=<span class="hljs-string">&quot;true&quot;</span></span><br><span class="hljs-tag">      <span class="hljs-attr">data-show-fullscreen</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">data-show-columns</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">data-show-columns-toggle-all</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">data-detail-view</span>=<span class="hljs-string">&quot;true&quot;</span></span><br><span class="hljs-tag">      <span class="hljs-attr">data-show-export</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">data-click-to-select</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">data-detail-formatter</span>=<span class="hljs-string">&quot;detailFormatter&quot;</span></span><br><span class="hljs-tag">      <span class="hljs-attr">data-minimum-count-columns</span>=<span class="hljs-string">&quot;2&quot;</span> <span class="hljs-attr">data-show-pagination-switch</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">data-pagination</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">data-id-field</span>=<span class="hljs-string">&quot;id&quot;</span></span><br><span class="hljs-tag">      <span class="hljs-attr">data-page-list</span>=<span class="hljs-string">&quot;[5,10, 25, 50, 100, all]&quot;</span> <span class="hljs-attr">data-show-footer</span>=<span class="hljs-string">&quot;true&quot;</span> <span class="hljs-attr">data-side-pagination</span>=<span class="hljs-string">&quot;client&quot;</span></span><br><span class="hljs-tag">      <span class="hljs-attr">data-url</span>=<span class="hljs-string">&quot;/novel-category/list&quot;</span> <span class="hljs-attr">data-response-handler</span>=<span class="hljs-string">&quot;responseHandler&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript">  <span class="hljs-comment">// 获取组件</span></span><br><span class="language-javascript">  <span class="hljs-keyword">var</span> $table = $(<span class="hljs-string">&#x27;#table&#x27;</span>)</span><br><span class="language-javascript">  <span class="hljs-keyword">var</span> $remove = $(<span class="hljs-string">&#x27;#remove&#x27;</span>)</span><br><span class="language-javascript">  <span class="hljs-keyword">var</span> selections = []</span><br><span class="language-javascript"></span><br><span class="language-javascript">  <span class="hljs-comment">// 获取被选中行的ID</span></span><br><span class="language-javascript">  <span class="hljs-keyword">function</span> <span class="hljs-title function_">getIdSelections</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">    <span class="hljs-keyword">return</span> $.<span class="hljs-title function_">map</span>($table.<span class="hljs-title function_">bootstrapTable</span>(<span class="hljs-string">&#x27;getSelections&#x27;</span>), <span class="hljs-keyword">function</span> (<span class="hljs-params">row</span>) &#123;</span><br><span class="language-javascript">      <span class="hljs-keyword">return</span> row.<span class="hljs-property">categoryId</span></span><br><span class="language-javascript">    &#125;)</span><br><span class="language-javascript">  &#125;</span><br><span class="language-javascript"></span><br><span class="language-javascript">  <span class="hljs-comment">// 处理远程响应的数据，可以指定要在表格显示的数据</span></span><br><span class="language-javascript">  <span class="hljs-keyword">function</span> <span class="hljs-title function_">responseHandler</span>(<span class="hljs-params">res</span>) &#123;</span><br><span class="language-javascript">    <span class="hljs-keyword">return</span> res.<span class="hljs-property">data</span>;</span><br><span class="language-javascript">  &#125;</span><br><span class="language-javascript"></span><br><span class="language-javascript">  <span class="hljs-comment">// 自定义显示样式</span></span><br><span class="language-javascript">  <span class="hljs-keyword">function</span> <span class="hljs-title function_">detailFormatter</span>(<span class="hljs-params">index, row</span>) &#123;</span><br><span class="language-javascript">    <span class="hljs-keyword">var</span> html = []</span><br><span class="language-javascript">    $.<span class="hljs-title function_">each</span>(row, <span class="hljs-keyword">function</span> (<span class="hljs-params">key, value</span>) &#123;</span><br><span class="language-javascript">      html.<span class="hljs-title function_">push</span>(<span class="hljs-string">&#x27;&lt;p&gt;&lt;b&gt;&#x27;</span> + key + <span class="hljs-string">&#x27;:&lt;/b&gt; &#x27;</span> + value + <span class="hljs-string">&#x27;&lt;/p&gt;&#x27;</span>)</span><br><span class="language-javascript">    &#125;)</span><br><span class="language-javascript">    <span class="hljs-keyword">return</span> html.<span class="hljs-title function_">join</span>(<span class="hljs-string">&#x27;&#x27;</span>)</span><br><span class="language-javascript">  &#125;</span><br><span class="language-javascript"></span><br><span class="language-javascript">  <span class="hljs-keyword">function</span> <span class="hljs-title function_">operateFormatter</span>(<span class="hljs-params">value, row, index</span>) &#123;</span><br><span class="language-javascript">    <span class="hljs-keyword">return</span> [</span><br><span class="language-javascript">      <span class="hljs-string">&#x27;&lt;button type=&quot;button&quot; class=&quot;btn btn-outline-primary edit btn-sm&quot; title=&quot;编辑&quot;&gt;&#x27;</span>,</span><br><span class="language-javascript">      <span class="hljs-string">&#x27;&lt;i class=&quot;bi bi-pencil&quot;&gt;&lt;/i&gt; 编辑&#x27;</span>,</span><br><span class="language-javascript">      <span class="hljs-string">&#x27;&lt;/button&gt; &#x27;</span>,</span><br><span class="language-javascript">      <span class="hljs-string">&#x27;&lt;button type=&quot;button&quot; class=&quot;btn btn-outline-danger remove btn-sm&quot; title=&quot;删除&quot;&gt;&#x27;</span>,</span><br><span class="language-javascript">      <span class="hljs-string">&#x27;&lt;i class=&quot;bi bi-trash&quot;&gt;&lt;/i&gt; 删除&#x27;</span>,</span><br><span class="language-javascript">      <span class="hljs-string">&#x27;&lt;/button&gt;&#x27;</span></span><br><span class="language-javascript">    ].<span class="hljs-title function_">join</span>(<span class="hljs-string">&#x27;&#x27;</span>);</span><br><span class="language-javascript">  &#125;</span><br><span class="language-javascript"></span><br><span class="language-javascript">  <span class="hljs-comment">// 按钮点击事件</span></span><br><span class="language-javascript">  <span class="hljs-variable language_">window</span>.<span class="hljs-property">operateEvents</span> = &#123;</span><br><span class="language-javascript"></span><br><span class="language-javascript">    <span class="hljs-string">&#x27;click .edit&#x27;</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params">e, value, row, index</span>) &#123;</span><br><span class="language-javascript">      <span class="hljs-comment">// 弹窗编辑回显</span></span><br><span class="language-javascript">      $.<span class="hljs-title function_">each</span>(row, <span class="hljs-keyword">function</span> (<span class="hljs-params">key, value</span>) &#123;</span><br><span class="language-javascript">        $(<span class="hljs-string">&#x27;#editForm input[name=&quot;&#x27;</span> + key + <span class="hljs-string">&#x27;&quot;]&#x27;</span>).<span class="hljs-title function_">val</span>(value);</span><br><span class="language-javascript">        <span class="hljs-comment">// 如果表单字段是&lt;input&gt;标签之外的其他类型，也可以使用类似的方式进行赋值</span></span><br><span class="language-javascript">      &#125;);</span><br><span class="language-javascript">      $editModal.<span class="hljs-title function_">modal</span>(<span class="hljs-string">&#x27;show&#x27;</span>);</span><br><span class="language-javascript">      <span class="hljs-comment">// alert(&#x27;You click edit action, row: &#x27; + JSON.stringify(row))</span></span><br><span class="language-javascript">    &#125;,</span><br><span class="language-javascript"></span><br><span class="language-javascript">    <span class="hljs-comment">// 移除</span></span><br><span class="language-javascript">    <span class="hljs-string">&#x27;click .remove&#x27;</span>: <span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> (<span class="hljs-params">e, value, row, index</span>) &#123;</span><br><span class="language-javascript">      <span class="hljs-keyword">if</span> (<span class="hljs-keyword">await</span> <span class="hljs-title function_">askDelete</span>()) &#123;</span><br><span class="language-javascript">        <span class="hljs-comment">// 从表格中移除选中的行</span></span><br><span class="language-javascript">        <span class="hljs-title function_">remove</span>(row.<span class="hljs-property">categoryId</span>);</span><br><span class="language-javascript">      &#125;</span><br><span class="language-javascript">    &#125;</span><br><span class="language-javascript">  &#125;</span><br><span class="language-javascript"></span><br><span class="language-javascript">  <span class="hljs-comment">// 表格初始化</span></span><br><span class="language-javascript">  <span class="hljs-keyword">function</span> <span class="hljs-title function_">initTable</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript"></span><br><span class="language-javascript">    $table.<span class="hljs-title function_">bootstrapTable</span>(<span class="hljs-string">&#x27;destroy&#x27;</span>).<span class="hljs-title function_">bootstrapTable</span>(&#123;</span><br><span class="language-javascript">      <span class="hljs-attr">exportDataType</span>: <span class="hljs-string">&#x27;all&#x27;</span>,</span><br><span class="language-javascript">      <span class="hljs-attr">height</span>: <span class="hljs-number">550</span>,</span><br><span class="language-javascript">      <span class="hljs-attr">locale</span>: $(<span class="hljs-string">&#x27;#locale&#x27;</span>).<span class="hljs-title function_">val</span>(),</span><br><span class="language-javascript">      <span class="hljs-attr">columns</span>: [</span><br><span class="language-javascript">        [</span><br><span class="language-javascript">          &#123;</span><br><span class="language-javascript">            <span class="hljs-attr">field</span>: <span class="hljs-string">&#x27;state&#x27;</span>,</span><br><span class="language-javascript">            <span class="hljs-attr">checkbox</span>: <span class="hljs-literal">true</span>,</span><br><span class="language-javascript">            <span class="hljs-attr">align</span>: <span class="hljs-string">&#x27;center&#x27;</span>,</span><br><span class="language-javascript">            <span class="hljs-attr">valign</span>: <span class="hljs-string">&#x27;middle&#x27;</span></span><br><span class="language-javascript">          &#125;,</span><br><span class="language-javascript">          &#123;</span><br><span class="language-javascript">            <span class="hljs-attr">title</span>: <span class="hljs-string">&#x27;ID编号&#x27;</span>,</span><br><span class="language-javascript">            <span class="hljs-attr">field</span>: <span class="hljs-string">&#x27;categoryId&#x27;</span>,</span><br><span class="language-javascript">            <span class="hljs-attr">align</span>: <span class="hljs-string">&#x27;center&#x27;</span>,</span><br><span class="language-javascript">            <span class="hljs-attr">valign</span>: <span class="hljs-string">&#x27;middle&#x27;</span>,</span><br><span class="language-javascript">            <span class="hljs-attr">sortable</span>: <span class="hljs-literal">true</span>,</span><br><span class="language-javascript"></span><br><span class="language-javascript">          &#125;,</span><br><span class="language-javascript">          &#123;</span><br><span class="language-javascript">            <span class="hljs-attr">title</span>: <span class="hljs-string">&#x27;分类名&#x27;</span>,</span><br><span class="language-javascript">            <span class="hljs-attr">field</span>: <span class="hljs-string">&#x27;categoryName&#x27;</span>,</span><br><span class="language-javascript">            <span class="hljs-attr">sortable</span>: <span class="hljs-literal">true</span>,</span><br><span class="language-javascript">            <span class="hljs-attr">align</span>: <span class="hljs-string">&#x27;center&#x27;</span></span><br><span class="language-javascript">          &#125;,</span><br><span class="language-javascript">          &#123;</span><br><span class="language-javascript">            <span class="hljs-attr">field</span>: <span class="hljs-string">&#x27;operate&#x27;</span>,</span><br><span class="language-javascript">            <span class="hljs-attr">title</span>: <span class="hljs-string">&#x27;操作&#x27;</span>,</span><br><span class="language-javascript">            <span class="hljs-attr">align</span>: <span class="hljs-string">&#x27;center&#x27;</span>,</span><br><span class="language-javascript">            <span class="hljs-attr">clickToSelect</span>: <span class="hljs-literal">false</span>,</span><br><span class="language-javascript">            <span class="hljs-attr">events</span>: <span class="hljs-variable language_">window</span>.<span class="hljs-property">operateEvents</span>,</span><br><span class="language-javascript">            <span class="hljs-attr">formatter</span>: operateFormatter</span><br><span class="language-javascript">          &#125;</span><br><span class="language-javascript">        ]</span><br><span class="language-javascript">      ]</span><br><span class="language-javascript">    &#125;)</span><br><span class="language-javascript">    <span class="hljs-comment">// 监听表格的选择事件，当表格中的行被选中或取消选中时触发</span></span><br><span class="language-javascript">    $table.<span class="hljs-title function_">on</span>(<span class="hljs-string">&#x27;check.bs.table uncheck.bs.table &#x27;</span> +</span><br><span class="language-javascript">      <span class="hljs-string">&#x27;check-all.bs.table uncheck-all.bs.table&#x27;</span>,</span><br><span class="language-javascript">      <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">        <span class="hljs-comment">// 根据当前选中的行的数量来启用或禁用删除按钮</span></span><br><span class="language-javascript">        $remove.<span class="hljs-title function_">prop</span>(<span class="hljs-string">&#x27;disabled&#x27;</span>, !$table.<span class="hljs-title function_">bootstrapTable</span>(<span class="hljs-string">&#x27;getSelections&#x27;</span>).<span class="hljs-property">length</span>)</span><br><span class="language-javascript"></span><br><span class="language-javascript">        <span class="hljs-comment">// 保存你的数据，这里只保存当前页的数据</span></span><br><span class="language-javascript">        selections = <span class="hljs-title function_">getIdSelections</span>()</span><br><span class="language-javascript">        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;当前选中:&quot;</span> + selections)</span><br><span class="language-javascript">        <span class="hljs-comment">// 如果你想要保存所有选中的数据，可以在这里使用 push 或 splice 方法</span></span><br><span class="language-javascript">      &#125;)</span><br><span class="language-javascript"></span><br><span class="language-javascript">    <span class="hljs-comment">// 监听表格的所有事件，用于调试目的</span></span><br><span class="language-javascript">    $table.<span class="hljs-title function_">on</span>(<span class="hljs-string">&#x27;all.bs.table&#x27;</span>, <span class="hljs-keyword">function</span> (<span class="hljs-params">e, name, args</span>) &#123;</span><br><span class="language-javascript">      <span class="hljs-comment">// console.log(name, args)</span></span><br><span class="language-javascript">    &#125;)</span><br><span class="language-javascript"></span><br><span class="language-javascript">    <span class="hljs-comment">// 点击删除按钮时执行的操作</span></span><br><span class="language-javascript">    $remove.<span class="hljs-title function_">click</span>(<span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">      <span class="hljs-comment">// 获取所有选中行的 ID</span></span><br><span class="language-javascript">      <span class="hljs-keyword">var</span> ids = <span class="hljs-title function_">getIdSelections</span>()</span><br><span class="language-javascript"></span><br><span class="language-javascript">      <span class="hljs-keyword">if</span> (<span class="hljs-keyword">await</span> <span class="hljs-title function_">askDelete</span>()) &#123;</span><br><span class="language-javascript">        <span class="hljs-comment">// 从表格中移除选中的行</span></span><br><span class="language-javascript">        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;要删除的ids：&quot;</span> + ids)</span><br><span class="language-javascript">        <span class="hljs-title function_">removeBatch</span>(ids);</span><br><span class="language-javascript">        <span class="hljs-comment">// 禁用删除按钮</span></span><br><span class="language-javascript">        $remove.<span class="hljs-title function_">prop</span>(<span class="hljs-string">&#x27;disabled&#x27;</span>, <span class="hljs-literal">true</span>)</span><br><span class="language-javascript">      &#125;</span><br><span class="language-javascript">    &#125;)</span><br><span class="language-javascript"></span><br><span class="language-javascript">  &#125;</span><br><span class="language-javascript"></span><br><span class="language-javascript">  <span class="hljs-comment">// 绑定导出按钮点击事件</span></span><br><span class="language-javascript">  $(<span class="hljs-string">&#x27;#export&#x27;</span>).<span class="hljs-title function_">click</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">    $table.<span class="hljs-title function_">tableExport</span>(&#123;</span><br><span class="language-javascript">      <span class="hljs-attr">type</span>: <span class="hljs-string">&#x27;excel&#x27;</span>, <span class="hljs-comment">// 导出文件类型，可选 &#x27;csv&#x27;, &#x27;txt&#x27;, &#x27;sql&#x27;, &#x27;json&#x27;, &#x27;xml&#x27;, &#x27;excel&#x27;, &#x27;doc&#x27;, &#x27;png&#x27;, &#x27;pdf&#x27;</span></span><br><span class="language-javascript">      <span class="hljs-attr">escape</span>: <span class="hljs-string">&#x27;false&#x27;</span> <span class="hljs-comment">// 是否使用转义，默认为 true</span></span><br><span class="language-javascript">    &#125;);</span><br><span class="language-javascript">  &#125;);</span><br><span class="language-javascript"></span><br><span class="language-javascript">  $(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">    <span class="hljs-title function_">initTable</span>();</span><br><span class="language-javascript">    $(<span class="hljs-string">&#x27;#locale&#x27;</span>).<span class="hljs-title function_">change</span>(initTable)</span><br><span class="language-javascript">  &#125;)</span><br><span class="language-javascript"></span><br><span class="language-javascript">  <span class="hljs-comment">// 删除确认弹窗</span></span><br><span class="language-javascript">  <span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">askDelete</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">    <span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> <span class="hljs-title class_">Swal</span>.<span class="hljs-title function_">fire</span>(&#123;</span><br><span class="language-javascript">      <span class="hljs-attr">title</span>: <span class="hljs-string">&quot;确定要删除它吗?&quot;</span>,</span><br><span class="language-javascript">      <span class="hljs-attr">text</span>: <span class="hljs-string">&quot;删除后无法恢复!&quot;</span>,</span><br><span class="language-javascript">      <span class="hljs-attr">icon</span>: <span class="hljs-string">&quot;warning&quot;</span>,</span><br><span class="language-javascript">      <span class="hljs-attr">showCancelButton</span>: <span class="hljs-literal">true</span>,</span><br><span class="language-javascript">      <span class="hljs-attr">confirmButtonColor</span>: <span class="hljs-string">&quot;#3085d6&quot;</span>,</span><br><span class="language-javascript">      <span class="hljs-attr">cancelButtonColor</span>: <span class="hljs-string">&quot;#d33&quot;</span>,</span><br><span class="language-javascript">      <span class="hljs-attr">confirmButtonText</span>: <span class="hljs-string">&quot;确定!&quot;</span></span><br><span class="language-javascript">    &#125;);</span><br><span class="language-javascript"></span><br><span class="language-javascript">    <span class="hljs-keyword">return</span> result.<span class="hljs-property">isConfirmed</span>;</span><br><span class="language-javascript">  &#125;</span><br><span class="language-javascript"></span><br><span class="language-javascript">  <span class="hljs-comment">// 操作提示</span></span><br><span class="language-javascript">  <span class="hljs-keyword">function</span> <span class="hljs-title function_">mess</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">    <span class="hljs-title class_">Swal</span>.<span class="hljs-title function_">fire</span>(&#123;</span><br><span class="language-javascript">      <span class="hljs-attr">position</span>: <span class="hljs-string">&quot;top-end&quot;</span>,</span><br><span class="language-javascript">      <span class="hljs-attr">icon</span>: <span class="hljs-string">&quot;success&quot;</span>,</span><br><span class="language-javascript">      <span class="hljs-attr">title</span>: <span class="hljs-string">&quot;操作OK&quot;</span>,</span><br><span class="language-javascript">      <span class="hljs-attr">showConfirmButton</span>: <span class="hljs-literal">false</span>,</span><br><span class="language-javascript">      <span class="hljs-attr">timer</span>: <span class="hljs-number">1500</span></span><br><span class="language-javascript">    &#125;);</span><br><span class="language-javascript">  &#125;</span><br><span class="language-javascript"></span><br><span class="language-javascript">  <span class="hljs-keyword">var</span> $addModal = $(<span class="hljs-string">&#x27;#addModal&#x27;</span>);</span><br><span class="language-javascript">  <span class="hljs-keyword">var</span> $editModal = $(<span class="hljs-string">&#x27;#editModal&#x27;</span>);</span><br><span class="language-javascript"></span><br><span class="language-javascript">  <span class="hljs-comment">// 新增</span></span><br><span class="language-javascript">  $(<span class="hljs-string">&#x27;#addForm&#x27;</span>).<span class="hljs-title function_">submit</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) &#123;</span><br><span class="language-javascript">    event.<span class="hljs-title function_">preventDefault</span>();</span><br><span class="language-javascript">    <span class="hljs-keyword">var</span> data = $(<span class="hljs-string">&#x27;#addForm&#x27;</span>).<span class="hljs-title function_">serialize</span>();</span><br><span class="language-javascript">    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(data);</span><br><span class="language-javascript">    <span class="hljs-title function_">save</span>(data)</span><br><span class="language-javascript">    $addModal.<span class="hljs-title function_">modal</span>(<span class="hljs-string">&#x27;hide&#x27;</span>);</span><br><span class="language-javascript">  &#125;)</span><br><span class="language-javascript"></span><br><span class="language-javascript"></span><br><span class="language-javascript"></span><br><span class="language-javascript"></span><br><span class="language-javascript">  <span class="hljs-comment">// 保存编辑</span></span><br><span class="language-javascript">  $(<span class="hljs-string">&#x27;#editForm&#x27;</span>).<span class="hljs-title function_">submit</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) &#123;</span><br><span class="language-javascript">    event.<span class="hljs-title function_">preventDefault</span>();</span><br><span class="language-javascript">    <span class="hljs-keyword">var</span> data = $(<span class="hljs-string">&#x27;#editForm&#x27;</span>).<span class="hljs-title function_">serialize</span>();</span><br><span class="language-javascript">    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(data);</span><br><span class="language-javascript">    <span class="hljs-title function_">update</span>(data);</span><br><span class="language-javascript">    $editModal.<span class="hljs-title function_">modal</span>(<span class="hljs-string">&#x27;hide&#x27;</span>);</span><br><span class="language-javascript">  &#125;)</span><br><span class="language-javascript"></span><br><span class="language-javascript"></span><br><span class="language-javascript">  <span class="hljs-keyword">function</span> <span class="hljs-title function_">save</span>(<span class="hljs-params">data</span>) &#123;</span><br><span class="language-javascript">    $.<span class="hljs-title function_">post</span>(<span class="hljs-string">&quot;/novel-category/add&quot;</span>, data, <span class="hljs-keyword">function</span> (<span class="hljs-params">data</span>) &#123;</span><br><span class="language-javascript">      <span class="hljs-keyword">if</span> (data.<span class="hljs-property">code</span> === <span class="hljs-number">200</span>) &#123;</span><br><span class="language-javascript">        <span class="hljs-title function_">mess</span>();</span><br><span class="language-javascript">        <span class="hljs-title function_">refresh</span>();</span><br><span class="language-javascript">      &#125;</span><br><span class="language-javascript">    &#125;)</span><br><span class="language-javascript">  &#125;</span><br><span class="language-javascript"></span><br><span class="language-javascript">  <span class="hljs-keyword">function</span> <span class="hljs-title function_">update</span>(<span class="hljs-params">data</span>) &#123;</span><br><span class="language-javascript">    $.<span class="hljs-title function_">post</span>(<span class="hljs-string">&quot;/novel-category/update&quot;</span>, data, <span class="hljs-keyword">function</span> (<span class="hljs-params">data</span>) &#123;</span><br><span class="language-javascript">      <span class="hljs-keyword">if</span> (data.<span class="hljs-property">code</span> === <span class="hljs-number">200</span>) &#123;</span><br><span class="language-javascript">        <span class="hljs-title function_">mess</span>();</span><br><span class="language-javascript">        <span class="hljs-title function_">refresh</span>();</span><br><span class="language-javascript">      &#125;</span><br><span class="language-javascript">    &#125;)</span><br><span class="language-javascript">  &#125;</span><br><span class="language-javascript"></span><br><span class="language-javascript">  <span class="hljs-keyword">function</span> <span class="hljs-title function_">remove</span>(<span class="hljs-params">id</span>) &#123;</span><br><span class="language-javascript">    $.<span class="hljs-title function_">get</span>(<span class="hljs-string">&quot;/novel-category/delete/&quot;</span> + id, <span class="hljs-keyword">function</span> (<span class="hljs-params">data</span>) &#123;</span><br><span class="language-javascript">      <span class="hljs-keyword">if</span> (data.<span class="hljs-property">code</span> === <span class="hljs-number">200</span>) &#123;</span><br><span class="language-javascript">        <span class="hljs-title function_">refresh</span>();</span><br><span class="language-javascript">        <span class="hljs-title function_">mess</span>();</span><br><span class="language-javascript">      &#125;</span><br><span class="language-javascript">    &#125;)</span><br><span class="language-javascript">  &#125;</span><br><span class="language-javascript"></span><br><span class="language-javascript">  <span class="hljs-keyword">function</span> <span class="hljs-title function_">removeBatch</span>(<span class="hljs-params">data</span>) &#123;</span><br><span class="language-javascript">    $.<span class="hljs-title function_">get</span>(<span class="hljs-string">&quot;/novel-category/deleteBatch?ids=&quot;</span> + data.<span class="hljs-title function_">join</span>(<span class="hljs-string">&#x27;,&#x27;</span>), <span class="hljs-keyword">function</span> (<span class="hljs-params">data</span>) &#123;</span><br><span class="language-javascript">      <span class="hljs-keyword">if</span> (data.<span class="hljs-property">code</span> === <span class="hljs-number">200</span>) &#123;</span><br><span class="language-javascript">        <span class="hljs-title function_">mess</span>();</span><br><span class="language-javascript">        <span class="hljs-title function_">refresh</span>();</span><br><span class="language-javascript">      &#125;</span><br><span class="language-javascript">    &#125;)</span><br><span class="language-javascript">  &#125;</span><br><span class="language-javascript"></span><br><span class="language-javascript"></span><br><span class="language-javascript">  <span class="hljs-keyword">function</span> <span class="hljs-title function_">refresh</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">    $table.<span class="hljs-title function_">bootstrapTable</span>(<span class="hljs-string">&#x27;refresh&#x27;</span>);</span><br><span class="language-javascript">  &#125;</span><br><span class="language-javascript"></span><br><span class="language-javascript"></span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E5%AE%9E%E7%94%A8/">#实用</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>实用技巧-7：快速整合使用bootstrap-table</div>
+      <div>http://example.com/posts/43379.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>李延胜</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年3月25日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/26908.html" title="实用技巧-8：文件选择器">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">实用技巧-8：文件选择器</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/53762.html" title="实用技巧-6：最快速的权限控制：Sa-Toekn">
+                        <span class="hidden-mobile">实用技巧-6：最快速的权限控制：Sa-Toekn</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"SabYreKdzdOiQemY4H7Pzbjr-gzGzoHsz","appKey":"o5EFclbNb5gGIxPipHHkBfg2","path":"window.location.pathname","placeholder":"您想说点什么吗...","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://blog.csdn.net/weixin_44107140" target="_blank" rel="nofollow noopener"> <span>CSDN博客</span></a> <i class="iconfont">|</i> <a href="https://gitee.com/yan-sheng-li" target="_blank" rel="nofollow noopener"><span>Gitee码云</span></a> <i class="iconfont">|</i> <a href="#" target="_blank" rel="nofollow noopener"><span style="color:green">微信公众号：《编程亿点有趣》</span></a> <i class="iconfont">|</i><a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=NZUoWMzd3PQLWwxRGMiBNYEnVkEdNq__&jump_from=webapi&authKey=kgAofDqUzgwMCSX+UQQwxf837zMeWFGGmo4iIcbgkklW2pdfmVOlxPWAK6sMYMaC"> <img border="0" src="../../img/group.png" srcset="/img/loading.gif" lazyload alt="远程调试-学习交流" title="远程调试-学习交流"></a>
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+    
+    
+  
+</div>
+
+  
+  
+  
+
+  <div style="text-align: center;">
+    <a href="https://beian.miit.gov.cn/" target="_blank">辽ICP备2022000630号</a>
+  </div>
+
+  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=2031204435&auto=1&height=32"></iframe>
+
+</div>
+
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"superSample":1,"width":200,"height":300,"position":"left","hOffset":0,"vOffset":-50},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
+</html>
