@@ -6,8 +6,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/Hexo/img/avatar2.jpg">
-  <link rel="icon" href="/Hexo/img/avatar2.jpg">
+  <link rel="apple-touch-icon" sizes="76x76" href="/blog/img/avatar2.jpg">
+  <link rel="icon" href="/blog/img/avatar2.jpg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -18,13 +18,13 @@
     <meta name="description" content="尝试了IDEA整合Docker，坑有些多，但经过查阅资料都一一解决了，写了个案例，感觉这种方式确实要方便很多。下面来整理下步骤：  一、安装Docker准备一台Linux，我这里用的是centos 7 mini 版，然后安装Docker  安装Device Mapper：    1yum install -y yum-utils device-mapper-persistent-data lvm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="IDEA整合Docker，快速打包部署">
-<meta property="og:url" content="https://yan-sheng-li.github.io/Hexo/posts/36780.html">
+<meta property="og:url" content="https://yan-sheng-li.github.io/blog/posts/36780.html">
 <meta property="og:site_name" content="👨‍💻木子-博客">
 <meta property="og:description" content="尝试了IDEA整合Docker，坑有些多，但经过查阅资料都一一解决了，写了个案例，感觉这种方式确实要方便很多。下面来整理下步骤：  一、安装Docker准备一台Linux，我这里用的是centos 7 mini 版，然后安装Docker  安装Device Mapper：    1yum install -y yum-utils device-mapper-persistent-data lvm">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://cdn.qiniu.liyansheng.top/typora/image-20230319161345405.png">
 <meta property="article:published_time" content="2023-03-19T15:34:00.000Z">
-<meta property="article:modified_time" content="2024-07-16T15:51:04.007Z">
+<meta property="article:modified_time" content="2024-07-17T06:09:52.977Z">
 <meta property="article:author" content="李延胜">
 <meta property="article:tag" content="docker">
 <meta property="article:tag" content="IDEA">
@@ -59,12 +59,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
-<link  rel="stylesheet" href="/Hexo/css/main.css" />
+<link  rel="stylesheet" href="/blog/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/Hexo/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/blog/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/Hexo/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/blog/css/highlight-dark.css" />
   
 
 
@@ -73,15 +73,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"yan-sheng-li.github.io","root":"/Hexo/","version":"1.9.4","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"85b00ecca8bd5efa8a581f758ba73a03","google":null,"gtag":"G-M78M7E4Y4N","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/Hexo/local-search.xml"};
+    var CONFIG = {"hostname":"yan-sheng-li.github.io","root":"/blog/","version":"1.9.4","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"85b00ecca8bd5efa8a581f758ba73a03","google":null,"gtag":"G-M78M7E4Y4N","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/blog/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/Hexo/js/utils.js" ></script>
-  <script  src="/Hexo/js/color-schema.js" ></script>
+  <script  src="/blog/js/utils.js" ></script>
+  <script  src="/blog/js/color-schema.js" ></script>
   
 
   
@@ -148,7 +148,7 @@ var _hmt = _hmt || [];
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/Hexo/">
+    <a class="navbar-brand" href="/blog/">
       <strong>👩‍💻木子-博客</strong>
     </a>
 
@@ -167,7 +167,7 @@ var _hmt = _hmt || [];
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Hexo/">
+              <a class="nav-link" href="/blog/">
                 <i class="iconfont icon-home-fill"></i>
                 <span>首页</span>
               </a>
@@ -179,7 +179,7 @@ var _hmt = _hmt || [];
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Hexo/categories/">
+              <a class="nav-link" href="/blog/categories/">
                 <i class="iconfont icon-category-fill"></i>
                 <span>分类</span>
               </a>
@@ -191,7 +191,7 @@ var _hmt = _hmt || [];
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Hexo/tags/">
+              <a class="nav-link" href="/blog/tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>标签</span>
               </a>
@@ -203,7 +203,7 @@ var _hmt = _hmt || [];
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Hexo/about/">
+              <a class="nav-link" href="/blog/about/">
                 <i class="iconfont icon-user-fill"></i>
                 <span>作者</span>
               </a>
@@ -239,7 +239,7 @@ var _hmt = _hmt || [];
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Hexo/remote_help/">
+              <a class="nav-link" href="/blog/remote_help/">
                 
                 <span>🐞远程调试/功能定做</span>
               </a>
@@ -269,7 +269,7 @@ var _hmt = _hmt || [];
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/Hexo/img/bg/bg5.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/blog/img/bg/bg5.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -409,7 +409,7 @@ var _hmt = _hmt || [];
 <h3 id="二、开启Docker的远程访问"><a href="#二、开启Docker的远程访问" class="headerlink" title="二、开启Docker的远程访问"></a>二、开启Docker的远程访问</h3><ol>
 <li><p>修改服务文件：<code>/lib/systemd/system/docker.service</code></p>
 <p> 新增一行：<code>ExecStart=/usr/bin/dockerd  -H tcp://0.0.0.0:2375  -H unix:///var/run/docker.sock</code></p>
-<p> <img src="http://cdn.qiniu.liyansheng.top/typora/image-20230116001447210.png" srcset="/Hexo/img/loading.gif" lazyload alt=" "></p>
+<p> <img src="http://cdn.qiniu.liyansheng.top/typora/image-20230116001447210.png" srcset="/blog/img/loading.gif" lazyload alt=" "></p>
 <p> <code>ps</code>：注意间隔，别写错了（我这步就是因为-H跟前面的写一块了，结果报了一堆奇怪的问题，(⊙o⊙)…</p>
 </li>
 <li><p>重新加载配置文件</p>
@@ -424,33 +424,33 @@ var _hmt = _hmt || [];
 
 <ol start="4">
 <li><p>内部检验：curl <a target="_blank" rel="noopener" href="http://127.0.0.1:2375/info">http://127.0.0.1:2375/info</a></p>
-<p> <img src="http://cdn.qiniu.liyansheng.top/typora/image-20230116002022460.png" srcset="/Hexo/img/loading.gif" lazyload></p>
+<p> <img src="http://cdn.qiniu.liyansheng.top/typora/image-20230116002022460.png" srcset="/blog/img/loading.gif" lazyload></p>
 </li>
 <li><p>外部访问（浏览器访问你Linux的IP+2375&#x2F;info）</p>
-<p> <img src="http://cdn.qiniu.liyansheng.top/typora/image-20230116002229312.png" srcset="/Hexo/img/loading.gif" lazyload></p>
+<p> <img src="http://cdn.qiniu.liyansheng.top/typora/image-20230116002229312.png" srcset="/blog/img/loading.gif" lazyload></p>
 <p> 能访问到如上信息，说明外部访问也是OK的</p>
 <p> <code>ps</code>：如果你访问不到，注意检查下2375端口是否开放，我这里安装了宝塔面板，可以方便在安全里添加开放端口的规则，当然你不装这个也行，用命令行也是可以操作的呢。</p>
-<p> <img src="http://cdn.qiniu.liyansheng.top/typora/image-20230116002534553.png" srcset="/Hexo/img/loading.gif" lazyload></p>
+<p> <img src="http://cdn.qiniu.liyansheng.top/typora/image-20230116002534553.png" srcset="/blog/img/loading.gif" lazyload></p>
 </li>
 </ol>
 <h3 id="三、在IDEA整合Docker"><a href="#三、在IDEA整合Docker" class="headerlink" title="三、在IDEA整合Docker"></a>三、在IDEA整合Docker</h3><ol>
 <li><p>先安装个插件<code>Docker</code>（在插件市场里面可以找到）</p>
-<p> <img src="http://cdn.qiniu.liyansheng.top/typora/image-20230116002756415.png" srcset="/Hexo/img/loading.gif" lazyload></p>
+<p> <img src="http://cdn.qiniu.liyansheng.top/typora/image-20230116002756415.png" srcset="/blog/img/loading.gif" lazyload></p>
 </li>
 <li><p>配置连接远程Docker信息</p>
 <p> 信息填写完整，下方出现<code>connection successful</code>说明连接成功！</p>
-<p> <img src="http://cdn.qiniu.liyansheng.top/typora/image-20230116003020509.png" srcset="/Hexo/img/loading.gif" lazyload></p>
+<p> <img src="http://cdn.qiniu.liyansheng.top/typora/image-20230116003020509.png" srcset="/blog/img/loading.gif" lazyload></p>
 </li>
 <li><p>启动service</p>
-<p> <img src="http://cdn.qiniu.liyansheng.top/typora/image-20230116003253279.png" srcset="/Hexo/img/loading.gif" lazyload></p>
+<p> <img src="http://cdn.qiniu.liyansheng.top/typora/image-20230116003253279.png" srcset="/blog/img/loading.gif" lazyload></p>
 </li>
 <li><p>然后就能浏览远程Docker里面的信息了</p>
 <p> （里面我拉了一些其他的镜像，可忽略）</p>
-<p> <img src="http://cdn.qiniu.liyansheng.top/typora/image-20230116003343708.png" srcset="/Hexo/img/loading.gif" lazyload></p>
+<p> <img src="http://cdn.qiniu.liyansheng.top/typora/image-20230116003343708.png" srcset="/blog/img/loading.gif" lazyload></p>
 </li>
 </ol>
 <h3 id="四、服务打镜像"><a href="#四、服务打镜像" class="headerlink" title="四、服务打镜像"></a>四、服务打镜像</h3><p>1.创建一个简单的SpringBoot项目，结构如下：</p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20230116003633915.png" srcset="/Hexo/img/loading.gif" lazyload></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20230116003633915.png" srcset="/blog/img/loading.gif" lazyload></p>
 <p>2.pom.xml如下：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span>?&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">project</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://maven.apache.org/POM/4.0.0&quot;</span></span><br><span class="hljs-tag">         <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span><br><span class="hljs-tag">         <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">modelVersion</span>&gt;</span>4.0.0<span class="hljs-tag">&lt;/<span class="hljs-name">modelVersion</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.lys<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>test-docker<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.0-SNAPSHOT<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;<span class="hljs-name">parent</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>2.3.7.RELEASE<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">relativePath</span>/&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">parent</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;<span class="hljs-name">properties</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">maven.compiler.source</span>&gt;</span>1.8<span class="hljs-tag">&lt;/<span class="hljs-name">maven.compiler.source</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">maven.compiler.target</span>&gt;</span>1.8<span class="hljs-tag">&lt;/<span class="hljs-name">maven.compiler.target</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">properties</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;<span class="hljs-name">dependencies</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">dependencies</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">build</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">plugins</span>&gt;</span><br>                <span class="hljs-comment">&lt;!-- 指定maven.compiler.plugin 配置版本，解决编译问题 --&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">plugin</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>maven-compiler-plugin<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>3.6.1<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span><br>                        <span class="hljs-tag">&lt;<span class="hljs-name">source</span>&gt;</span>1.8<span class="hljs-tag">&lt;/<span class="hljs-name">source</span>&gt;</span><br>                        <span class="hljs-tag">&lt;<span class="hljs-name">target</span>&gt;</span>1.8<span class="hljs-tag">&lt;/<span class="hljs-name">target</span>&gt;</span><br>                    <span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span><br>                <span class="hljs-tag">&lt;/<span class="hljs-name">plugin</span>&gt;</span><br><br>                <span class="hljs-tag">&lt;<span class="hljs-name">plugin</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span><br>                        <span class="hljs-comment">&lt;!--项目的启动类--&gt;</span><br>                        <span class="hljs-tag">&lt;<span class="hljs-name">mainClass</span>&gt;</span>com.lys.DemoApplication<span class="hljs-tag">&lt;/<span class="hljs-name">mainClass</span>&gt;</span><br>                        <span class="hljs-tag">&lt;<span class="hljs-name">layout</span>&gt;</span>ZIP<span class="hljs-tag">&lt;/<span class="hljs-name">layout</span>&gt;</span><br>                    <span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">executions</span>&gt;</span><br>                        <span class="hljs-tag">&lt;<span class="hljs-name">execution</span>&gt;</span><br>                            <span class="hljs-tag">&lt;<span class="hljs-name">goals</span>&gt;</span><br>                                <span class="hljs-tag">&lt;<span class="hljs-name">goal</span>&gt;</span>repackage<span class="hljs-tag">&lt;/<span class="hljs-name">goal</span>&gt;</span><br>                            <span class="hljs-tag">&lt;/<span class="hljs-name">goals</span>&gt;</span><br>                        <span class="hljs-tag">&lt;/<span class="hljs-name">execution</span>&gt;</span><br>                    <span class="hljs-tag">&lt;/<span class="hljs-name">executions</span>&gt;</span><br>                <span class="hljs-tag">&lt;/<span class="hljs-name">plugin</span>&gt;</span><br>            <span class="hljs-tag">&lt;/<span class="hljs-name">plugins</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">build</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">project</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
@@ -465,35 +465,35 @@ var _hmt = _hmt || [];
 <figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs dockerfile"><span class="hljs-comment">#指定基础镜像，在其上进行定制</span><br><span class="hljs-keyword">FROM</span> williamyeh/java8:latest<br><br><span class="hljs-comment">#维护者信息</span><br><span class="hljs-keyword">MAINTAINER</span> liyansheng<br><br><span class="hljs-comment">#这里的 /tmp 目录就会在运行时自动挂载为匿名卷，任何向 /tmp 中写入的信息都不会记录进容器存储层</span><br><span class="hljs-keyword">VOLUME</span><span class="language-bash"> /tmp</span><br><br><span class="hljs-comment">#复制上下文目录下的target/demo-1.0.0.jar 到容器里</span><br><span class="hljs-keyword">COPY</span><span class="language-bash"> target/test-docker-1.0-SNAPSHOT.jar  docker-0.0.1.jar</span><br><br><span class="hljs-comment">#bash方式执行，使demo-1.0.0.jar可访问</span><br><span class="hljs-comment">#RUN新建立一层，在其上执行这些命令，执行结束后， commit 这一层的修改，构成新的镜像。</span><br><span class="hljs-keyword">RUN</span><span class="language-bash"> bash -c <span class="hljs-string">&quot;touch /docker-0.0.1.jar&quot;</span></span><br><br><span class="hljs-comment">#声明运行时容器提供服务端口，这只是一个声明，在运行时并不会因为这个声明应用就会开启这个端口的服务</span><br><span class="hljs-keyword">EXPOSE</span> <span class="hljs-number">8080</span><br><br><span class="hljs-comment">#指定容器启动程序及参数   &lt;ENTRYPOINT&gt; &quot;&lt;CMD&gt;&quot;</span><br><span class="hljs-keyword">ENTRYPOINT</span><span class="language-bash"> [<span class="hljs-string">&quot;java&quot;</span>,<span class="hljs-string">&quot;-jar&quot;</span>,<span class="hljs-string">&quot;docker-0.0.1.jar&quot;</span>]</span><br></code></pre></td></tr></table></figure>
 
 <p>7.将项目打jar包</p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20230116004108628.png" srcset="/Hexo/img/loading.gif" lazyload></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20230116004108628.png" srcset="/blog/img/loading.gif" lazyload></p>
 <p>如果打包成功，在项目下的target下我们能看到jar包</p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20230116004216546.png" srcset="/Hexo/img/loading.gif" lazyload></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20230116004216546.png" srcset="/blog/img/loading.gif" lazyload></p>
 <p>8.切换到Dockerfile文件，点击按钮打包镜像</p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20230116004354868.png" srcset="/Hexo/img/loading.gif" lazyload></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20230116004354868.png" srcset="/blog/img/loading.gif" lazyload></p>
 <p>在之前可以新增一些简单的配置</p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20230116004802417.png" srcset="/Hexo/img/loading.gif" lazyload></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20230116004802417.png" srcset="/blog/img/loading.gif" lazyload></p>
 <p>然后点击上图中的run按钮，进行镜像构建与容器启动</p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20230116004953308.png" srcset="/Hexo/img/loading.gif" lazyload></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20230116004953308.png" srcset="/blog/img/loading.gif" lazyload></p>
 <p>切换到Log面板，我们可以看到容器启动的日志</p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20230116005039825.png" srcset="/Hexo/img/loading.gif" lazyload></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20230116005039825.png" srcset="/blog/img/loading.gif" lazyload></p>
 <p>在Dashboard可以修改配置，比如我们新增端口映射：</p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20230116005209773.png" srcset="/Hexo/img/loading.gif" lazyload></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20230116005209773.png" srcset="/blog/img/loading.gif" lazyload></p>
 <p>这样我们在外部通过8080端口访问到容器内端口8080的服务</p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20230116005328517.png" srcset="/Hexo/img/loading.gif" lazyload></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20230116005328517.png" srcset="/blog/img/loading.gif" lazyload></p>
 <p>在控制面板，还提供了一些快捷按钮给我们操作：</p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20230116005531044.png" srcset="/Hexo/img/loading.gif" lazyload></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20230116005531044.png" srcset="/blog/img/loading.gif" lazyload></p>
 <p>比如进入容器：</p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20230116005547080.png" srcset="/Hexo/img/loading.gif" lazyload></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20230116005547080.png" srcset="/blog/img/loading.gif" lazyload></p>
 <h3 id="五、总结"><a href="#五、总结" class="headerlink" title="五、总结"></a>五、总结</h3><p>综上，在IDEA里面整合Docker确实为我们提供很大的便利，比起传统的打包上传-打镜像-启动容器，上面的方式要快速很多，更多细节大家可以进一步探索！！！</p>
 <h3 id="六、踩坑"><a href="#六、踩坑" class="headerlink" title="六、踩坑"></a>六、踩坑</h3><ol>
 <li><h4 id="启动容器失败"><a href="#启动容器失败" class="headerlink" title="启动容器失败"></a>启动容器失败</h4> 报错：</li>
 </ol>
   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">(iptables failed: iptables --wait -t nat -A DOCKER -p tcp -d 0/0 --dport 80 -j DNAT --to-destination 172.17.0.2:80 ! -i docker0: iptables: No chain/target/match by that name.<br> (exit status 1)).<br></code></pre></td></tr></table></figure>
 
-<p>  <img src="http://cdn.qiniu.liyansheng.top/typora/image-20230114231224128.png" srcset="/Hexo/img/loading.gif" lazyload></p>
+<p>  <img src="http://cdn.qiniu.liyansheng.top/typora/image-20230114231224128.png" srcset="/blog/img/loading.gif" lazyload></p>
 <ol start="2">
-<li><h4 id="IDEA打镜像报错"><a href="#IDEA打镜像报错" class="headerlink" title="IDEA打镜像报错"></a>IDEA打镜像报错</h4><p> <img src="http://cdn.qiniu.liyansheng.top/typora/image-20230115220606008.png" srcset="/Hexo/img/loading.gif" lazyload></p>
-<p> <img src="http://cdn.qiniu.liyansheng.top/typora/image-20230115220836929.png" srcset="/Hexo/img/loading.gif" lazyload></p>
+<li><h4 id="IDEA打镜像报错"><a href="#IDEA打镜像报错" class="headerlink" title="IDEA打镜像报错"></a>IDEA打镜像报错</h4><p> <img src="http://cdn.qiniu.liyansheng.top/typora/image-20230115220606008.png" srcset="/blog/img/loading.gif" lazyload></p>
+<p> <img src="http://cdn.qiniu.liyansheng.top/typora/image-20230115220836929.png" srcset="/blog/img/loading.gif" lazyload></p>
 <p> 上述问题我也看了很多网上的解决方案，但是我没有得到解决，最后我是卸载然后重装了Docker然后才没有报上面的错误</p>
 </li>
 </ol>
@@ -512,9 +512,9 @@ var _hmt = _hmt || [];
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/Hexo/tags/docker/">#docker</a>
+        <a href="/blog/tags/docker/">#docker</a>
       
-        <a href="/Hexo/tags/IDEA/">#IDEA</a>
+        <a href="/blog/tags/IDEA/">#IDEA</a>
       
     </div>
   
@@ -527,7 +527,7 @@ var _hmt = _hmt || [];
   <div class="license-box my-3">
     <div class="license-title">
       <div>IDEA整合Docker，快速打包部署</div>
-      <div>https://yan-sheng-li.github.io/Hexo/posts/36780.html</div>
+      <div>https://yan-sheng-li.github.io/blog/posts/36780.html</div>
     </div>
     <div class="license-meta">
       
@@ -571,7 +571,7 @@ var _hmt = _hmt || [];
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/Hexo/posts/52114.html" title="毕设整理：高校就业信息管理系统">
+                      <a href="/blog/posts/52114.html" title="毕设整理：高校就业信息管理系统">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">毕设整理：高校就业信息管理系统</span>
                         <span class="visible-mobile">上一篇</span>
@@ -581,7 +581,7 @@ var _hmt = _hmt || [];
                   <article class="post-next col-6">
                     
                     
-                      <a href="/Hexo/remote_help/" title="📌强强支援：远程调试🖥 需求定做📝 疑难解答❓ 攻bug🐛.....">
+                      <a href="/blog/remote_help/" title="📌强强支援：远程调试🖥 需求定做📝 疑难解答❓ 攻bug🐛.....">
                         <span class="hidden-mobile">📌强强支援：远程调试🖥 需求定做📝 疑难解答❓ 攻bug🐛.....</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -716,7 +716,7 @@ var _hmt = _hmt || [];
     <div class="footer-inner">
   
     <div class="footer-content">
-       <a href="https://blog.csdn.net/weixin_44107140" target="_blank" rel="nofollow noopener"> <span>CSDN博客</span></a> <i class="iconfont">|</i> <a href="https://gitee.com/yan-sheng-li" target="_blank" rel="nofollow noopener"><span>Gitee码云</span></a> <i class="iconfont">|</i> <a href="#" target="_blank" rel="nofollow noopener"><span style="color:green">微信公众号：《编程亿点有趣》</span></a> <i class="iconfont">|</i><a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=NZUoWMzd3PQLWwxRGMiBNYEnVkEdNq__&jump_from=webapi&authKey=kgAofDqUzgwMCSX+UQQwxf837zMeWFGGmo4iIcbgkklW2pdfmVOlxPWAK6sMYMaC"> <img border="0" src="../../img/group.png" srcset="/Hexo/img/loading.gif" lazyload alt="远程调试-学习交流" title="远程调试-学习交流"></a>
+       <a href="https://blog.csdn.net/weixin_44107140" target="_blank" rel="nofollow noopener"> <span>CSDN博客</span></a> <i class="iconfont">|</i> <a href="https://gitee.com/yan-sheng-li" target="_blank" rel="nofollow noopener"><span>Gitee码云</span></a> <i class="iconfont">|</i> <a href="#" target="_blank" rel="nofollow noopener"><span style="color:green">微信公众号：《编程亿点有趣》</span></a> <i class="iconfont">|</i><a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=NZUoWMzd3PQLWwxRGMiBNYEnVkEdNq__&jump_from=webapi&authKey=kgAofDqUzgwMCSX+UQQwxf837zMeWFGGmo4iIcbgkklW2pdfmVOlxPWAK6sMYMaC"> <img border="0" src="../../img/group.png" srcset="/blog/img/loading.gif" lazyload alt="远程调试-学习交流" title="远程调试-学习交流"></a>
     </div>
   
   
@@ -762,8 +762,8 @@ var _hmt = _hmt || [];
 
 <script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/Hexo/js/events.js" ></script>
-<script  src="/Hexo/js/plugins.js" ></script>
+<script  src="/blog/js/events.js" ></script>
+<script  src="/blog/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -785,7 +785,7 @@ var _hmt = _hmt || [];
 
 
   
-    <script  src="/Hexo/js/img-lazyload.js" ></script>
+    <script  src="/blog/js/img-lazyload.js" ></script>
   
 
 
@@ -884,7 +884,7 @@ var _hmt = _hmt || [];
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/Hexo/js/local-search.js" ></script>
+  <script  src="/blog/js/local-search.js" ></script>
 
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
@@ -894,7 +894,7 @@ var _hmt = _hmt || [];
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/Hexo/js/boot.js" ></script>
+<script  src="/blog/js/boot.js" ></script>
 
 
   
@@ -902,5 +902,5 @@ var _hmt = _hmt || [];
   <noscript>
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
-<script src="/Hexo/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/Hexo/live2dw/assets/hijiki.model.json"},"display":{"superSample":1,"width":200,"height":300,"position":"left","hOffset":0,"vOffset":-50},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
+<script src="/blog/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/blog/live2dw/assets/hijiki.model.json"},"display":{"superSample":1,"width":200,"height":300,"position":"left","hOffset":0,"vOffset":-50},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
 </html>

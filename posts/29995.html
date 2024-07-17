@@ -6,8 +6,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/Hexo/img/avatar2.jpg">
-  <link rel="icon" href="/Hexo/img/avatar2.jpg">
+  <link rel="apple-touch-icon" sizes="76x76" href="/blog/img/avatar2.jpg">
+  <link rel="icon" href="/blog/img/avatar2.jpg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -18,13 +18,13 @@
     <meta name="description" content="1.VMware汉化tips：下载地址：&#x3D;》123云盘_VMware (123pan.com)  步骤：  在桌面找到你的VMware图标，右键打开属性 选择快捷方式，看目标那一栏 在原路径后面添加--locale zh_CN 保存，重启VMware，你就会发现汉化OK！     2.安装centos7 mini下载地址：https:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;centos">
 <meta property="og:type" content="article">
 <meta property="og:title" content="玩转Linux虚拟机，从安装到实操">
-<meta property="og:url" content="https://yan-sheng-li.github.io/Hexo/posts/29995.html">
+<meta property="og:url" content="https://yan-sheng-li.github.io/blog/posts/29995.html">
 <meta property="og:site_name" content="👨‍💻木子-博客">
 <meta property="og:description" content="1.VMware汉化tips：下载地址：&#x3D;》123云盘_VMware (123pan.com)  步骤：  在桌面找到你的VMware图标，右键打开属性 选择快捷方式，看目标那一栏 在原路径后面添加--locale zh_CN 保存，重启VMware，你就会发现汉化OK！     2.安装centos7 mini下载地址：https:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;centos">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://cdn.qiniu.liyansheng.top/typora/image-20230318180814080.png">
 <meta property="article:published_time" content="2022-09-20T17:41:29.000Z">
-<meta property="article:modified_time" content="2024-07-16T15:51:04.007Z">
+<meta property="article:modified_time" content="2024-07-17T06:09:52.977Z">
 <meta property="article:author" content="李延胜">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="shell">
@@ -59,12 +59,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
-<link  rel="stylesheet" href="/Hexo/css/main.css" />
+<link  rel="stylesheet" href="/blog/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/Hexo/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/blog/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/Hexo/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/blog/css/highlight-dark.css" />
   
 
 
@@ -73,15 +73,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"yan-sheng-li.github.io","root":"/Hexo/","version":"1.9.4","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"85b00ecca8bd5efa8a581f758ba73a03","google":null,"gtag":"G-M78M7E4Y4N","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/Hexo/local-search.xml"};
+    var CONFIG = {"hostname":"yan-sheng-li.github.io","root":"/blog/","version":"1.9.4","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"85b00ecca8bd5efa8a581f758ba73a03","google":null,"gtag":"G-M78M7E4Y4N","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/blog/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/Hexo/js/utils.js" ></script>
-  <script  src="/Hexo/js/color-schema.js" ></script>
+  <script  src="/blog/js/utils.js" ></script>
+  <script  src="/blog/js/color-schema.js" ></script>
   
 
   
@@ -148,7 +148,7 @@ var _hmt = _hmt || [];
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/Hexo/">
+    <a class="navbar-brand" href="/blog/">
       <strong>👩‍💻木子-博客</strong>
     </a>
 
@@ -167,7 +167,7 @@ var _hmt = _hmt || [];
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Hexo/">
+              <a class="nav-link" href="/blog/">
                 <i class="iconfont icon-home-fill"></i>
                 <span>首页</span>
               </a>
@@ -179,7 +179,7 @@ var _hmt = _hmt || [];
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Hexo/categories/">
+              <a class="nav-link" href="/blog/categories/">
                 <i class="iconfont icon-category-fill"></i>
                 <span>分类</span>
               </a>
@@ -191,7 +191,7 @@ var _hmt = _hmt || [];
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Hexo/tags/">
+              <a class="nav-link" href="/blog/tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>标签</span>
               </a>
@@ -203,7 +203,7 @@ var _hmt = _hmt || [];
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Hexo/about/">
+              <a class="nav-link" href="/blog/about/">
                 <i class="iconfont icon-user-fill"></i>
                 <span>作者</span>
               </a>
@@ -239,7 +239,7 @@ var _hmt = _hmt || [];
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Hexo/remote_help/">
+              <a class="nav-link" href="/blog/remote_help/">
                 
                 <span>🐞远程调试/功能定做</span>
               </a>
@@ -269,7 +269,7 @@ var _hmt = _hmt || [];
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/Hexo/img/bg/bg5.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/blog/img/bg/bg5.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -378,7 +378,7 @@ var _hmt = _hmt || [];
 <li>保存，重启VMware，你就会发现汉化OK！</li>
 </ol>
 </blockquote>
-<img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823091203391.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20220823091203391" style="zoom:70%;" />
+<img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823091203391.png" srcset="/blog/img/loading.gif" lazyload alt="image-20220823091203391" style="zoom:70%;" />
 
 <h2 id="2-安装centos7-mini"><a href="#2-安装centos7-mini" class="headerlink" title="2.安装centos7 mini"></a>2.安装centos7 mini</h2><p>下载地址：<a target="_blank" rel="noopener" href="https://mirrors.aliyun.com/centos/7/isos/x86_64/">https://mirrors.aliyun.com/centos/7/isos/x86_64/</a></p>
 <p><a target="_blank" rel="noopener" href="http://mirror.nsc.liu.se/centos-store/">Index of &#x2F;centos-store&#x2F; (liu.se)</a></p>
@@ -389,16 +389,16 @@ var _hmt = _hmt || [];
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Black_Customer/article/details/109693645?ops_request_misc=%7B%22request_id%22:%22166126687516781683990414%22,%22scm%22:%2220140713.130102334..%22%7D&request_id=166126687516781683990414&biz_id=0&spm=1018.2226.3001.4187">【linux】文件管理系统之手动分区_是馄饨呀的博客-CSDN博客_linux手动分区</a></p>
 </blockquote>
 <p>下方为VMware中安装centos mini版时手动分两个区的图示（swap区和”&#x2F;“区）</p>
-<img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823092953960.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20220823092953960" style="zoom:50%;" />
+<img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823092953960.png" srcset="/blog/img/loading.gif" lazyload alt="image-20220823092953960" style="zoom:50%;" />
 
-<img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823093049916.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20220823093049916" style="zoom:50%;" />
+<img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823093049916.png" srcset="/blog/img/loading.gif" lazyload alt="image-20220823093049916" style="zoom:50%;" />
 
-<img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823093117428.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20220823093117428" style="zoom:50%;" />
+<img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823093117428.png" srcset="/blog/img/loading.gif" lazyload alt="image-20220823093117428" style="zoom:50%;" />
 
 <h2 id="3-动态获取IP"><a href="#3-动态获取IP" class="headerlink" title="3.动态获取IP"></a>3.动态获取IP</h2><blockquote>
 <p>刚装的centos，你可能获取不到动态IP，类似下面的情况：</p>
 </blockquote>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823231118096.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20220823231118096"></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823231118096.png" srcset="/blog/img/loading.gif" lazyload alt="image-20220823231118096"></p>
 <p>解决方案：</p>
 <ol>
 <li><p>首先确定你网卡的名称，使用指令<code>ip addr</code>即可查看。如上图，我的当前网卡名称是 <strong>ens33</strong></p>
@@ -411,7 +411,7 @@ var _hmt = _hmt || [];
 <li><p>重启网络服务：<code>systemctl restart network</code></p>
 </li>
 <li><p>再次测试：<code>ip addr</code>，就可以看到动态的IP了</p>
-<img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823233120116.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20220823233120116" style="zoom:67%;" /></li>
+<img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823233120116.png" srcset="/blog/img/loading.gif" lazyload alt="image-20220823233120116" style="zoom:67%;" /></li>
 </ol>
 <h2 id="4-关闭SELinux"><a href="#4-关闭SELinux" class="headerlink" title="4.关闭SELinux"></a>4.关闭SELinux</h2><blockquote>
 <p>科普：SELinux是一个增强型的Linux，它是一个Linux的一个内核模块，是Linux的一个安全子系统。</p>
@@ -438,20 +438,20 @@ var _hmt = _hmt || [];
 <p><strong>下面列举下我遇到的问题：</strong></p>
 <blockquote>
 <p><strong>问题1</strong>：安装前编译错误，如下图。</p>
-<img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823105023719.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20220823105023719" style="zoom:67%;" />
+<img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823105023719.png" srcset="/blog/img/loading.gif" lazyload alt="image-20220823105023719" style="zoom:67%;" />
 
 <p><strong>原因</strong>：是没有安装相关的依赖。</p>
 <p><strong>解决</strong>：先安装依赖  <code>yum -y install gcc zlib zlib-devel pcre-devel openssl openssl-devel</code></p>
 </blockquote>
 <blockquote>
 <p><strong>问题2</strong>：安装好nginx后，在虚拟机上访客是能看到nginx的欢迎界面的，但是我将IP地址放到外面的window的浏览器却访问不到，如下图。</p>
-<img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823110122059.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20220823110122059" style="zoom:40%;" />
+<img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823110122059.png" srcset="/blog/img/loading.gif" lazyload alt="image-20220823110122059" style="zoom:40%;" />
 
-<img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823105924804.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20220823105924804" style="zoom:40%;" />
+<img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823105924804.png" srcset="/blog/img/loading.gif" lazyload alt="image-20220823105924804" style="zoom:40%;" />
 
 <p><strong>原因</strong>：防火墙没有开放相应的端口</p>
 <p><strong>解决</strong>：将<code>80</code>端口打开（记得重启防火墙）</p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823111444095.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20220823111444095"></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823111444095.png" srcset="/blog/img/loading.gif" lazyload alt="image-20220823111444095"></p>
 </blockquote>
 <h2 id="6-防火墙常用指令"><a href="#6-防火墙常用指令" class="headerlink" title="6.防火墙常用指令"></a>6.防火墙常用指令</h2><ol>
 <li><p>查看防火墙状态：<code>systemctl status firewalld</code> 或<code>firewall-cmd --state</code></p>
@@ -472,7 +472,7 @@ var _hmt = _hmt || [];
 <li><p>永久关闭防火墙：<code>chkconfig iptables off</code></p>
 </li>
 </ol>
-<h2 id="7-lsof命令没有找到？"><a href="#7-lsof命令没有找到？" class="headerlink" title="7.lsof命令没有找到？"></a>7.lsof命令没有找到？</h2><p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823143849017.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20220823143849017"></p>
+<h2 id="7-lsof命令没有找到？"><a href="#7-lsof命令没有找到？" class="headerlink" title="7.lsof命令没有找到？"></a>7.lsof命令没有找到？</h2><p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823143849017.png" srcset="/blog/img/loading.gif" lazyload alt="image-20220823143849017"></p>
 <h2 id="8-手动安装命令依赖"><a href="#8-手动安装命令依赖" class="headerlink" title="8.手动安装命令依赖"></a>8.手动安装命令依赖</h2><blockquote>
 <p><strong>场景</strong>：这次我测试安装的是<code>centos 7 mini</code>版，也就是精简版，没有系统桌面等，因此，常常遇到下面的情况：</p>
 <p>当你输入一些命令的时候，系统提示你没有这个命令，如<code>lsof</code>，<code>ifconfig</code>都没有预装。</p>
@@ -480,10 +480,10 @@ var _hmt = _hmt || [];
 <p><strong>解决</strong>方式：</p>
 <ol>
 <li><p>先用<code>yum search [命令]</code> 找一下你需要安装哪个插件和工具，如这里我要找<code>lsof</code>相关的：</p>
-<img src="http://cdn.qiniu.liyansheng.top/typora/image-20220824093616969.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20220824093616969" style="zoom:67%;" />
+<img src="http://cdn.qiniu.liyansheng.top/typora/image-20220824093616969.png" srcset="/blog/img/loading.gif" lazyload alt="image-20220824093616969" style="zoom:67%;" />
 </li>
 <li><p>使用<code>yum install [名称]</code> 进行安装</p>
-<img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823144055517.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20220823144055517" style="zoom:50%;" />
+<img src="http://cdn.qiniu.liyansheng.top/typora/image-20220823144055517.png" srcset="/blog/img/loading.gif" lazyload alt="image-20220823144055517" style="zoom:50%;" />
 </li>
 <li><p>等安装完成后，就可以使用这个命令了。</p>
 </li>
@@ -569,13 +569,13 @@ var _hmt = _hmt || [];
 <p>参考：</p>
 <p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/JZjuechen/p/15689796.html">Linux文件属性详述 - JZEason - 博客园 (cnblogs.com)</a></p>
 </blockquote>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220824143055753.png" srcset="/Hexo/img/loading.gif" lazyload alt="来源 (https://www.cnblogs.com/JZjuechen/p/15689796.html"></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220824143055753.png" srcset="/blog/img/loading.gif" lazyload alt="来源 (https://www.cnblogs.com/JZjuechen/p/15689796.html"></p>
 <p>演示：</p>
 <blockquote>
 <p>权限标示：r-可读，w-可写，x-可执行</p>
 <p>权限分配角色：u-文件创建者  g-用户所在组，o-用户组外的其他人</p>
 </blockquote>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220829100130862.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20220829100130862"></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220829100130862.png" srcset="/blog/img/loading.gif" lazyload alt="image-20220829100130862"></p>
 <h2 id="14-文件：打包、压缩与解压"><a href="#14-文件：打包、压缩与解压" class="headerlink" title="14.文件：打包、压缩与解压"></a>14.文件：打包、压缩与解压</h2><p>参考学习：<a target="_blank" rel="noopener" href="https://blog.csdn.net/example440982/article/details/51712973">tar 解压缩命令详解_追求者2016的博客-CSDN博客_tar</a></p>
 <blockquote>
 <p>使用系统自带的   <strong>tar</strong>  工具即可完成文件的压缩与解压。</p>
@@ -618,21 +618,21 @@ var _hmt = _hmt || [];
 <h3 id="避雷-x3D-》"><a href="#避雷-x3D-》" class="headerlink" title="避雷&#x3D;》"></a>避雷&#x3D;》</h3><blockquote>
 <p>tar 的命令参数一定要写完整，否则会出现卡住，无响应的情况。</p>
 </blockquote>
-<img src="http://cdn.qiniu.liyansheng.top/typora/image-20220824152227333.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20220824152227333" style="zoom:50%;" />
+<img src="http://cdn.qiniu.liyansheng.top/typora/image-20220824152227333.png" srcset="/blog/img/loading.gif" lazyload alt="image-20220824152227333" style="zoom:50%;" />
 
 <p>否则会报错：</p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220824152254843.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20220824152254843"></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220824152254843.png" srcset="/blog/img/loading.gif" lazyload alt="image-20220824152254843"></p>
 <h2 id="15-自定义主机名-多节点）互ping通"><a href="#15-自定义主机名-多节点）互ping通" class="headerlink" title="15.自定义主机名(多节点）互ping通"></a>15.自定义主机名(多节点）互ping通</h2><p>自定义主机名：<code>hostnamectl set-hostname [主机名]</code></p>
 <p>查看主机名：<code>hostname</code></p>
 <p>路径<code>C:\Windows\System32\drivers\etc</code></p>
 <p>末尾添加：<code>192.168.220.128  node1</code></p>
 <p>ping测试：打开cmd，直接ping主机名</p>
 <p>问题1：</p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220825151904941.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20220825151904941"></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220825151904941.png" srcset="/blog/img/loading.gif" lazyload alt="image-20220825151904941"></p>
 <p>linux  &#x3D;&gt;win  ping不通</p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220825144443668.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20220825144443668"></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220825144443668.png" srcset="/blog/img/loading.gif" lazyload alt="image-20220825144443668"></p>
 <p>win  &#x3D;&gt; linux  可以ping通</p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220826100655421.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20220826100655421"></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220826100655421.png" srcset="/blog/img/loading.gif" lazyload alt="image-20220826100655421"></p>
 <p>解决：win的防火墙没关   关闭防火墙命令：<code>netsh advfirewall set allprofiles state off</code></p>
 <blockquote>
 <p>更多防火墙操作，可以参考：</p>
@@ -656,7 +656,7 @@ var _hmt = _hmt || [];
 <li>刷新：<code>yum makecache</code></li>
 </ol>
 <p>补充：</p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220825160515378.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20220825160515378"></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220825160515378.png" srcset="/blog/img/loading.gif" lazyload alt="image-20220825160515378"></p>
 <h2 id="17-软件常用配置路径"><a href="#17-软件常用配置路径" class="headerlink" title="17.软件常用配置路径"></a>17.软件常用配置路径</h2><blockquote>
 <p>学习参考：</p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_38317491/article/details/79217178?spm=1001.2101.3001.4242.2&utm_relevant_index=4"> linux常用的文件路径_爪穴心久的博客-CSDN博客_linux常用文件路径</a></p>
@@ -669,7 +669,7 @@ var _hmt = _hmt || [];
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs shell">[Unit]<br>Description=nginx<br>After=network.target<br><br>[Service]<br>Type=forking<br>ExecStart=/usr/local/nginx/sbin/nginx<br>ExecReload=/usr/local/nginx/sbin/nginx -s reload<br>ExecStop=/usr/local/nginx/sbin/nginx -s quit<br>PrivateTmp=true<br><br>[Install]<br>WantedBy=multi-user.target<br></code></pre></td></tr></table></figure>
 
 <p>启动、查看运行状态：</p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220829112302731.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20220829112302731"></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220829112302731.png" srcset="/blog/img/loading.gif" lazyload alt="image-20220829112302731"></p>
 <h2 id="19-神奇的-tail"><a href="#19-神奇的-tail" class="headerlink" title="19.神奇的   tail"></a>19.神奇的   tail</h2><blockquote>
 <p>tail用于查看文件的内容</p>
 </blockquote>
@@ -706,7 +706,7 @@ var _hmt = _hmt || [];
     
       <span class="category-chain">
         
-  <a href="/Hexo/categories/Linux/" class="category-chain-item">Linux</a>
+  <a href="/blog/categories/Linux/" class="category-chain-item">Linux</a>
   
   
 
@@ -721,9 +721,9 @@ var _hmt = _hmt || [];
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/Hexo/tags/Linux/">#Linux</a>
+        <a href="/blog/tags/Linux/">#Linux</a>
       
-        <a href="/Hexo/tags/shell/">#shell</a>
+        <a href="/blog/tags/shell/">#shell</a>
       
     </div>
   
@@ -736,7 +736,7 @@ var _hmt = _hmt || [];
   <div class="license-box my-3">
     <div class="license-title">
       <div>玩转Linux虚拟机，从安装到实操</div>
-      <div>https://yan-sheng-li.github.io/Hexo/posts/29995.html</div>
+      <div>https://yan-sheng-li.github.io/blog/posts/29995.html</div>
     </div>
     <div class="license-meta">
       
@@ -780,7 +780,7 @@ var _hmt = _hmt || [];
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/Hexo/posts/41053.html" title="启动Kafka步骤与常见问题">
+                      <a href="/blog/posts/41053.html" title="启动Kafka步骤与常见问题">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">启动Kafka步骤与常见问题</span>
                         <span class="visible-mobile">上一篇</span>
@@ -790,7 +790,7 @@ var _hmt = _hmt || [];
                   <article class="post-next col-6">
                     
                     
-                      <a href="/Hexo/posts/3820.html" title="初学shell常用操作">
+                      <a href="/blog/posts/3820.html" title="初学shell常用操作">
                         <span class="hidden-mobile">初学shell常用操作</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -925,7 +925,7 @@ var _hmt = _hmt || [];
     <div class="footer-inner">
   
     <div class="footer-content">
-       <a href="https://blog.csdn.net/weixin_44107140" target="_blank" rel="nofollow noopener"> <span>CSDN博客</span></a> <i class="iconfont">|</i> <a href="https://gitee.com/yan-sheng-li" target="_blank" rel="nofollow noopener"><span>Gitee码云</span></a> <i class="iconfont">|</i> <a href="#" target="_blank" rel="nofollow noopener"><span style="color:green">微信公众号：《编程亿点有趣》</span></a> <i class="iconfont">|</i><a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=NZUoWMzd3PQLWwxRGMiBNYEnVkEdNq__&jump_from=webapi&authKey=kgAofDqUzgwMCSX+UQQwxf837zMeWFGGmo4iIcbgkklW2pdfmVOlxPWAK6sMYMaC"> <img border="0" src="../../img/group.png" srcset="/Hexo/img/loading.gif" lazyload alt="远程调试-学习交流" title="远程调试-学习交流"></a>
+       <a href="https://blog.csdn.net/weixin_44107140" target="_blank" rel="nofollow noopener"> <span>CSDN博客</span></a> <i class="iconfont">|</i> <a href="https://gitee.com/yan-sheng-li" target="_blank" rel="nofollow noopener"><span>Gitee码云</span></a> <i class="iconfont">|</i> <a href="#" target="_blank" rel="nofollow noopener"><span style="color:green">微信公众号：《编程亿点有趣》</span></a> <i class="iconfont">|</i><a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=NZUoWMzd3PQLWwxRGMiBNYEnVkEdNq__&jump_from=webapi&authKey=kgAofDqUzgwMCSX+UQQwxf837zMeWFGGmo4iIcbgkklW2pdfmVOlxPWAK6sMYMaC"> <img border="0" src="../../img/group.png" srcset="/blog/img/loading.gif" lazyload alt="远程调试-学习交流" title="远程调试-学习交流"></a>
     </div>
   
   
@@ -971,8 +971,8 @@ var _hmt = _hmt || [];
 
 <script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/Hexo/js/events.js" ></script>
-<script  src="/Hexo/js/plugins.js" ></script>
+<script  src="/blog/js/events.js" ></script>
+<script  src="/blog/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -994,7 +994,7 @@ var _hmt = _hmt || [];
 
 
   
-    <script  src="/Hexo/js/img-lazyload.js" ></script>
+    <script  src="/blog/js/img-lazyload.js" ></script>
   
 
 
@@ -1093,7 +1093,7 @@ var _hmt = _hmt || [];
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/Hexo/js/local-search.js" ></script>
+  <script  src="/blog/js/local-search.js" ></script>
 
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
@@ -1103,7 +1103,7 @@ var _hmt = _hmt || [];
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/Hexo/js/boot.js" ></script>
+<script  src="/blog/js/boot.js" ></script>
 
 
   
@@ -1111,5 +1111,5 @@ var _hmt = _hmt || [];
   <noscript>
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
-<script src="/Hexo/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/Hexo/live2dw/assets/hijiki.model.json"},"display":{"superSample":1,"width":200,"height":300,"position":"left","hOffset":0,"vOffset":-50},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
+<script src="/blog/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/blog/live2dw/assets/hijiki.model.json"},"display":{"superSample":1,"width":200,"height":300,"position":"left","hOffset":0,"vOffset":-50},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
 </html>

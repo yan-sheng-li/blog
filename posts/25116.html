@@ -6,8 +6,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/Hexo/img/avatar2.jpg">
-  <link rel="icon" href="/Hexo/img/avatar2.jpg">
+  <link rel="apple-touch-icon" sizes="76x76" href="/blog/img/avatar2.jpg">
+  <link rel="icon" href="/blog/img/avatar2.jpg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -18,13 +18,13 @@
     <meta name="description" content="在现代应用程序开发中，数据可视化是一个关键部分。本文将介绍如何使用 Java Swing 和 XChart 库创建各种类型的图表。XChart 是一个轻量级的图表库，支持多种类型的图表，非常适合在 Java 应用中进行快速的图表绘制。  1、环境配置在开始之前，我们需要确保项目中包含了 XChart 的依赖。以下是在 Maven 项目中的 pom.xml 文件中添加 XChart 依赖的方法：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用 Java Swing 和 XChart 创建多种图表">
-<meta property="og:url" content="https://yan-sheng-li.github.io/Hexo/posts/25116.html">
+<meta property="og:url" content="https://yan-sheng-li.github.io/blog/posts/25116.html">
 <meta property="og:site_name" content="👨‍💻木子-博客">
 <meta property="og:description" content="在现代应用程序开发中，数据可视化是一个关键部分。本文将介绍如何使用 Java Swing 和 XChart 库创建各种类型的图表。XChart 是一个轻量级的图表库，支持多种类型的图表，非常适合在 Java 应用中进行快速的图表绘制。  1、环境配置在开始之前，我们需要确保项目中包含了 XChart 的依赖。以下是在 Maven 项目中的 pom.xml 文件中添加 XChart 依赖的方法：">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://cdn.qiniu.liyansheng.top/img/20240627122556.png">
 <meta property="article:published_time" content="2024-06-27T12:07:00.000Z">
-<meta property="article:modified_time" content="2024-07-16T15:51:04.007Z">
+<meta property="article:modified_time" content="2024-07-17T06:09:52.977Z">
 <meta property="article:author" content="李延胜">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary_large_image">
@@ -58,12 +58,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
-<link  rel="stylesheet" href="/Hexo/css/main.css" />
+<link  rel="stylesheet" href="/blog/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/Hexo/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/blog/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/Hexo/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/blog/css/highlight-dark.css" />
   
 
 
@@ -72,15 +72,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"yan-sheng-li.github.io","root":"/Hexo/","version":"1.9.4","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"85b00ecca8bd5efa8a581f758ba73a03","google":null,"gtag":"G-M78M7E4Y4N","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/Hexo/local-search.xml"};
+    var CONFIG = {"hostname":"yan-sheng-li.github.io","root":"/blog/","version":"1.9.4","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"85b00ecca8bd5efa8a581f758ba73a03","google":null,"gtag":"G-M78M7E4Y4N","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/blog/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/Hexo/js/utils.js" ></script>
-  <script  src="/Hexo/js/color-schema.js" ></script>
+  <script  src="/blog/js/utils.js" ></script>
+  <script  src="/blog/js/color-schema.js" ></script>
   
 
   
@@ -147,7 +147,7 @@ var _hmt = _hmt || [];
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/Hexo/">
+    <a class="navbar-brand" href="/blog/">
       <strong>👩‍💻木子-博客</strong>
     </a>
 
@@ -166,7 +166,7 @@ var _hmt = _hmt || [];
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Hexo/">
+              <a class="nav-link" href="/blog/">
                 <i class="iconfont icon-home-fill"></i>
                 <span>首页</span>
               </a>
@@ -178,7 +178,7 @@ var _hmt = _hmt || [];
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Hexo/categories/">
+              <a class="nav-link" href="/blog/categories/">
                 <i class="iconfont icon-category-fill"></i>
                 <span>分类</span>
               </a>
@@ -190,7 +190,7 @@ var _hmt = _hmt || [];
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Hexo/tags/">
+              <a class="nav-link" href="/blog/tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>标签</span>
               </a>
@@ -202,7 +202,7 @@ var _hmt = _hmt || [];
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Hexo/about/">
+              <a class="nav-link" href="/blog/about/">
                 <i class="iconfont icon-user-fill"></i>
                 <span>作者</span>
               </a>
@@ -238,7 +238,7 @@ var _hmt = _hmt || [];
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Hexo/remote_help/">
+              <a class="nav-link" href="/blog/remote_help/">
                 
                 <span>🐞远程调试/功能定做</span>
               </a>
@@ -268,7 +268,7 @@ var _hmt = _hmt || [];
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/Hexo/img/bg/bg5.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/blog/img/bg/bg5.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -373,19 +373,19 @@ var _hmt = _hmt || [];
 <h2 id="1、环境配置"><a href="#1、环境配置" class="headerlink" title="1、环境配置"></a>1、环境配置</h2><p>在开始之前，我们需要确保项目中包含了 XChart 的依赖。以下是在 Maven 项目中的 pom.xml 文件中添加 XChart 依赖的方法：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.knowm.xchart<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>xchart<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>3.8.0<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <h2 id="2、创建不同类型的图表"><a href="#2、创建不同类型的图表" class="headerlink" title="2、创建不同类型的图表"></a>2、创建不同类型的图表</h2><p>以下是如何使用 XChart 创建不同类型的图表的示例代码，包括堆积柱状图、阶梯图、时间序列图、直方图和气泡图。</p>
-<h3 id="面积图"><a href="#面积图" class="headerlink" title="面积图"></a>面积图</h3><p><img src="http://cdn.qiniu.liyansheng.top/img/20240627121605.png" srcset="/Hexo/img/loading.gif" lazyload></p>
+<h3 id="面积图"><a href="#面积图" class="headerlink" title="面积图"></a>面积图</h3><p><img src="http://cdn.qiniu.liyansheng.top/img/20240627121605.png" srcset="/blog/img/loading.gif" lazyload></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs java"><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">AreaChartExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">JFrame</span> &#123;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">AreaChartExample</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-comment">// 创建图表</span><br>        <span class="hljs-type">XYChart</span> <span class="hljs-variable">chart</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">XYChartBuilder</span>().width(<span class="hljs-number">800</span>).height(<span class="hljs-number">600</span>).title(<span class="hljs-string">&quot;Area Chart Example&quot;</span>).xAxisTitle(<span class="hljs-string">&quot;X&quot;</span>).yAxisTitle(<span class="hljs-string">&quot;Y&quot;</span>).build();<br><br>        <span class="hljs-comment">// 添加数据</span><br>        <span class="hljs-type">double</span>[] xData = <span class="hljs-keyword">new</span> <span class="hljs-title class_">double</span>[] &#123;<span class="hljs-number">0.0</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">3.0</span>, <span class="hljs-number">4.0</span>&#125;;<br>        <span class="hljs-type">double</span>[] yData = <span class="hljs-keyword">new</span> <span class="hljs-title class_">double</span>[] &#123;<span class="hljs-number">2.0</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">0.0</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">2.0</span>&#125;;<br>        chart.addSeries(<span class="hljs-string">&quot;y(x)&quot;</span>, xData, yData).setMarker(SeriesMarkers.NONE).setFillColor(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Color</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">255</span>, <span class="hljs-number">50</span>));<br><br>        <span class="hljs-comment">// 将图表面板添加到 JFrame</span><br>        <span class="hljs-type">JPanel</span> <span class="hljs-variable">chartPanel</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">XChartPanel</span>&lt;&gt;(chart);<br>        getContentPane().add(chartPanel, BorderLayout.CENTER);<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        SwingUtilities.invokeLater(() -&gt; &#123;<br>            <span class="hljs-type">AreaChartExample</span> <span class="hljs-variable">example</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">AreaChartExample</span>();<br>            example.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);<br>            example.pack();<br>            example.setVisible(<span class="hljs-literal">true</span>);<br>        &#125;);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h3 id="柱状图"><a href="#柱状图" class="headerlink" title="柱状图"></a>柱状图</h3><p><img src="http://cdn.qiniu.liyansheng.top/img/20240627122041.png" srcset="/Hexo/img/loading.gif" lazyload></p>
+<h3 id="柱状图"><a href="#柱状图" class="headerlink" title="柱状图"></a>柱状图</h3><p><img src="http://cdn.qiniu.liyansheng.top/img/20240627122041.png" srcset="/blog/img/loading.gif" lazyload></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">BarChartExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">JFrame</span> &#123;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">BarChartExample</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-comment">// 创建图表</span><br>        <span class="hljs-type">CategoryChart</span> <span class="hljs-variable">chart</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">CategoryChartBuilder</span>().width(<span class="hljs-number">800</span>).height(<span class="hljs-number">600</span>).title(<span class="hljs-string">&quot;Bar Chart Example&quot;</span>).xAxisTitle(<span class="hljs-string">&quot;Category&quot;</span>).yAxisTitle(<span class="hljs-string">&quot;Value&quot;</span>).build();<br><br>        <span class="hljs-comment">// 添加数据</span><br>        List&lt;String&gt; categories = Arrays.asList(<span class="hljs-string">&quot;A&quot;</span>, <span class="hljs-string">&quot;B&quot;</span>, <span class="hljs-string">&quot;C&quot;</span>);<br>        List&lt;Number&gt; series1Values = Arrays.asList(<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">9</span>);<br>        List&lt;Number&gt; series2Values = Arrays.asList(<span class="hljs-number">3</span>, <span class="hljs-number">8</span>, <span class="hljs-number">5</span>);<br><br>        chart.addSeries(<span class="hljs-string">&quot;Series 1&quot;</span>, categories, series1Values);<br>        chart.addSeries(<span class="hljs-string">&quot;Series 2&quot;</span>, categories, series2Values);<br><br>        <span class="hljs-comment">// 将图表面板添加到 JFrame</span><br>        <span class="hljs-type">JPanel</span> <span class="hljs-variable">chartPanel</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">XChartPanel</span>&lt;&gt;(chart);<br>        getContentPane().add(chartPanel, BorderLayout.CENTER);<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        SwingUtilities.invokeLater(() -&gt; &#123;<br>            <span class="hljs-type">BarChartExample</span> <span class="hljs-variable">example</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">BarChartExample</span>();<br>            example.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);<br>            example.pack();<br>            example.setVisible(<span class="hljs-literal">true</span>);<br>        &#125;);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h3 id="气泡图"><a href="#气泡图" class="headerlink" title="气泡图"></a>气泡图</h3><p><img src="http://cdn.qiniu.liyansheng.top/img/20240627122141.png" srcset="/Hexo/img/loading.gif" lazyload></p>
+<h3 id="气泡图"><a href="#气泡图" class="headerlink" title="气泡图"></a>气泡图</h3><p><img src="http://cdn.qiniu.liyansheng.top/img/20240627122141.png" srcset="/blog/img/loading.gif" lazyload></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-title function_">BubbleChartExample</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-comment">// 创建图表</span><br>        <span class="hljs-type">XYChart</span> <span class="hljs-variable">chart</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">XYChartBuilder</span>().width(<span class="hljs-number">800</span>).height(<span class="hljs-number">600</span>).title(<span class="hljs-string">&quot;Bubble Chart Example&quot;</span>).xAxisTitle(<span class="hljs-string">&quot;X&quot;</span>).yAxisTitle(<span class="hljs-string">&quot;Y&quot;</span>).build();<br><br>        <span class="hljs-comment">// 添加数据</span><br>        <span class="hljs-type">double</span>[] xData = <span class="hljs-keyword">new</span> <span class="hljs-title class_">double</span>[] &#123;<span class="hljs-number">0.1</span>, <span class="hljs-number">0.4</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">1.5</span>, <span class="hljs-number">2.2</span>, <span class="hljs-number">3.0</span>&#125;;<br>        <span class="hljs-type">double</span>[] yData = <span class="hljs-keyword">new</span> <span class="hljs-title class_">double</span>[] &#123;<span class="hljs-number">2.0</span>, <span class="hljs-number">1.5</span>, <span class="hljs-number">0.9</span>, <span class="hljs-number">1.4</span>, <span class="hljs-number">1.9</span>, <span class="hljs-number">2.2</span>&#125;;<br>        <span class="hljs-type">double</span>[] bubbleSize = <span class="hljs-keyword">new</span> <span class="hljs-title class_">double</span>[] &#123;<span class="hljs-number">0.1</span>, <span class="hljs-number">0.2</span>, <span class="hljs-number">0.3</span>, <span class="hljs-number">0.4</span>, <span class="hljs-number">0.5</span>, <span class="hljs-number">0.6</span>&#125;;<br>        chart.addSeries(<span class="hljs-string">&quot;y(x)&quot;</span>, xData, yData, bubbleSize).setMarker(SeriesMarkers.CIRCLE);<br><br>        <span class="hljs-comment">// 将图表面板添加到 JFrame</span><br>        <span class="hljs-type">JPanel</span> <span class="hljs-variable">chartPanel</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">XChartPanel</span>&lt;&gt;(chart);<br>        getContentPane().add(chartPanel, BorderLayout.CENTER);<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        SwingUtilities.invokeLater(() -&gt; &#123;<br>            <span class="hljs-type">BubbleChartExample</span> <span class="hljs-variable">example</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">BubbleChartExample</span>();<br>            example.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);<br>            example.pack();<br>            example.setVisible(<span class="hljs-literal">true</span>);<br>        &#125;);<br>    &#125;<br></code></pre></td></tr></table></figure>
-<h3 id="折线图"><a href="#折线图" class="headerlink" title="折线图"></a>折线图</h3><p><img src="http://cdn.qiniu.liyansheng.top/img/20240627122331.png" srcset="/Hexo/img/loading.gif" lazyload></p>
+<h3 id="折线图"><a href="#折线图" class="headerlink" title="折线图"></a>折线图</h3><p><img src="http://cdn.qiniu.liyansheng.top/img/20240627122331.png" srcset="/blog/img/loading.gif" lazyload></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">LineChartExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">JFrame</span> &#123;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">LineChartExample</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-comment">// 创建图表</span><br>        <span class="hljs-type">XYChart</span> <span class="hljs-variable">chart</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">XYChartBuilder</span>().width(<span class="hljs-number">800</span>).height(<span class="hljs-number">600</span>).title(<span class="hljs-string">&quot;Line Chart Example&quot;</span>).xAxisTitle(<span class="hljs-string">&quot;X&quot;</span>).yAxisTitle(<span class="hljs-string">&quot;Y&quot;</span>).build();<br><br>        <span class="hljs-comment">// 自定义图表样式</span><br>        chart.getStyler().setLegendPosition(Styler.LegendPosition.InsideNE);<br>        chart.getStyler().setMarkerSize(<span class="hljs-number">16</span>);<br><br>        <span class="hljs-comment">// 添加数据</span><br>        <span class="hljs-type">double</span>[] xData = <span class="hljs-keyword">new</span> <span class="hljs-title class_">double</span>[] &#123;<span class="hljs-number">0.0</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">3.0</span>, <span class="hljs-number">4.0</span>&#125;;<br>        <span class="hljs-type">double</span>[] yData = <span class="hljs-keyword">new</span> <span class="hljs-title class_">double</span>[] &#123;<span class="hljs-number">2.0</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">0.0</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">2.0</span>&#125;;<br>        chart.addSeries(<span class="hljs-string">&quot;y(x)&quot;</span>, xData, yData);<br><br>        <span class="hljs-comment">// 将图表面板添加到 JFrame</span><br>        <span class="hljs-type">JPanel</span> <span class="hljs-variable">chartPanel</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">XChartPanel</span>&lt;&gt;(chart);<br>        getContentPane().add(chartPanel, BorderLayout.CENTER);<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        SwingUtilities.invokeLater(() -&gt; &#123;<br>            <span class="hljs-type">LineChartExample</span> <span class="hljs-variable">example</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">LineChartExample</span>();<br>            example.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);<br>            example.pack();<br>            example.setVisible(<span class="hljs-literal">true</span>);<br>        &#125;);<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
 
-<h3 id="饼图"><a href="#饼图" class="headerlink" title="饼图"></a>饼图</h3><p><img src="http://cdn.qiniu.liyansheng.top/img/20240627122556.png" srcset="/Hexo/img/loading.gif" lazyload></p>
+<h3 id="饼图"><a href="#饼图" class="headerlink" title="饼图"></a>饼图</h3><p><img src="http://cdn.qiniu.liyansheng.top/img/20240627122556.png" srcset="/blog/img/loading.gif" lazyload></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">PieChartExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">JFrame</span> &#123;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">PieChartExample</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-comment">// 创建图表</span><br>        <span class="hljs-type">PieChart</span> <span class="hljs-variable">chart</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">PieChartBuilder</span>().width(<span class="hljs-number">800</span>).height(<span class="hljs-number">600</span>).title(<span class="hljs-string">&quot;Pie Chart Example&quot;</span>).build();<br><br>        <span class="hljs-comment">// 添加数据</span><br>        chart.addSeries(<span class="hljs-string">&quot;Category A&quot;</span>, <span class="hljs-number">40</span>);<br>        chart.addSeries(<span class="hljs-string">&quot;Category B&quot;</span>, <span class="hljs-number">30</span>);<br>        chart.addSeries(<span class="hljs-string">&quot;Category C&quot;</span>, <span class="hljs-number">20</span>);<br>        chart.addSeries(<span class="hljs-string">&quot;Category D&quot;</span>, <span class="hljs-number">10</span>);<br><br>        <span class="hljs-comment">// 将图表面板添加到 JFrame</span><br>        <span class="hljs-type">JPanel</span> <span class="hljs-variable">chartPanel</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">XChartPanel</span>&lt;&gt;(chart);<br>        getContentPane().add(chartPanel, BorderLayout.CENTER);<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        SwingUtilities.invokeLater(() -&gt; &#123;<br>            <span class="hljs-type">PieChartExample</span> <span class="hljs-variable">example</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">PieChartExample</span>();<br>            example.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);<br>            example.pack();<br>            example.setVisible(<span class="hljs-literal">true</span>);<br>        &#125;);<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
-<h3 id="阶梯图"><a href="#阶梯图" class="headerlink" title="阶梯图"></a>阶梯图</h3><p><img src="http://cdn.qiniu.liyansheng.top/img/20240627122654.png" srcset="/Hexo/img/loading.gif" lazyload></p>
+<h3 id="阶梯图"><a href="#阶梯图" class="headerlink" title="阶梯图"></a>阶梯图</h3><p><img src="http://cdn.qiniu.liyansheng.top/img/20240627122654.png" srcset="/blog/img/loading.gif" lazyload></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">StepChartExample</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">JFrame</span> &#123;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">StepChartExample</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-comment">// 创建图表</span><br>        <span class="hljs-type">XYChart</span> <span class="hljs-variable">chart</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">XYChartBuilder</span>().width(<span class="hljs-number">800</span>).height(<span class="hljs-number">600</span>).title(<span class="hljs-string">&quot;Step Chart Example&quot;</span>).xAxisTitle(<span class="hljs-string">&quot;X&quot;</span>).yAxisTitle(<span class="hljs-string">&quot;Y&quot;</span>).build();<br><br>        <span class="hljs-comment">// 添加数据</span><br>        <span class="hljs-type">double</span>[] xData = <span class="hljs-keyword">new</span> <span class="hljs-title class_">double</span>[] &#123;<span class="hljs-number">0.0</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">3.0</span>, <span class="hljs-number">4.0</span>&#125;;<br>        <span class="hljs-type">double</span>[] yData = <span class="hljs-keyword">new</span> <span class="hljs-title class_">double</span>[] &#123;<span class="hljs-number">2.0</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">0.0</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">2.0</span>&#125;;<br>        chart.addSeries(<span class="hljs-string">&quot;y(x)&quot;</span>, xData, yData).setXYSeriesRenderStyle(XYSeries.XYSeriesRenderStyle.Step);<br><br>        <span class="hljs-comment">// 将图表面板添加到 JFrame</span><br>        <span class="hljs-type">JPanel</span> <span class="hljs-variable">chartPanel</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">XChartPanel</span>&lt;&gt;(chart);<br>        getContentPane().add(chartPanel, BorderLayout.CENTER);<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        SwingUtilities.invokeLater(() -&gt; &#123;<br>            <span class="hljs-type">StepChartExample</span> <span class="hljs-variable">example</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StepChartExample</span>();<br>            example.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);<br>            example.pack();<br>            example.setVisible(<span class="hljs-literal">true</span>);<br>        &#125;);<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
 
 
@@ -402,7 +402,7 @@ var _hmt = _hmt || [];
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/Hexo/tags/java/">#java</a>
+        <a href="/blog/tags/java/">#java</a>
       
     </div>
   
@@ -415,7 +415,7 @@ var _hmt = _hmt || [];
   <div class="license-box my-3">
     <div class="license-title">
       <div>使用 Java Swing 和 XChart 创建多种图表</div>
-      <div>https://yan-sheng-li.github.io/Hexo/posts/25116.html</div>
+      <div>https://yan-sheng-li.github.io/blog/posts/25116.html</div>
     </div>
     <div class="license-meta">
       
@@ -459,7 +459,7 @@ var _hmt = _hmt || [];
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/Hexo/install/" title="⚙常用工具安装教程">
+                      <a href="/blog/install/" title="⚙常用工具安装教程">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">⚙常用工具安装教程</span>
                         <span class="visible-mobile">上一篇</span>
@@ -469,7 +469,7 @@ var _hmt = _hmt || [];
                   <article class="post-next col-6">
                     
                     
-                      <a href="/Hexo/posts/44467.html" title="使用 Vue Router 的 meta 属性实现多种功能">
+                      <a href="/blog/posts/44467.html" title="使用 Vue Router 的 meta 属性实现多种功能">
                         <span class="hidden-mobile">使用 Vue Router 的 meta 属性实现多种功能</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -604,7 +604,7 @@ var _hmt = _hmt || [];
     <div class="footer-inner">
   
     <div class="footer-content">
-       <a href="https://blog.csdn.net/weixin_44107140" target="_blank" rel="nofollow noopener"> <span>CSDN博客</span></a> <i class="iconfont">|</i> <a href="https://gitee.com/yan-sheng-li" target="_blank" rel="nofollow noopener"><span>Gitee码云</span></a> <i class="iconfont">|</i> <a href="#" target="_blank" rel="nofollow noopener"><span style="color:green">微信公众号：《编程亿点有趣》</span></a> <i class="iconfont">|</i><a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=NZUoWMzd3PQLWwxRGMiBNYEnVkEdNq__&jump_from=webapi&authKey=kgAofDqUzgwMCSX+UQQwxf837zMeWFGGmo4iIcbgkklW2pdfmVOlxPWAK6sMYMaC"> <img border="0" src="../../img/group.png" srcset="/Hexo/img/loading.gif" lazyload alt="远程调试-学习交流" title="远程调试-学习交流"></a>
+       <a href="https://blog.csdn.net/weixin_44107140" target="_blank" rel="nofollow noopener"> <span>CSDN博客</span></a> <i class="iconfont">|</i> <a href="https://gitee.com/yan-sheng-li" target="_blank" rel="nofollow noopener"><span>Gitee码云</span></a> <i class="iconfont">|</i> <a href="#" target="_blank" rel="nofollow noopener"><span style="color:green">微信公众号：《编程亿点有趣》</span></a> <i class="iconfont">|</i><a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=NZUoWMzd3PQLWwxRGMiBNYEnVkEdNq__&jump_from=webapi&authKey=kgAofDqUzgwMCSX+UQQwxf837zMeWFGGmo4iIcbgkklW2pdfmVOlxPWAK6sMYMaC"> <img border="0" src="../../img/group.png" srcset="/blog/img/loading.gif" lazyload alt="远程调试-学习交流" title="远程调试-学习交流"></a>
     </div>
   
   
@@ -650,8 +650,8 @@ var _hmt = _hmt || [];
 
 <script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/Hexo/js/events.js" ></script>
-<script  src="/Hexo/js/plugins.js" ></script>
+<script  src="/blog/js/events.js" ></script>
+<script  src="/blog/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -673,7 +673,7 @@ var _hmt = _hmt || [];
 
 
   
-    <script  src="/Hexo/js/img-lazyload.js" ></script>
+    <script  src="/blog/js/img-lazyload.js" ></script>
   
 
 
@@ -772,7 +772,7 @@ var _hmt = _hmt || [];
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/Hexo/js/local-search.js" ></script>
+  <script  src="/blog/js/local-search.js" ></script>
 
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
@@ -782,7 +782,7 @@ var _hmt = _hmt || [];
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/Hexo/js/boot.js" ></script>
+<script  src="/blog/js/boot.js" ></script>
 
 
   
@@ -790,5 +790,5 @@ var _hmt = _hmt || [];
   <noscript>
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
-<script src="/Hexo/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/Hexo/live2dw/assets/hijiki.model.json"},"display":{"superSample":1,"width":200,"height":300,"position":"left","hOffset":0,"vOffset":-50},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
+<script src="/blog/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/blog/live2dw/assets/hijiki.model.json"},"display":{"superSample":1,"width":200,"height":300,"position":"left","hOffset":0,"vOffset":-50},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
 </html>

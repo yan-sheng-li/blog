@@ -6,8 +6,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/Hexo/img/avatar2.jpg">
-  <link rel="icon" href="/Hexo/img/avatar2.jpg">
+  <link rel="apple-touch-icon" sizes="76x76" href="/blog/img/avatar2.jpg">
+  <link rel="icon" href="/blog/img/avatar2.jpg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -18,13 +18,13 @@
     <meta name="description" content="在本文中，我将介绍如何利用Spring Boot轻松整合Knife4j（Swagger-Bootstrap-UI的升级版），快速搭建出美观的API文档界面。通过这个过程，你将学会配置Knife4j，自动生成API文档，并且掌握在可视化界面中进行接口调试的方法，为你的项目增添便捷性与可维护性。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="轻松整合Knife4j：快速搭建Swagger文档界面与接口调试">
-<meta property="og:url" content="https://yan-sheng-li.github.io/Hexo/posts/30821.html">
+<meta property="og:url" content="https://yan-sheng-li.github.io/blog/posts/30821.html">
 <meta property="og:site_name" content="👨‍💻木子-博客">
 <meta property="og:description" content="在本文中，我将介绍如何利用Spring Boot轻松整合Knife4j（Swagger-Bootstrap-UI的升级版），快速搭建出美观的API文档界面。通过这个过程，你将学会配置Knife4j，自动生成API文档，并且掌握在可视化界面中进行接口调试的方法，为你的项目增添便捷性与可维护性。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://yan-sheng-li.github.io/img/knife4j.jpg">
 <meta property="article:published_time" content="2023-11-28T22:05:00.000Z">
-<meta property="article:modified_time" content="2024-07-16T15:51:04.011Z">
+<meta property="article:modified_time" content="2024-07-17T06:09:52.977Z">
 <meta property="article:author" content="李延胜">
 <meta property="article:tag" content="SpringBoot">
 <meta name="twitter:card" content="summary_large_image">
@@ -58,12 +58,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
-<link  rel="stylesheet" href="/Hexo/css/main.css" />
+<link  rel="stylesheet" href="/blog/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/Hexo/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/blog/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/Hexo/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/blog/css/highlight-dark.css" />
   
 
 
@@ -72,15 +72,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"yan-sheng-li.github.io","root":"/Hexo/","version":"1.9.4","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"85b00ecca8bd5efa8a581f758ba73a03","google":null,"gtag":"G-M78M7E4Y4N","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/Hexo/local-search.xml"};
+    var CONFIG = {"hostname":"yan-sheng-li.github.io","root":"/blog/","version":"1.9.4","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"85b00ecca8bd5efa8a581f758ba73a03","google":null,"gtag":"G-M78M7E4Y4N","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/blog/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/Hexo/js/utils.js" ></script>
-  <script  src="/Hexo/js/color-schema.js" ></script>
+  <script  src="/blog/js/utils.js" ></script>
+  <script  src="/blog/js/color-schema.js" ></script>
   
 
   
@@ -147,7 +147,7 @@ var _hmt = _hmt || [];
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/Hexo/">
+    <a class="navbar-brand" href="/blog/">
       <strong>👩‍💻木子-博客</strong>
     </a>
 
@@ -166,7 +166,7 @@ var _hmt = _hmt || [];
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Hexo/">
+              <a class="nav-link" href="/blog/">
                 <i class="iconfont icon-home-fill"></i>
                 <span>首页</span>
               </a>
@@ -178,7 +178,7 @@ var _hmt = _hmt || [];
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Hexo/categories/">
+              <a class="nav-link" href="/blog/categories/">
                 <i class="iconfont icon-category-fill"></i>
                 <span>分类</span>
               </a>
@@ -190,7 +190,7 @@ var _hmt = _hmt || [];
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Hexo/tags/">
+              <a class="nav-link" href="/blog/tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>标签</span>
               </a>
@@ -202,7 +202,7 @@ var _hmt = _hmt || [];
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Hexo/about/">
+              <a class="nav-link" href="/blog/about/">
                 <i class="iconfont icon-user-fill"></i>
                 <span>作者</span>
               </a>
@@ -238,7 +238,7 @@ var _hmt = _hmt || [];
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Hexo/remote_help/">
+              <a class="nav-link" href="/blog/remote_help/">
                 
                 <span>🐞远程调试/功能定做</span>
               </a>
@@ -268,7 +268,7 @@ var _hmt = _hmt || [];
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/Hexo/img/bg/bg5.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/blog/img/bg/bg5.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -381,11 +381,11 @@ var _hmt = _hmt || [];
 <h3 id="步骤3：测试"><a href="#步骤3：测试" class="headerlink" title="步骤3：测试"></a>步骤3：测试</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@RestController</span><br><span class="hljs-meta">@RequestMapping(&quot;/api/sims&quot;)</span><br><span class="hljs-meta">@CrossOrigin</span> <span class="hljs-comment">//跨域</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ProductController</span> &#123;<br>    <span class="hljs-meta">@GetMapping(&quot;/test&quot;)</span><br>    <span class="hljs-meta">@ApiOperation(&quot;测试接口&quot;)</span><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">test</span><span class="hljs-params">()</span>&#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;hello&quot;</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p>启动程序，访问：<a href="http://localhost:{your-port}/doc.htm">http://localhost:{your-port}/doc.htm</a></p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231128194303906.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20231128194303906"></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231128194303906.png" srcset="/blog/img/loading.gif" lazyload alt="image-20231128194303906"></p>
 <p>接口信息：</p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231128194410697.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20231128194410697"></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231128194410697.png" srcset="/blog/img/loading.gif" lazyload alt="image-20231128194410697"></p>
 <p>可以直接向接口发起请求：</p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231128194452290.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20231128194452290"></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231128194452290.png" srcset="/blog/img/loading.gif" lazyload alt="image-20231128194452290"></p>
 <p>其他类型的接口同理操作。</p>
 <h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>确保你的控制器类和方法已经按照 Swagger 的注解规范进行了注解，以便 Knife4j 能够扫描并生成 API 文档。</p>
 <p>一般来说，只需以上几步即可在 Spring Boot 项目中整合 Knife4j 来生成 API 文档，方便查看和测试接口。如果有额外的配置需求或者特定的定制需求，你可以查阅 Knife4j 官方文档或者 GitHub 仓库，了解更多详细的配置方法和定制选项。</p>
@@ -412,7 +412,7 @@ var _hmt = _hmt || [];
     
       <span class="category-chain">
         
-  <a href="/Hexo/categories/SpringBoot/" class="category-chain-item">SpringBoot</a>
+  <a href="/blog/categories/SpringBoot/" class="category-chain-item">SpringBoot</a>
   
   
 
@@ -427,7 +427,7 @@ var _hmt = _hmt || [];
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/Hexo/tags/SpringBoot/">#SpringBoot</a>
+        <a href="/blog/tags/SpringBoot/">#SpringBoot</a>
       
     </div>
   
@@ -440,7 +440,7 @@ var _hmt = _hmt || [];
   <div class="license-box my-3">
     <div class="license-title">
       <div>轻松整合Knife4j：快速搭建Swagger文档界面与接口调试</div>
-      <div>https://yan-sheng-li.github.io/Hexo/posts/30821.html</div>
+      <div>https://yan-sheng-li.github.io/blog/posts/30821.html</div>
     </div>
     <div class="license-meta">
       
@@ -484,7 +484,7 @@ var _hmt = _hmt || [];
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/Hexo/posts/287.html" title="Python：字符串转列表">
+                      <a href="/blog/posts/287.html" title="Python：字符串转列表">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">Python：字符串转列表</span>
                         <span class="visible-mobile">上一篇</span>
@@ -494,7 +494,7 @@ var _hmt = _hmt || [];
                   <article class="post-next col-6">
                     
                     
-                      <a href="/Hexo/posts/42245.html" title="Python：正则的贪婪匹配">
+                      <a href="/blog/posts/42245.html" title="Python：正则的贪婪匹配">
                         <span class="hidden-mobile">Python：正则的贪婪匹配</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -629,7 +629,7 @@ var _hmt = _hmt || [];
     <div class="footer-inner">
   
     <div class="footer-content">
-       <a href="https://blog.csdn.net/weixin_44107140" target="_blank" rel="nofollow noopener"> <span>CSDN博客</span></a> <i class="iconfont">|</i> <a href="https://gitee.com/yan-sheng-li" target="_blank" rel="nofollow noopener"><span>Gitee码云</span></a> <i class="iconfont">|</i> <a href="#" target="_blank" rel="nofollow noopener"><span style="color:green">微信公众号：《编程亿点有趣》</span></a> <i class="iconfont">|</i><a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=NZUoWMzd3PQLWwxRGMiBNYEnVkEdNq__&jump_from=webapi&authKey=kgAofDqUzgwMCSX+UQQwxf837zMeWFGGmo4iIcbgkklW2pdfmVOlxPWAK6sMYMaC"> <img border="0" src="../../img/group.png" srcset="/Hexo/img/loading.gif" lazyload alt="远程调试-学习交流" title="远程调试-学习交流"></a>
+       <a href="https://blog.csdn.net/weixin_44107140" target="_blank" rel="nofollow noopener"> <span>CSDN博客</span></a> <i class="iconfont">|</i> <a href="https://gitee.com/yan-sheng-li" target="_blank" rel="nofollow noopener"><span>Gitee码云</span></a> <i class="iconfont">|</i> <a href="#" target="_blank" rel="nofollow noopener"><span style="color:green">微信公众号：《编程亿点有趣》</span></a> <i class="iconfont">|</i><a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=NZUoWMzd3PQLWwxRGMiBNYEnVkEdNq__&jump_from=webapi&authKey=kgAofDqUzgwMCSX+UQQwxf837zMeWFGGmo4iIcbgkklW2pdfmVOlxPWAK6sMYMaC"> <img border="0" src="../../img/group.png" srcset="/blog/img/loading.gif" lazyload alt="远程调试-学习交流" title="远程调试-学习交流"></a>
     </div>
   
   
@@ -675,8 +675,8 @@ var _hmt = _hmt || [];
 
 <script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/Hexo/js/events.js" ></script>
-<script  src="/Hexo/js/plugins.js" ></script>
+<script  src="/blog/js/events.js" ></script>
+<script  src="/blog/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -698,7 +698,7 @@ var _hmt = _hmt || [];
 
 
   
-    <script  src="/Hexo/js/img-lazyload.js" ></script>
+    <script  src="/blog/js/img-lazyload.js" ></script>
   
 
 
@@ -797,7 +797,7 @@ var _hmt = _hmt || [];
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/Hexo/js/local-search.js" ></script>
+  <script  src="/blog/js/local-search.js" ></script>
 
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
@@ -807,7 +807,7 @@ var _hmt = _hmt || [];
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/Hexo/js/boot.js" ></script>
+<script  src="/blog/js/boot.js" ></script>
 
 
   
@@ -815,5 +815,5 @@ var _hmt = _hmt || [];
   <noscript>
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
-<script src="/Hexo/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/Hexo/live2dw/assets/hijiki.model.json"},"display":{"superSample":1,"width":200,"height":300,"position":"left","hOffset":0,"vOffset":-50},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
+<script src="/blog/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/blog/live2dw/assets/hijiki.model.json"},"display":{"superSample":1,"width":200,"height":300,"position":"left","hOffset":0,"vOffset":-50},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
 </html>

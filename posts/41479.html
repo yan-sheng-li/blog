@@ -6,8 +6,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/Hexo/img/avatar2.jpg">
-  <link rel="icon" href="/Hexo/img/avatar2.jpg">
+  <link rel="apple-touch-icon" sizes="76x76" href="/blog/img/avatar2.jpg">
+  <link rel="icon" href="/blog/img/avatar2.jpg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -18,13 +18,13 @@
     <meta name="description" content="本文介绍了一个基于B&#x2F;S架构的图书馆座位管理系统的设计与实现。使用IDEA、MySQL和Java等工具和语言开发，包括用户登录、座位预约、违规记录管理等功能，同时管理员拥有用户管理权限。系统通过HTML、CSS、JS和BootStrap等前端技术实现友好界面，并提供了数据库设计与编程方法的实践机会。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="课程设计：Springboot+Bootstrap实现图书馆选座管理系统">
-<meta property="og:url" content="https://yan-sheng-li.github.io/Hexo/posts/41479.html">
+<meta property="og:url" content="https://yan-sheng-li.github.io/blog/posts/41479.html">
 <meta property="og:site_name" content="👨‍💻木子-博客">
 <meta property="og:description" content="本文介绍了一个基于B&#x2F;S架构的图书馆座位管理系统的设计与实现。使用IDEA、MySQL和Java等工具和语言开发，包括用户登录、座位预约、违规记录管理等功能，同时管理员拥有用户管理权限。系统通过HTML、CSS、JS和BootStrap等前端技术实现友好界面，并提供了数据库设计与编程方法的实践机会。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://yan-sheng-li.github.io/img/%E5%B0%81%E9%9D%A22.jpg">
 <meta property="article:published_time" content="2023-12-24T23:41:00.000Z">
-<meta property="article:modified_time" content="2024-07-16T15:51:04.011Z">
+<meta property="article:modified_time" content="2024-07-17T06:09:52.981Z">
 <meta property="article:author" content="李延胜">
 <meta property="article:tag" content="作品">
 <meta property="article:tag" content="毕设">
@@ -59,12 +59,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
-<link  rel="stylesheet" href="/Hexo/css/main.css" />
+<link  rel="stylesheet" href="/blog/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/Hexo/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/blog/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/Hexo/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/blog/css/highlight-dark.css" />
   
 
 
@@ -73,15 +73,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"yan-sheng-li.github.io","root":"/Hexo/","version":"1.9.4","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"85b00ecca8bd5efa8a581f758ba73a03","google":null,"gtag":"G-M78M7E4Y4N","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/Hexo/local-search.xml"};
+    var CONFIG = {"hostname":"yan-sheng-li.github.io","root":"/blog/","version":"1.9.4","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"85b00ecca8bd5efa8a581f758ba73a03","google":null,"gtag":"G-M78M7E4Y4N","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/blog/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/Hexo/js/utils.js" ></script>
-  <script  src="/Hexo/js/color-schema.js" ></script>
+  <script  src="/blog/js/utils.js" ></script>
+  <script  src="/blog/js/color-schema.js" ></script>
   
 
   
@@ -148,7 +148,7 @@ var _hmt = _hmt || [];
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/Hexo/">
+    <a class="navbar-brand" href="/blog/">
       <strong>👩‍💻木子-博客</strong>
     </a>
 
@@ -167,7 +167,7 @@ var _hmt = _hmt || [];
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Hexo/">
+              <a class="nav-link" href="/blog/">
                 <i class="iconfont icon-home-fill"></i>
                 <span>首页</span>
               </a>
@@ -179,7 +179,7 @@ var _hmt = _hmt || [];
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Hexo/categories/">
+              <a class="nav-link" href="/blog/categories/">
                 <i class="iconfont icon-category-fill"></i>
                 <span>分类</span>
               </a>
@@ -191,7 +191,7 @@ var _hmt = _hmt || [];
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Hexo/tags/">
+              <a class="nav-link" href="/blog/tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>标签</span>
               </a>
@@ -203,7 +203,7 @@ var _hmt = _hmt || [];
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Hexo/about/">
+              <a class="nav-link" href="/blog/about/">
                 <i class="iconfont icon-user-fill"></i>
                 <span>作者</span>
               </a>
@@ -239,7 +239,7 @@ var _hmt = _hmt || [];
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Hexo/remote_help/">
+              <a class="nav-link" href="/blog/remote_help/">
                 
                 <span>🐞远程调试/功能定做</span>
               </a>
@@ -269,7 +269,7 @@ var _hmt = _hmt || [];
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/Hexo/img/bg/bg5.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/blog/img/bg/bg5.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -379,7 +379,7 @@ var _hmt = _hmt || [];
 <li><strong>我的违规记录：</strong> 用户可以查看自己是否有违规记录，了解违规原因。</li>
 <li><strong>用户管理：</strong> 管理员可以管理用户，包括查询、添加、修改、删除用户以及导出用户列表。</li>
 </ul>
-<h2 id="数据库表设计："><a href="#数据库表设计：" class="headerlink" title="数据库表设计："></a>数据库表设计：</h2><p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223224819636.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20231223224819636"></p>
+<h2 id="数据库表设计："><a href="#数据库表设计：" class="headerlink" title="数据库表设计："></a>数据库表设计：</h2><p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223224819636.png" srcset="/blog/img/loading.gif" lazyload alt="image-20231223224819636"></p>
 <h2 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h2><p>座位管理系统采用以下技术：</p>
 <ul>
 <li><strong>Spring Boot：</strong> 提供了强大而灵活的 Java 企业应用程序开发框架。</li>
@@ -389,45 +389,45 @@ var _hmt = _hmt || [];
 <li><strong>MyBatis-Plus：</strong> MyBatis 的增强工具，简化数据库操作。</li>
 <li><strong>SA-Token：</strong> Spring Boot 项目的轻量级权限认证系统。</li>
 </ul>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/b50eb7f070464a28b6b6bf3dcc7136bf.jpeg" srcset="/Hexo/img/loading.gif" lazyload></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/b50eb7f070464a28b6b6bf3dcc7136bf.jpeg" srcset="/blog/img/loading.gif" lazyload></p>
 <h2 id="系统架构"><a href="#系统架构" class="headerlink" title="系统架构"></a>系统架构</h2><p>座位管理系统采用模块化架构，前端页面使用Thymeleaf模板渲染动态内容，后端逻辑则由Spring Boot处理，并与MySQL数据库无缝集成。</p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223225920870.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20231223225920870"></p>
-<h2 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h2><p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223233125145.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20231223233125145"></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223225920870.png" srcset="/blog/img/loading.gif" lazyload alt="image-20231223225920870"></p>
+<h2 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h2><p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223233125145.png" srcset="/blog/img/loading.gif" lazyload alt="image-20231223233125145"></p>
 <h2 id="核心功能展示"><a href="#核心功能展示" class="headerlink" title="核心功能展示"></a>核心功能展示</h2><h3 id="用户认证"><a href="#用户认证" class="headerlink" title="用户认证"></a>用户认证</h3><p>基于用户表的role字段来判断身份，admin表示管理员，user表示普通用户，登录后，根据role自动验证授权。</p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223230159535.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20231223230159535"></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223230159535.png" srcset="/blog/img/loading.gif" lazyload alt="image-20231223230159535"></p>
 <h3 id="首页"><a href="#首页" class="headerlink" title="首页"></a>首页</h3><p>简单分三个板块：</p>
 <ul>
 <li><strong>轮播图</strong>：在这个板块，您可以欣赏到校园内壮丽的景色和丰富多彩的校园活动，让您更深入地了解我们学校的多元魅力。这里将呈现校园一瞥，带您领略我们学校丰富多彩的校园生活。</li>
 <li><strong>系统公告</strong>：系统公告板块为您提供最新的系统消息和重要通知。无论是座位预约调整、系统更新还是重要通知事项，您都可以在这里第一时间获取到相关信息。我们承诺提供及时、清晰的系统动态，让您对系统运行状况了如指掌。</li>
 <li><strong>学校通知</strong>：学校通知板块为您带来学校内部的最新动态和重要消息。无论是学校活动、教学安排还是重要通知，这里将为您及时呈现。让您与学校保持紧密联系，随时了解学校的各项消息和活动，共同感受学校蓬勃发展的活力与魅力。</li>
 </ul>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223230303279.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20231223230303279"></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223230303279.png" srcset="/blog/img/loading.gif" lazyload alt="image-20231223230303279"></p>
 <h3 id="座位预约"><a href="#座位预约" class="headerlink" title="座位预约"></a>座位预约</h3><p>选座阅览室：</p>
 <p>选择开放的阅览室，如果是管理员，还能操作新增阅览室。</p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223230344950.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20231223230344950"></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223230344950.png" srcset="/blog/img/loading.gif" lazyload alt="image-20231223230344950"></p>
 <p>选座预约：</p>
 <p>进入一个阅览室，即可看到改室内的座位的状态（可选，使用中，暂离等）</p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223230416281.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20231223230416281"></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223230416281.png" srcset="/blog/img/loading.gif" lazyload alt="image-20231223230416281"></p>
 <p>成功预约如下：</p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223230445919.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20231223230445919"></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223230445919.png" srcset="/blog/img/loading.gif" lazyload alt="image-20231223230445919"></p>
 <p>不可重复预约，一次一人只能预约一个，如下：</p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223230630634.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20231223230630634"></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223230630634.png" srcset="/blog/img/loading.gif" lazyload alt="image-20231223230630634"></p>
 <h3 id="我的预约"><a href="#我的预约" class="headerlink" title="我的预约"></a>我的预约</h3><p>进入我的预约界面，如果我有新的预约，将出现签到按钮，点击按钮，可签到！</p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223230505210.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20231223230505210"></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223230505210.png" srcset="/blog/img/loading.gif" lazyload alt="image-20231223230505210"></p>
 <p>签到成功如下：</p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223230700612.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20231223230700612"></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223230700612.png" srcset="/blog/img/loading.gif" lazyload alt="image-20231223230700612"></p>
 <p>中途可暂离或者签退：</p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223230730970.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20231223230730970"></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223230730970.png" srcset="/blog/img/loading.gif" lazyload alt="image-20231223230730970"></p>
 <p>指定时间内不签到或者长时间不签退，记违规一次：</p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223230838768.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20231223230838768"></p>
-<h3 id="违规查看"><a href="#违规查看" class="headerlink" title="违规查看"></a>违规查看</h3><p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223230539000.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20231223230539000"></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223230838768.png" srcset="/blog/img/loading.gif" lazyload alt="image-20231223230838768"></p>
+<h3 id="违规查看"><a href="#违规查看" class="headerlink" title="违规查看"></a>违规查看</h3><p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223230539000.png" srcset="/blog/img/loading.gif" lazyload alt="image-20231223230539000"></p>
 <h3 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h3><p>管理员可操作</p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223230601055.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20231223230601055"></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223230601055.png" srcset="/blog/img/loading.gif" lazyload alt="image-20231223230601055"></p>
 <p>个人信息更新：</p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223230934389.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20231223230934389"></p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223230950088.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20231223230950088"></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223230934389.png" srcset="/blog/img/loading.gif" lazyload alt="image-20231223230934389"></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231223230950088.png" srcset="/blog/img/loading.gif" lazyload alt="image-20231223230950088"></p>
 <p>以上展示部分，更多页面效果可以拿到源码后自己尝试！</p>
-<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231224231224390.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20231224231224390" style="zoom:67%;" />
+<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><img src="http://cdn.qiniu.liyansheng.top/typora/image-20231224231224390.png" srcset="/blog/img/loading.gif" lazyload alt="image-20231224231224390" style="zoom:67%;" />
 
 
 <h2 id="开发过程和挑战"><a href="#开发过程和挑战" class="headerlink" title="开发过程和挑战"></a>开发过程和挑战</h2><p>在系统开发过程中，我们遇到了一些挑战，比如实现灵活的预约系统和有效管理用户违规情况。然而，通过合理的决策和充分利用Spring Boot的特性，我们成功解决了这些挑战。此外，权限系统没有使用spring scurity 和shiro，而是选择轻量级权限认证系统SA-token，经过这次实践，用起来很是很丝滑的。页面搭建使用的是bootstrap5，相比与其他的layui，elementUI  感觉更容易上手。</p>
@@ -450,7 +450,7 @@ var _hmt = _hmt || [];
     
       <span class="category-chain">
         
-  <a href="/Hexo/categories/%E4%BD%9C%E5%93%81/" class="category-chain-item">作品</a>
+  <a href="/blog/categories/%E4%BD%9C%E5%93%81/" class="category-chain-item">作品</a>
   
   
 
@@ -465,9 +465,9 @@ var _hmt = _hmt || [];
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/Hexo/tags/%E4%BD%9C%E5%93%81/">#作品</a>
+        <a href="/blog/tags/%E4%BD%9C%E5%93%81/">#作品</a>
       
-        <a href="/Hexo/tags/%E6%AF%95%E8%AE%BE/">#毕设</a>
+        <a href="/blog/tags/%E6%AF%95%E8%AE%BE/">#毕设</a>
       
     </div>
   
@@ -480,7 +480,7 @@ var _hmt = _hmt || [];
   <div class="license-box my-3">
     <div class="license-title">
       <div>课程设计：Springboot+Bootstrap实现图书馆选座管理系统</div>
-      <div>https://yan-sheng-li.github.io/Hexo/posts/41479.html</div>
+      <div>https://yan-sheng-li.github.io/blog/posts/41479.html</div>
     </div>
     <div class="license-meta">
       
@@ -524,7 +524,7 @@ var _hmt = _hmt || [];
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/Hexo/posts/14719.html" title="课程设计：停车场管理系统（Java+MySQL）">
+                      <a href="/blog/posts/14719.html" title="课程设计：停车场管理系统（Java+MySQL）">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">课程设计：停车场管理系统（Java+MySQL）</span>
                         <span class="visible-mobile">上一篇</span>
@@ -534,7 +534,7 @@ var _hmt = _hmt || [];
                   <article class="post-next col-6">
                     
                     
-                      <a href="/Hexo/posts/287.html" title="Python：字符串转列表">
+                      <a href="/blog/posts/287.html" title="Python：字符串转列表">
                         <span class="hidden-mobile">Python：字符串转列表</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -669,7 +669,7 @@ var _hmt = _hmt || [];
     <div class="footer-inner">
   
     <div class="footer-content">
-       <a href="https://blog.csdn.net/weixin_44107140" target="_blank" rel="nofollow noopener"> <span>CSDN博客</span></a> <i class="iconfont">|</i> <a href="https://gitee.com/yan-sheng-li" target="_blank" rel="nofollow noopener"><span>Gitee码云</span></a> <i class="iconfont">|</i> <a href="#" target="_blank" rel="nofollow noopener"><span style="color:green">微信公众号：《编程亿点有趣》</span></a> <i class="iconfont">|</i><a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=NZUoWMzd3PQLWwxRGMiBNYEnVkEdNq__&jump_from=webapi&authKey=kgAofDqUzgwMCSX+UQQwxf837zMeWFGGmo4iIcbgkklW2pdfmVOlxPWAK6sMYMaC"> <img border="0" src="../../img/group.png" srcset="/Hexo/img/loading.gif" lazyload alt="远程调试-学习交流" title="远程调试-学习交流"></a>
+       <a href="https://blog.csdn.net/weixin_44107140" target="_blank" rel="nofollow noopener"> <span>CSDN博客</span></a> <i class="iconfont">|</i> <a href="https://gitee.com/yan-sheng-li" target="_blank" rel="nofollow noopener"><span>Gitee码云</span></a> <i class="iconfont">|</i> <a href="#" target="_blank" rel="nofollow noopener"><span style="color:green">微信公众号：《编程亿点有趣》</span></a> <i class="iconfont">|</i><a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=NZUoWMzd3PQLWwxRGMiBNYEnVkEdNq__&jump_from=webapi&authKey=kgAofDqUzgwMCSX+UQQwxf837zMeWFGGmo4iIcbgkklW2pdfmVOlxPWAK6sMYMaC"> <img border="0" src="../../img/group.png" srcset="/blog/img/loading.gif" lazyload alt="远程调试-学习交流" title="远程调试-学习交流"></a>
     </div>
   
   
@@ -715,8 +715,8 @@ var _hmt = _hmt || [];
 
 <script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/Hexo/js/events.js" ></script>
-<script  src="/Hexo/js/plugins.js" ></script>
+<script  src="/blog/js/events.js" ></script>
+<script  src="/blog/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -738,7 +738,7 @@ var _hmt = _hmt || [];
 
 
   
-    <script  src="/Hexo/js/img-lazyload.js" ></script>
+    <script  src="/blog/js/img-lazyload.js" ></script>
   
 
 
@@ -837,7 +837,7 @@ var _hmt = _hmt || [];
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/Hexo/js/local-search.js" ></script>
+  <script  src="/blog/js/local-search.js" ></script>
 
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
@@ -847,7 +847,7 @@ var _hmt = _hmt || [];
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/Hexo/js/boot.js" ></script>
+<script  src="/blog/js/boot.js" ></script>
 
 
   
@@ -855,5 +855,5 @@ var _hmt = _hmt || [];
   <noscript>
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
-<script src="/Hexo/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/Hexo/live2dw/assets/hijiki.model.json"},"display":{"superSample":1,"width":200,"height":300,"position":"left","hOffset":0,"vOffset":-50},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
+<script src="/blog/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/blog/live2dw/assets/hijiki.model.json"},"display":{"superSample":1,"width":200,"height":300,"position":"left","hOffset":0,"vOffset":-50},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
 </html>

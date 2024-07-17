@@ -6,8 +6,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/Hexo/img/avatar2.jpg">
-  <link rel="icon" href="/Hexo/img/avatar2.jpg">
+  <link rel="apple-touch-icon" sizes="76x76" href="/blog/img/avatar2.jpg">
+  <link rel="icon" href="/blog/img/avatar2.jpg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -18,13 +18,13 @@
     <meta name="description" content="每次用到kafka时都会出现各种奇怪的问题，综合实践，下面汇总下主要操作步骤：  Docker镜像形式启动zookeeper启动1docker run -d --name zookeeper -p 2181:2181 -t wurstmeister&#x2F;zookeeper  kafka启动1docker run --name kafka01 -p 9092:9092 -e KAFKA_BROKER_">
 <meta property="og:type" content="article">
 <meta property="og:title" content="启动Kafka步骤与常见问题">
-<meta property="og:url" content="https://yan-sheng-li.github.io/Hexo/posts/41053.html">
+<meta property="og:url" content="https://yan-sheng-li.github.io/blog/posts/41053.html">
 <meta property="og:site_name" content="👨‍💻木子-博客">
 <meta property="og:description" content="每次用到kafka时都会出现各种奇怪的问题，综合实践，下面汇总下主要操作步骤：  Docker镜像形式启动zookeeper启动1docker run -d --name zookeeper -p 2181:2181 -t wurstmeister&#x2F;zookeeper  kafka启动1docker run --name kafka01 -p 9092:9092 -e KAFKA_BROKER_">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://cdn.qiniu.liyansheng.top/typora/image-20230318180359278.png">
 <meta property="article:published_time" content="2022-10-16T22:41:29.000Z">
-<meta property="article:modified_time" content="2024-07-16T15:51:04.007Z">
+<meta property="article:modified_time" content="2024-07-17T06:09:52.977Z">
 <meta property="article:author" content="李延胜">
 <meta property="article:tag" content="kafka">
 <meta name="twitter:card" content="summary_large_image">
@@ -58,12 +58,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
-<link  rel="stylesheet" href="/Hexo/css/main.css" />
+<link  rel="stylesheet" href="/blog/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/Hexo/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/blog/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/Hexo/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/blog/css/highlight-dark.css" />
   
 
 
@@ -72,15 +72,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"yan-sheng-li.github.io","root":"/Hexo/","version":"1.9.4","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"85b00ecca8bd5efa8a581f758ba73a03","google":null,"gtag":"G-M78M7E4Y4N","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/Hexo/local-search.xml"};
+    var CONFIG = {"hostname":"yan-sheng-li.github.io","root":"/blog/","version":"1.9.4","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"85b00ecca8bd5efa8a581f758ba73a03","google":null,"gtag":"G-M78M7E4Y4N","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/blog/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/Hexo/js/utils.js" ></script>
-  <script  src="/Hexo/js/color-schema.js" ></script>
+  <script  src="/blog/js/utils.js" ></script>
+  <script  src="/blog/js/color-schema.js" ></script>
   
 
   
@@ -147,7 +147,7 @@ var _hmt = _hmt || [];
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/Hexo/">
+    <a class="navbar-brand" href="/blog/">
       <strong>👩‍💻木子-博客</strong>
     </a>
 
@@ -166,7 +166,7 @@ var _hmt = _hmt || [];
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Hexo/">
+              <a class="nav-link" href="/blog/">
                 <i class="iconfont icon-home-fill"></i>
                 <span>首页</span>
               </a>
@@ -178,7 +178,7 @@ var _hmt = _hmt || [];
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Hexo/categories/">
+              <a class="nav-link" href="/blog/categories/">
                 <i class="iconfont icon-category-fill"></i>
                 <span>分类</span>
               </a>
@@ -190,7 +190,7 @@ var _hmt = _hmt || [];
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Hexo/tags/">
+              <a class="nav-link" href="/blog/tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>标签</span>
               </a>
@@ -202,7 +202,7 @@ var _hmt = _hmt || [];
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Hexo/about/">
+              <a class="nav-link" href="/blog/about/">
                 <i class="iconfont icon-user-fill"></i>
                 <span>作者</span>
               </a>
@@ -238,7 +238,7 @@ var _hmt = _hmt || [];
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Hexo/remote_help/">
+              <a class="nav-link" href="/blog/remote_help/">
                 
                 <span>🐞远程调试/功能定做</span>
               </a>
@@ -268,7 +268,7 @@ var _hmt = _hmt || [];
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/Hexo/img/bg/bg5.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/blog/img/bg/bg5.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -381,9 +381,9 @@ var _hmt = _hmt || [];
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">./kafka-topics.sh --create --zookeeper 150.158.16.123:12348 --replication-factor 1 --partitions 1 --topic mykafka<br>./kafka-topics.sh --create --zookeeper 150.158.16.123:2181 --replication-factor 1 --partitions 1 --topic mykafka<br></code></pre></td></tr></table></figure>
 
 <p>运行生产者</p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220923112024973.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20220923112024973"></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220923112024973.png" srcset="/blog/img/loading.gif" lazyload alt="image-20220923112024973"></p>
 <p>运行消费者</p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220923112035890.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20220923112035890"></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220923112035890.png" srcset="/blog/img/loading.gif" lazyload alt="image-20220923112035890"></p>
 <hr>
 <h2 id="单机形式启动"><a href="#单机形式启动" class="headerlink" title="单机形式启动"></a>单机形式启动</h2><h3 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h3><p>1、Linux 机器</p>
 <p>2、环境已准备好JDK，如果还没有装，推荐用yum一键安装</p>
@@ -428,20 +428,20 @@ var _hmt = _hmt || [];
 <p>注意：<code>ZK_HOSTS</code> 后面在web页面上要用到！</p>
 </blockquote>
 <h3 id="管理界面"><a href="#管理界面" class="headerlink" title="管理界面"></a>管理界面</h3><p>进入主页面后，点击 <code>Add Cluster</code> 添加集群信息</p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220818233716973.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20220818233716973"></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220818233716973.png" srcset="/blog/img/loading.gif" lazyload alt="image-20220818233716973"></p>
 <p>然后填写配置信息，主要填写集群名称，Zookeeper的Hosts，还有指定kafka版本（选个跟你所使用的kafka版本号最接近的就行），其他的一些配置按默认的就行。</p>
 <p>当你正确连接上以后，就能看到你的集群啦，如：</p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220818235108897.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20220818235108897"></p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220818235134261.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20220818235134261"></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220818235108897.png" srcset="/blog/img/loading.gif" lazyload alt="image-20220818235108897"></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220818235134261.png" srcset="/blog/img/loading.gif" lazyload alt="image-20220818235134261"></p>
 <p><strong>更多关于kafka可视化操作就由你慢慢探索吧！这里将你引进门！</strong></p>
 <blockquote>
 <p>注意：</p>
 <ol>
 <li><p>如果你在启动<code>kafka manager</code>这个容器时指定了 <code>ZK_HOSTS</code> ，那么<strong>Cluster Zookeeper Hosts</strong>这项填的内容要和 <code>ZK_HOSTS</code> 一致，否则会出现连接不上，连接超时等情况。如下图：</p>
-<p> <img src="http://cdn.qiniu.liyansheng.top/typora/image-20220818234605319.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20220818234605319"></p>
+<p> <img src="http://cdn.qiniu.liyansheng.top/typora/image-20220818234605319.png" srcset="/blog/img/loading.gif" lazyload alt="image-20220818234605319"></p>
 </li>
 <li><p>另外有些配置默认值是1，但是你得将其改成1以上的整数，否则不能正确保存提交。如：</p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220818234844587.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20220818234844587"></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220818234844587.png" srcset="/blog/img/loading.gif" lazyload alt="image-20220818234844587"></p>
 </li>
 </ol>
 </blockquote>
@@ -449,8 +449,8 @@ var _hmt = _hmt || [];
 <h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>kafka版本不同，响应的api有区别</p>
 <p>本版本是2.11</p>
 <p>注意3.x是 –bootstrap-server localhost:9092方式新建，kafka2.x是以–zookeeper方式创建。下面查看新建的topic。</p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220925165659756.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20220925165659756"></p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220925165713665.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20220925165713665"></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220925165659756.png" srcset="/blog/img/loading.gif" lazyload alt="image-20220925165659756"></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20220925165713665.png" srcset="/blog/img/loading.gif" lazyload alt="image-20220925165713665"></p>
 <h2 id="奇葩问题"><a href="#奇葩问题" class="headerlink" title="奇葩问题"></a>奇葩问题</h2><h3 id="1-重启docker失败？"><a href="#1-重启docker失败？" class="headerlink" title="1.重启docker失败？"></a>1.重启docker失败？</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@localhost ~]# systemctl restart docker<br>Job for docker.service failed because the control process exited with error code. See &quot;systemctl status docker.service&quot; and &quot;journalctl -xe&quot; for details.<br></code></pre></td></tr></table></figure>
 
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@localhost ~]# journalctl -xe<br>-- The result is failed.<br>2月 22 02:01:53 localhost.localdomain systemd[1]: Unit docker.service entered failed state.<br>2月 22 02:01:53 localhost.localdomain systemd[1]: Unit docker.service entered failed state.<br>2月 22 02:01:53 localhost.localdomain systemd[1]: docker.service failed.<br>2月 22 02:01:55 localhost.localdomain systemd[1]: docker.service holdoff time over, scheduling restart.<br>2月 22 02:01:55 localhost.localdomain systemd[1]: Stopped Docker Application Container Engine.<br>-- Subject: Unit docker.service has finished shutting down<br>-- Defined-By: systemd<br>-- Support: http://lists.freedesktop.org/mailman/listinfo/systemd-devel<br>-- <br>-- Unit docker.service has finished shutting down.<br>2月 22 02:01:55 localhost.localdomain systemd[1]: start request repeated too quickly for docker.service<br>2月 22 02:01:55 localhost.localdomain systemd[1]: Failed to start Docker Application Container Engine.<br>-- Subject: Unit docker.service has failed<br>-- Defined-By: systemd<br>-- Support: http://lists.freedesktop.org/mailman/listinfo/systemd-devel<br>-- <br>-- Unit docker.service has failed.<br>-- <br>-- The result is failed.<br></code></pre></td></tr></table></figure>
@@ -478,9 +478,9 @@ var _hmt = _hmt || [];
 <h3 id="4-无法启动kafka"><a href="#4-无法启动kafka" class="headerlink" title="4.无法启动kafka?"></a>4.无法启动kafka?</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs shell">kafka.common.KafkaException: Socket server failed to bind to 150.158.16.123:9092: 无法指定被请求的地址.<br>        at kafka.network.Acceptor.openServerSocket(SocketServer.scala:327)<br>        at kafka.network.Acceptor.&lt;init&gt;(SocketServer.scala:252)<br>        at kafka.network.SocketServer$$anonfun$startup$1.apply(SocketServer.scala:91)<br>        at kafka.network.SocketServer$$anonfun$startup$1.apply(SocketServer.scala:83)<br>        at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)<br>        at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)<br>        at kafka.network.SocketServer.startup(SocketServer.scala:83)<br>        at kafka.server.KafkaServer.startup(KafkaServer.scala:222)<br>        at kafka.server.KafkaServerStartable.startup(KafkaServerStartable.scala:38)<br>        at kafka.Kafka$.main(Kafka.scala:65)<br>        at kafka.Kafka.main(Kafka.scala)<br><br></code></pre></td></tr></table></figure>
 
 <p>注意，上面是配置里面有个地址写得不对，listeners&#x3D;PLAINTEXT:&#x2F;&#x2F;10.20.30.153:9092后接的是内网地址，通过ip addr即可查看，如我的机器</p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20221001140813960.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20221001140813960"></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20221001140813960.png" srcset="/blog/img/loading.gif" lazyload alt="image-20221001140813960"></p>
 <p>一个写内网地址，一个写外网地址</p>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20221001140917719.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20221001140917719"></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20221001140917719.png" srcset="/blog/img/loading.gif" lazyload alt="image-20221001140917719"></p>
 
                 
               </div>
@@ -499,7 +499,7 @@ var _hmt = _hmt || [];
     
       <span class="category-chain">
         
-  <a href="/Hexo/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/" class="category-chain-item">中间件</a>
+  <a href="/blog/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/" class="category-chain-item">中间件</a>
   
   
 
@@ -514,7 +514,7 @@ var _hmt = _hmt || [];
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/Hexo/tags/kafka/">#kafka</a>
+        <a href="/blog/tags/kafka/">#kafka</a>
       
     </div>
   
@@ -527,7 +527,7 @@ var _hmt = _hmt || [];
   <div class="license-box my-3">
     <div class="license-title">
       <div>启动Kafka步骤与常见问题</div>
-      <div>https://yan-sheng-li.github.io/Hexo/posts/41053.html</div>
+      <div>https://yan-sheng-li.github.io/blog/posts/41053.html</div>
     </div>
     <div class="license-meta">
       
@@ -571,7 +571,7 @@ var _hmt = _hmt || [];
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/Hexo/posts/6850.html" title="ElasticSearch快速入门与部署">
+                      <a href="/blog/posts/6850.html" title="ElasticSearch快速入门与部署">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">ElasticSearch快速入门与部署</span>
                         <span class="visible-mobile">上一篇</span>
@@ -581,7 +581,7 @@ var _hmt = _hmt || [];
                   <article class="post-next col-6">
                     
                     
-                      <a href="/Hexo/posts/29995.html" title="玩转Linux虚拟机，从安装到实操">
+                      <a href="/blog/posts/29995.html" title="玩转Linux虚拟机，从安装到实操">
                         <span class="hidden-mobile">玩转Linux虚拟机，从安装到实操</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -716,7 +716,7 @@ var _hmt = _hmt || [];
     <div class="footer-inner">
   
     <div class="footer-content">
-       <a href="https://blog.csdn.net/weixin_44107140" target="_blank" rel="nofollow noopener"> <span>CSDN博客</span></a> <i class="iconfont">|</i> <a href="https://gitee.com/yan-sheng-li" target="_blank" rel="nofollow noopener"><span>Gitee码云</span></a> <i class="iconfont">|</i> <a href="#" target="_blank" rel="nofollow noopener"><span style="color:green">微信公众号：《编程亿点有趣》</span></a> <i class="iconfont">|</i><a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=NZUoWMzd3PQLWwxRGMiBNYEnVkEdNq__&jump_from=webapi&authKey=kgAofDqUzgwMCSX+UQQwxf837zMeWFGGmo4iIcbgkklW2pdfmVOlxPWAK6sMYMaC"> <img border="0" src="../../img/group.png" srcset="/Hexo/img/loading.gif" lazyload alt="远程调试-学习交流" title="远程调试-学习交流"></a>
+       <a href="https://blog.csdn.net/weixin_44107140" target="_blank" rel="nofollow noopener"> <span>CSDN博客</span></a> <i class="iconfont">|</i> <a href="https://gitee.com/yan-sheng-li" target="_blank" rel="nofollow noopener"><span>Gitee码云</span></a> <i class="iconfont">|</i> <a href="#" target="_blank" rel="nofollow noopener"><span style="color:green">微信公众号：《编程亿点有趣》</span></a> <i class="iconfont">|</i><a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=NZUoWMzd3PQLWwxRGMiBNYEnVkEdNq__&jump_from=webapi&authKey=kgAofDqUzgwMCSX+UQQwxf837zMeWFGGmo4iIcbgkklW2pdfmVOlxPWAK6sMYMaC"> <img border="0" src="../../img/group.png" srcset="/blog/img/loading.gif" lazyload alt="远程调试-学习交流" title="远程调试-学习交流"></a>
     </div>
   
   
@@ -762,8 +762,8 @@ var _hmt = _hmt || [];
 
 <script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/Hexo/js/events.js" ></script>
-<script  src="/Hexo/js/plugins.js" ></script>
+<script  src="/blog/js/events.js" ></script>
+<script  src="/blog/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -785,7 +785,7 @@ var _hmt = _hmt || [];
 
 
   
-    <script  src="/Hexo/js/img-lazyload.js" ></script>
+    <script  src="/blog/js/img-lazyload.js" ></script>
   
 
 
@@ -884,7 +884,7 @@ var _hmt = _hmt || [];
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/Hexo/js/local-search.js" ></script>
+  <script  src="/blog/js/local-search.js" ></script>
 
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
@@ -894,7 +894,7 @@ var _hmt = _hmt || [];
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/Hexo/js/boot.js" ></script>
+<script  src="/blog/js/boot.js" ></script>
 
 
   
@@ -902,5 +902,5 @@ var _hmt = _hmt || [];
   <noscript>
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
-<script src="/Hexo/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/Hexo/live2dw/assets/hijiki.model.json"},"display":{"superSample":1,"width":200,"height":300,"position":"left","hOffset":0,"vOffset":-50},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
+<script src="/blog/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/blog/live2dw/assets/hijiki.model.json"},"display":{"superSample":1,"width":200,"height":300,"position":"left","hOffset":0,"vOffset":-50},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
 </html>

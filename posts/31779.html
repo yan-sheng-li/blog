@@ -6,8 +6,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/Hexo/img/avatar2.jpg">
-  <link rel="icon" href="/Hexo/img/avatar2.jpg">
+  <link rel="apple-touch-icon" sizes="76x76" href="/blog/img/avatar2.jpg">
+  <link rel="icon" href="/blog/img/avatar2.jpg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -18,13 +18,13 @@
     <meta name="description" content="在 Hexo 博客的 根目录下新建 &#x2F;live2d_models 文件夹    下载 live2d-widget.js 和对应模型库  点击查看：Live2D看板娘+模型预览  安装：打开根目录，命令窗口：  1npm install live2d-widget-model-hijiki  将下载的 live2d-widget.js (在node_modules里面)和模型库文件放入">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo添加live2d人物动画">
-<meta property="og:url" content="https://yan-sheng-li.github.io/Hexo/posts/31779.html">
+<meta property="og:url" content="https://yan-sheng-li.github.io/blog/posts/31779.html">
 <meta property="og:site_name" content="👨‍💻木子-博客">
 <meta property="og:description" content="在 Hexo 博客的 根目录下新建 &#x2F;live2d_models 文件夹    下载 live2d-widget.js 和对应模型库  点击查看：Live2D看板娘+模型预览  安装：打开根目录，命令窗口：  1npm install live2d-widget-model-hijiki  将下载的 live2d-widget.js (在node_modules里面)和模型库文件放入">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9odWFqaTgudG9wL2ltZy9saXZlMmQvaGlqaWtpLmdpZg">
 <meta property="article:published_time" content="2023-03-18T06:22:00.000Z">
-<meta property="article:modified_time" content="2024-07-16T15:51:04.011Z">
+<meta property="article:modified_time" content="2024-07-17T06:09:52.981Z">
 <meta property="article:author" content="李延胜">
 <meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary_large_image">
@@ -58,12 +58,12 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
-<link  rel="stylesheet" href="/Hexo/css/main.css" />
+<link  rel="stylesheet" href="/blog/css/main.css" />
 
 
-  <link id="highlight-css" rel="stylesheet" href="/Hexo/css/highlight.css" />
+  <link id="highlight-css" rel="stylesheet" href="/blog/css/highlight.css" />
   
-    <link id="highlight-css-dark" rel="stylesheet" href="/Hexo/css/highlight-dark.css" />
+    <link id="highlight-css-dark" rel="stylesheet" href="/blog/css/highlight-dark.css" />
   
 
 
@@ -72,15 +72,15 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"yan-sheng-li.github.io","root":"/Hexo/","version":"1.9.4","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"85b00ecca8bd5efa8a581f758ba73a03","google":null,"gtag":"G-M78M7E4Y4N","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/Hexo/local-search.xml"};
+    var CONFIG = {"hostname":"yan-sheng-li.github.io","root":"/blog/","version":"1.9.4","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"85b00ecca8bd5efa8a581f758ba73a03","google":null,"gtag":"G-M78M7E4Y4N","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/blog/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
       Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
     }
   </script>
-  <script  src="/Hexo/js/utils.js" ></script>
-  <script  src="/Hexo/js/color-schema.js" ></script>
+  <script  src="/blog/js/utils.js" ></script>
+  <script  src="/blog/js/color-schema.js" ></script>
   
 
   
@@ -147,7 +147,7 @@ var _hmt = _hmt || [];
 <div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/Hexo/">
+    <a class="navbar-brand" href="/blog/">
       <strong>👩‍💻木子-博客</strong>
     </a>
 
@@ -166,7 +166,7 @@ var _hmt = _hmt || [];
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Hexo/">
+              <a class="nav-link" href="/blog/">
                 <i class="iconfont icon-home-fill"></i>
                 <span>首页</span>
               </a>
@@ -178,7 +178,7 @@ var _hmt = _hmt || [];
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Hexo/categories/">
+              <a class="nav-link" href="/blog/categories/">
                 <i class="iconfont icon-category-fill"></i>
                 <span>分类</span>
               </a>
@@ -190,7 +190,7 @@ var _hmt = _hmt || [];
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Hexo/tags/">
+              <a class="nav-link" href="/blog/tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 <span>标签</span>
               </a>
@@ -202,7 +202,7 @@ var _hmt = _hmt || [];
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Hexo/about/">
+              <a class="nav-link" href="/blog/about/">
                 <i class="iconfont icon-user-fill"></i>
                 <span>作者</span>
               </a>
@@ -238,7 +238,7 @@ var _hmt = _hmt || [];
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/Hexo/remote_help/">
+              <a class="nav-link" href="/blog/remote_help/">
                 
                 <span>🐞远程调试/功能定做</span>
               </a>
@@ -268,7 +268,7 @@ var _hmt = _hmt || [];
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/Hexo/img/bg/bg5.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/blog/img/bg/bg5.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -369,7 +369,7 @@ var _hmt = _hmt || [];
                 
                 <ol>
 <li><p>在 Hexo 博客的 根目录下新建 &#x2F;live2d_models 文件夹</p>
-<p> <img src="http://cdn.qiniu.liyansheng.top/typora/image-20230318061123366.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20230318061123366"></p>
+<p> <img src="http://cdn.qiniu.liyansheng.top/typora/image-20230318061123366.png" srcset="/blog/img/loading.gif" lazyload alt="image-20230318061123366"></p>
 </li>
 <li><p>下载 live2d-widget.js 和对应模型库</p>
 <p> 点击查看：<a target="_blank" rel="noopener" href="https://blog.csdn.net/wang_123_zy/article/details/87181892?spm=1001.2014.3001.5506">Live2D看板娘+模型预览</a></p>
@@ -377,8 +377,8 @@ var _hmt = _hmt || [];
  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">npm install live2d-widget-model-hijiki<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>将下载的 live2d-widget.js (在node_modules里面)和模型库文件放入 &#x2F;live2d_models 文件夹中</p>
-<p> <img src="http://cdn.qiniu.liyansheng.top/typora/image-20230318061645524.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20230318061645524"></p>
-<p> <img src="http://cdn.qiniu.liyansheng.top/typora/image-20230318061711618.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20230318061711618"></p>
+<p> <img src="http://cdn.qiniu.liyansheng.top/typora/image-20230318061645524.png" srcset="/blog/img/loading.gif" lazyload alt="image-20230318061645524"></p>
+<p> <img src="http://cdn.qiniu.liyansheng.top/typora/image-20230318061711618.png" srcset="/blog/img/loading.gif" lazyload alt="image-20230318061711618"></p>
 </li>
 <li><p>在 Hexo 主题的配置文件中添加 live2d 配置</p>
  <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-comment"># Live2D</span><br><span class="hljs-comment">## https://github.com/EYHN/hexo-helper-live2d</span><br><span class="hljs-attr">live2d:</span><br>  <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-comment"># enable: false</span><br>  <span class="hljs-attr">scriptFrom:</span> <span class="hljs-string">local</span> <span class="hljs-comment"># 默认</span><br>  <span class="hljs-attr">pluginRootPath:</span> <span class="hljs-string">live2dw/</span> <span class="hljs-comment"># 插件在站点上的根目录(相对路径)</span><br>  <span class="hljs-attr">pluginJsPath:</span> <span class="hljs-string">lib/</span> <span class="hljs-comment"># 脚本文件相对与插件根目录路径</span><br>  <span class="hljs-attr">pluginModelPath:</span> <span class="hljs-string">assets/</span> <span class="hljs-comment"># 模型文件相对与插件根目录路径</span><br>  <span class="hljs-comment"># scriptFrom: jsdelivr # jsdelivr CDN</span><br>  <span class="hljs-comment"># scriptFrom: unpkg # unpkg CDN</span><br>  <span class="hljs-comment"># scriptFrom: https://cdn.jsdelivr.net/npm/live2d-widget@3.x/lib/L2Dwidget.min.js # 你的自定义 url</span><br>  <span class="hljs-attr">tagMode:</span> <span class="hljs-literal">false</span> <span class="hljs-comment"># 标签模式, 是否仅替换 live2d tag标签而非插入到所有页面中</span><br>  <span class="hljs-attr">debug:</span> <span class="hljs-literal">false</span> <span class="hljs-comment"># 调试, 是否在控制台输出日志</span><br>  <span class="hljs-attr">model:</span><br>    <span class="hljs-attr">use:</span> <span class="hljs-string">live2d-widget-model-hijiki</span><br>    <span class="hljs-attr">scale:</span> <span class="hljs-number">1</span><br>    <span class="hljs-attr">hHeadPos:</span> <span class="hljs-number">0.5</span><br>    <span class="hljs-attr">vHeadPos:</span> <span class="hljs-number">0.618</span><br>    <span class="hljs-comment"># use: live2d-widget-model-wanko # npm-module package name</span><br>    <span class="hljs-comment"># use: wanko # 博客根目录/live2d_models/ 下的目录名</span><br>    <span class="hljs-comment"># use: ./wives/wanko # 相对于博客根目录的路径</span><br>    <span class="hljs-comment"># use: https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json # 你的自定义 url</span><br>  <span class="hljs-attr">display:</span><br>    <span class="hljs-attr">superSample:</span> <span class="hljs-number">1</span><br>    <span class="hljs-attr">width:</span> <span class="hljs-number">200</span><br>    <span class="hljs-attr">height:</span> <span class="hljs-number">300</span><br>    <span class="hljs-attr">position:</span> <span class="hljs-string">left</span><br>    <span class="hljs-attr">hOffset:</span> <span class="hljs-number">0</span><br>    <span class="hljs-attr">vOffset:</span> <span class="hljs-number">-50</span><br>  <span class="hljs-attr">mobile:</span><br>    <span class="hljs-attr">show:</span> <span class="hljs-literal">true</span> <span class="hljs-comment"># 是否在移动设备上显示</span><br>    <span class="hljs-attr">scale:</span> <span class="hljs-number">0.5</span> <span class="hljs-comment"># 移动设备上的缩放       </span><br>  <span class="hljs-attr">react:</span><br>    <span class="hljs-attr">opacityDefault:</span> <span class="hljs-number">0.7</span><br>    <span class="hljs-attr">opacityOnHover:</span> <span class="hljs-number">0.8</span><br></code></pre></td></tr></table></figure>
@@ -386,7 +386,7 @@ var _hmt = _hmt || [];
 <li><p>执行 hexo g 和 hexo s 命令重新生成和启动博客，查看效果</p>
 </li>
 </ol>
-<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20230318062115087.png" srcset="/Hexo/img/loading.gif" lazyload alt="image-20230318062115087"></p>
+<p><img src="http://cdn.qiniu.liyansheng.top/typora/image-20230318062115087.png" srcset="/blog/img/loading.gif" lazyload alt="image-20230318062115087"></p>
 
                 
               </div>
@@ -405,7 +405,7 @@ var _hmt = _hmt || [];
     
       <span class="category-chain">
         
-  <a href="/Hexo/categories/%E5%BB%BA%E7%AB%99/" class="category-chain-item">建站</a>
+  <a href="/blog/categories/%E5%BB%BA%E7%AB%99/" class="category-chain-item">建站</a>
   
   
 
@@ -420,7 +420,7 @@ var _hmt = _hmt || [];
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/Hexo/tags/hexo/">#hexo</a>
+        <a href="/blog/tags/hexo/">#hexo</a>
       
     </div>
   
@@ -433,7 +433,7 @@ var _hmt = _hmt || [];
   <div class="license-box my-3">
     <div class="license-title">
       <div>hexo添加live2d人物动画</div>
-      <div>https://yan-sheng-li.github.io/Hexo/posts/31779.html</div>
+      <div>https://yan-sheng-li.github.io/blog/posts/31779.html</div>
     </div>
     <div class="license-meta">
       
@@ -477,7 +477,7 @@ var _hmt = _hmt || [];
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/Hexo/posts/46056.html" title="服务2：毕设/课设等程序定制">
+                      <a href="/blog/posts/46056.html" title="服务2：毕设/课设等程序定制">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">服务2：毕设/课设等程序定制</span>
                         <span class="visible-mobile">上一篇</span>
@@ -487,7 +487,7 @@ var _hmt = _hmt || [];
                   <article class="post-next col-6">
                     
                     
-                      <a href="/Hexo/posts/37787.html" title="hexo集成admin插件">
+                      <a href="/blog/posts/37787.html" title="hexo集成admin插件">
                         <span class="hidden-mobile">hexo集成admin插件</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -622,7 +622,7 @@ var _hmt = _hmt || [];
     <div class="footer-inner">
   
     <div class="footer-content">
-       <a href="https://blog.csdn.net/weixin_44107140" target="_blank" rel="nofollow noopener"> <span>CSDN博客</span></a> <i class="iconfont">|</i> <a href="https://gitee.com/yan-sheng-li" target="_blank" rel="nofollow noopener"><span>Gitee码云</span></a> <i class="iconfont">|</i> <a href="#" target="_blank" rel="nofollow noopener"><span style="color:green">微信公众号：《编程亿点有趣》</span></a> <i class="iconfont">|</i><a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=NZUoWMzd3PQLWwxRGMiBNYEnVkEdNq__&jump_from=webapi&authKey=kgAofDqUzgwMCSX+UQQwxf837zMeWFGGmo4iIcbgkklW2pdfmVOlxPWAK6sMYMaC"> <img border="0" src="../../img/group.png" srcset="/Hexo/img/loading.gif" lazyload alt="远程调试-学习交流" title="远程调试-学习交流"></a>
+       <a href="https://blog.csdn.net/weixin_44107140" target="_blank" rel="nofollow noopener"> <span>CSDN博客</span></a> <i class="iconfont">|</i> <a href="https://gitee.com/yan-sheng-li" target="_blank" rel="nofollow noopener"><span>Gitee码云</span></a> <i class="iconfont">|</i> <a href="#" target="_blank" rel="nofollow noopener"><span style="color:green">微信公众号：《编程亿点有趣》</span></a> <i class="iconfont">|</i><a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=NZUoWMzd3PQLWwxRGMiBNYEnVkEdNq__&jump_from=webapi&authKey=kgAofDqUzgwMCSX+UQQwxf837zMeWFGGmo4iIcbgkklW2pdfmVOlxPWAK6sMYMaC"> <img border="0" src="../../img/group.png" srcset="/blog/img/loading.gif" lazyload alt="远程调试-学习交流" title="远程调试-学习交流"></a>
     </div>
   
   
@@ -668,8 +668,8 @@ var _hmt = _hmt || [];
 
 <script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/Hexo/js/events.js" ></script>
-<script  src="/Hexo/js/plugins.js" ></script>
+<script  src="/blog/js/events.js" ></script>
+<script  src="/blog/js/plugins.js" ></script>
 
 
   <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
@@ -691,7 +691,7 @@ var _hmt = _hmt || [];
 
 
   
-    <script  src="/Hexo/js/img-lazyload.js" ></script>
+    <script  src="/blog/js/img-lazyload.js" ></script>
   
 
 
@@ -790,7 +790,7 @@ var _hmt = _hmt || [];
 
   <script>Fluid.plugins.imageCaption();</script>
 
-  <script  src="/Hexo/js/local-search.js" ></script>
+  <script  src="/blog/js/local-search.js" ></script>
 
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
@@ -800,7 +800,7 @@ var _hmt = _hmt || [];
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
-<script  src="/Hexo/js/boot.js" ></script>
+<script  src="/blog/js/boot.js" ></script>
 
 
   
@@ -808,5 +808,5 @@ var _hmt = _hmt || [];
   <noscript>
     <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
-<script src="/Hexo/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/Hexo/live2dw/assets/hijiki.model.json"},"display":{"superSample":1,"width":200,"height":300,"position":"left","hOffset":0,"vOffset":-50},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
+<script src="/blog/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/blog/live2dw/assets/hijiki.model.json"},"display":{"superSample":1,"width":200,"height":300,"position":"left","hOffset":0,"vOffset":-50},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
 </html>
