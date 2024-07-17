@@ -2,7 +2,7 @@
 title: JVM组成
 tags:
   - JVM
-time: '2023年3月27日22:41:08'
+date: 2023-03-27 01:03:19
 abbrlink: 54795
 ---
 
