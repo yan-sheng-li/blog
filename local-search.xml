@@ -4,63 +4,6 @@
   
   
   <entry>
-    <title>算法：打家劫舍问题</title>
-    <link href="/blog/posts/36939.html"/>
-    <url>/blog/posts/36939.html</url>
-    
-    <content type="html"><![CDATA[<p>假设你是一个专业的小偷，计划偷窃一条街上的所有房屋。每个房屋都有一定的现金，你<font color='red'>不能同时打劫相邻的两个房屋</font>。给定一个代表每个房屋存放金额的非负整数数组，计算你能够偷窃到的最高金额。</p><h3 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h3><p>这个问题可以用动态规划来解决。<strong>动态规划是一种解决最优化问题的算法思想</strong>，在某些情况下能够大大降低问题的复杂度。在打家劫舍问题中，动态规划的状态转移方程如下：</p><p>dp[i] &#x3D; max(dp[i-1], dp[i-2] + nums[i])</p><p>其中，dp[i] 表示偷到第 i 个房屋时的最大金额，nums[i] 表示第 i 个房屋的现金数。如果你偷第 i 个房屋，那么你就不能偷第 i-1 个房屋，所以偷到第 i 个房屋时的最大金额为偷到第 i-2 个房屋时的最大金额加上第 i 个房屋里的现金数。如果你不偷第 i  个房屋，那么你可以偷到第 i-1 个房屋，所以偷到第 i 个房屋时的最大金额为偷到第 i-1 个房屋时的最大金额。</p><p>最终要求的是最后一个房屋的最大金额，所以返回 dp[n-1]，其中 n 表示房屋数量。</p><h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><h4 id="Python代码实现"><a href="#Python代码实现" class="headerlink" title="Python代码实现"></a>Python代码实现</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">rob</span>(<span class="hljs-params">nums: <span class="hljs-type">List</span>[<span class="hljs-built_in">int</span>]</span>) -&gt; <span class="hljs-built_in">int</span>:<br>    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> nums:<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>    <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(nums) == <span class="hljs-number">1</span>:<br>        <span class="hljs-keyword">return</span> nums[<span class="hljs-number">0</span>]<br>    dp = [<span class="hljs-number">0</span>] * <span class="hljs-built_in">len</span>(nums)<br>    dp[<span class="hljs-number">0</span>] = nums[<span class="hljs-number">0</span>]<br>    dp[<span class="hljs-number">1</span>] = <span class="hljs-built_in">max</span>(nums[<span class="hljs-number">0</span>], nums[<span class="hljs-number">1</span>])<br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">2</span>, <span class="hljs-built_in">len</span>(nums)):<br>        dp[i] = <span class="hljs-built_in">max</span>(dp[i-<span class="hljs-number">1</span>], dp[i-<span class="hljs-number">2</span>] + nums[i])<br>    <span class="hljs-keyword">return</span> dp[-<span class="hljs-number">1</span>]<br></code></pre></td></tr></table></figure><p>时间复杂度：<font color='yellow'>O(n)，其中 n 表示房屋数量。</font></p><p>空间复杂度：<font color='yellow'>O(n)，需要用一个数组来保存偷到每个房屋时的最大金额</font>。</p><h4 id="Java代码实现"><a href="#Java代码实现" class="headerlink" title="Java代码实现"></a>Java代码实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">rob</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>    <span class="hljs-keyword">if</span> (nums == <span class="hljs-literal">null</span> || nums.length == <span class="hljs-number">0</span>) &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    &#125;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> nums.length;<br>    <span class="hljs-keyword">if</span> (n == <span class="hljs-number">1</span>) &#123;<br>        <span class="hljs-keyword">return</span> nums[<span class="hljs-number">0</span>];<br>    &#125;<br>    <span class="hljs-type">int</span>[] dp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n];<br>    dp[<span class="hljs-number">0</span>] = nums[<span class="hljs-number">0</span>];<br>    dp[<span class="hljs-number">1</span>] = Math.max(nums[<span class="hljs-number">0</span>], nums[<span class="hljs-number">1</span>]);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">2</span>; i &lt; n; i++) &#123;<br>        dp[i] = Math.max(dp[i - <span class="hljs-number">1</span>], dp[i - <span class="hljs-number">2</span>] + nums[i]);<br>    &#125;<br>    <span class="hljs-keyword">return</span> dp[n - <span class="hljs-number">1</span>];<br>&#125;<br></code></pre></td></tr></table></figure><p>相比于Python代码，Java代码只是语法上的差异。Java使用了数组来保存偷到每个房屋时的最大金额，数组的长度为房屋数量。Java中数组的下标从0开始，所以dp[0]表示偷到第一个房屋时的最大金额，dp[1]表示偷到第二个房屋时的最大金额，以此类推。Java中的for循环语法和Python有所不同，但是实现的思路是一样的。</p>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>算法</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>算法：斐波那契数列</title>
-    <link href="/blog/posts/25920.html"/>
-    <url>/blog/posts/25920.html</url>
-    
-    <content type="html"><![CDATA[<p>斐波那契数列的算法思路和Java代码实现。</p><h2 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h2><p>斐波那契数列是一个非常经典的数列，在数学上以递推的方式定义为：</p><p><strong>F(0) &#x3D; 0 F(1) &#x3D; 1 F(n) &#x3D; F(n-1) + F(n-2) (n &gt;&#x3D; 2)</strong></p><p>根据这个递推关系式，我们可以用递归或者循环的方式来实现斐波那契数列。</p><h2 id="递归法"><a href="#递归法" class="headerlink" title="递归法"></a>递归法</h2><p>递归法是最基本的实现方式。当 n &#x3D; 0 或者 n &#x3D; 1 时，斐波那契数列的第 n 个数就是 n。当 n &gt;&#x3D; 2 时，斐波那契数列的第 n 个数就是前两个数之和。因此，我们可以使用递归来实现斐波那契数列，递归过程中依次计算前两个数之和。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">fib</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> &#123;<br>    <span class="hljs-keyword">if</span> (n &lt;= <span class="hljs-number">1</span>) &#123;<br>        <span class="hljs-keyword">return</span> n;<br>    &#125;<br>    <span class="hljs-keyword">return</span> fib(n - <span class="hljs-number">1</span>) + fib(n - <span class="hljs-number">2</span>);<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="迭代法"><a href="#迭代法" class="headerlink" title="迭代法"></a>迭代法</h2><p>迭代法是一种比较高效的实现方式。我们定义三个变量 a、b、c 表示斐波那契数列的前三个数，初始化时 a &#x3D; 0，b &#x3D; 1，c &#x3D; 0。然后从第三个数开始用循环计算每个数的值，直到计算到第 n 个数为止。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">fib</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> &#123;<br>    <span class="hljs-keyword">if</span> (n &lt;= <span class="hljs-number">1</span>) &#123;<br>        <span class="hljs-keyword">return</span> n;<br>    &#125;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, b = <span class="hljs-number">1</span>, c = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">2</span>; i &lt;= n; i++) &#123;<br>        c = a + b;<br>        a = b;<br>        b = c;<br>    &#125;<br>    <span class="hljs-keyword">return</span> c;<br>&#125;<br></code></pre></td></tr></table></figure><p>这两种方法的时间复杂度和空间复杂度都不同，递归法时间复杂度较高，所以不推荐使用，迭<strong>代法时间复杂度较低，空间复杂度也较低，所以是最优的选择</strong>。</p>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>算法</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>算法：硬币问题</title>
-    <link href="/blog/posts/53295.html"/>
-    <url>/blog/posts/53295.html</url>
-    
-    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定不同面额的硬币 coins 和一个总金额 amount，编写一个函数来计算可以凑成总金额所需的最少的硬币个数。如果没有任何一种硬币组合能组成总金额，返回-1。</p><p>示例：</p><p>输入：</p><p>coins &#x3D; [1, 2, 5], amount &#x3D; 11</p><p>输出：</p><p>3</p><p>解释：</p><p>11 &#x3D; 5 + 5 + 1</p><h2 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h2><p>采用动态规划的思路来解决这个问题。</p><p>定义一个数组 dp，其中 dp[i] 表示凑成金额 i 所需的最少硬币数。</p><p>对于 coins 中的每个硬币，我们依次更新 dp 数组。具体来说，对于第 i 个硬币，我们遍历 dp 数组，对于每个满足 j ≥ coins[i] 的 j，更新 dp[j] &#x3D; min(dp[j], dp[j - coins[i]] + 1)。</p><p>最后，可能存在一种情况，即没有任何一种硬币组合能组成总金额，此时 dp[amount] 为正无穷，我们需要将其改为 -1。</p><h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">coinChange</span><span class="hljs-params">(<span class="hljs-type">int</span>[] coins, <span class="hljs-type">int</span> amount)</span> &#123;<br>        <span class="hljs-type">int</span>[] dp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[amount + <span class="hljs-number">1</span>];<br>        Arrays.fill(dp, Integer.MAX_VALUE);<br>        dp[<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; coins.length; i++) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> coins[i]; j &lt;= amount; j++) &#123;<br>                <span class="hljs-keyword">if</span> (dp[j - coins[i]] != Integer.MAX_VALUE) &#123;<br>                    dp[j] = Math.min(dp[j], dp[j - coins[i]] + <span class="hljs-number">1</span>);<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> dp[amount] == Integer.MAX_VALUE ? -<span class="hljs-number">1</span> : dp[amount];<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>算法</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>JVM组成</title>
     <link href="/blog/posts/54795.html"/>
     <url>/blog/posts/54795.html</url>
@@ -1493,6 +1436,63 @@
     <tags>
       
       <tag>Python</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>算法：硬币问题</title>
+    <link href="/blog/posts/53295.html"/>
+    <url>/blog/posts/53295.html</url>
+    
+    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定不同面额的硬币 coins 和一个总金额 amount，编写一个函数来计算可以凑成总金额所需的最少的硬币个数。如果没有任何一种硬币组合能组成总金额，返回-1。</p><p>示例：</p><p>输入：</p><p>coins &#x3D; [1, 2, 5], amount &#x3D; 11</p><p>输出：</p><p>3</p><p>解释：</p><p>11 &#x3D; 5 + 5 + 1</p><h2 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h2><p>采用动态规划的思路来解决这个问题。</p><p>定义一个数组 dp，其中 dp[i] 表示凑成金额 i 所需的最少硬币数。</p><p>对于 coins 中的每个硬币，我们依次更新 dp 数组。具体来说，对于第 i 个硬币，我们遍历 dp 数组，对于每个满足 j ≥ coins[i] 的 j，更新 dp[j] &#x3D; min(dp[j], dp[j - coins[i]] + 1)。</p><p>最后，可能存在一种情况，即没有任何一种硬币组合能组成总金额，此时 dp[amount] 为正无穷，我们需要将其改为 -1。</p><h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">coinChange</span><span class="hljs-params">(<span class="hljs-type">int</span>[] coins, <span class="hljs-type">int</span> amount)</span> &#123;<br>        <span class="hljs-type">int</span>[] dp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[amount + <span class="hljs-number">1</span>];<br>        Arrays.fill(dp, Integer.MAX_VALUE);<br>        dp[<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; coins.length; i++) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> coins[i]; j &lt;= amount; j++) &#123;<br>                <span class="hljs-keyword">if</span> (dp[j - coins[i]] != Integer.MAX_VALUE) &#123;<br>                    dp[j] = Math.min(dp[j], dp[j - coins[i]] + <span class="hljs-number">1</span>);<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> dp[amount] == Integer.MAX_VALUE ? -<span class="hljs-number">1</span> : dp[amount];<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>算法</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>算法：打家劫舍问题</title>
+    <link href="/blog/posts/36939.html"/>
+    <url>/blog/posts/36939.html</url>
+    
+    <content type="html"><![CDATA[<p>假设你是一个专业的小偷，计划偷窃一条街上的所有房屋。每个房屋都有一定的现金，你<font color='red'>不能同时打劫相邻的两个房屋</font>。给定一个代表每个房屋存放金额的非负整数数组，计算你能够偷窃到的最高金额。</p><h3 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h3><p>这个问题可以用动态规划来解决。<strong>动态规划是一种解决最优化问题的算法思想</strong>，在某些情况下能够大大降低问题的复杂度。在打家劫舍问题中，动态规划的状态转移方程如下：</p><p>dp[i] &#x3D; max(dp[i-1], dp[i-2] + nums[i])</p><p>其中，dp[i] 表示偷到第 i 个房屋时的最大金额，nums[i] 表示第 i 个房屋的现金数。如果你偷第 i 个房屋，那么你就不能偷第 i-1 个房屋，所以偷到第 i 个房屋时的最大金额为偷到第 i-2 个房屋时的最大金额加上第 i 个房屋里的现金数。如果你不偷第 i  个房屋，那么你可以偷到第 i-1 个房屋，所以偷到第 i 个房屋时的最大金额为偷到第 i-1 个房屋时的最大金额。</p><p>最终要求的是最后一个房屋的最大金额，所以返回 dp[n-1]，其中 n 表示房屋数量。</p><h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><h4 id="Python代码实现"><a href="#Python代码实现" class="headerlink" title="Python代码实现"></a>Python代码实现</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">rob</span>(<span class="hljs-params">nums: <span class="hljs-type">List</span>[<span class="hljs-built_in">int</span>]</span>) -&gt; <span class="hljs-built_in">int</span>:<br>    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> nums:<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>    <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(nums) == <span class="hljs-number">1</span>:<br>        <span class="hljs-keyword">return</span> nums[<span class="hljs-number">0</span>]<br>    dp = [<span class="hljs-number">0</span>] * <span class="hljs-built_in">len</span>(nums)<br>    dp[<span class="hljs-number">0</span>] = nums[<span class="hljs-number">0</span>]<br>    dp[<span class="hljs-number">1</span>] = <span class="hljs-built_in">max</span>(nums[<span class="hljs-number">0</span>], nums[<span class="hljs-number">1</span>])<br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">2</span>, <span class="hljs-built_in">len</span>(nums)):<br>        dp[i] = <span class="hljs-built_in">max</span>(dp[i-<span class="hljs-number">1</span>], dp[i-<span class="hljs-number">2</span>] + nums[i])<br>    <span class="hljs-keyword">return</span> dp[-<span class="hljs-number">1</span>]<br></code></pre></td></tr></table></figure><p>时间复杂度：<font color='yellow'>O(n)，其中 n 表示房屋数量。</font></p><p>空间复杂度：<font color='yellow'>O(n)，需要用一个数组来保存偷到每个房屋时的最大金额</font>。</p><h4 id="Java代码实现"><a href="#Java代码实现" class="headerlink" title="Java代码实现"></a>Java代码实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">rob</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>    <span class="hljs-keyword">if</span> (nums == <span class="hljs-literal">null</span> || nums.length == <span class="hljs-number">0</span>) &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    &#125;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> nums.length;<br>    <span class="hljs-keyword">if</span> (n == <span class="hljs-number">1</span>) &#123;<br>        <span class="hljs-keyword">return</span> nums[<span class="hljs-number">0</span>];<br>    &#125;<br>    <span class="hljs-type">int</span>[] dp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n];<br>    dp[<span class="hljs-number">0</span>] = nums[<span class="hljs-number">0</span>];<br>    dp[<span class="hljs-number">1</span>] = Math.max(nums[<span class="hljs-number">0</span>], nums[<span class="hljs-number">1</span>]);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">2</span>; i &lt; n; i++) &#123;<br>        dp[i] = Math.max(dp[i - <span class="hljs-number">1</span>], dp[i - <span class="hljs-number">2</span>] + nums[i]);<br>    &#125;<br>    <span class="hljs-keyword">return</span> dp[n - <span class="hljs-number">1</span>];<br>&#125;<br></code></pre></td></tr></table></figure><p>相比于Python代码，Java代码只是语法上的差异。Java使用了数组来保存偷到每个房屋时的最大金额，数组的长度为房屋数量。Java中数组的下标从0开始，所以dp[0]表示偷到第一个房屋时的最大金额，dp[1]表示偷到第二个房屋时的最大金额，以此类推。Java中的for循环语法和Python有所不同，但是实现的思路是一样的。</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>算法</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>算法：斐波那契数列</title>
+    <link href="/blog/posts/25920.html"/>
+    <url>/blog/posts/25920.html</url>
+    
+    <content type="html"><![CDATA[<p>斐波那契数列的算法思路和Java代码实现。</p><h2 id="算法思路"><a href="#算法思路" class="headerlink" title="算法思路"></a>算法思路</h2><p>斐波那契数列是一个非常经典的数列，在数学上以递推的方式定义为：</p><p><strong>F(0) &#x3D; 0 F(1) &#x3D; 1 F(n) &#x3D; F(n-1) + F(n-2) (n &gt;&#x3D; 2)</strong></p><p>根据这个递推关系式，我们可以用递归或者循环的方式来实现斐波那契数列。</p><h2 id="递归法"><a href="#递归法" class="headerlink" title="递归法"></a>递归法</h2><p>递归法是最基本的实现方式。当 n &#x3D; 0 或者 n &#x3D; 1 时，斐波那契数列的第 n 个数就是 n。当 n &gt;&#x3D; 2 时，斐波那契数列的第 n 个数就是前两个数之和。因此，我们可以使用递归来实现斐波那契数列，递归过程中依次计算前两个数之和。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">fib</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> &#123;<br>    <span class="hljs-keyword">if</span> (n &lt;= <span class="hljs-number">1</span>) &#123;<br>        <span class="hljs-keyword">return</span> n;<br>    &#125;<br>    <span class="hljs-keyword">return</span> fib(n - <span class="hljs-number">1</span>) + fib(n - <span class="hljs-number">2</span>);<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="迭代法"><a href="#迭代法" class="headerlink" title="迭代法"></a>迭代法</h2><p>迭代法是一种比较高效的实现方式。我们定义三个变量 a、b、c 表示斐波那契数列的前三个数，初始化时 a &#x3D; 0，b &#x3D; 1，c &#x3D; 0。然后从第三个数开始用循环计算每个数的值，直到计算到第 n 个数为止。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">fib</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> &#123;<br>    <span class="hljs-keyword">if</span> (n &lt;= <span class="hljs-number">1</span>) &#123;<br>        <span class="hljs-keyword">return</span> n;<br>    &#125;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, b = <span class="hljs-number">1</span>, c = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">2</span>; i &lt;= n; i++) &#123;<br>        c = a + b;<br>        a = b;<br>        b = c;<br>    &#125;<br>    <span class="hljs-keyword">return</span> c;<br>&#125;<br></code></pre></td></tr></table></figure><p>这两种方法的时间复杂度和空间复杂度都不同，递归法时间复杂度较高，所以不推荐使用，迭<strong>代法时间复杂度较低，空间复杂度也较低，所以是最优的选择</strong>。</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>算法</tag>
       
     </tags>
     
