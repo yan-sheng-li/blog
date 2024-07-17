@@ -1,7 +1,7 @@
 ---
 title: Python：字符串转列表
 author: 李延胜
-index_img: ../img/arraylist.jpg
+index_img: http://cdn.qiniu.liyansheng.top/img/arraylist.jpg
 tags:
   - Python
 categories:

@@ -1,7 +1,7 @@
 ---
 title: Python：正则的贪婪匹配
 author: 李延胜
-index_img: ../img/re.jpg
+index_img: http://cdn.qiniu.liyansheng.top/img/re.jpg
 tags:
   - Python
 categories:

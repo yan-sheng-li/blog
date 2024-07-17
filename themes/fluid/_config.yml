@@ -18,11 +18,11 @@
 
 # 用于浏览器标签的图标
 # Icon for browser tab
-favicon: /img/avatar2.jpg
+favicon: http://cdn.qiniu.liyansheng.top/img/avatar2.jpg
 
 # 用于苹果设备的图标
 # Icon for Apple touch
-apple_touch_icon: /img/avatar2.jpg
+apple_touch_icon: http://cdn.qiniu.liyansheng.top/img/avatar2.jpg
 
 # 浏览器标签页中的标题分隔符，效果： 文章名 - 站点名
 # Title separator in browser tab, eg: article - site
@@ -435,7 +435,7 @@ footer:
     <a href="https://gitee.com/yan-sheng-li" target="_blank" rel="nofollow noopener"><span>Gitee码云</span></a>
   <i class="iconfont">|</i> <a href="#" target="_blank" rel="nofollow noopener"><span style="color:green">微信公众号：《编程亿点有趣》</span></a>
       <i class="iconfont">|</i><a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=NZUoWMzd3PQLWwxRGMiBNYEnVkEdNq__&jump_from=webapi&authKey=kgAofDqUzgwMCSX+UQQwxf837zMeWFGGmo4iIcbgkklW2pdfmVOlxPWAK6sMYMaC">
-  <img border="0" src="../../img/group.png" alt="远程调试-学习交流" title="远程调试-学习交流"></a>'
+  <img border="0" src="http://cdn.qiniu.liyansheng.top/img/group.png" alt="远程调试-学习交流" title="远程调试-学习交流"></a>'
 
   # 展示网站的 PV、UV 统计数
   # Display website PV and UV statistics
@@ -897,7 +897,7 @@ giscus:
 # Archive Page
 #---------------------------
 archive:
-  banner_img: /img/bg/bg3.jpeg
+  banner_img: http://cdn.qiniu.liyansheng.top/img/bg3.jpeg
   banner_img_height: 60
   banner_mask_alpha: 0.3
 
@@ -908,7 +908,7 @@ archive:
 #---------------------------
 category:
   enable: true
-  banner_img: /img/bg/bg3.jpeg
+  banner_img: http://cdn.qiniu.liyansheng.top/img/bg3.jpeg
   banner_img_height: 60
   banner_mask_alpha: 0.3
 
@@ -937,7 +937,7 @@ category:
 #---------------------------
 tag:
   enable: true
-  banner_img: /img/bg/bg3.jpeg
+  banner_img: http://cdn.qiniu.liyansheng.top/img/bg3.jpeg
   banner_img_height: 80
   banner_mask_alpha: 0.3
   tagcloud:
@@ -954,10 +954,10 @@ tag:
 #---------------------------
 about:
   enable: true
-  banner_img: /img/bg/bg2.jpeg
+  banner_img: http://cdn.qiniu.liyansheng.top/img/bg2.jpeg
   banner_img_height: 65
   banner_mask_alpha: 0.3
-  avatar: /img/avatar2.jpg
+  avatar: http://cdn.qiniu.liyansheng.top/img/avatar2.jpg
   name: "木子"
   intro: "广漂一枚👨‍💻，热衷技术总结、实战，热衷挑战各种奇奇怪怪的Bug🍳，项目整理，完善💪。感谢您的关注与支持！下面是我在互联网各平台的足迹，可以关注我哦❤"
   # 更多图标可从 https://hexo.fluid-dev.com/docs/icon/ 查找，`class` 代表图标的 css class，添加 `qrcode` 后，图标不再是链接而是悬浮二维码
@@ -981,7 +981,7 @@ about:
 # Custom Page through `hexo new page`
 #---------------------------
 page:
-  banner_img: /img/bg/bg3.jpeg
+  banner_img: http://cdn.qiniu.liyansheng.top/img/bg3.jpeg
   banner_img_height: 60
   banner_mask_alpha: 0.3
 
@@ -992,7 +992,7 @@ page:
 #---------------------------
 page404:
   enable: true
-  banner_img: /img/bg/bg3.jpeg
+  banner_img: http://cdn.qiniu.liyansheng.top/img/bg3.jpeg
   banner_img_height: 85
   banner_mask_alpha: 0.3
   # 重定向到首页的延迟(毫秒)
@@ -1006,7 +1006,7 @@ page404:
 #---------------------------
 links:
   enable: true
-  banner_img: /img/bg/bg3.jpeg
+  banner_img: http://cdn.qiniu.liyansheng.top/img/bg3.jpeg
   banner_img_height: 60
   banner_mask_alpha: 0.3
   # 友链的成员项

@@ -1,7 +1,7 @@
 ---
 title: 课程设计：Springboot+Bootstrap实现图书馆选座管理系统
 author: 李延胜
-index_img: ../img/封面2.jpg
+index_img: http://cdn.qiniu.liyansheng.top/img/封面2.jpg
 tags:
   - 作品
   - 毕设

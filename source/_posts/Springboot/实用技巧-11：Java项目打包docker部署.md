@@ -4,7 +4,7 @@ author: 李延胜
 tags:
   - 实用
 categories: []
-index_img: ../img/skills.jpg
+index_img: http://cdn.qiniu.liyansheng.top/img/skills.jpg
 description: 一键打包镜像，容器启动
 abbrlink: 1939
 date: 2024-03-26 15:19:00

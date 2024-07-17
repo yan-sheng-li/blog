@@ -1,7 +1,7 @@
 ---
 title: Python中控制台如何展示进度条——tqdm库使用
 author: 李延胜
-index_img: ../img/tqdm.png
+index_img: http://cdn.qiniu.liyansheng.top/img/tqdm.png
 tags:
   - Python
 categories:

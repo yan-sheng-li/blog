@@ -4,7 +4,7 @@ author: 李延胜
 tags:
   - 实用
 categories: []
-index_img: ../img/skills.jpg
+index_img: http://cdn.qiniu.liyansheng.top/img/skills.jpg
 abbrlink: 13170
 date: 2024-03-21 00:32:00
 ---

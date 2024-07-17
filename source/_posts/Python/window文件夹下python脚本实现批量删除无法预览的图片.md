@@ -1,7 +1,7 @@
 ---
 title: window文件夹下python脚本实现批量删除无法预览的图片
 author: 李延胜
-index_img: ../img/bits-del.png
+index_img: http://cdn.qiniu.liyansheng.top/img/bits-del.png
 tags:
   - Python
 categories:

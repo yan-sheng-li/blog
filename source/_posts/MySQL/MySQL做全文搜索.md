@@ -4,7 +4,7 @@ author: 李延胜
 abbrlink: 20208
 date: 2024-04-30 15:14:40
 tags:
-index_img: ../img/mysql_search.png
+index_img: http://cdn.qiniu.liyansheng.top/img/mysql_search.png
 ---
 
 

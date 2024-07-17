@@ -3,7 +3,7 @@ title: 解决npm证书过期错误及其他常见npm问题
 author: 李延胜
 tags: []
 categories: []
-index_img: ../img/npm.png
+index_img: http://cdn.qiniu.liyansheng.top/img/npm.png
 abbrlink: 41760
 date: 2024-04-03 00:48:00
 ---

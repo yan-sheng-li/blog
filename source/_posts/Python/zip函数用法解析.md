@@ -1,7 +1,7 @@
 ---
 title: Python中数组中移除元素操作
 author: 李延胜
-index_img: ../img/zip.jpg
+index_img: http://cdn.qiniu.liyansheng.top/img/zip.jpg
 description: zip()函数是 Python 中一个非常有用的函数，可应用于列表打包，列表解压，转置矩阵，列表合并等，本文展开解析并附上实例演示。
 tags:
   - Python

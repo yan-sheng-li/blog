@@ -4,7 +4,7 @@ author: 李延胜
 tags:
   - 实用
 categories: []
-index_img: ../img/skills.jpg
+index_img: http://cdn.qiniu.liyansheng.top/img/skills.jpg
 description: springboot支持jsp页面
 abbrlink: 41256
 date: 2024-03-26 14:51:00

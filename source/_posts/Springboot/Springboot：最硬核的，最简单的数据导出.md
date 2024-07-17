@@ -4,7 +4,7 @@ author: 李延胜
 tags:
   - 工具
 categories: []
-index_img: ../img/dataExport.jpg
+index_img: http://cdn.qiniu.liyansheng.top/img/dataExport.jpg
 abbrlink: 14172
 date: 2024-04-11 13:29:00
 ---

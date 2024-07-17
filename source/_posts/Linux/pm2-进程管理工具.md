@@ -6,7 +6,7 @@ tags:
   - 工具
 categories: []
 date: 2024-04-30 13:46:00
-index_img: ../img/pm2.png
+index_img: http://cdn.qiniu.liyansheng.top/img/pm2.png
 
 ---
 

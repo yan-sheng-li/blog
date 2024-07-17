@@ -1,7 +1,7 @@
 ---
 title: fullPage.js：网站单页滚动插件，真香
 author: 李延胜
-index_img: ../img/fullpage.png
+index_img: http://cdn.qiniu.liyansheng.top/img/fullpage.png
 abbrlink: 26208
 date: 2024-04-06 22:10:11
 tags:

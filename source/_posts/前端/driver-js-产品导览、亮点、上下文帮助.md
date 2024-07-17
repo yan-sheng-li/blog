@@ -1,7 +1,7 @@
 ---
 title: driver.js 产品导览、亮点、上下文帮助
 author: 李延胜
-index_img: ../img/driver.png
+index_img: http://cdn.qiniu.liyansheng.top/img/driver.png
 abbrlink: 54624
 date: 2024-04-03 21:01:53
 tags:

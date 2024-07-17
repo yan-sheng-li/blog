@@ -1,7 +1,7 @@
 ---
 title: springboot获取配置变量
 author: 李延胜
-index_img: ../img/Springboot绑定配置变量.png
+index_img: http://cdn.qiniu.liyansheng.top/img/Springboot绑定配置变量.png
 tags: SpringBoot
 categories:
   - 后端

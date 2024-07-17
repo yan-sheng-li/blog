@@ -9,7 +9,7 @@ description: >-
 tags:
   - 作品
 categories: []
-index_img: ../img/car.png
+index_img: http://cdn.qiniu.liyansheng.top/img/car.png
 abbrlink: 34106
 date: 2024-04-10 00:22:00
 ---

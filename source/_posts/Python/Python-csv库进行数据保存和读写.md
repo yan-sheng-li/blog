@@ -1,7 +1,7 @@
 ---
 title: Python-csv库进行数据保存和读写
 author: 李延胜
-index_img: ../img/csv.jpg
+index_img: http://cdn.qiniu.liyansheng.top/img/csv.jpg
 tags:
   - Python
 categories:

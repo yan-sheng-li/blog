@@ -1,7 +1,7 @@
 ---
 title: flatpicker：时间选择工具
 author: 李延胜
-index_img: ../img/flatpickr.png
+index_img: http://cdn.qiniu.liyansheng.top/img/flatpickr.png
 abbrlink: 5116
 date: 2024-04-04 01:03:19
 tags:

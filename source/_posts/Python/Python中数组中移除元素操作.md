@@ -1,7 +1,7 @@
 ---
 title: Python中数组中移除元素操作
 author: 李延胜
-index_img: ../img/array.jpg
+index_img: http://cdn.qiniu.liyansheng.top/img/array.jpg
 tags:
   - Python
 categories:

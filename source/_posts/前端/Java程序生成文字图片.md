@@ -2,7 +2,7 @@ title: Java程序生成文字图片
 author: 李延胜
 tags: [工具]
 categories: []
-index_img: ../img/StringPicture.png
+index_img: http://cdn.qiniu.liyansheng.top/img/StringPicture.png
 description: "自动化来了，再也不用手动画了\U0001F4AA"
 abbrlink: 974
 date: 2024-04-23 21:24:00

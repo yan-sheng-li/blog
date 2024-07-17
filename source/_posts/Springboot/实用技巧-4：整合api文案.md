@@ -4,7 +4,7 @@ author: 李延胜
 tags:
   - 实用
 categories: []
-index_img: ../img/skills.jpg
+index_img: http://cdn.qiniu.liyansheng.top/img/skills.jpg
 description: 快速生成项目的api文档，在线调试，利索又好使
 abbrlink: 17772
 date: 2024-03-21 01:16:00

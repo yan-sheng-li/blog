@@ -4,7 +4,7 @@ author: 李延胜
 description: >-
   with语句在 Python
   中有多种用途，主要用于创建上下文环境，在进入和离开代码块时执行特定的操作。最常见的用途之一是在文件处理中自动关闭文件，但它还可以用于其他需要资源管理的情况。
-index_img: ../img/with.jpg
+index_img: http://cdn.qiniu.liyansheng.top/img/with.jpg
 tags:
   - Python
 categories:

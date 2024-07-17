@@ -4,7 +4,7 @@ author: 李延胜
 tags:
   - 实用
 categories: []
-index_img: ../img/skills.jpg
+index_img: http://cdn.qiniu.liyansheng.top/img/skills.jpg
 description: 后台数据增删改查快速实现，模板换换接口即可
 abbrlink: 43379
 date: 2024-03-25 19:35:00

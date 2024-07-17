@@ -5,7 +5,7 @@ tags:
   - git
 categories:
   - 工具神器集
-index_img: ../img/git.png
+index_img: http://cdn.qiniu.liyansheng.top/img/git.png
 abbrlink: 8084
 date: 2023-11-15 14:52:00
 ---

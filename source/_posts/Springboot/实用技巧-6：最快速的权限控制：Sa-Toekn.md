@@ -4,7 +4,7 @@ author: 李延胜
 tags:
   - 实用
 categories: []
-index_img: ../img/skills.jpg
+index_img: http://cdn.qiniu.liyansheng.top/img/skills.jpg
 description: 轻量化权限认证，极易上手
 abbrlink: 53762
 date: 2024-03-21 01:37:00

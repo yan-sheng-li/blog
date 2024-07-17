@@ -4,7 +4,7 @@ author: 李延胜
 description: >-
   在本文中，我将介绍如何利用Spring
   Boot轻松整合Knife4j（Swagger-Bootstrap-UI的升级版），快速搭建出美观的API文档界面。通过这个过程，你将学会配置Knife4j，自动生成API文档，并且掌握在可视化界面中进行接口调试的方法，为你的项目增添便捷性与可维护性。
-index_img: ../img/knife4j.jpg
+index_img: http://cdn.qiniu.liyansheng.top/img/knife4j.jpg
 tags:
   - SpringBoot
 categories:
