@@ -1,5 +1,5 @@
 ---
-title: Dropzone.js实现文件长传
+title: Dropzonejs实现文件上传
 author: 李延胜
 index_img: http://cdn.qiniu.liyansheng.top/img/dropzone.png
 abbrlink: 13815
