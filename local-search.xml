@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>电脑深度清理C盘-技巧</title>
+    <link href="/blog/posts/25153.html"/>
+    <url>/blog/posts/25153.html</url>
+    
+    <content type="html"><![CDATA[<blockquote><p>C盘爆红，满了如何清理？</p></blockquote><p><img src="http://cdn.qiniu.liyansheng.top/img/20241101231002.png"></p><h2 id="第一步：清理系统缓存"><a href="#第一步：清理系统缓存" class="headerlink" title="第一步：清理系统缓存"></a>第一步：清理系统缓存</h2><p>按<code>win+R</code>，输入<code>%temp%</code>，接着全选删除</p><p>按<code>win+R</code>，输入<code>SoftWareDistribution</code>,进入<code>Download</code>文件夹，全选删除</p><p>按<code>win+R</code>，输入<code>temp</code>，全选删除</p><h2 id="第二步，清理系统更新文件"><a href="#第二步，清理系统更新文件" class="headerlink" title="第二步，清理系统更新文件"></a>第二步，清理系统更新文件</h2><p>此电脑&#x3D;》C盘&#x3D;》属性&#x3D;》磁盘清理&#x3D;》清理系统文件&#x3D;》列表全选&#x3D;》删除</p><p>开始&#x3D;》设置&#x3D;》存储&#x3D;》临时文件&#x3D;》全选删除</p><h2 id="第三步，修改文件保存位置"><a href="#第三步，修改文件保存位置" class="headerlink" title="第三步，修改文件保存位置"></a>第三步，修改文件保存位置</h2><p>开始&#x3D;》设置&#x3D;》存储&#x3D;》更改新内容的保存位置&#x3D;》全改其他盘</p><p>此外，电脑软件如微信，浏览器，网盘等各自内部也可以修改文件保存位置，全改其他盘</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Java8的新特性与案例解析</title>
     <link href="/blog/posts/49921.html"/>
     <url>/blog/posts/49921.html</url>
