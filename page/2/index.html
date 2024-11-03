@@ -16,8 +16,8 @@
   <meta name="keywords" content="">
   
     <meta property="og:type" content="website">
-<meta property="og:title" content="归档">
-<meta property="og:url" content="https://yan-sheng-li.github.io/blog/archives/2022/index.html">
+<meta property="og:title" content="👨‍💻木子-博客">
+<meta property="og:url" content="https://yan-sheng-li.github.io/blog/page/2/index.html">
 <meta property="og:site_name" content="👨‍💻木子-博客">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="李延胜">
@@ -27,7 +27,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>归档 - 👨‍💻木子-博客</title>
+  <title>👨‍💻木子-博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -131,7 +131,7 @@ var _hmt = _hmt || [];
   <header>
     
 
-<div class="header-inner" style="height: 60vh;">
+<div class="header-inner" style="height: 100vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/blog/">
@@ -255,19 +255,23 @@ var _hmt = _hmt || [];
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('http://cdn.qiniu.liyansheng.top/img/bg3.jpeg') no-repeat center center; background-size: cover;">
+     style="background: url('/blog/img/bg/bg4.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="发布时间线👇"></span>
+            <span id="subtitle" data-typed-text="一模，二改，三创新..."></span>
           
         </div>
 
         
       </div>
 
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
       
     </div>
   </div>
@@ -281,30 +285,88 @@ var _hmt = _hmt || [];
     
       <div class="container nopadding-x-md">
         <div id="board"
-          >
+          style="margin-top: 0">
           
           <div class="container">
             <div class="row">
               <div class="col-12 col-md-10 m-auto">
                 
 
-<div class="list-group">
-  <p class="h4">共计 11 篇文章</p>
-  <hr>
-  
-  
+
+  <div class="row mx-auto index-card">
     
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/blog/posts/28281.html" target="_self">
+          <img src="http://cdn.qiniu.liyansheng.top/typora/image-20230318181048925.png" srcset="/blog/img/loading.gif" lazyload alt="快速实现免费使用typora">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/blog/posts/28281.html" target="_self">
+          快速实现免费使用typora
+        </a>
+      </h1>
+
       
-      <p class="h5">2022</p>
-    
-    <a href="/blog/posts/28281.html" class="list-group-item list-group-item-action">
-      <time>03-18</time>
-      <div class="list-group-item-title">快速实现免费使用typora</div>
-    </a>
+      <a class="index-excerpt " href="/blog/posts/28281.html" target="_self">
+        <div>
+          用过Typora的伙伴都知道，用它来写作是挺丝滑的事情，但新版的Typora已经开始收费了，如果你还想继续free使用，请往下看（支持正版哈）  tips：本演示基于1.3.8版本   如果你还没有安装包，可以在我的百度网盘获取 链接：https://pan.baidu.com/s/1NW5ieA9sDwt1we3xcFguBg提取码：8iyi  安装激活步骤：  下载安装包，解压   点击Se
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-03-18 17:38" pubdate>
+              2022-03-18
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
   
-</div>
+  
+    
+      <span class="category-chain">
+        
+  <a href="/blog/categories/%E5%B7%A5%E5%85%B7%E7%A5%9E%E5%99%A8%E9%9B%86/" class="category-chain-item">工具神器集</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/blog/tags/%E5%B7%A5%E5%85%B7/">#工具</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
 
 
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/blog/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/blog/">1</a><span class="page-number current">2</span>
+    </span>
+  </nav>
 
 
 
@@ -412,7 +474,37 @@ var _hmt = _hmt || [];
       }
       var text = subtitle.getAttribute('data-typed-text');
       
-        typing(text);
+        jQuery.ajax({
+          type: 'GET',
+          url: 'https://v1.hitokoto.cn/?c=f&amp;c=d',
+          headers: {},
+          dataType: 'json',
+          success: function(result) {
+            var apiText;
+            if (result) {
+              var keys = 'hitokoto'.split(',');
+              if (result instanceof Array) {
+                result = result[0];
+              }
+              for (const k of keys) {
+                var value = result[k];
+                if (typeof value === 'string') {
+                  apiText = value;
+                  break;
+                } else if (value instanceof Object) {
+                  result = value;
+                }
+              }
+            }
+            apiText ? typing(apiText) : typing(text);
+          },
+          error: function(xhr, status, error) {
+            if (error) {
+              console.error('Failed to request https://v1.hitokoto.cn/?c=f&amp;c=d:', error);
+            }
+            typing(text);
+          }
+        })
       
     })(window, document);
   </script>

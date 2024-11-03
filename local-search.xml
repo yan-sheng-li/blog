@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>在网页中添加 Live2D 看板娘</title>
+    <link href="/blog/posts/44745.html"/>
+    <url>/blog/posts/44745.html</url>
+    
+    <content type="html"><![CDATA[<h2 id="仓库地址"><a href="#仓库地址" class="headerlink" title="仓库地址"></a>仓库地址</h2><p><a href="https://github.com/stevenjoezhang/live2d-widget">前往</a></p><h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><p>直接在网页中引入</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js">&lt;script src=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js&quot;</span>&gt;&lt;/script&gt;<br>    <br></code></pre></td></tr></table></figure><p>浏览器打开页面即可看到效果，更多自定义用法可以参考文档。</p><p><img src="http://cdn.qiniu.liyansheng.top/img/20241104001519.png"></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>科学上网-技法</title>
     <link href="/blog/posts/40617.html"/>
     <url>/blog/posts/40617.html</url>
