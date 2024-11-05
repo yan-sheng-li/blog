@@ -3,13 +3,15 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 👨‍💻木子-博客
+title: 简忆
 subtitle: '技术探索仔一枚，热衷技术总结、实战。感谢您的关注与支持！'
 description: ''
 keywords:
 author: 李延胜
 language: zh-CN
 timezone: ''
+
+
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
@@ -193,3 +195,4 @@ hide_posts:
 
 sitemap:
   path: sitemap.xml
+
