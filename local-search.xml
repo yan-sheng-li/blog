@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>hexo server命令无法识别？</title>
+    <link href="/blog/posts/36980.html"/>
+    <url>/blog/posts/36980.html</url>
+    
+    <content type="html"><![CDATA[<p><img src="http://cdn.qiniu.liyansheng.top/img/image-20241104123045155.png"></p><h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p> PowerShell 的执行策略限制了脚本的运行</p><h2 id="方法一：以管理员身份更改执行策略（推荐）"><a href="#方法一：以管理员身份更改执行策略（推荐）" class="headerlink" title="方法一：以管理员身份更改执行策略（推荐）"></a>方法一：以管理员身份更改执行策略（推荐）</h2><ol><li>以管理员身份打开 PowerShell。在开始菜单中搜索 “PowerShell”，右键点击 “Windows PowerShell”，选择 “以管理员身份运行”。</li><li>在打开的 PowerShell 窗口中，输入以下命令：<ul><li><code>Set-ExecutionPolicy RemoteSigned</code></li><li>这个命令会将执行策略更改为 “RemoteSigned”。这意味着本地创建的脚本可以运行，而从网络下载的脚本需要有数字签名才能运行。</li></ul></li><li>按照提示操作，输入<code>Y</code>或者<code>A</code>（<code>Y</code>表示对当前作用域更改策略，<code>A</code>表示对所有作用域更改策略），然后回车。</li></ol><h2 id="方法二：仅对当前会话更改执行策略"><a href="#方法二：仅对当前会话更改执行策略" class="headerlink" title="方法二：仅对当前会话更改执行策略"></a>方法二：仅对当前会话更改执行策略</h2><ol><li>在你运行<code>hexo server</code><br>的同一个 PowerShell 窗口中（不需要以管理员身份运行），输入以下命令：<ul><li><code>Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass</code></li><li>这个命令只在当前的 PowerShell 进程中绕过执行策略的限制。这样不会对整个系统的执行策略设置产生永久性影响。不过每次重新打开 PowerShell 窗口都需要重新执行此命令。</li></ul></li><li>修改执行策略后，再尝试运行<code>hexo server</code>命令就应该可以正常执行了。</li></ol>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>在网页中添加 Live2D 看板娘</title>
     <link href="/blog/posts/44745.html"/>
     <url>/blog/posts/44745.html</url>
