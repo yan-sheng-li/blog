@@ -4,6 +4,82 @@
   
   
   <entry>
+    <title>Nginx代理静态资源</title>
+    <link href="/blog/posts/29122.html"/>
+    <url>/blog/posts/29122.html</url>
+    
+    <content type="html"><![CDATA[<p>以下是一个静态文件代理的示例配置，启用了SSL：</p><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-section">server</span> &#123;<br>    <span class="hljs-attribute">listen</span> <span class="hljs-number">443</span> ssl;<br>    <span class="hljs-attribute">server_name</span> example.com;<br><br>    <span class="hljs-comment"># SSL证书配置</span><br>    <span class="hljs-attribute">ssl_certificate</span> /path/to/your/certificate.crt;<br>    <span class="hljs-attribute">ssl_certificate_key</span> /path/to/your/private.key;<br>    <span class="hljs-attribute">ssl_protocols</span> TLSv1.<span class="hljs-number">2</span> TLSv1.<span class="hljs-number">3</span>;<br>    <span class="hljs-attribute">ssl_ciphers</span> HIGH:!aNULL:!MD5;<br><br>    <span class="hljs-comment"># 设置根目录，静态文件将从这个目录提供</span><br>    <span class="hljs-attribute">root</span> /path/to/your/static/files;<br><br>    <span class="hljs-comment"># 代理静态文件</span><br>    <span class="hljs-section">location</span> /static/ &#123;<br>        <span class="hljs-attribute">alias</span> /path/to/your/static/files/;<br>        <span class="hljs-attribute">expires</span> <span class="hljs-number">30d</span>;<br>        <span class="hljs-attribute">access_log</span> /var/log/nginx/static_access.log;<br>    &#125;<br><br>    <span class="hljs-comment"># 针对特定静态资源类型设置缓存</span><br>    <span class="hljs-section">location</span> <span class="hljs-regexp">~* \.(jpg|jpeg|png|gif|ico|css|js)$</span> &#123;<br>        <span class="hljs-attribute">root</span> /path/to/your/static/files;<br>        <span class="hljs-attribute">expires</span> <span class="hljs-number">7d</span>;<br>        <span class="hljs-attribute">access_log</span> <span class="hljs-literal">off</span>;<br>    &#125;<br>&#125;<br><br><span class="hljs-comment"># 配置HTTP自动跳转到HTTPS</span><br><span class="hljs-section">server</span> &#123;<br>    <span class="hljs-attribute">listen</span> <span class="hljs-number">80</span>;<br>    <span class="hljs-attribute">server_name</span> example.com;<br>    <span class="hljs-attribute">return</span> <span class="hljs-number">301</span> https://<span class="hljs-variable">$server_name</span><span class="hljs-variable">$request_uri</span>;<br>&#125;<br></code></pre></td></tr></table></figure><h3 id="配置解析"><a href="#配置解析" class="headerlink" title="配置解析"></a>配置解析</h3><ul><li><code>listen 443 ssl</code>：开启443端口的SSL监听，启用HTTPS。</li><li><code>ssl_certificate</code> 和 <code>ssl_certificate_key</code>：指定SSL证书文件和私钥文件的路径。</li><li><code>ssl_protocols</code> 和 <code>ssl_ciphers</code>：设置SSL协议版本和加密套件，以确保安全性。</li><li><code>return 301 https://$server_name$request_uri;</code>：将HTTP请求自动重定向到HTTPS，保证所有访问都通过加密连接。</li></ul><p>这样配置后，访问静态资源时会通过HTTPS加密传输，提升了数据的安全性。</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>nginx</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>npminstall很慢-解决方法</title>
+    <link href="/blog/posts/60362.html"/>
+    <url>/blog/posts/60362.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="npm-install很慢-解决方法"><a href="#npm-install很慢-解决方法" class="headerlink" title="npm install很慢-解决方法"></a>npm install很慢-解决方法</h1><h3 id="更换镜像源"><a href="#更换镜像源" class="headerlink" title="更换镜像源"></a>更换镜像源</h3><ul><li><strong>使用淘宝镜像（cnpm）</strong>：在服务器上全局安装<code>cnpm</code>，执行<code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code>。然后使用<code>cnpm install</code>替代<code>npm install</code>来安装项目依赖。</li><li><strong>使用其他镜像源</strong>：比如使用 Yarn 的镜像源（Yarn 和 npm 有类似的功能），先安装 Yarn（<code>npm install -g yarn</code>），然后配置 Yarn 镜像源（<code>yarn config set registry https://registry.npm.taobao.org</code>），再使用<code>yarn</code>安装依赖。也可以尝试使用企业内部的私有镜像源，如果有的话。</li></ul><h3 id="优化网络连接"><a href="#优化网络连接" class="headerlink" title="优化网络连接"></a>优化网络连接</h3><ul><li><strong>检查服务器网络设置</strong>：确保服务器网络连接稳定，没有限制或阻塞 NPM 下载的网络策略。如果服务器在防火墙后，检查防火墙规则是否允许 NPM 相关的网络访问。</li><li><strong>增加网络带宽（如果可能）</strong>：联系服务器提供商，看是否可以临时或长期增加网络带宽，特别是在安装大型依赖包或多个依赖时。</li></ul><h3 id="本地安装后上传"><a href="#本地安装后上传" class="headerlink" title="本地安装后上传"></a>本地安装后上传</h3><ul><li>在本地开发环境（网络较好的地方）中，在项目目录下执行<code>npm install</code>，将安装好依赖的整个项目目录（除了<code>node_modules</code>目录下的二进制文件可能需要重新编译外）打包上传到服务器。这样可以避免在服务器上缓慢的下载过程，但要注意服务器环境和本地环境的一致性。</li></ul>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>node</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>用Node快速写API</title>
+    <link href="/blog/posts/52388.html"/>
+    <url>/blog/posts/52388.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="快速写API"><a href="#快速写API" class="headerlink" title="快速写API"></a>快速写API</h1><blockquote><p>以 Express 框架为例</p></blockquote><p>首先，确保已经安装了 Node.js，然后新建一个文件夹，在命令行中进入该文件夹后执行<code>npm init -y</code>初始化项目，接着安装 Express：<code>npm install express</code>。</p><p>创建一个名为<code>app.js</code>的文件，内容如下：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;express&#x27;</span>);<br><span class="hljs-keyword">const</span> app = <span class="hljs-title function_">express</span>();<br><span class="hljs-keyword">const</span> port = <span class="hljs-number">8081</span>;<br><span class="hljs-keyword">const</span> multer = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;multer&#x27;</span>);<br><span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;fs&#x27;</span>);<br><span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;path&#x27;</span>);<br><br><span class="hljs-comment">// 假设你的HTML文件在项目目录下的public文件夹中的index.html</span><br>app.<span class="hljs-title function_">get</span>(<span class="hljs-string">&#x27;/index&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">req, res</span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">const</span> htmlPath = path.<span class="hljs-title function_">join</span>(__dirname, <span class="hljs-string">&#x27;public&#x27;</span>, <span class="hljs-string">&#x27;index.html&#x27;</span>);<br>    res.<span class="hljs-title function_">sendFile</span>(htmlPath);<br>&#125;);<br><br><span class="hljs-comment">// 创建一个简单的GET请求API</span><br>app.<span class="hljs-title function_">get</span>(<span class="hljs-string">&#x27;/api/greet&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">req, res</span>) =&gt;</span> &#123;<br>    res.<span class="hljs-title function_">send</span>(<span class="hljs-string">&#x27;Hello, huangjinyan!&#x27;</span>);<br>&#125;);<br><br><span class="hljs-comment">// 创建一个返回JSON数据的API</span><br>app.<span class="hljs-title function_">get</span>(<span class="hljs-string">&#x27;/api/user&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">req, res</span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">const</span> user = &#123;<br>        <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;李明~&quot;</span>,<br>        <span class="hljs-attr">age</span>: <span class="hljs-number">30</span><br>    &#125;;<br>    res.<span class="hljs-title function_">json</span>(user);<br>&#125;);<br><br><span class="hljs-comment">// 下载文件</span><br>app.<span class="hljs-title function_">get</span>(<span class="hljs-string">&#x27;/api/download&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">req, res</span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">const</span> filePath = path.<span class="hljs-title function_">join</span>(__dirname, <span class="hljs-string">&#x27;files&#x27;</span>, <span class="hljs-string">&#x27;example.txt&#x27;</span>);<br>    <span class="hljs-keyword">const</span> fileName = <span class="hljs-string">&#x27;example.txt&#x27;</span>;<br>    res.<span class="hljs-title function_">setHeader</span>(<span class="hljs-string">&#x27;Content-Disposition&#x27;</span>, <span class="hljs-string">`attachment; filename=&quot;<span class="hljs-subst">$&#123;fileName&#125;</span>&quot;`</span>);<br>    res.<span class="hljs-title function_">setHeader</span>(<span class="hljs-string">&#x27;Content-Type&#x27;</span>, <span class="hljs-string">&#x27;application/octet-stream&#x27;</span>);<br>    fs.<span class="hljs-title function_">access</span>(filePath, fs.<span class="hljs-property">constants</span>.<span class="hljs-property">F_OK</span>, <span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> &#123;<br>        <span class="hljs-keyword">if</span> (err) &#123;<br>            res.<span class="hljs-title function_">status</span>(<span class="hljs-number">404</span>).<span class="hljs-title function_">send</span>(<span class="hljs-string">&#x27;File not found&#x27;</span>);<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br>        <span class="hljs-keyword">const</span> fileStream = fs.<span class="hljs-title function_">createReadStream</span>(filePath);<br>        fileStream.<span class="hljs-title function_">pipe</span>(res);<br>    &#125;);<br>&#125;);<br><br><br><br><span class="hljs-comment">// 启动服务器并监听端口</span><br>app.<span class="hljs-title function_">listen</span>(port, <span class="hljs-function">() =&gt;</span> &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Server running at http://localhost:<span class="hljs-subst">$&#123;port&#125;</span>`</span>);<br>&#125;);<br><br></code></pre></td></tr></table></figure><p>在上述代码中：</p><ol><li>引入<code>express</code>模块并创建一个<code>app</code>实例。</li><li>定义了一个端口号<code>3000</code>。</li><li>通过<code>app.get</code>方法创建了一个<code>GET</code>请求类型的 API。当访问<code>/api/greet</code>路径时，服务器会返回<code>Hello, World!</code>的响应。</li><li>当访问<code>/api/user</code>路径时，服务器会返回一个包含用户信息的 JSON 对象。</li><li>亦可打开指定网页</li><li>下载文件</li><li>最后，使用<code>app.listen</code>启动服务器并监听指定端口，在控制台打印服务器运行的地址。</li></ol><p><img src="http://cdn.qiniu.liyansheng.top/img/image-20241107132444122.png" alt="image-20241107132444122"></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>node</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Nginx配置了SSL不生效?</title>
+    <link href="/blog/posts/37544.html"/>
+    <url>/blog/posts/37544.html</url>
+    
+    <content type="html"><![CDATA[<blockquote><p>小细节~</p></blockquote><ol><li>先检查服务器的安全组是否开发规则，将443端口打开。</li><li>检查配置文件是否书写错误</li><li>注意文件读写权限</li><li>注意端口占用，用<code>netstat -tlnp</code>查看接口情况</li></ol><p><img src="http://cdn.qiniu.liyansheng.top/img/image-20241108020236512.png" alt="image-20241108020236512"></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>nginx</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>如何实现内网穿透？</title>
     <link href="/blog/posts/26131.html"/>
     <url>/blog/posts/26131.html</url>
