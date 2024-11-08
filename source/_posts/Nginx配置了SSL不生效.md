@@ -5,6 +5,7 @@ abbrlink: 37544
 date: 2024-11-08 12:56:02
 index_img: http://cdn.qiniu.liyansheng.top/img/20241108130152.png
 tags:
+ - nginx
 ---
 > 小细节~
 1. 先检查服务器的安全组是否开发规则，将443端口打开。
