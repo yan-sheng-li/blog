@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>提Bug+问题流程</title>
+    <link href="/blog/raise/"/>
+    <url>/blog/raise/</url>
+    
+    <content type="html"><![CDATA[<h1 id="项目提问题，提Bug，请看步骤👇"><a href="#项目提问题，提Bug，请看步骤👇" class="headerlink" title="项目提问题，提Bug，请看步骤👇"></a>项目提问题，提Bug，请看步骤👇</h1><h2 id="1、打开我给你的项目仓库地址"><a href="#1、打开我给你的项目仓库地址" class="headerlink" title="1、打开我给你的项目仓库地址"></a>1、打开我给你的项目仓库地址</h2><p><img src="http://cdn.qiniu.liyansheng.top/img/image-20250224220859255.png"></p><h2 id="2、按下图数字顺序操作"><a href="#2、按下图数字顺序操作" class="headerlink" title="2、按下图数字顺序操作"></a>2、按下图数字顺序操作</h2><blockquote><p>切换到【工单】面板，点【创建工单】，然后输入【工单标题】，【简单描述过程】，最后点右下角的【创建工单】提交即可。</p></blockquote><p><img src="http://cdn.qiniu.liyansheng.top/img/image-20250224220927094.png"></p><blockquote><p><strong>注意：一个问题一个工单，无需长篇大论，简明扼要</strong></p></blockquote><p><img src="http://cdn.qiniu.liyansheng.top/img/20250111132745.png"></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>自建内网穿透服务</title>
     <link href="/blog/posts/57913.html"/>
     <url>/blog/posts/57913.html</url>
