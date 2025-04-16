@@ -38,6 +38,6 @@ jobs:
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3  # 这个插件保持 v3 即可（最新版）
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}  # 建议改用默认的 GITHUB_TOKEN
+        github_token: ${{ secrets.ACCESS_TOKEN }}
         publish_branch: gh-pages
         publish_dir: ./public
