@@ -11,15 +11,15 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4  # 从 v2 升级到 v4
 
     - name: Setup Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v4  # 从 v2 升级到 v4
       with:
-        node-version: '19.9.0' # 你可以根据需要更改 Node.js 版本
+        node-version: '20'  # 建议升级到 LTS 版本（如 20.x）
 
     - name: Cache node modules
-      uses: actions/cache@v2
+      uses: actions/cache@v4  # 关键修改：从 v2 升级到 v4
       with:
         path: node_modules
         key: ${{ runner.os }}-node_modules-${{ hashFiles('**/package-lock.json') }}
@@ -36,8 +36,8 @@ jobs:
       run: hexo generate
 
     - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
+      uses: peaceiris/actions-gh-pages@v3  # 这个插件保持 v3 即可（最新版）
       with:
-        github_token: ${{ secrets.ACCESS_TOKEN }}
-        publish_branch: gh-pages # 部署到 gh-pages 分支
+        github_token: ${{ secrets.GITHUB_TOKEN }}  # 建议改用默认的 GITHUB_TOKEN
+        publish_branch: gh-pages
         publish_dir: ./public
