@@ -4,6 +4,7 @@ author: 李延胜
 abbrlink: 49477
 permalink: raise/
 date: 2025-02-24 22:22:57
+index_img: http://cdn.qiniu.liyansheng.top/img/20250520141746.png
 tags:
 ---
 
