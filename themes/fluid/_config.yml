@@ -429,13 +429,19 @@ footer:
   # 页脚第一行文字的 HTML，建议保留 Fluid 的链接，用于向更多人推广本主题
   # HTML of the first line of the footer, it is recommended to keep the Fluid link to promote this theme to more people
   content: '
-    <a href="https://blog.csdn.net/weixin_44107140" target="_blank" rel="nofollow noopener">
-    <span>CSDN博客</span></a>
-    <i class="iconfont">|</i>
-    <a href="https://gitee.com/yan-sheng-li" target="_blank" rel="nofollow noopener"><span>Gitee码云</span></a>
-  <i class="iconfont">|</i> <a href="#" target="_blank" rel="nofollow noopener"><span style="color:green">微信公众号：《木子空间Pro》</span></a>
-      <i class="iconfont">|</i><a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=NZUoWMzd3PQLWwxRGMiBNYEnVkEdNq__&jump_from=webapi&authKey=kgAofDqUzgwMCSX+UQQwxf837zMeWFGGmo4iIcbgkklW2pdfmVOlxPWAK6sMYMaC">
-  <img border="0" src="http://cdn.qiniu.liyansheng.top/img/group.png" alt="远程调试-学习交流" title="远程调试-学习交流"></a>'
+    <span>
+<a href="http://www.liyansheng.top/blog"><img src="https://img.shields.io/badge/木子空间-自营博客-00dfbf" alt="自营博客"></a>
+<a href="https://yan-sheng-li.github.io/project/"><img src="https://img.shields.io/badge/木子空间-项目&资料-1e90ff" alt="项目合集"></a>
+<a href="https://blog.csdn.net/weixin_44107140"><img src="https://img.shields.io/badge/木子空间-CSDN&粉丝1.5w+-FC5531" alt="CSDN博客"></a>
+<a href="https://gitee.com/yan-sheng-li"><img src="https://img.shields.io/badge/木子空间-Gitee-orange" alt="Gitee"></a>
+<a href="https://github.com/yan-sheng-li"><img src="https://img.shields.io/badge/木子空间-GitHub-black" alt="GitHub"></a><br/>
+<a href="http://cdn.qiniu.liyansheng.top/img/gzh_muzikongjianPro.png"><img src="https://img.shields.io/badge/木子空间Pro-公众号&粉丝6k+-brightgreen" alt="公众号"></a>
+<a href="https://qm.qq.com/cgi-bin/qm/qr?k=NZUoWMzd3PQLWwxRGMiBNYEnVkEdNq__&jump_from=webapi&authKey=kgAofDqUzgwMCSX+UQQwxf837zMeWFGGmo4iIcbgkklW2pdfmVOlxPWAK6sMYMaC"><img src="https://img.shields.io/badge/木子空间-QQ社群(450+人)-18a2ea" alt="QQ Group"></a>
+<a href="https://www.xiaohongshu.com/user/profile/668f634100000000030315a1"><img src="https://img.shields.io/badge/木子空间-小红书-FF2842" alt="小红书"></a>
+<a href="http://cdn.qiniu.liyansheng.top/img/20250423150441.png"><img src="https://img.shields.io/badge/木子空间-闲鱼-ffe10f" alt="闲鱼"></a>
+<a href="http://cdn.qiniu.liyansheng.top/img/20250423145452.png"><img src="https://img.shields.io/badge/木子空间-小程序商店-green" alt="小程序商店"></a>
+</span>
+    '
 
   # 展示网站的 PV、UV 统计数
   # Display website PV and UV statistics
