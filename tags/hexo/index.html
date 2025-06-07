@@ -364,9 +364,9 @@ var _hmt = _hmt || [];
     <div class="footer-content">
        <span> <a target="_blank" rel="noopener" href="http://www.liyansheng.top/blog"><img src="https://img.shields.io/badge/木子空间-自营博客-00dfbf" srcset="/blog/img/loading.gif" lazyload alt="自营博客"></a> <a href="https://yan-sheng-li.github.io/project/"><img src="https://img.shields.io/badge/木子空间-项目&资料-1e90ff" srcset="/blog/img/loading.gif" lazyload alt="项目合集"></a> <a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44107140"><img src="https://img.shields.io/badge/木子空间-CSDN&粉丝1.5w+-FC5531" srcset="/blog/img/loading.gif" lazyload alt="CSDN博客"></a> <a target="_blank" rel="noopener" href="https://gitee.com/yan-sheng-li"><img src="https://img.shields.io/badge/木子空间-Gitee-orange" srcset="/blog/img/loading.gif" lazyload alt="Gitee"></a> <a target="_blank" rel="noopener" href="https://github.com/yan-sheng-li"><img src="https://img.shields.io/badge/木子空间-GitHub-black" srcset="/blog/img/loading.gif" lazyload alt="GitHub"></a><br/> <a target="_blank" rel="noopener" href="http://cdn.qiniu.liyansheng.top/img/gzh_muzikongjianPro.png"><img src="https://img.shields.io/badge/木子空间Pro-公众号&粉丝6k+-brightgreen" srcset="/blog/img/loading.gif" lazyload alt="公众号"></a> <a target="_blank" rel="noopener" href="https://qm.qq.com/cgi-bin/qm/qr?k=NZUoWMzd3PQLWwxRGMiBNYEnVkEdNq__&jump_from=webapi&authKey=kgAofDqUzgwMCSX+UQQwxf837zMeWFGGmo4iIcbgkklW2pdfmVOlxPWAK6sMYMaC"><img src="https://img.shields.io/badge/木子空间-QQ社群(450+人)-18a2ea" srcset="/blog/img/loading.gif" lazyload alt="QQ Group"></a> <a target="_blank" rel="noopener" href="https://www.xiaohongshu.com/user/profile/668f634100000000030315a1"><img src="https://img.shields.io/badge/木子空间-小红书-FF2842" srcset="/blog/img/loading.gif" lazyload alt="小红书"></a> <a target="_blank" rel="noopener" href="http://cdn.qiniu.liyansheng.top/img/20250423150441.png"><img src="https://img.shields.io/badge/木子空间-闲鱼-ffe10f" srcset="/blog/img/loading.gif" lazyload alt="闲鱼"></a> <a target="_blank" rel="noopener" href="http://cdn.qiniu.liyansheng.top/img/20250423145452.png"><img src="https://img.shields.io/badge/木子空间-小程序商店-green" srcset="/blog/img/loading.gif" lazyload alt="小程序商店"></a> </span> 
     </div>
-  
-  
-    <div class="statistics">
+    
+      
+        <div class="statistics">
   
   
 
@@ -377,15 +377,127 @@ var _hmt = _hmt || [];
   
 </div>
 
-  
-  
-  
+          
+            
+                  
 
-  <div style="text-align: center;">
-    <a href="https://beian.miit.gov.cn/" target="_blank">辽ICP备2022000630号</a>
-  </div>
+                      <div style="text-align: center;">
+                        <a href="https://beian.miit.gov.cn/" target="_blank">辽ICP备2022000630号</a>
+                      </div>
+
+                      <!-- 在footer.ejs或after-footer.ejs中添加 -->
+                      <div id="hexo-cs-btn-container">
+                        <button id="hexo-cs-btn" aria-label="联系博主">
+                          <span>联系博主🚀</span>
+                        </button>
+                      </div>
+
+                      <style>
+                        /* 使用特定ID限定样式作用范围，避免全局影响 */
+                        #hexo-cs-btn-container {
+                          position: fixed;
+                          right: 0;
+                          bottom: 0;
+                          padding: 10px;
+                          z-index: 9999;
+                          pointer-events: none;
+                        }
+
+                        #hexo-cs-btn {
+                          --cs-btn-primary: #FF6B6B;
+                          --cs-btn-secondary: #FF8E53;
+                          --cs-btn-text: white;
+
+                          position: relative;
+                          padding: 0.7rem 1.2rem;
+                          background: linear-gradient(135deg, var(--cs-btn-primary) 0%, var(--cs-btn-secondary) 100%);
+                          color: var(--cs-btn-text);
+                          border-radius: 2rem;
+                          cursor: pointer;
+                          box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+                          font: bold 0.85rem/1 sans-serif;
+                          display: inline-flex;
+                          align-items: center;
+                          justify-content: center;
+                          transition: transform 0.2s ease, box-shadow 0.2s ease;
+                          border: none;
+                          outline: none;
+                          max-width: 100%;
+                          pointer-events: auto;
+                          white-space: nowrap;
+                          overflow: hidden;
+                          margin: 0;
+                        }
+
+                        #hexo-cs-btn span {
+                          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+                        }
+
+                        #hexo-cs-btn:hover {
+                          transform: scale(1.05);
+                          box-shadow: 0 6px 14px rgba(255, 107, 107, 0.5);
+                        }
+
+                        #hexo-cs-btn:active {
+                          transform: scale(0.98);
+                        }
+
+                        /* 安全区域适配 */
+                        @supports (padding: max(0px)) {
+                          #hexo-cs-btn-container {
+                            right: max(10px, env(safe-area-inset-right));
+                            bottom: max(10px, env(safe-area-inset-bottom));
+                          }
+                        }
+
+                        /* 移动端优化 */
+                        @media (max-width: 768px) {
+                          #hexo-cs-btn-container {
+                            padding: 8px;
+                          }
+
+                          #hexo-cs-btn {
+                            padding: 0.6rem 1rem;
+                            font-size: 0.8rem;
+                          }
+                        }
+
+                        /* 超小设备处理 */
+                        @media (max-width: 360px) {
+                          #hexo-cs-btn {
+                            white-space: normal;
+                            padding: 0.5rem 0.8rem;
+                            font-size: 0.75rem;
+                          }
+                        }
+                      </style>
+
+                      <script>
+                        // 使用自执行函数避免全局变量污染
+                        (function () {
+                          document.addEventListener('DOMContentLoaded', function () {
+                            const btn = document.getElementById('hexo-cs-btn');
+                            if (!btn) return;
+
+                            // 点击事件
+                            btn.addEventListener('click', function (e) {
+                              e.preventDefault();
+                              window.open(
+                                'https://qm.qq.com/cgi-bin/qm/qr?k=NZUoWMzd3PQLWwxRGMiBNYEnVkEdNq__&jump_from=webapi&authKey=kgAofDqUzgwMCSX+UQQwxf837zMeWFGGmo4iIcbgkklW2pdfmVOlxPWAK6sMYMaC',
+                                '_blank',
+                                'noopener,noreferrer'
+                              );
+
+                              // 点击反馈
+                              btn.style.transform = 'scale(0.95)';
+                              setTimeout(() => btn.style.transform = '', 200);
+                            });
+                          });
+                        })();
+                      </script>
+
+
 </div>
-
 
   </footer>
 
