@@ -3,20 +3,133 @@
     <div class="footer-content">
       <%- theme.footer.content %>
     </div>
-  <% } %>
-  <% if (theme.footer.statistics.enable) { %>
-    <%- partial('_partials/footer/statistics.ejs') %>
-  <% } %>
-  <% if(theme.footer.beian.enable) { %>
-    <!-- 备案信息 ICP for China -->
-    <%- partial('_partials/footer/beian.ejs') %>
-  <% } %>
-  <% if(theme.web_analytics.cnzz) { %>
-    <!-- cnzz Analytics Icon -->
-    <span id="cnzz_stat_icon_<%= theme.web_analytics.cnzz %>" style="display: none"></span>
-  <% } %>
+    <% } %>
+      <% if (theme.footer.statistics.enable) { %>
+        <%- partial('_partials/footer/statistics.ejs') %>
+          <% } %>
+            <% if(theme.footer.beian.enable) { %>
+              <!-- 备案信息 ICP for China -->
+              <%- partial('_partials/footer/beian.ejs') %>
+                <% } %>
+                  <% if(theme.web_analytics.cnzz) { %>
+                    <!-- cnzz Analytics Icon -->
+                    <span id="cnzz_stat_icon_<%= theme.web_analytics.cnzz %>" style="display: none"></span>
+                    <% } %>
 
-  <div style="text-align: center;">
-    <a href="https://beian.miit.gov.cn/" target="_blank">辽ICP备2022000630号</a>
-  </div>
+                      <div style="text-align: center;">
+                        <a href="https://beian.miit.gov.cn/" target="_blank">辽ICP备2022000630号</a>
+                      </div>
+
+                      <!-- 在footer.ejs或after-footer.ejs中添加 -->
+                      <div id="hexo-cs-btn-container">
+                        <button id="hexo-cs-btn" aria-label="联系博主">
+                          <span>联系博主🚀</span>
+                        </button>
+                      </div>
+
+                      <style>
+                        /* 使用特定ID限定样式作用范围，避免全局影响 */
+                        #hexo-cs-btn-container {
+                          position: fixed;
+                          right: 0;
+                          bottom: 0;
+                          padding: 10px;
+                          z-index: 9999;
+                          pointer-events: none;
+                        }
+
+                        #hexo-cs-btn {
+                          --cs-btn-primary: #FF6B6B;
+                          --cs-btn-secondary: #FF8E53;
+                          --cs-btn-text: white;
+
+                          position: relative;
+                          padding: 0.7rem 1.2rem;
+                          background: linear-gradient(135deg, var(--cs-btn-primary) 0%, var(--cs-btn-secondary) 100%);
+                          color: var(--cs-btn-text);
+                          border-radius: 2rem;
+                          cursor: pointer;
+                          box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+                          font: bold 0.85rem/1 sans-serif;
+                          display: inline-flex;
+                          align-items: center;
+                          justify-content: center;
+                          transition: transform 0.2s ease, box-shadow 0.2s ease;
+                          border: none;
+                          outline: none;
+                          max-width: 100%;
+                          pointer-events: auto;
+                          white-space: nowrap;
+                          overflow: hidden;
+                          margin: 0;
+                        }
+
+                        #hexo-cs-btn span {
+                          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+                        }
+
+                        #hexo-cs-btn:hover {
+                          transform: scale(1.05);
+                          box-shadow: 0 6px 14px rgba(255, 107, 107, 0.5);
+                        }
+
+                        #hexo-cs-btn:active {
+                          transform: scale(0.98);
+                        }
+
+                        /* 安全区域适配 */
+                        @supports (padding: max(0px)) {
+                          #hexo-cs-btn-container {
+                            right: max(10px, env(safe-area-inset-right));
+                            bottom: max(10px, env(safe-area-inset-bottom));
+                          }
+                        }
+
+                        /* 移动端优化 */
+                        @media (max-width: 768px) {
+                          #hexo-cs-btn-container {
+                            padding: 8px;
+                          }
+
+                          #hexo-cs-btn {
+                            padding: 0.6rem 1rem;
+                            font-size: 0.8rem;
+                          }
+                        }
+
+                        /* 超小设备处理 */
+                        @media (max-width: 360px) {
+                          #hexo-cs-btn {
+                            white-space: normal;
+                            padding: 0.5rem 0.8rem;
+                            font-size: 0.75rem;
+                          }
+                        }
+                      </style>
+
+                      <script>
+                        // 使用自执行函数避免全局变量污染
+                        (function () {
+                          document.addEventListener('DOMContentLoaded', function () {
+                            const btn = document.getElementById('hexo-cs-btn');
+                            if (!btn) return;
+
+                            // 点击事件
+                            btn.addEventListener('click', function (e) {
+                              e.preventDefault();
+                              window.open(
+                                'https://qm.qq.com/cgi-bin/qm/qr?k=NZUoWMzd3PQLWwxRGMiBNYEnVkEdNq__&jump_from=webapi&authKey=kgAofDqUzgwMCSX+UQQwxf837zMeWFGGmo4iIcbgkklW2pdfmVOlxPWAK6sMYMaC',
+                                '_blank',
+                                'noopener,noreferrer'
+                              );
+
+                              // 点击反馈
+                              btn.style.transform = 'scale(0.95)';
+                              setTimeout(() => btn.style.transform = '', 200);
+                            });
+                          });
+                        })();
+                      </script>
+
+
 </div>
