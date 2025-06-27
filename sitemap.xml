@@ -2,24 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://yan-sheng-li.github.io/blog/remote_help/</loc>
-    
-    <lastmod>2025-06-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://yan-sheng-li.github.io/blog/raise/</loc>
-    
-    <lastmod>2025-06-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://yan-sheng-li.github.io/blog/posts/57913.html</loc>
     
     <lastmod>2025-06-27</lastmod>
@@ -30,15 +12,6 @@
   
   <url>
     <loc>https://yan-sheng-li.github.io/blog/posts/52388.html</loc>
-    
-    <lastmod>2025-06-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://yan-sheng-li.github.io/blog/posts/26131.html</loc>
     
     <lastmod>2025-06-27</lastmod>
     
@@ -65,34 +38,7 @@
   </url>
   
   <url>
-    <loc>https://yan-sheng-li.github.io/blog/posts/18883.html</loc>
-    
-    <lastmod>2025-06-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://yan-sheng-li.github.io/blog/posts/25153.html</loc>
-    
-    <lastmod>2025-06-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://yan-sheng-li.github.io/blog/posts/37189.html</loc>
-    
-    <lastmod>2025-06-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://yan-sheng-li.github.io/blog/posts/28281.html</loc>
     
     <lastmod>2025-06-27</lastmod>
     
@@ -119,7 +65,34 @@
   </url>
   
   <url>
+    <loc>https://yan-sheng-li.github.io/blog/remote_help/</loc>
+    
+    <lastmod>2025-06-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yan-sheng-li.github.io/blog/teamwork/</loc>
+    
+    <lastmod>2025-06-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://yan-sheng-li.github.io/blog/posts/62815.html</loc>
+    
+    <lastmod>2025-06-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yan-sheng-li.github.io/blog/raise/</loc>
     
     <lastmod>2025-06-27</lastmod>
     
@@ -155,7 +128,25 @@
   </url>
   
   <url>
+    <loc>https://yan-sheng-li.github.io/blog/posts/26131.html</loc>
+    
+    <lastmod>2025-06-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://yan-sheng-li.github.io/blog/posts/36980.html</loc>
+    
+    <lastmod>2025-06-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yan-sheng-li.github.io/blog/posts/18883.html</loc>
     
     <lastmod>2025-06-27</lastmod>
     
@@ -183,6 +174,24 @@
   
   <url>
     <loc>https://yan-sheng-li.github.io/blog/posts/37787.html</loc>
+    
+    <lastmod>2025-06-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yan-sheng-li.github.io/blog/posts/37189.html</loc>
+    
+    <lastmod>2025-06-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yan-sheng-li.github.io/blog/posts/28281.html</loc>
     
     <lastmod>2025-06-27</lastmod>
     
