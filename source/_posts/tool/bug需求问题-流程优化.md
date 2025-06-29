@@ -1,5 +1,5 @@
 ---
-title: "\U0001F4AA100%保真，在线监工，修改更追溯，随写随更新"
+title: "\U0001F4AA100%项目定制开发~量身定做"
 author: 李延胜
 index_img: http://cdn.qiniu.liyansheng.top/img/look_here.webp
 permalink: issues_flow/
@@ -7,9 +7,9 @@ abbrlink: 7645
 date: 2024-04-11 14:03:12
 tags:
 top: true
-description: 靠不靠谱，点进来看下就知道了~🏷
+description: 保真，在线监工，修改更追溯，随写随更新
 ---
-# 😀任务进度跟踪
+
 
 <span>
 <a href="http://www.liyansheng.top/blog"><img src="https://img.shields.io/badge/木子空间-自营博客-00dfbf" alt="自营博客"></a>
@@ -26,27 +26,26 @@ description: 靠不靠谱，点进来看下就知道了~🏷
 <a href="http://cdn.qiniu.liyansheng.top/img/20250423145452.png"><img src="https://img.shields.io/badge/木子空间-小程序商店-green" alt="小程序商店"></a>
 </span>
 
-![](http://cdn.qiniu.liyansheng.top/img/note2.png)
-# 🎯代码提交记录
-![](http://cdn.qiniu.liyansheng.top/img/note4.png)
-# 📝修改细节，我怎么改的，改了哪里，你都可以看得到
-![](http://cdn.qiniu.liyansheng.top/img/20240623140314.png)
-### 1. 使用码云，[点我前往](https://gitee.com/)
 
-### 2. 需求、问题、bug随时提     👇
+## 日期最新
+🔥你来要求，从第一行代码走起，实时代码提交记录,日期最新，进度一目了然，【保质保量】 <span style="color:red">绝不是网上随便扒个【天坑项目】敷衍你
 
----
+![](http://cdn.qiniu.liyansheng.top/img/20241213010505.png?watermark/4/text/5pyo5a2Q56m66Ze0/fontsize/400/fill/Z3JheQ==/dissolve/50/rotate/30/uw/180/uh/180/resize/1)
 
-找到对应的仓库，点击`issues`，然后点击右边的`新增`
+## 代码细节
+【一个功能点，一个提交记录】，小白也能看懂，哪个功能对应哪块代码
 
-![](http://cdn.qiniu.liyansheng.top/img/s1.png)
+![](http://cdn.qiniu.liyansheng.top/img/20241213011522.png?watermark/4/text/5pyo5a2Q56m66Ze0/fontsize/400/fill/Z3JheQ==/dissolve/50/rotate/30/uw/180/uh/180/resize/1)
 
-填写`问题/需求`，`描述`，然后`提交`
+## 隐私保护
+私有部署仓库，项目详情只有你我可见
 
-![](http://cdn.qiniu.liyansheng.top/img/s2.png)
+![](http://cdn.qiniu.liyansheng.top/img/20250419103252.png?watermark/4/text/5pyo5a2Q56m66Ze0/fontsize/400/fill/Z3JheQ==/dissolve/50/rotate/30/uw/180/uh/180/resize/1)
 
-### 3.🔑举例
+## 项目维护
+项目发现问题，随时提，随时改，你也是【优秀测试】👍
 
-![](http://cdn.qiniu.liyansheng.top/img/s3.png)
+![](http://cdn.qiniu.liyansheng.top/img/20250111132745.png?watermark/4/text/5pyo5a2Q56m66Ze0/fontsize/400/fill/Z3JheQ==/dissolve/50/rotate/30/uw/180/uh/180/resize/1)
 
-## 一般资费说明：[点我查看](/remote_help/)
+## 答疑辅导 
+另外，附赠论文免费指点
