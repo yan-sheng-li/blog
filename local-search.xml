@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>Windows 下安装与使用 aria2 简记</title>
+    <link href="/blog/posts/4966.html"/>
+    <url>/blog/posts/4966.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="Windows-下安装与使用-aria2-简记"><a href="#Windows-下安装与使用-aria2-简记" class="headerlink" title="Windows 下安装与使用 aria2 简记"></a>Windows 下安装与使用 aria2 简记</h1><p>最近在 Windows 上需要一个轻量级的多线程下载工具，于是重新装了一下 <strong>aria2</strong>。这里做个简单记录，方便以后查阅。</p><hr><h2 id="安装步骤（官方-zip-包方式）"><a href="#安装步骤（官方-zip-包方式）" class="headerlink" title="安装步骤（官方 zip 包方式）"></a>安装步骤（官方 zip 包方式）</h2><ol><li><p>打开 <a href="https://github.com/aria2/aria2/releases">aria2 GitHub Release 页面</a></p></li><li><p>找到最新的 Windows 版本（比如 <strong>aria2-1.37.0-win-64bit-build1.zip</strong>）并下载</p></li><li><p>解压到一个目录，例如：</p><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs avrasm"><span class="hljs-symbol">C:</span>\aria2\<br></code></pre></td></tr></table></figure></li><li><p>配置环境变量：</p><ul><li>右键 “此电脑” → 属性 → 高级系统设置 → 环境变量</li><li>在 <strong>系统变量</strong> 的 <code>Path</code> 中新增 <code>C:\aria2\</code></li></ul></li><li><p>打开新的命令提示符，输入：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">aria2c -v<br></code></pre></td></tr></table></figure><p>能看到版本号说明安装成功</p></li></ol><hr><h2 id="基础使用方法"><a href="#基础使用方法" class="headerlink" title="基础使用方法"></a>基础使用方法</h2><h3 id="1-多线程下载"><a href="#1-多线程下载" class="headerlink" title="1. 多线程下载"></a>1. 多线程下载</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">aria2c -s 16 -x 16 -k 1M <span class="hljs-string">&quot;https://example.com/file.zip&quot;</span><br></code></pre></td></tr></table></figure><ul><li><code>-s 16</code>：分成 16 个分片下载</li><li><code>-x 16</code>：每个服务器最多开 16 个连接</li><li><code>-k 1M</code>：每个分片大小 1MB</li></ul><h3 id="2-断点续传"><a href="#2-断点续传" class="headerlink" title="2. 断点续传"></a>2. 断点续传</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">aria2c -c <span class="hljs-string">&quot;https://example.com/file.zip&quot;</span><br></code></pre></td></tr></table></figure><p>参数 <code>-c</code> 表示继续上次的下载。</p><h3 id="3-批量下载"><a href="#3-批量下载" class="headerlink" title="3. 批量下载"></a>3. 批量下载</h3><p>先把链接写在 <code>urls.txt</code> 文件中（每行一个）：</p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs awk">https:<span class="hljs-regexp">//</span>example.com/file1.zip<br>https:<span class="hljs-regexp">//</span>example.com/file2.zip<br></code></pre></td></tr></table></figure><p>然后执行：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">aria2c -i urls.txt -s 16 -x 16<br></code></pre></td></tr></table></figure><hr><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ul><li>aria2 是一个非常轻量、强大的命令行下载器</li><li>支持 HTTP、FTP、BT、Metalink 等多种协议</li><li>Windows 下推荐直接用官方 zip 包，配置一次 PATH 即可全局使用</li></ul><p>轻便好用，完全可以作为 wget&#x2F;curl 的补充</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>常见问题与解答</title>
     <link href="/blog/qa/"/>
     <url>/blog/qa/</url>
