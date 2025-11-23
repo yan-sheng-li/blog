@@ -11,15 +11,6 @@
   </url>
   
   <url>
-    <loc>https://yan-sheng-li.github.io/blog/qa/</loc>
-    
-    <lastmod>2025-11-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://yan-sheng-li.github.io/blog/teamwork/</loc>
     
     <lastmod>2025-11-23</lastmod>
@@ -101,15 +92,6 @@
   </url>
   
   <url>
-    <loc>https://yan-sheng-li.github.io/blog/install/</loc>
-    
-    <lastmod>2025-11-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://yan-sheng-li.github.io/blog/posts/37189.html</loc>
     
     <lastmod>2025-11-23</lastmod>
@@ -155,6 +137,15 @@
   </url>
   
   <url>
+    <loc>https://yan-sheng-li.github.io/blog/qa/</loc>
+    
+    <lastmod>2025-11-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://yan-sheng-li.github.io/blog/posts/62815.html</loc>
     
     <lastmod>2025-11-23</lastmod>
@@ -192,6 +183,15 @@
   
   <url>
     <loc>https://yan-sheng-li.github.io/blog/posts/36980.html</loc>
+    
+    <lastmod>2025-11-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yan-sheng-li.github.io/blog/install/</loc>
     
     <lastmod>2025-11-23</lastmod>
     
