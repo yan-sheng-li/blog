@@ -62,7 +62,7 @@
 <meta property="og:image" content="http://cdn.qiniu.liyansheng.top/img/20251021164523.png">
 <meta property="og:image" content="http://cdn.qiniu.liyansheng.top/img/20251027144730.png">
 <meta property="article:published_time" content="2024-07-02T13:06:29.000Z">
-<meta property="article:modified_time" content="2025-11-17T06:43:15.701Z">
+<meta property="article:modified_time" content="2025-11-23T13:17:33.853Z">
 <meta property="article:author" content="李延胜">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://img.shields.io/badge/%E6%9C%A8%E5%AD%90%E7%A9%BA%E9%97%B4-%E8%87%AA%E8%90%A5%E5%8D%9A%E5%AE%A2-00dfbf">
@@ -334,7 +334,7 @@ var _hmt = _hmt || [];
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.2k 字
+          1.6k 字
         
       </span>
     
@@ -345,7 +345,7 @@ var _hmt = _hmt || [];
         
         
         
-          10 分钟
+          14 分钟
         
       </span>
     
@@ -480,17 +480,41 @@ var _hmt = _hmt || [];
   <summary>点我展开-详细操作</summary>
 方式2
 
-<p>先安装<a target="_blank" rel="noopener" href="https://www.msys2.org/">MSYS2</a>，打开终端，通过<code>pacman -Syu</code>更新包数据库并升级，重启窗口后<code>pacman -Su</code>，输入<code>pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-gdb</code>安装<code>gcc</code>，前往<code>C:\msys64\mingw64\bin</code>重新打开cmd，验证<code>g++ --version</code></p>
+<p>先安装<a target="_blank" rel="noopener" href="https://www.msys2.org/">MSYS2</a>，打开终端，通过<code>pacman -Syu</code>更新包数据库并升级，重启窗口后<code>pacman -Su</code>，输入<code>pacman -S mingw-w64-x86_64-gcc mingw-w64-x86_64-gdb</code>安装<code>gcc</code>，前往<code>C:\msys64\mingw64\bin</code>重新打开cmd，验证<code>g++ --version</code>与<code>gcc --version</code></p>
 <p>   在vscode验证</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br>using namespace <span class="hljs-built_in">std</span>;<br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Hello, C++ from MSYS2 MinGW64!&quot;</span> &lt;&lt; <span class="hljs-built_in">endl</span>;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>提示: g++编译c++语言，文件后缀是.cpp<br>gcc编译c语言，文件后缀是.c</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    cout &lt;&lt; <span class="hljs-string">&quot;Hello, C++ from MSYS2 MinGW64!&quot;</span> &lt;&lt; endl;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p>执行：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">g++ hello.cpp -o hello<br>./hello<br></code></pre></td></tr></table></figure>
 
-<p>如果输出：</p>
+<p>如果输出如下，就OK</p>
 <figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">Hello, C++ <span class="hljs-keyword">from</span> MSYS2 MinGW64!<br></code></pre></td></tr></table></figure>
 
-<p>OK!</p>
+<p>如果在vscode里面要交互输入变量即让 Code Runner 在“终端”运行，而不是在“Output”中运行</p>
+<ol>
+<li>打开 VS Code 设置（Ctrl + ,）</li>
+<li>搜索：</li>
+</ol>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gauss"><span class="hljs-built_in">code</span> runner <span class="hljs-keyword">run</span> in terminal<br></code></pre></td></tr></table></figure>
+
+<ol>
+<li>勾选：<br> ✔ <strong>Run In Terminal</strong></li>
+</ol>
+<p>如果控制台输出乱码，那就每个文件都加上这两行</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;windows.h&gt;</span></span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span> &#123;<br>    SetConsoleOutputCP(CP_UTF8);<br></code></pre></td></tr></table></figure>
+
+
+
+<hr>
+<p>如果是c语言</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Hello, World!\n&quot;</span>);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>执行<code>gcc hello.c -o hello.exe</code></p>
+<p>然后</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">D:\test_MinGW&gt;hello<br>Hello, World!<br></code></pre></td></tr></table></figure>
+
+<p>也OK</p>
 </details>
 
 
